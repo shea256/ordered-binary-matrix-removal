@@ -3,18 +3,20 @@
 **Candidate research manuscript · October 10, 2026**
 
 This repository proposes reducing the fixed obstruction to polynomial ordered
-induced removal from **66×66 to 5×5**. The complete **5×5 forbidden pattern**
-contains a **3×3 anchor** plus two additional rows and columns. The manuscript contains the full written
-argument and exact finite checks. Independent mathematical review,
-formalization, and a conclusive novelty assessment remain pending.
+induced removal from **66×66 to 4×4**, refining our earlier 15×15 and 5×5
+candidates. The complete **4×4 forbidden pattern** contains a **2×2 anchor
+component** plus two additional rows and columns. The manuscript contains
+the full written argument and exact finite checks. Independent mathematical
+review, formalization, and a conclusive novelty assessment remain pending.
 
-| Construction | Forbidden pattern | Anchor | Status |
+| Construction | Forbidden pattern | Anchor component | Status |
 | --- | --- | --- | --- |
 | [OpenAI baseline](BASELINE.md) | 66×66 | 64×64 | Released manuscript and Lean sources |
-| [Our earlier candidate](proofs/compressed-pattern.md) | 15×15 | 13×13 | Proof draft; independent review pending |
-| [Our current candidate](proofs/five-by-five.md) | **5×5** | **3×3** | Proof draft; independent review pending |
+| [First candidate](proofs/compressed-pattern.md) | 15×15 | 13×13 | Proof draft; independent review pending |
+| [Previous candidate](proofs/five-by-five.md) | 5×5 | 3×3 | Proof draft; independent review pending |
+| [Current candidate](proofs/four-by-four.md) | **4×4** | **2×2** | Proof draft; independent review pending |
 
-All three constructions use arbitrarily large host matrices. The anchor is
+All four constructions use arbitrarily large host matrices. The anchor is
 part of the forbidden pattern. See [IMPROVEMENTS.md](IMPROVEMENTS.md) for
 the history of the refinements.
 
@@ -25,12 +27,27 @@ baseline and its assumptions. The host and propagation mechanism adapt
 OpenAI's September 25, 2026 construction; [ATTRIBUTION.md](ATTRIBUTION.md)
 identifies the inherited and proposed ingredients.
 
-For every integer h ≥ 1, the candidate has order n=(20h+2)2^h, normalized
-repair distance at least (20h+2)^−2, and exactly 2·2^(8h) ordered copies.
-The density is 2(20h+2)^−10·4^−h. Copies match both binary values and preserve
-separate row and column orders. Repairs allow arbitrary binary changes.
-The pattern is fixed independently of h. Finite tests support the argument;
-they do not prove its universal quantifiers.
+The fixed forbidden pattern is:
+
+```text
+0 1 1 0
+1 0 0 1
+1 0 1 0
+0 1 1 1
+```
+
+For every integer h ≥ 1, put m=2^h. The candidate host has order
+n=(14h+2)m and normalized repair distance at least (14h+2)^−2. Its exact
+copy count is 128 at h=1 and (33/4)m^6−(29/2)m^5 for h≥2. Thus its copy
+density is at most (33/4)(14h+2)^−8·4^−h, smaller than every fixed power
+of the certified distance scale as h grows.
+
+Copies match both binary values and preserve separate row and column
+orders. Repairs allow arbitrary binary changes, including anchor cells.
+The pattern is fixed independently of h. The new proof permits additional
+anchor configurations and localizes every complete 4×4 copy to one of 2m
+specific zero cells. Finite tests support the argument; they do not prove
+its universal quantifiers.
 
 ## Reproduce the checks
 
@@ -42,6 +59,10 @@ python3 scripts/run_checks.py
 
 This regenerates exact reports, compares them to checked-in references, and
 validates repository artifacts. Receipts go to ignored `.context/` files.
+The 4×4 census checks all copies through depth 4 without assuming the
+localization theorem, and the separate count calculation runs through
+depth 8. The suite retains the earlier candidates' checks.
+
 For optional network source verification:
 
 ```sh
@@ -59,20 +80,17 @@ from Markdown, install Pandoc 3.6.4 and use `--regenerate-tex`.
 
 ## Review
 
-[HANDOFF.md](HANDOFF.md) identifies the decisive all-depth lemma and rigidity
-arguments to audit. [ATTEMPT.md](ATTEMPT.md), [RUNLOG.md](RUNLOG.md), and
-[verification/README.md](verification/README.md) separate proofs, finite evidence,
-and remaining obligations. [results/current.json](results/current.json) is the
-machine-readable status. All binary 2×2 patterns occur in the nonanchor host,
-blocking a further reduction by the same pure-anchor rigidity method. This does not prove
-that a 5×5 obstruction is minimal.
+[HANDOFF.md](HANDOFF.md) identifies the full-pattern classification,
+zero-cell localization, copy count, and arbitrary-repair argument to audit.
+[ATTEMPT.md](ATTEMPT.md), [RUNLOG.md](RUNLOG.md), and
+[verification/README.md](verification/README.md) separate proofs, finite
+evidence, and remaining obligations. [results/current.json](results/current.json)
+is the machine-readable status. No claim that 4×4 is minimal is made.
 
-The earlier 15×15 candidate used a 13×13 anchor. Its
-[proof draft](proofs/compressed-pattern.md) and exact reports are retained;
-the original manuscript is available at the
-[initial commit](https://github.com/shea256/ordered-binary-matrix-removal/tree/fa2aa33105d7d16ae782f4a0858a417e31de9f05).
-The new [proof](proofs/five-by-five.md) uses a different order of the anchor
-blocks to make the smaller anchor rigid. See [IMPROVEMENTS.md](IMPROVEMENTS.md).
+The earlier [15×15](proofs/compressed-pattern.md) and
+[5×5](proofs/five-by-five.md) drafts and exact reports are retained. The
+previous 5×5 manuscript is available at its
+[release commit](https://github.com/shea256/ordered-binary-matrix-removal/tree/f16d432d9a918c694f0b404a12f744c0c8b0db03).
 
 Prepared by Ryan Shea with Codex assistance. AI assistance and same-agent
 second-pass checking are not independent peer review. Licensed under

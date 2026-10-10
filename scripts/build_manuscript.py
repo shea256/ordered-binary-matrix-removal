@@ -31,7 +31,7 @@ with tempfile.TemporaryDirectory() as td:
     warnings = [line for line in run.stdout.splitlines() if 'Warning' in line or 'Overfull' in line]
 version = subprocess.run(['pdflatex', '--version'], check=True, capture_output=True, text=True).stdout.splitlines()[0]
 receipt = {'engine': version, 'passes': 3, 'shell_escape': False, 'warnings': warnings, 'artifacts': {}}
-for name in ('manuscript.md', 'tex/manuscript.tex', 'manuscript.pdf', 'proofs/five-by-five.md'):
+for name in ('manuscript.md', 'tex/manuscript.tex', 'manuscript.pdf', 'proofs/four-by-four.md'):
     data = (ROOT / name).read_bytes()
     receipt['artifacts'][name] = {'sha256': hashlib.sha256(data).hexdigest(), 'bytes': len(data)}
 (ROOT / 'results/paper_build.json').write_text(json.dumps(receipt, indent=2) + '\n')

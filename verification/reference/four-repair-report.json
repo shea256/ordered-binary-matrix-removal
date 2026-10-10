@@ -1,0 +1,45 @@
+{
+  "flipped_parent_zero_set": [
+    {
+      "h": 1,
+      "leaf_choices_checked": 2,
+      "every_choice_creates_a_V_minus_copy": true
+    },
+    {
+      "h": 2,
+      "leaf_choices_checked": 4,
+      "every_choice_creates_a_V_minus_copy": true
+    },
+    {
+      "h": 3,
+      "leaf_choices_checked": 8,
+      "every_choice_creates_a_V_minus_copy": true
+    },
+    {
+      "h": 4,
+      "leaf_choices_checked": 16,
+      "every_choice_creates_a_V_minus_copy": true
+    },
+    {
+      "h": 5,
+      "leaf_choices_checked": 32,
+      "every_choice_creates_a_V_minus_copy": true
+    },
+    {
+      "h": 6,
+      "leaf_choices_checked": 64,
+      "every_choice_creates_a_V_minus_copy": true
+    },
+    {
+      "h": 7,
+      "leaf_choices_checked": 128,
+      "every_choice_creates_a_V_minus_copy": true
+    },
+    {
+      "h": 8,
+      "leaf_choices_checked": 256,
+      "every_choice_creates_a_V_minus_copy": true
+    }
+  ],
+  "scope": "Exact finite boundary check; all-depth explanation in proofs/four-by-four.md, Section 7."
+}
