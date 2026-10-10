@@ -8,6 +8,16 @@ contains a **3×3 anchor** plus two additional rows and columns. The manuscript 
 argument and exact finite checks. Independent mathematical review,
 formalization, and a conclusive novelty assessment remain pending.
 
+| Construction | Forbidden pattern | Anchor | Status |
+| --- | --- | --- | --- |
+| [OpenAI baseline](BASELINE.md) | 66×66 | 64×64 | Released manuscript and Lean sources |
+| [Our earlier candidate](proofs/compressed-pattern.md) | 15×15 | 13×13 | Proof draft; independent review pending |
+| [Our current candidate](proofs/five-by-five.md) | **5×5** | **3×3** | Proof draft; independent review pending |
+
+All three constructions use arbitrarily large host matrices. The anchor is
+part of the forbidden pattern. See [IMPROVEMENTS.md](IMPROVEMENTS.md) for
+the history of the refinements.
+
 Read the [manuscript PDF](manuscript.pdf), [Markdown manuscript](manuscript.md),
 or [LaTeX source](tex/manuscript.tex). Start with [RESULT.md](RESULT.md) for the
 precise contribution and [BASELINE.md](BASELINE.md) for the strongest audited
