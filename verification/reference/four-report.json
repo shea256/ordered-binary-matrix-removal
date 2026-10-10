@@ -1,0 +1,784 @@
+{
+  "pattern": [
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ]
+  ],
+  "anchor": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "full_census": [
+    {
+      "h": 1,
+      "quotient_axis_size": 17,
+      "row_quadruples_checked": 2380,
+      "total_copies": 128,
+      "groups": {
+        "balanced": {
+          "quotient_copies": 2,
+          "weighted_copies": 128
+        }
+      },
+      "parent_zero_localization_failures": 0,
+      "old_leaf_diagonal_hitting_set_counterexample": null
+    },
+    {
+      "h": 2,
+      "quotient_axis_size": 35,
+      "row_quadruples_checked": 52360,
+      "total_copies": 18944,
+      "groups": {
+        "parent_full": {
+          "quotient_copies": 4,
+          "weighted_copies": 8192
+        },
+        "leaf_plus": {
+          "quotient_copies": 3,
+          "weighted_copies": 1536
+        },
+        "balanced": {
+          "quotient_copies": 4,
+          "weighted_copies": 8192
+        },
+        "leaf_minus": {
+          "quotient_copies": 2,
+          "weighted_copies": 1024
+        }
+      },
+      "parent_zero_localization_failures": 0,
+      "old_leaf_diagonal_hitting_set_counterexample": {
+        "rows": [
+          {
+            "kind": "anchor",
+            "depth": -1,
+            "sign": "",
+            "node": -1,
+            "mode": [
+              "W",
+              2,
+              "+",
+              0
+            ],
+            "group": 0,
+            "weight": 4
+          },
+          {
+            "kind": "anchor",
+            "depth": -1,
+            "sign": "",
+            "node": -1,
+            "mode": [
+              "W",
+              2,
+              "-",
+              0
+            ],
+            "group": 1,
+            "weight": 4
+          },
+          {
+            "kind": "variable",
+            "depth": 2,
+            "sign": "L",
+            "node": 2,
+            "mode": [],
+            "group": -1,
+            "weight": 1
+          },
+          {
+            "kind": "dummy",
+            "depth": -1,
+            "sign": "",
+            "node": -1,
+            "mode": [],
+            "group": -1,
+            "weight": 4
+          }
+        ],
+        "columns": [
+          {
+            "kind": "anchor",
+            "depth": -1,
+            "sign": "",
+            "node": -1,
+            "mode": [
+              "W",
+              2,
+              "-",
+              0
+            ],
+            "group": 0,
+            "weight": 4
+          },
+          {
+            "kind": "variable",
+            "depth": 1,
+            "sign": "+",
+            "node": 0,
+            "mode": [],
+            "group": -1,
+            "weight": 2
+          },
+          {
+            "kind": "variable",
+            "depth": 1,
+            "sign": "+",
+            "node": 1,
+            "mode": [],
+            "group": -1,
+            "weight": 2
+          },
+          {
+            "kind": "variable",
+            "depth": 1,
+            "sign": "-",
+            "node": 1,
+            "mode": [],
+            "group": -1,
+            "weight": 2
+          }
+        ]
+      }
+    },
+    {
+      "h": 3,
+      "quotient_axis_size": 59,
+      "row_quadruples_checked": 455126,
+      "total_copies": 1687552,
+      "groups": {
+        "parent_half": {
+          "quotient_copies": 4,
+          "weighted_copies": 131072
+        },
+        "parent_full": {
+          "quotient_copies": 24,
+          "weighted_copies": 786432
+        },
+        "leaf_plus": {
+          "quotient_copies": 18,
+          "weighted_copies": 147456
+        },
+        "balanced": {
+          "quotient_copies": 8,
+          "weighted_copies": 524288
+        },
+        "leaf_minus": {
+          "quotient_copies": 12,
+          "weighted_copies": 98304
+        }
+      },
+      "parent_zero_localization_failures": 0,
+      "old_leaf_diagonal_hitting_set_counterexample": {
+        "rows": [
+          {
+            "kind": "anchor",
+            "depth": -1,
+            "sign": "",
+            "node": -1,
+            "mode": [
+              "W",
+              2,
+              "+",
+              0
+            ],
+            "group": 1,
+            "weight": 8
+          },
+          {
+            "kind": "anchor",
+            "depth": -1,
+            "sign": "",
+            "node": -1,
+            "mode": [
+              "W",
+              3,
+              "-",
+              0
+            ],
+            "group": 1,
+            "weight": 8
+          },
+          {
+            "kind": "variable",
+            "depth": 3,
+            "sign": "L",
+            "node": 4,
+            "mode": [],
+            "group": -1,
+            "weight": 1
+          },
+          {
+            "kind": "dummy",
+            "depth": -1,
+            "sign": "",
+            "node": -1,
+            "mode": [],
+            "group": -1,
+            "weight": 8
+          }
+        ],
+        "columns": [
+          {
+            "kind": "anchor",
+            "depth": -1,
+            "sign": "",
+            "node": -1,
+            "mode": [
+              "W",
+              3,
+              "-",
+              0
+            ],
+            "group": 0,
+            "weight": 8
+          },
+          {
+            "kind": "variable",
+            "depth": 2,
+            "sign": "+",
+            "node": 0,
+            "mode": [],
+            "group": -1,
+            "weight": 2
+          },
+          {
+            "kind": "variable",
+            "depth": 2,
+            "sign": "+",
+            "node": 2,
+            "mode": [],
+            "group": -1,
+            "weight": 2
+          },
+          {
+            "kind": "variable",
+            "depth": 2,
+            "sign": "-",
+            "node": 2,
+            "mode": [],
+            "group": -1,
+            "weight": 2
+          }
+        ]
+      }
+    },
+    {
+      "h": 4,
+      "quotient_axis_size": 95,
+      "row_quadruples_checked": 3183545,
+      "total_copies": 123207680,
+      "groups": {
+        "parent_half": {
+          "quotient_copies": 24,
+          "weighted_copies": 12582912
+        },
+        "parent_full": {
+          "quotient_copies": 112,
+          "weighted_copies": 58720256
+        },
+        "leaf_plus": {
+          "quotient_copies": 84,
+          "weighted_copies": 11010048
+        },
+        "balanced": {
+          "quotient_copies": 16,
+          "weighted_copies": 33554432
+        },
+        "leaf_minus": {
+          "quotient_copies": 56,
+          "weighted_copies": 7340032
+        }
+      },
+      "parent_zero_localization_failures": 0,
+      "old_leaf_diagonal_hitting_set_counterexample": {
+        "rows": [
+          {
+            "kind": "anchor",
+            "depth": -1,
+            "sign": "",
+            "node": -1,
+            "mode": [
+              "W",
+              3,
+              "+",
+              0
+            ],
+            "group": 1,
+            "weight": 16
+          },
+          {
+            "kind": "anchor",
+            "depth": -1,
+            "sign": "",
+            "node": -1,
+            "mode": [
+              "W",
+              4,
+              "-",
+              0
+            ],
+            "group": 1,
+            "weight": 16
+          },
+          {
+            "kind": "variable",
+            "depth": 4,
+            "sign": "L",
+            "node": 4,
+            "mode": [],
+            "group": -1,
+            "weight": 1
+          },
+          {
+            "kind": "dummy",
+            "depth": -1,
+            "sign": "",
+            "node": -1,
+            "mode": [],
+            "group": -1,
+            "weight": 16
+          }
+        ],
+        "columns": [
+          {
+            "kind": "anchor",
+            "depth": -1,
+            "sign": "",
+            "node": -1,
+            "mode": [
+              "W",
+              4,
+              "-",
+              0
+            ],
+            "group": 0,
+            "weight": 16
+          },
+          {
+            "kind": "variable",
+            "depth": 3,
+            "sign": "+",
+            "node": 0,
+            "mode": [],
+            "group": -1,
+            "weight": 2
+          },
+          {
+            "kind": "variable",
+            "depth": 3,
+            "sign": "+",
+            "node": 2,
+            "mode": [],
+            "group": -1,
+            "weight": 2
+          },
+          {
+            "kind": "variable",
+            "depth": 3,
+            "sign": "-",
+            "node": 2,
+            "mode": [],
+            "group": -1,
+            "weight": 2
+          }
+        ]
+      }
+    }
+  ],
+  "independent_node_pair_counts": [
+    {
+      "h": 1,
+      "m": 2,
+      "n": 32,
+      "canonical_copies": 128,
+      "additional_copies": 0,
+      "total_copies": 128,
+      "pair_counts_by_family": {}
+    },
+    {
+      "h": 2,
+      "m": 4,
+      "n": 120,
+      "canonical_copies": 8192,
+      "additional_copies": 10752,
+      "total_copies": 18944,
+      "pair_counts_by_family": {
+        "leaf_plus": 3,
+        "leaf_minus": 2,
+        "parent_full": 16
+      }
+    },
+    {
+      "h": 3,
+      "m": 8,
+      "n": 352,
+      "canonical_copies": 524288,
+      "additional_copies": 1163264,
+      "total_copies": 1687552,
+      "pair_counts_by_family": {
+        "leaf_plus": 18,
+        "leaf_minus": 12,
+        "parent_full": 96,
+        "parent_half": 16
+      }
+    },
+    {
+      "h": 4,
+      "m": 16,
+      "n": 928,
+      "canonical_copies": 33554432,
+      "additional_copies": 89653248,
+      "total_copies": 123207680,
+      "pair_counts_by_family": {
+        "leaf_plus": 84,
+        "leaf_minus": 56,
+        "parent_full": 448,
+        "parent_half": 96
+      }
+    },
+    {
+      "h": 5,
+      "m": 32,
+      "n": 2304,
+      "canonical_copies": 2147483648,
+      "additional_copies": 6224347136,
+      "total_copies": 8371830784,
+      "pair_counts_by_family": {
+        "leaf_plus": 360,
+        "leaf_minus": 240,
+        "parent_full": 1920,
+        "parent_half": 448
+      }
+    },
+    {
+      "h": 6,
+      "m": 64,
+      "n": 5504,
+      "canonical_copies": 137438953472,
+      "additional_copies": 413927473152,
+      "total_copies": 551366426624,
+      "pair_counts_by_family": {
+        "leaf_plus": 1488,
+        "leaf_minus": 992,
+        "parent_full": 7936,
+        "parent_half": 1920
+      }
+    },
+    {
+      "h": 7,
+      "m": 128,
+      "n": 12800,
+      "canonical_copies": 8796093022208,
+      "additional_copies": 26989574488064,
+      "total_copies": 35785667510272,
+      "pair_counts_by_family": {
+        "leaf_plus": 6048,
+        "leaf_minus": 4032,
+        "parent_full": 32256,
+        "parent_half": 7936
+      }
+    },
+    {
+      "h": 8,
+      "m": 256,
+      "n": 29184,
+      "canonical_copies": 562949953421312,
+      "additional_copies": 1743275685838848,
+      "total_copies": 2306225639260160,
+      "pair_counts_by_family": {
+        "leaf_plus": 24384,
+        "leaf_minus": 16256,
+        "parent_full": 130048,
+        "parent_half": 32256
+      }
+    }
+  ],
+  "tree_orders": [
+    {
+      "h": 1,
+      "strict_order_comparisons": 6
+    },
+    {
+      "h": 2,
+      "strict_order_comparisons": 34
+    },
+    {
+      "h": 3,
+      "strict_order_comparisons": 146
+    },
+    {
+      "h": 4,
+      "strict_order_comparisons": 594
+    },
+    {
+      "h": 5,
+      "strict_order_comparisons": 2386
+    }
+  ],
+  "reversed_minus_parity_counterexample": {
+    "h": 3,
+    "rows": [
+      {
+        "kind": "anchor",
+        "depth": -1,
+        "sign": "",
+        "node": -1,
+        "mode": [
+          "W",
+          2,
+          "-",
+          1
+        ],
+        "group": 0,
+        "weight": 8
+      },
+      {
+        "kind": "anchor",
+        "depth": -1,
+        "sign": "",
+        "node": -1,
+        "mode": [
+          "W",
+          2,
+          "-",
+          0
+        ],
+        "group": 1,
+        "weight": 8
+      },
+      {
+        "kind": "variable",
+        "depth": 2,
+        "sign": "-",
+        "node": 2,
+        "mode": [],
+        "group": -1,
+        "weight": 2
+      },
+      {
+        "kind": "dummy",
+        "depth": -1,
+        "sign": "",
+        "node": -1,
+        "mode": [],
+        "group": -1,
+        "weight": 8
+      }
+    ],
+    "columns": [
+      {
+        "kind": "anchor",
+        "depth": -1,
+        "sign": "",
+        "node": -1,
+        "mode": [
+          "W",
+          2,
+          "-",
+          0
+        ],
+        "group": 0,
+        "weight": 8
+      },
+      {
+        "kind": "variable",
+        "depth": 2,
+        "sign": "-",
+        "node": 1,
+        "mode": [],
+        "group": -1,
+        "weight": 2
+      },
+      {
+        "kind": "variable",
+        "depth": 2,
+        "sign": "-",
+        "node": 3,
+        "mode": [],
+        "group": -1,
+        "weight": 2
+      },
+      {
+        "kind": "variable",
+        "depth": 1,
+        "sign": "-",
+        "node": 1,
+        "mode": [],
+        "group": -1,
+        "weight": 4
+      }
+    ],
+    "weighted_copies_in_this_family": 131072,
+    "scope": "Counterexample to localization if minus parity modes are reversed; all chosen depths are fixed below the leaves."
+  },
+  "crown_exclusion": [
+    {
+      "h": 1,
+      "column_triples": 10,
+      "nonanchor_crowns": 0
+    },
+    {
+      "h": 2,
+      "column_triples": 165,
+      "nonanchor_crowns": 0
+    },
+    {
+      "h": 3,
+      "column_triples": 1771,
+      "nonanchor_crowns": 0
+    },
+    {
+      "h": 4,
+      "column_triples": 16215,
+      "nonanchor_crowns": 0
+    },
+    {
+      "h": 5,
+      "column_triples": 138415,
+      "nonanchor_crowns": 0
+    }
+  ],
+  "laminar_supports": [
+    {
+      "h": 1,
+      "support_pairs": 132,
+      "strict_containments": 8
+    },
+    {
+      "h": 2,
+      "support_pairs": 552,
+      "strict_containments": 28
+    },
+    {
+      "h": 3,
+      "support_pairs": 1260,
+      "strict_containments": 48
+    },
+    {
+      "h": 4,
+      "support_pairs": 2256,
+      "strict_containments": 68
+    },
+    {
+      "h": 5,
+      "support_pairs": 3540,
+      "strict_containments": 88
+    },
+    {
+      "h": 6,
+      "support_pairs": 5112,
+      "strict_containments": 108
+    },
+    {
+      "h": 7,
+      "support_pairs": 6972,
+      "strict_containments": 128
+    },
+    {
+      "h": 8,
+      "support_pairs": 9120,
+      "strict_containments": 148
+    }
+  ],
+  "arbitrary_path_edits": [
+    {
+      "h": 1,
+      "free_binary_assignments": 8,
+      "H_free_path_assignments": 0
+    },
+    {
+      "h": 2,
+      "free_binary_assignments": 128,
+      "H_free_path_assignments": 0
+    },
+    {
+      "h": 3,
+      "free_binary_assignments": 2048,
+      "H_free_path_assignments": 0
+    },
+    {
+      "h": 4,
+      "free_binary_assignments": 32768,
+      "H_free_path_assignments": 0
+    }
+  ],
+  "sampling": [
+    {
+      "h": 1,
+      "max_variable_mode_incidence": 4,
+      "protected_cell_probability": "1/4",
+      "diagonal_leaf_selection_probability": "1/2"
+    },
+    {
+      "h": 2,
+      "max_variable_mode_incidence": 4,
+      "protected_cell_probability": "1/16",
+      "diagonal_leaf_selection_probability": "1/4"
+    },
+    {
+      "h": 3,
+      "max_variable_mode_incidence": 4,
+      "protected_cell_probability": "1/64",
+      "diagonal_leaf_selection_probability": "1/8"
+    },
+    {
+      "h": 4,
+      "max_variable_mode_incidence": 4,
+      "protected_cell_probability": "1/256",
+      "diagonal_leaf_selection_probability": "1/16"
+    },
+    {
+      "h": 5,
+      "max_variable_mode_incidence": 4,
+      "protected_cell_probability": "1/1024",
+      "diagonal_leaf_selection_probability": "1/32"
+    },
+    {
+      "h": 6,
+      "max_variable_mode_incidence": 4,
+      "protected_cell_probability": "1/4096",
+      "diagonal_leaf_selection_probability": "1/64"
+    },
+    {
+      "h": 7,
+      "max_variable_mode_incidence": 4,
+      "protected_cell_probability": "1/16384",
+      "diagonal_leaf_selection_probability": "1/128"
+    },
+    {
+      "h": 8,
+      "max_variable_mode_incidence": 4,
+      "protected_cell_probability": "1/65536",
+      "diagonal_leaf_selection_probability": "1/256"
+    }
+  ],
+  "scope": "Exact finite evidence and a separate combinatorial count; no independent review or Lean proof. Universal argument: proofs/four-by-four.md."
+}

@@ -1,60 +1,67 @@
 # Handoff — OPENAI-190
 
-**Current checkpoint:** a complete candidate proof for a fixed **5×5**
-ordered binary obstruction, using a 3×3 anchor. Retain `Candidate result`:
-no independent reviewer or Lean kernel has verified the new theorem.
+**Current checkpoint:** a complete candidate proof for a fixed **4×4**
+ordered binary obstruction, with a 2×2 anchor component. Retain
+`Candidate result`: no independent reviewer or Lean kernel has verified
+this new theorem. The smaller anchor is not itself rigid.
 
-Start with [five-by-five.md](proofs/five-by-five.md). The earlier
-[15×15 draft](proofs/compressed-pattern.md) is retained as history, not a
-proven premise. The new draft restates the host and arbitrary-edit argument.
+Start with [four-by-four.md](proofs/four-by-four.md). The earlier
+[5×5](proofs/five-by-five.md) and [15×15](proofs/compressed-pattern.md)
+drafts remain as research history. The current draft restates its required
+host properties and the arbitrary-edit argument.
 
 The next decisive step is independent adversarial review of:
 
-1. **Nonanchor crown exclusion.** Only the three weight-two words are
-   needed. Verify same-class comparability, the unique terminal class
-   triangle, nested leaf traces, and the h=1 shared-leaf boundary.
-2. **Ordered laminar supports.** Every role is a whole class or parity
-   half. All strict containers must occur later on both axes. The mode
-   order is W+0,W+1,W−0,W−1,V+,V− within each increasing depth. Reverting
-   to V-before-W produces an unintended anchor copy at h=2.
-3. **3×3 rigidity.** Audit all cases for the counts a,b of selected
-   anchor positions. For a,b≥2, aligned mode order forces the crossed
-   anchor incidences into one mode. For one count≥2 and the other≤1,
-   proper containment would run backward. For a,b≤1, same-class
-   comparability or crown exclusion gives the contradiction.
-4. **Final theorem.** Unit signatures must exclude all other anchors;
-   original body localization and arbitrary-repair sampling must still
-   apply after reordering. Verify n=(20h+2)2^h, count 2·2^(8h), and the
-   all-c,C asymptotic implication with n^10 normalization. Preserve the
-   distinction between protected probabilities 1/m² and leaf probability
-   1/m. Do not replace arbitrary repair distance by original-copy hitting.
+1. **Full-pattern anchor classification.** Check the complete split by
+   counts a,b of selected anchors; crown exclusion, same-class comparability,
+   and ordered support containment leave only (2,2) and (2,1). Unit signatures
+   alone cannot exclude unintended anchors when the anchor size is two.
+2. **Unbalanced copies.** In the (2,1) case check the orientation of the
+   second anchor row and first anchor column, all four possible mode types,
+   and every column class having a one against row 3. The W− case below the
+   leaves crucially uses the parity-mode order. Verify that row 4 must be
+   dummy, and the fixed zero (3,4) lies in the leaf-to-parent-minus set T_h.
+3. **Exact count.** Audit all four unbalanced families and the factors from
+   actual block sizes. The balanced count is 2m^6. The total is 128 at h=1,
+   and (33/4)m^6−(29/2)m^5 for h≥2. The h=1 exception is essential; the
+   summation uses that m/2 is even only when h≥2. The old leaf-diagonal
+   hitting set fails on valid unbalanced copies with no leaf columns.
+   The weaker bound N_H≤2mn^6 follows immediately from localization and
+   already suffices for failure of polynomial removal; the exact count is
+   a separate refinement.
+4. **Final theorem and arbitrary repairs.** Designated mode anchors suffice
+   for propagation even though other S copies occur. Preserve the protected
+   probability 1/m², as opposed to 1/m on shared leaf diagonals. Verify the
+   m² edit lower bound, n=(14h+2)m, n^8 density normalization, fixed H and all
+   c,C quantifiers. Hitting original copies is not an arbitrary repair bound.
 
-Reproduce all new finite checks offline:
+Reproduce the current finite checks offline:
 
 ```sh
 python3 scripts/run_checks.py
 ```
 
-Compare parsed JSON with `verification/reference/refinement-report.json`. The checker
-searches every ordered S_3 copy through depth 6 and every ordered H_5 copy
-through depth 2, with exact twin-block weights. It checks role supports
-against a separate descriptor table, and reruns the existing exact path
-and sampling checks. These are same-agent checks, not independent review.
+Compare parsed JSON with `verification/reference/four-report.json`. The full census
+checks every ordered H_4 copy through depth 4 without assuming localization;
+a separate node-pair sum checks the closed count through depth 8. The checker
+includes a witness for failure of the old hitting set and a nonleaf H copy
+when the minus parity modes are reversed. It also reruns the inherited
+crown, role-support, path-assignment, and sampling checks. Finite tests and
+same-agent proof review do not constitute independent mathematical review.
+The same command also reproduces `verification/reference/four-repair-report.json` and
+checks that flipping the zero-cell hitting set creates new designated copies.
 
-For further compression, the direct 2×2 anchor route is blocked in this
-host: all 16 patterns already occur among nonanchors at depth 2. A 4×4
-obstruction might require a different host, a different enforcement
-mechanism, or a proof that does not require pure-anchor rigidity. No
-universal lower bound of 5 is claimed.
+No global minimality claim is made. A smaller obstruction would require
+its own copy-density and arbitrary-repair arguments; finite pattern searches
+alone would not establish it.
 
 Upstream main still matched the audited commit
 `fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb` when rechecked on 2026-10-10.
-The original Lean implementation has not been rebuilt. Formalization of
-the new construction must include the changed mode order and new rigidity
-lemma; changing constants in the old formalization is insufficient.
+The original Lean implementation has not been rebuilt. Formalizing this
+refinement requires replacing anchor rigidity by full-pattern localization,
+including the additional copies, rather than only changing size constants.
 
-The earlier 15×15 package is preserved at commit
-`fa2aa33105d7d16ae782f4a0858a417e31de9f05` and in the retained earlier proof.
-The current manuscript and `results/current.json` describe the 5×5 candidate.
-Run `python3 scripts/run_checks.py` for the complete offline verification
-and package-integrity checks.
+The previous 5×5 release is preserved at commit
+`f16d432d9a918c694f0b404a12f744c0c8b0db03`. The current manuscript, PDF,
+and results/current.json describe the 4×4 candidate. All previous proof
+drafts and deterministic reference reports remain available.

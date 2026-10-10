@@ -1,8 +1,8 @@
 # Executed attempts — OPENAI-190
 
-Date: 2026-10-10. Current proof draft: [five-by-five.md](proofs/five-by-five.md).
-The earlier 15×15 attempt is retained below. See the second refinement
-section for the current 5×5 candidate.
+Date: 2026-10-10. Current proof draft: [four-by-four.md](proofs/four-by-four.md).
+Earlier attempts are retained below. The third refinement gives the current
+4×4 candidate by localizing complete copies without a rigid anchor.
 
 ## Attack 1: compress the shattering witness and anchor — candidate
 
@@ -178,3 +178,72 @@ condition. This was a checker bug, not evidence against that condition.
 All calculations are exact. The written all-depth argument is distinct
 from this finite evidence. No independent agent/reviewer or Lean kernel
 has verified the new result.
+
+## Third refinement: 4×4 without pure anchor rigidity
+
+### 1. Allow unintended anchor copies — executed
+
+Set S=((0,1),(1,0)) and retain the two role signatures and P body. The full
+pattern is H=((0,1,1,0),(1,0,0,1),(1,0,1,0),(0,1,1,1)). Reuse the W-before-V
+order. This cannot make S rigid: the previous all-16-patterns check rules
+that out. A full-pattern search is needed instead of an anchor-only search.
+
+Exact weighted searches found 128; 18,944; 1,687,552 copies at depths 1,2,3,
+with no wholly nonleaf witness. Those counts exceed the designated-mode
+formula 2m^6 starting at depth 2. Classifying copies by their selected
+anchor counts identifies a new configuration: two anchor rows and one
+anchor column. The proof excludes all other counts except the designated
+(2,2) case using crown exclusion and ordered role supports.
+
+### 2. Retain the old leaf-diagonal hitting set — failed
+
+A depth-two H copy has no leaf column: its last three columns are
+C_1^+(0), C_1^+(1), C_1^−(1), and its last two rows are leaf 2 and a dummy.
+Its first row is group 1 of W_{2,0}^+, second row group 2 of W_{2,0}^−,
+and first column group 1 of W_{2,0}^− (group indices here start at one).
+It matches H exactly and is missed by every diagonal-leaf cell.
+The complete coordinates are preserved in `verification/reference/four-report.json`.
+This invalidates reusing the old hitting-set claim for the smaller pattern.
+
+### 3. Localize a fixed zero instead — candidate theorem
+
+The (2,1) case still forces row 3 to be leaf p and column 4 into
+C_{h-1}^−(floor(p/2)), where the entry is zero. Row 4 is dummy. The same
+statement holds in the (2,2) case. There are only 2m cells of this form.
+The proof splits by the second anchor row's mode; the W− nonleaf case
+uses the order of its two parity modes to rule out the required strict
+inequality p<q. This is proved in the all-depth draft, separately from tests.
+
+For leaf p=2b+d, every unbalanced copy has three size-m anchors, one size-m
+dummy row, and two choices for its last column. The first anchor and the
+middle column pair have four possible families, contributing
+(11−d)b+4 floor(b/2) pairs. Summing gives (25/4)m^6−(29/2)m^5 extra copies
+for h≥2; adding the 2m^6 balanced copies yields (33/4)m^6−(29/2)m^5.
+At h=1 there are no extra copies. The distance proof uses designated copies
+only and therefore survives the failure of pure anchor rigidity.
+
+The resulting quantitative implication is k=4, n=(14h+2)2^h, arbitrary
+repair distance at least (14h+2)^−2, and density bounded by
+(33/4)(14h+2)^−8 4^−h. The latter divided by epsilon^C tends to zero
+for every fixed C>0. It is the fixed forbidden pattern that shrinks; the
+qualitative obstruction and exponential-in-depth mechanism are inherited.
+
+### Boundary and second-pass checks
+
+A full embedding census through h=4 checks 3,693,411 quotient row quadruples
+and all matching column quadruples without assuming localization. Exact
+counts and every additional-copy family agree with a separate node-pair
+sum, also checked through h=8. Crown exclusion, role containment, strict
+tree orders, arbitrary path bits, and protected probabilities pass.
+
+Reversing the two W− parity modes gives a wholly nonleaf copy at h=3:
+rows are W_{2,1}^− group 1, W_{2,0}^− group 2, R_2^−(2), and dummy;
+columns are W_{2,0}^− group 1, C_2^−(1), C_2^−(3), C_1^−(1).
+The same fixed-depth blocks persist at every h≥3, with m^8/128 weighted
+copies, violating the intended zero-cell localization and density bound
+for large h. Thus the specified parity order is a substantive requirement.
+
+A same-agent review corrected the direction of both inequalities in the
+aligned-mode chain in Lemma 3; the corrected chain forces the same equality.
+No independent peer review or universal machine-checked proof is claimed.
+No claim that 4×4 is globally minimal is made.

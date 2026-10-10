@@ -38,7 +38,7 @@ public when the 5×5 update was requested. Candidate status is unchanged.
 
 ## 5×5 refinement package — 2026-10-10
 
-The current proof is `proofs/five-by-five.md`. The 5×5 pattern contains a
+That release's proof is `proofs/five-by-five.md`. The 5×5 pattern contains a
 3×3 anchor; both manuscript formats, the PDF, and results/current.json
 are updated together. The earlier 15×15 proof and exact reports remain.
 The initial package is preserved at commit
@@ -60,3 +60,46 @@ separate from the offline finite checks.
 Actual standalone update validation: all three exact report comparisons
 passed; package integrity passed with 38 local links and matching manuscript
 artifacts. The PDF built with three pdflatex passes and no warnings.
+
+## 4×4 review PR — 2026-10-10
+
+The user authorized a PR for the 4×4 refinement. No existing PR was found
+in this standalone repository. Preparation started from master at
+`5aae39b6015677a4fba98e402fa576b22d3b10f9` on branch
+`shea256/four-by-four-obstruction`. A fresh GitHub API query confirmed that
+openai/math main still matches the pinned upstream commit. The baseline's
+previous companion and follow-up audit is retained; novelty remains unresolved.
+
+Copied the 4×4 proof, discovery search, two verification scripts, and exact
+reference reports from the originating research track. Typeset the proof's
+plain-text mathematical expressions without changing its argument. The
+manuscript contains the same statement and proof body, with repository-local
+verification links. Updated the README table, result metadata, contribution
+history, attribution, and review handoff. Earlier candidates and reports
+remain available. Subsequent exploratory 3×3 work is outside this PR.
+
+Actual commands and results, using Python 3.9.25 and the standard library:
+
+```sh
+python3 scripts/run_checks.py
+python3 scripts/build_manuscript.py --regenerate-tex
+python3 scripts/validate_repository.py
+git diff --check
+```
+
+All five exact reference comparisons passed: compression, adversarial,
+refinement, four, and four_repair. The 4×4 census checked 3,693,411 quotient
+row quadruples at depths 1–4, with counts 128; 18,944; 1,687,552; and
+123,207,680. The closed formula agreed with the separate node-pair sums
+through depth 8. All 510 repair-boundary cases passed. Run receipts are
+under ignored `.context/checks-receipt.json`.
+
+The first PDF build exposed unsupported Unicode mathematical symbols;
+visual inspection also caught malformed math delimiters in the new abstract.
+These export issues were corrected before publication. Final conversion
+used Pandoc 3.6.4 and three pdflatex passes with shell escape disabled;
+the nine-page PDF built with no warnings. Mathematical tables and first-page
+formulas were visually checked. The build receipt records all artifact hashes.
+After the final typesetting changes, package integrity passed again with
+49 local links, matching manuscript hashes, and candidate status. Whitespace
+checks passed. No independent mathematical review or Lean build was performed.

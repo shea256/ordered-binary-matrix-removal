@@ -186,3 +186,27 @@ arbitrary repair distance at least (20h+2)^−2. The full draft is
 [five-by-five.md](proofs/five-by-five.md). The qualitative obstruction and
 4^−h decay mechanism remain inherited; the fixed pattern size is the
 proposed new theorem refinement.
+
+## Third refinement audit — 2026-10-10
+
+Rechecked upstream main through the GitHub API: it still matches the pinned
+commit above, dated 2026-10-08. Searches for the original title with refinement
+and for ordered binary removal with 4×4 did not identify a stronger direct
+primary follow-up. The prior companion audit is retained; a conclusive
+novelty assessment is still outstanding. Neither earlier local candidate
+is treated as independently verified SOTA.
+
+The new candidate reduces the fixed forbidden pattern from 5×5 to **4×4**,
+with S=((0,1),(1,0)). The 2×2 component is not rigid. Instead the proof map is:
+
+crown exclusion + ordered laminar supports -> full H copies have anchor
+counts (2,2) or (2,1) -> both configurations use a fixed zero at a leaf row
+and its immediate parent-minus column -> exact count at most (33/4)m^6
+-> density at most (33/4)(14h+2)^−8 4^−h.
+
+Separately, protected sampling and the designated modes still imply at
+least m² arbitrary repair edits, hence distance at least (14h+2)^−2.
+The all-c,C conclusion follows with the same fixed 4×4 H. See
+[four-by-four.md](proofs/four-by-four.md). The 5×5 pure-anchor proof and
+its two-by-two limitation are preserved as history: this refinement
+changes the localization requirement, not that limitation's truth.

@@ -1,16 +1,17 @@
 {
-  "result_id": "ordered-anchor-refinement-2026-10-10",
+  "result_id": "ordered-full-pattern-refinement-2026-10-10",
   "status": "candidate",
-  "pattern_size": 5,
-  "anchor_size": 3,
-  "host_coefficient": 20,
+  "pattern_size": 4,
+  "anchor_size": 2,
+  "host_coefficient": 14,
   "baseline_pattern_size": 66,
-  "previous_candidate_pattern_size": 15,
-  "previous_candidate_commit": "fa2aa33105d7d16ae782f4a0858a417e31de9f05",
-  "proof_file": "proofs/five-by-five.md",
-  "verification_report": "verification/reference/refinement-report.json",
+  "previous_candidate_pattern_size": 5,
+  "previous_candidate_commit": "f16d432d9a918c694f0b404a12f744c0c8b0db03",
+  "proof_file": "proofs/four-by-four.md",
+  "verification_report": "verification/reference/four-report.json",
   "independent_review": false,
   "new_result_formalized": false,
   "novelty": "unresolved",
-  "upstream_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb"
+  "upstream_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "repair_verification_report": "verification/reference/four-repair-report.json"
 }

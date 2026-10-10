@@ -12,13 +12,19 @@ leaf localization are inherited. The original source repository is licensed
 under Apache 2.0. The pinned [source manifest](verification/source_manifest.json)
 records provenance; upstream files are fetched into an ignored cache.
 
-The earlier proposed contribution was a three-column nonshattering
-argument and a 13×13 anchor yielding a 15×15 pattern. The current candidate
-sharpens this to three-row crown exclusion, orders the laminar role supports
-by containment, and proves rigidity of a 3×3 anchor, yielding a 5×5 pattern. The exact 4^−h density decay also follows for the original
-construction and is not claimed as a new mechanism.
+The first proposed contribution was a three-column nonshattering argument
+and a 13×13 anchor yielding a 15×15 pattern. The next candidate used
+three-row crown exclusion and ordered laminar supports to make a 3×3
+anchor rigid, yielding a 5×5 pattern. The current 4×4 candidate uses a
+2×2 anchor without pure anchor rigidity. Its proposed new contributions
+are the full-pattern anchor classification, leaf-to-parent zero-cell
+localization, and exact enumeration of the additional copy families.
+The arbitrary-repair argument remains inherited. The exact 4^−h decay
+also follows for the original construction and is not a new mechanism.
 
-The proof draft and verification scripts were prepared for this research
-track; the current manuscript describes the 5×5 candidate, with the earlier 15×15 draft retained for provenance. The companion literature and unresolved novelty check are
-recorded in [BASELINE.md](BASELINE.md). No Lean certificate for the new result
-or independent acceptance is asserted.
+These proof drafts and verification scripts were prepared for this research
+track. The current manuscript describes the 4×4 candidate; the 5×5 and
+15×15 drafts and exact reports are retained for provenance. Companion
+literature and the unresolved novelty check are recorded in
+[BASELINE.md](BASELINE.md). No Lean certificate for the new result or
+independent acceptance is asserted.

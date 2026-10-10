@@ -9,9 +9,12 @@ status = json.loads((ROOT / 'results/current.json').read_text())
 assert status['status'] == 'candidate'
 assert status['independent_review'] is False and status['new_result_formalized'] is False
 report = json.loads((ROOT / status['verification_report']).read_text())
-assert len(report['pattern']) == status['pattern_size'] == 5
-assert all(len(row) == 5 and set(row) <= {0,1} for row in report['pattern'])
-assert status['anchor_size'] == 3 and status['host_coefficient'] == 20
+assert len(report['pattern']) == status['pattern_size'] == 4
+assert all(len(row) == 4 and set(row) <= {0,1} for row in report['pattern'])
+assert status['anchor_size'] == 2 and status['host_coefficient'] == 14
+assert report['anchor'] == [[0, 1], [1, 0]]
+repair = json.loads((ROOT / status['repair_verification_report']).read_text())
+assert sum(row['leaf_choices_checked'] for row in repair['flipped_parent_zero_set']) == 510
 proof = (ROOT / status['proof_file']).read_text()
 manuscript = (ROOT / 'manuscript.md').read_text()
 assert manuscript[manuscript.index('## Statement'):] == proof[proof.index('## Statement'):].replace('../verification/', 'verification/')
