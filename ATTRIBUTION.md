@@ -12,12 +12,13 @@ leaf localization are inherited. The original source repository is licensed
 under Apache 2.0. The pinned [source manifest](verification/source_manifest.json)
 records provenance; upstream files are fetched into an ignored cache.
 
-The proposed contributions are the all-depth three-column nonshattering
-argument and a 13×13 anchor with an asymmetric rigidity proof, yielding a
-15×15 pattern. The exact 4^−h density decay also follows for the original
+The earlier proposed contribution was a three-column nonshattering
+argument and a 13×13 anchor yielding a 15×15 pattern. The current candidate
+sharpens this to three-row crown exclusion, orders the laminar role supports
+by containment, and proves rigidity of a 3×3 anchor, yielding a 5×5 pattern. The exact 4^−h density decay also follows for the original
 construction and is not claimed as a new mechanism.
 
-The manuscript, proof draft, and verification scripts were prepared for this
-review package. The companion literature and unresolved novelty check are
+The proof draft and verification scripts were prepared for this research
+track; the current manuscript describes the 5×5 candidate, with the earlier 15×15 draft retained for provenance. The companion literature and unresolved novelty check are
 recorded in [BASELINE.md](BASELINE.md). No Lean certificate for the new result
 or independent acceptance is asserted.

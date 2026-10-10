@@ -158,3 +158,31 @@ the replacement makes d_h=80h+2 and k=15. All-depth rigidity must be
 proved anew; substituting 13 for 64 in the existing Lean code is invalid.
 The final implication is a smaller fixed forbidden pattern, with the
 same binary model and every-c,C quantifiers, not a smaller finite host.
+
+
+## Second refinement audit — 2026-10-10
+
+Rechecked `openai/math` main through the GitHub API: it remains
+`fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb`, dated 2026-10-08. Revisited
+CONTENTS and the pinned manuscript's exact introductory definitions and
+quantifiers. The source baseline and companion coverage above are unchanged.
+Searches for the exact title, smaller ordered binary removal patterns, and
+5×5 / 5-by-5 variants did not find a stronger direct primary follow-up.
+The absence of search results is not proof of novelty.
+
+The 15×15 result is an earlier *candidate*, not independently verified SOTA.
+Its proof has been reread; the new proof states and justifies the required
+host properties again. The current candidate improves the primary 66×66
+pattern and the earlier candidate to **5×5**. Its 3×3 anchor is J_3-I_3.
+The local improvement is not two-column nonshattering (which remains false):
+it uses only the three weight-two traces from the old eight-word witness,
+plus an ordering in which strictly containing role supports occur later.
+
+New proof map: nonanchor crown exclusion + ordered laminar role supports
++ aligned anchor mode orders -> 3×3 anchor rigidity -> unit body signatures
+-> original leaf localization -> exact density 2(20h+2)^−10 4^−h. Separately,
+unchanged protected-cell sampling and four implications per level ->
+arbitrary repair distance at least (20h+2)^−2. The full draft is
+[five-by-five.md](proofs/five-by-five.md). The qualitative obstruction and
+4^−h decay mechanism remain inherited; the fixed pattern size is the
+proposed new theorem refinement.

@@ -1,7 +1,8 @@
 # Executed attempts — OPENAI-190
 
-Date: 2026-10-10. Full proof draft:
-[compressed-pattern.md](proofs/compressed-pattern.md).
+Date: 2026-10-10. Current proof draft: [five-by-five.md](proofs/five-by-five.md).
+The earlier 15×15 attempt is retained below. See the second refinement
+section for the current 5×5 candidate.
 
 ## Attack 1: compress the shattering witness and anchor — candidate
 
@@ -104,3 +105,76 @@ copies explicitly.
 This second pass was performed by the same agent. It is not independent
 peer review, and finite enumerations are not a machine-checked universal
 proof. The all-depth mathematical proof is the essential certificate.
+
+
+## Second refinement: executed attacks
+
+### 1. Replace full shattering by a crown — successful local candidate lemma
+
+The three-column proof uses only 110,101,011. Any three columns supporting
+these traces must be in distinct classes, every pair must be adjacent in
+the support graph, and the terminal triangle cannot supply both traces
+with leaf coordinate one. Thus the entire nonanchor host excludes J_3-I_3.
+All 156,576 quotient column triples through depth 5 satisfy this stronger
+condition. A dense-prefix replacement first suggests an 8×8 anchor, but
+its four-incidence threshold wastes information about how role supports
+intersect. The final proof replaces that density argument entirely.
+
+### 2. Reorder modes to make a 3×3 anchor rigid — candidate theorem
+
+Every nonanchor role is a whole level/sign class, a parity half of one
+class, or the dummy class. The supports are laminar. Strict containment
+means a half-class in its full class. Column containers occur a level
+later; row containers can occur in V_i at the same level as W_i. Therefore
+put all W_i modes before V_i modes, with levels still increasing.
+Now every strict container comes later on both axes.
+
+For an S_3 copy, let a,b count its initial anchor positions. If both are
+at least two, off-diagonal incidences plus aligned mode order force them
+into one mode, then exclude all remaining nonanchors. If one count is at
+least two and the other at most one, the required 11 and 01 signatures
+would force an earlier support to contain a later one properly. If both
+counts are at most one, a remaining anchor puts the last two opposite
+positions in one nonanchor class, where the off-diagonal 2×2 pattern is
+impossible. With no anchors, crown exclusion applies. This is an all-depth
+rigidity proof with no six-row density prefix and no full shattering cube.
+
+The original V-before-W order actually fails: at h=2, take the group-2
+anchor row of W_{2,1}^+, followed by leaf rows 0 and 3. Take group-1 anchor
+columns of V_2^+ and W_{2,1}^+, followed by leaf column 1. These form S_3
+in increasing order. The new order reverses the first two columns, blocking
+this witness. Its full position data is stored in the new report.
+
+Executed exhaustive searches checked all 5,813,724 quotient row triples
+through depth 6 and all compatible ordered column triples. The only S_3
+copies were the 6h designated mode anchors, with weighted count 6h m^6.
+A separate full-H embedding search at depths 1 and 2 checked all 1,567,588
+quotient row quintuples and counted exactly 512 and 131,072 weighted copies.
+It uses ordered-column dynamic programming and does not assume rigidity.
+The original mode-body checker independently recovers 2m^8 for s=3.
+
+The final quantitative implication is k=5, n=(20h+2)2^h, distance at least
+(20h+2)^−2, and density 2(20h+2)^−10 4^−h. Its ratio to epsilon^C tends to
+zero for every fixed C>0. The proof includes all edit directions.
+
+### 3. Shrink the anchor to 2×2 — blocked for pure-anchor rigidity
+
+Exhaustively enumerating the expanded nonanchor host at h=2 finds **all
+16 binary 2×2 patterns**, with explicit ordered row/column witnesses.
+Consequently no choice of a 2×2 anchor can have all its copies confined
+to designated anchor blocks in this unchanged host. This rules out that
+particular next step, not a different 4×4 obstruction or a weaker
+localization proof. No global minimality theorem is claimed.
+
+### Verification boundary
+
+`check_refinement.py` also compares concrete role supports to a separately
+encoded whole/half-class descriptor table through depth 8, and reruns the
+exact arbitrary-path and sampling checks. An initial assertion in the
+support-order checker had its inequality direction reversed; correcting
+the checker made it agree with the explicitly stated containing-later
+condition. This was a checker bug, not evidence against that condition.
+
+All calculations are exact. The written all-depth argument is distinct
+from this finite evidence. No independent agent/reviewer or Lean kernel
+has verified the new result.

@@ -1,4 +1,4 @@
-# A Smaller Obstruction to Polynomial Ordered Binary Matrix Removal
+# A Five-by-Five Obstruction to Polynomial Ordered Binary Matrix Removal
 
 **Ryan Shea**
 
@@ -6,95 +6,88 @@ October 10, 2026
 
 **Candidate research manuscript.** Complete written argument and exact finite
 checks; independent mathematical review, end-to-end formalization, and
-novelty assessment remain pending. Developed with Codex assistance.
+conclusive novelty assessment remain pending. Developed with Codex assistance.
 
 ## Abstract
 
-We propose an explicit fixed 15-by-15 binary pattern with no polynomial
-ordered induced removal bound. The construction adapts OpenAI's 66-by-66
-obstruction by proving a sharper three-column nonshattering lemma for its
-tree host and replacing the 64-by-64 anchor with a 13-by-13 anchor.
-The hosts preserve independently increasing row and column orders, require
-both zero and one constraints, and permit arbitrary binary changes in either
-direction. For every integer $h\ge1$ the host has order $(80h+2)2^h$,
-normalized repair distance at least $(80h+2)^{-2}$, and exactly $2\cdot2^{28h}$
-ordered copies. These give the claimed asymptotic failure for every fixed
-polynomial. The finite checks do not themselves prove the universal claim.
+We propose an explicit fixed **5×5 binary pattern** with no polynomial
+ordered induced removal bound. Its **3×3 anchor** is supplemented by two
+rows and two columns. The construction refines OpenAI's 66×66 obstruction
+and our earlier 15×15 candidate. The new ingredients are exclusion of a
+three-row crown from the nonanchor host and a mode order in which properly
+containing role supports come later. These give a rigidity proof for the
+3×3 anchor without the earlier density-prefix argument.
+
+For every integer \(h\ge1\), the host has order \((20h+2)2^h\), normalized
+repair distance at least \((20h+2)^{-2}\), and exactly \(2\cdot2^{8h}\)
+ordered copies. Copies match both zeros and ones and preserve independent
+row and column orders; repairs allow arbitrary binary entry changes in
+either direction. The fixed pattern is independent of the host depth.
+Finite checks support the argument but do not establish its universal claim.
 
 ## Source and contribution
 
 The tree host, four-step propagation mechanism, sampling argument against
-arbitrary repairs, and diagonal-leaf localization method are adapted from
-OpenAI, *Polynomial removal fails for ordered binary matrices*, September 25,
-2026, at commit `fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb`.
-The proposed new ingredients are the three-column nonshattering lemma and
-the 13-by-13 anchor rigidity argument. This is a smaller-pattern refinement,
-not a new proof of the already claimed qualitative failure of polynomial
-removal. The exact 4^-h decay can also be derived for the original host.
-See [the baseline audit](BASELINE.md) and [attribution](ATTRIBUTION.md).
-The original 66-by-66 Lean implementation has not been rebuilt here, and
-its formalization does not certify the new 15-by-15 pattern.
+arbitrary repairs, and diagonal-leaf localization adapt OpenAI,
+*Polynomial removal fails for ordered binary matrices*, September 25, 2026,
+at commit `fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb`. The qualitative failure
+of polynomial removal and the exact \(4^{-h}\) density-decay mechanism
+are inherited. The proposed refinement is the much smaller fixed pattern.
+
+See [BASELINE.md](BASELINE.md) and [ATTRIBUTION.md](ATTRIBUTION.md) for the
+source and theorem comparisons. The earlier 15×15 candidate remains in
+[the historical proof draft](proofs/compressed-pattern.md) and repository
+history. The released formalization of the original 66×66 construction
+has not been rebuilt here and does not certify either new pattern.
 
 ## Statement
 
-There is an explicit fixed binary matrix H of order 15 such that, for every
-integer h >= 1, with m = 2^h, d = 80h+2 and n = dm, there is a binary n-by-n
-matrix A_h satisfying
+There is a fixed binary matrix H of order 5 such that for every integer
+h >= 1, with m=2^h, d=20h+2 and n=dm, the explicit binary host A_h satisfies
 
 \[
  \operatorname{dist}_H(A_h)\ge d^{-2},\qquad
- N_H(A_h)=2m^{28},\qquad
- \frac{N_H(A_h)}{n^{30}}=2d^{-30}4^{-h}.
+ N_H(A_h)=2m^8,\qquad
+ \frac{N_H(A_h)}{n^{10}}=2d^{-10}4^{-h}.
 \]
 
-Consequently, for all real c,C > 0 there exist n, 0 < epsilon < 1 and A
-with dist_H(A) >= epsilon and N_H(A) < c epsilon^C n^30. The pattern is
-fixed before c,C,h are chosen. The density normalization is n^30,
-not the number of possible submatrices; this is the baseline convention.
+Here copies preserve independently increasing row and column orders and
+match both zero and one entries. Distance is the minimum number of arbitrary
+binary entry changes, in either direction and anywhere in the host, divided
+by n^2. In particular, for every c,C>0 there are n, 0<epsilon<1 and A with
+\(\operatorname{dist}_H(A)\ge\epsilon\) and
+\(N_H(A)<c\epsilon^C n^{10}\). The same fixed H works for every c,C.
 
-## 1. Explicit pattern
+## 1. Pattern and changed mode order
 
-Indices in this proof are one based, except for tree nodes and word labels.
-Let s=13. For 1 <= u,v <= 13 put
+Put s=3 and let S=J_3-I_3, where J_3 is the all-one matrix. The pattern is
 
 \[
- S(u,v)=
- \begin{cases}
-  \left\lfloor (u-6)/2^{13-v}\right\rfloor\bmod 2,
-       &6\le u\le13,\quad11\le v\le13,\\
-  \mathbf1[u\ne v],&\text{otherwise}.
- \end{cases}
+ H=\begin{pmatrix}S&e_1&e_2\\e_1^T&1&0\\e_2^T&1&1\end{pmatrix}
+  =\begin{pmatrix}
+ 0&1&1&1&0\\
+ 1&0&1&0&1\\
+ 1&1&0&0&0\\
+ 1&0&0&1&0\\
+ 0&1&0&1&1
+ \end{pmatrix},\qquad
+ P=\begin{pmatrix}1&0\\1&1\end{pmatrix}.
 \]
 
-Thus rows 6 through 13 on columns 11 through 13 list 000,001,...,111.
-With e_1,e_2 the first two standard unit vectors in {0,1}^13, put
+Every S row and column has two ones, so none equals a unit vector or zero.
+All rows and columns of S are distinct. Each mode's anchor contains three
+size-m groups on each axis, with between-group matrix S.
+
+**Essential change:** order modes by increasing level i and, within a level,
 
 \[
- H=\begin{pmatrix}S&e_1&e_2\\ e_1^T&1&0\\ e_2^T&1&1\end{pmatrix},
- \qquad P=\begin{pmatrix}1&0\\1&1\end{pmatrix}.
+ W_{i,0}^+,\ W_{i,1}^+,\ W_{i,0}^-,\ W_{i,1}^-,\ V_i^+,\ V_i^-.
 \]
 
-S has the following checked elementary properties:
-
-1. Its rows are distinct: rows 1 through 10 have distinct zero positions
-   in columns 1 through 10; rows 11 through 13 are all one there and
-   have distinct last-three-bit words 101,110,111.
-2. Its columns are distinct: columns 1 through 10 have single distinct
-   zeros. Each of the last three columns has four zeros, and their
-   word-coordinate vectors are distinct.
-3. Every column has at most one zero in rows 1 through 6. For columns
-   1 through 10 this is the diagonal zero, if present. For columns
-   11 through 13 it is precisely the zero in row 6 (word 000).
-4. Every row has at most one zero in columns 1 through 6, since this
-   region avoids the replacement columns.
-5. Every row and column has at least nine ones. Rows 1 through 10
-   have at least nine among their first ten entries; the other rows
-   have ten there. The last-three columns have nine ones in total.
-
-In particular every column has at least five ones in the first six
-rows, and every row has at least five in the first six columns. Any
-two columns share a one in the first six rows, and any two rows share
-a one in the first six columns (at most two excluded positions).
+Use this same mode order on both axes. All anchors precede all nonanchors.
+The V-before-W order in the 15-by-15 construction fails to give rigidity
+for S_3: an explicit unintended copy occurs at h=2 in the verification
+report. The W-before-V order is part of the new construction.
 
 ## 2. Host definition
 
@@ -127,9 +120,9 @@ For every i=1,...,h introduce these six modes:
 | W_{i,0}^+ and W_{i,1}^+ | R_{i,d}^+ | R_* | C_{i-1}^+ | C_{i,d}^+ |
 | W_{i,0}^- and W_{i,1}^- | R_{i,d}^- | R_* | C_{i,d}^- | C_{i-1}^- |
 
-Place one anchor block per mode before every non-anchor position on
-each axis. Within an anchor block put s consecutive groups of size m.
-Use increasing i, then V^+,V^-,W_0^+,W_1^+,W_0^-,W_1^- to order modes.
+Place all mode anchor blocks before all nonanchor positions on each
+axis. Within an anchor block put s consecutive groups of size m.
+Use increasing i, then W_0^+,W_1^+,W_0^-,W_1^-,V^+,V^- to order modes.
 Each mode's two roles on a given axis are disjoint, even at leaves.
 
 Define every host entry as follows:
@@ -153,7 +146,7 @@ The common leaves satisfy the first rule. The second excludes them;
 in the final two rules the column signs are still distinct. Hence
 these assignments are consistent. There are 6hs anchor classes,
 2h+1 variable classes and one dummy class of size m on each axis,
-giving n=(6hs+2h+2)m=(80h+2)m. No labels are part of the binary alphabet:
+giving n=(6hs+2h+2)m=(20h+2)m. No labels are part of the binary alphabet:
 the block names serve only to describe actual positions and entries.
 
 The recursive orders imply, writing pi(p)=floor(p/2),
@@ -171,116 +164,117 @@ This follows because the subtrees at a fixed depth occur as consecutive
 intervals in increasing node order, and each child's block lies between
 its own parent's two signs. These comparisons include the shared leaves.
 
-## 3. Stronger non-anchor trace lemma
+## 3. Three structural properties
 
-**Lemma.** No three non-anchor columns are shattered by the non-anchor rows,
-for any h>=1. Columns need not be in increasing order.
+A nonanchor class means one level/sign class (identifying the two leaf
+signs as one class L) or the dummy class. A half-class restricts a non-root
+variable class to one parity of its node label. No auxiliary labels are
+part of the binary alphabet.
 
-**Proof.** A dummy column is constantly one, so cannot belong to a
-shattered set. Otherwise classify columns by level and sign, counting
-the common leaf class L only once. In a class the ones of every variable
-row form a suffix when columns are sorted by node; dummy rows are all one.
-Thus two columns from the same class cannot be shattered: the word one
-on the earlier and zero on the later cannot occur. Equal node indices
-or repeated positions also cannot be separated.
+**Lemma 1 (comparability and crown exclusion).** On nonanchor rows, any
+two columns from the same nonanchor class have comparable one-sets.
+The analogous statement holds for rows. Moreover, no nonanchor rows and
+columns induce S=J_3-I_3, even if their orders are disregarded.
 
-It remains to treat three distinct classes. Define a graph on the column
-classes: join (i,sigma) to (i-1,sigma) for 1<=i<h, and make a triangle
-on L,(h-1,+),(h-1,-). These are two paths ending at that triangle.
-For a non-leaf variable row, the only possible nonzero column classes
-are its own class and the immediately preceding class of the same sign.
-For a leaf row they are exactly among L,(h-1,+),(h-1,-). Consequently
-if a variable row is one in two distinct classes those classes are
-adjacent in this graph.
+**Proof.** Within a column class, each variable row's entries form a suffix
+in increasing node label; dummy rows are constant one. Within a row class,
+each variable column's entries form a prefix, since all the inequalities
+in Section 2 decrease as the row node increases. Dummy classes are constant.
+Thus either same-class row or column pairs cannot contain both traces 10
+and 01.
 
-If three distinct classes were shattered, each two-one/one-zero word
-would require a variable row (a dummy row cannot supply the zero).
-Every pair of the three classes would therefore be adjacent. The only
-triangle is L,(h-1,+),(h-1,-): a path contains no triangle, and no
-earlier-level vertex has two neighbors in the terminal triangle.
+An S copy has those two traces on every column pair, so its three column
+classes must be distinct. It cannot include a dummy column, whose entries
+are constantly one. Classify variable columns by level/sign, with the
+shared leaves represented by L. Put edges between consecutive levels of
+each sign, and a terminal triangle on L,(h-1,+),(h-1,-). A non-leaf variable
+row can be one only in its own and the preceding class; a leaf row can
+be one only in those three terminal classes.
 
-Now select columns from those three classes, with node labels q,b_+,b_-
-respectively. Only leaf rows can be one in the leaf column. A leaf row
-with node p has the three entries
+Every pair of S columns has a row with ones on that pair and zero on the
+third. That row cannot be dummy. Hence every pair of the three column
+classes must be an edge, forcing the unique terminal triangle. Select
+columns L(q), C_{h-1}^+(b_+), C_{h-1}^-(b_-). A leaf row p gives the trace
 
 \[
  (\mathbf1[p\le q],\ \mathbf1[\lfloor p/2\rfloor\le b_+],\
    \mathbf1[\lfloor p/2\rfloor<b_-]).
 \]
 
-These traces are coordinatewise nonincreasing as p increases, so form
-a chain under coordinatewise comparison. They cannot include both
-(1,1,0) and (1,0,1), which are incomparable. Non-leaf rows have zero
-in the first coordinate, and dummy rows give (1,1,1). Thus the full
-trace family cannot contain both words either. This contradicts
-shattering and proves the lemma. QED.
+These traces form a chain as p increases. They cannot supply both 110 and
+101. Non-leaf rows have zero in the L coordinate, and dummy rows give 111.
+An S copy requires both missing traces, a contradiction. This includes h=1,
+when the triangle consists of the leaf class and the two root classes. QED.
 
-The strengthening is sharp for this host: for h>=2, root-plus column
-node 0 and level-1 plus column node 0 are shattered. Rows at root plus
-and level-1 plus node 0 give 10 and 11. At h=2, leaf nodes 0 and 2
-give 01 and 00; at h>2, level-2 plus nodes 0 and 2 give those words.
-Thus two-column nonshattering is false.
+**Lemma 2 (ordered laminar role supports).** Fix either axis. Every role
+support is a whole nonanchor class or one of its two parity halves. Thus
+any two role supports are disjoint or nested. If one is a proper subset
+of another, the containing support belongs to a strictly later mode in
+the order of Section 1. The two supports of one mode are disjoint.
 
-## 4. Rigidity of the smaller anchor
+**Proof.** The mode table gives the following exhaustive possibilities:
 
-A variable row or column belongs to the roles of at most four modes.
-For a non-leaf row at depth i, these are V_i^sigma,V_{i+1}^sigma and
-W_{i,d}^sigma, omitting out-of-range levels. A leaf row belongs to
-V_h^+,V_h^- and W_{h,d}^+,W_{h,d}^-. A non-leaf column belongs to
-V_{i+1}^sigma,W_{i+1,0}^sigma,W_{i+1,1}^sigma,W_{i,d}^sigma;
-a leaf column belongs only to W_{h,d}^+,W_{h,d}^-.
-Against a collection using at most one representative per anchor group,
-each variable position therefore has at most four ones.
+| Axis | Whole variable-class supports | Half-class supports |
+| --- | --- | --- |
+| Row | V_i on its depth-i child class; V_{i+1} on its depth-i parent class | W_{i,d} on its depth-i child class |
+| Column | V_{i+1} and W_{i+1,d} on their depth-i parent class | W_{i,d} on its depth-i child class |
 
-**Lemma.** Every ordered copy of S in A_h uses exactly one representative
-of each anchor group of a single mode on each axis, in group order.
+At depth h the sign classes coincide; full and half leaf supports are
+still the same whole class and its parity halves. Omit modes with indices
+outside 1,...,h. Dummy supports are the whole dummy class and are disjoint
+from every variable support. At the root no half-class support occurs.
 
-**Proof.** Two positions in the same anchor group are twins throughout
-the host. Dummy positions on the same axis are also twins. Since S has
-distinct rows and columns, a copy uses at most one position from each
-anchor group and at most one dummy per axis.
+The only possible strict inclusion is a parity half of one variable class
+in the whole of that class. On the row axis, its W_i mode precedes both
+V_i (by the within-level order) and V_{i+1} (by level). On the column axis,
+its W_i mode precedes V_{i+1} and W_{i+1,d} by level. Equality of supports
+across modes, including leaf sign identifications, is harmless. The two
+roles of a single mode lie in different classes: parent/child, variable/
+dummy, or dummy/variable. Therefore they are disjoint. QED.
 
-If a copy used at most five anchor rows and at most ten anchor columns,
-its last eight rows and last three columns would all be non-anchor:
-anchors precede all non-anchors. They would realize all eight words
-by S's word rectangle, contradicting Section 3. Thus either at least
-six selected rows or at least eleven selected columns are anchors.
+An anchor row's support on nonanchor columns is one of these column-role
+supports if its group is 1 or 2, and empty if its group is 3. The analogous
+statement holds for anchor columns and row-role supports.
 
-First suppose at least six selected rows are anchors, so the first
-six are anchors. A selected variable column has at most four ones
-against these representatives, but every S column has at least five
-ones there. There are no variable columns. Since at most one selected
-column is dummy, at least twelve selected columns are anchors. Any
-two of them share a one in the first six selected rows, and hence
-belong to the same mode t (different modes have zero anchor incidences).
-An anchor row of another mode would have at most one one in the copy,
-contradicting the minimum nine ones of every S row. Thus all selected
-anchor rows belong to t.
+**Lemma 3 (rigidity).** Every ordered S copy in A_h uses exactly one
+representative of each anchor group of one mode on both axes.
 
-A dummy column has at most one one against the first six selected
-anchor rows of this mode, since its signature is a unit vector or
-zero. This contradicts the required five ones. Therefore all columns
-are anchors of t. Any non-anchor row then has at most one one against
-them, so all rows are anchors of t too.
+**Proof.** Let a,b be the numbers of selected anchor rows and columns.
+They form prefixes of the selected axes. Twin anchor positions in one
+group cannot both occur, because S has distinct rows and columns.
 
-If instead there are at least eleven selected anchor columns, use the
-first six selected columns and interchange the axes in the argument:
-each S row has at least five ones there; variable rows have at most
-four; at least twelve rows are anchors; any two share a one among those
-six columns; the remaining dummy row and non-anchor columns are excluded
-by unit-vector sparsity and the minimum row/column density. Thus this
-case also forces both axes into a single mode.
+If a,b >= 2, the one-entries (1,2) and (2,1) force the mode identities
+\(t(r_1)=t(c_2)\) and \(t(r_2)=t(c_1)\). Anchor order on the two axes gives
+\(t(r_1)\le t(r_2)\) and \(t(c_1)\le t(c_2)\). Therefore all four modes
+are equal to one t. The third column must have ones against both first
+anchor rows. It cannot be nonanchor, whose signature has at most one one
+among t's distinct groups; if anchor, it must also belong to t. The same
+reasoning forces the third row into t. All three distinct groups occur.
 
-There are thirteen selected positions and exactly thirteen anchor
-groups per axis in that mode, with no group repeated. Every group
-is therefore represented, in order. QED.
+If a >= 2 and b <= 1, columns 2 and 3 are nonanchor. The first two anchor
+rows restrict to 11 and 01 on these columns. Their nonanchor supports
+intersect, so by Lemma 2 they are nested. The earlier support properly
+contains the later one, contradicting the strict-containment mode order.
+The case a <= 1 and b >= 2 is identical after transposition: columns 1
+and 2 have supports 11 and 01 on nonanchor rows 2 and 3.
 
-**Corollary.** In every H copy, the first thirteen rows and columns
-belong to one mode's anchor. The last two rows and columns belong to
-that mode's roles 1 and 2 respectively. Indeed their anchor signatures
-must be e_1,e_2. An anchor from another mode gives zero; an anchor from
-the same mode gives a dense S row/column; and only the designated
-non-anchor role j gives e_j. This proves the corollary for both axes.
+It remains that a,b <= 1. If a=1, the first anchor row has ones in columns
+2 and 3, putting those two nonanchor columns in a single role support and
+therefore one class. Rows 2 and 3 are nonanchor and require the traces 01
+and 10 on those columns, contradicting Lemma 1's comparability. If a=0
+and b=1, transpose this argument using the first anchor column and the
+last two rows. Finally, a=b=0 contradicts Lemma 1's crown exclusion.
+These cases exhaust a,b in {0,1,2,3}, proving rigidity. QED.
+
+## 4. Roles of the remaining body positions
+
+In any H copy, Lemma 3 forces its first three rows and columns into one
+mode's three anchor groups. The last two rows and columns have signatures
+e_1 and e_2 against those anchors. An anchor from another mode has zero
+signature; an anchor from the same mode has an S row/column of weight two.
+Neither can equal a unit vector. Among nonanchors exactly the prescribed
+role-j support gives e_j. Thus every H body is in one mode's designated
+roles, on both axes. No minimum-density or four-incidence bound is needed.
 
 ## 5. Localization and exact number of copies
 
@@ -303,19 +297,19 @@ column node, as applicable.
 
 Conversely, in W_{h,d}^- each leaf p of parity d, any dummy row, and
 any parent-minus column in C_{h-1}^-(pi(p)) produce exactly P, in the
-required order. Any representatives of that mode's thirteen anchor
+required order. Any representatives of that mode's three anchor
 groups complete an H copy.
 
 There are m leaf choices, m dummy row choices, two parent column
-choices, and m^{26} anchor choices. Each embedding has a unique mode
+choices, and m^{6} anchor choices. Each embedding has a unique mode
 and leaf, so
 
 \[
- N_H(A_h)=m\cdot m\cdot2\cdot m^{26}=2m^{28}.
+ N_H(A_h)=m\cdot m\cdot2\cdot m^{6}=2m^{8}.
 \]
 
-Every copy sends the fixed pattern cell (14,14) into the m-cell leaf
-diagonal L_h. This also gives the coarser bound N_H(A_h)<=m n^{28},
+Every copy sends the fixed pattern cell (4,4) into the m-cell leaf
+diagonal L_h. This also gives the coarser bound N_H(A_h)<=m n^{8},
 which already suffices for nonpolynomial removal.
 
 ## 6. Distance against arbitrary binary repairs
@@ -384,8 +378,8 @@ unprotected entries or on the directions of the changes.
 For epsilon_h=d^{-2} the exact density gives, for every fixed C>0,
 
 \[
- \frac{N_H(A_h)}{\epsilon_h^C n^{30}}
-   =2(80h+2)^{2C-30}4^{-h}\longrightarrow0.
+ \frac{N_H(A_h)}{\epsilon_h^C n^{10}}
+   =2(20h+2)^{2C-10}4^{-h}\longrightarrow0.
 \]
 
 An exponential in h beats every fixed power of h; choosing h sufficiently
@@ -396,8 +390,8 @@ many tested hosts.
 For canonical sampling of q uniform rows and, independently, q uniform
 columns, rejection on observing H implies sampling one of L_h's m cells.
 Thus Pr(reject)<=m(q/n)^2=epsilon_h 2^{-h}q^2. Rejection probability
-at least rho>0 requires q>=sqrt(rho)(80h+2)2^{h/2}. Equivalently
-q>=sqrt(rho) epsilon_h^{-1/2} 2^{(epsilon_h^{-1/2}-2)/160}
+at least rho>0 requires q>=sqrt(rho)(20h+2)2^{h/2}. Equivalently
+q>=sqrt(rho) epsilon_h^{-1/2} 2^{(epsilon_h^{-1/2}-2)/40}
 along this sequence. There are q^2 observed entries. This does not claim
 a lower bound for arbitrary adaptive or two-sided testers.
 
@@ -407,12 +401,23 @@ is one, the changed leaf entry is zero, and its dummy bottom row is
 11. This makes explicit why the m-cell hitting set is not an m-cell
 repair, and why both directions of binary edits must be allowed.
 
-## Verification boundary
+## Verification boundary and comparison
 
-The proof is all-depth mathematics; finite exact checks exercise its
-inputs and boundaries but are not its justification. Source hashes,
-anchor properties, non-anchor triples, mode bodies and weighted counts
-are checked by [check_compression.py](verification/check_compression.py).
-No independent reviewer, Lean kernel build, or equivalence check of a
-new formal statement has been performed. The released 66-by-66 Lean
-proof is not a formal proof of this 15-by-15 construction.
+The prior 15-by-15 candidate used s=13 and d=80h+2; the pinned original
+66-by-66 manuscript uses s=64 and d=386h+2. The new candidate has s=3,
+k=5 and d=20h+2. The qualitative failure and the exact 4^{-h} decay
+mechanism are inherited. The sharper result is the fixed forbidden
+pattern size, with all model assumptions and asymptotic quantifiers intact.
+
+The all-depth proof above, rather than extrapolation from finite examples,
+is the proposed justification. [check_refinement.py](verification/check_refinement.py)
+checks crown exclusion, the role table and its laminar order, every ordered
+S_3 embedding through depth 6, every ordered H_5 embedding through depth 2,
+and weighted body counts through depth 6. Existing path checks exercise
+all free path assignments through depth 4. These are same-agent checks;
+no independent reviewer or Lean kernel has verified the new theorem.
+
+All 16 binary 2-by-2 matrices occur among nonanchors already at h=2, as
+certified by the checker. Thus a 2-by-2 anchor cannot satisfy the same
+pure-anchor rigidity requirement in this nonanchor host. This is a
+limitation of this approach, not a proof that no 4-by-4 obstruction exists.

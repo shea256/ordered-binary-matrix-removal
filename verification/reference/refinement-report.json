@@ -1,0 +1,583 @@
+{
+  "pattern": [
+    [
+      0,
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      1,
+      1
+    ]
+  ],
+  "nonanchor_crown": [
+    {
+      "h": 1,
+      "column_triples": 10,
+      "nonanchor_crowns": 0
+    },
+    {
+      "h": 2,
+      "column_triples": 165,
+      "nonanchor_crowns": 0
+    },
+    {
+      "h": 3,
+      "column_triples": 1771,
+      "nonanchor_crowns": 0
+    },
+    {
+      "h": 4,
+      "column_triples": 16215,
+      "nonanchor_crowns": 0
+    },
+    {
+      "h": 5,
+      "column_triples": 138415,
+      "nonanchor_crowns": 0
+    }
+  ],
+  "laminar_roles": [
+    {
+      "h": 1,
+      "support_pairs": 132,
+      "strict_containments": 8
+    },
+    {
+      "h": 2,
+      "support_pairs": 552,
+      "strict_containments": 28
+    },
+    {
+      "h": 3,
+      "support_pairs": 1260,
+      "strict_containments": 48
+    },
+    {
+      "h": 4,
+      "support_pairs": 2256,
+      "strict_containments": 68
+    },
+    {
+      "h": 5,
+      "support_pairs": 3540,
+      "strict_containments": 88
+    },
+    {
+      "h": 6,
+      "support_pairs": 5112,
+      "strict_containments": 108
+    },
+    {
+      "h": 7,
+      "support_pairs": 6972,
+      "strict_containments": 128
+    },
+    {
+      "h": 8,
+      "support_pairs": 9120,
+      "strict_containments": 148
+    }
+  ],
+  "anchor_embeddings": [
+    {
+      "h": 1,
+      "reordered": true,
+      "quotient_rows": 23,
+      "row_triples_checked": 1771,
+      "canonical_quotient_copies": 6,
+      "weighted_anchor_copies": 384,
+      "unexpected_copies": 0
+    },
+    {
+      "h": 2,
+      "reordered": true,
+      "quotient_rows": 47,
+      "row_triples_checked": 16215,
+      "canonical_quotient_copies": 12,
+      "weighted_anchor_copies": 49152,
+      "unexpected_copies": 0
+    },
+    {
+      "h": 3,
+      "reordered": true,
+      "quotient_rows": 77,
+      "row_triples_checked": 73150,
+      "canonical_quotient_copies": 18,
+      "weighted_anchor_copies": 4718592,
+      "unexpected_copies": 0
+    },
+    {
+      "h": 4,
+      "reordered": true,
+      "quotient_rows": 119,
+      "row_triples_checked": 273819,
+      "canonical_quotient_copies": 24,
+      "weighted_anchor_copies": 402653184,
+      "unexpected_copies": 0
+    },
+    {
+      "h": 5,
+      "reordered": true,
+      "quotient_rows": 185,
+      "row_triples_checked": 1038220,
+      "canonical_quotient_copies": 30,
+      "weighted_anchor_copies": 32212254720,
+      "unexpected_copies": 0
+    },
+    {
+      "h": 6,
+      "reordered": true,
+      "quotient_rows": 299,
+      "row_triples_checked": 4410549,
+      "canonical_quotient_copies": 36,
+      "weighted_anchor_copies": 2473901162496,
+      "unexpected_copies": 0
+    }
+  ],
+  "full_pattern_embeddings": [
+    {
+      "h": 1,
+      "row_quintuples_checked": 33649,
+      "quotient_H_copies": 2,
+      "weighted_H_copies": 512,
+      "expected": 512
+    },
+    {
+      "h": 2,
+      "row_quintuples_checked": 1533939,
+      "quotient_H_copies": 4,
+      "weighted_H_copies": 131072,
+      "expected": 131072
+    }
+  ],
+  "bodies": [
+    {
+      "h": 1,
+      "s": 3,
+      "ordered_quotient_bodies_checked": 8,
+      "weighted_body_count": 8,
+      "nonzero_modes": {
+        "('W', 1, '-', 0)": 4,
+        "('W', 1, '-', 1)": 4
+      },
+      "conditional_full_copy_count": 512,
+      "n": 44,
+      "distance_lower_bound": "1/484"
+    },
+    {
+      "h": 2,
+      "s": 3,
+      "ordered_quotient_bodies_checked": 56,
+      "weighted_body_count": 32,
+      "nonzero_modes": {
+        "('W', 2, '-', 0)": 16,
+        "('W', 2, '-', 1)": 16
+      },
+      "conditional_full_copy_count": 131072,
+      "n": 168,
+      "distance_lower_bound": "1/1764"
+    },
+    {
+      "h": 3,
+      "s": 3,
+      "ordered_quotient_bodies_checked": 376,
+      "weighted_body_count": 128,
+      "nonzero_modes": {
+        "('W', 3, '-', 0)": 64,
+        "('W', 3, '-', 1)": 64
+      },
+      "conditional_full_copy_count": 33554432,
+      "n": 496,
+      "distance_lower_bound": "1/3844"
+    },
+    {
+      "h": 4,
+      "s": 3,
+      "ordered_quotient_bodies_checked": 2680,
+      "weighted_body_count": 512,
+      "nonzero_modes": {
+        "('W', 4, '-', 0)": 256,
+        "('W', 4, '-', 1)": 256
+      },
+      "conditional_full_copy_count": 8589934592,
+      "n": 1312,
+      "distance_lower_bound": "1/6724"
+    },
+    {
+      "h": 5,
+      "s": 3,
+      "ordered_quotient_bodies_checked": 20088,
+      "weighted_body_count": 2048,
+      "nonzero_modes": {
+        "('W', 5, '-', 0)": 1024,
+        "('W', 5, '-', 1)": 1024
+      },
+      "conditional_full_copy_count": 2199023255552,
+      "n": 3264,
+      "distance_lower_bound": "1/10404"
+    },
+    {
+      "h": 6,
+      "s": 3,
+      "ordered_quotient_bodies_checked": 155256,
+      "weighted_body_count": 8192,
+      "nonzero_modes": {
+        "('W', 6, '-', 0)": 4096,
+        "('W', 6, '-', 1)": 4096
+      },
+      "conditional_full_copy_count": 562949953421312,
+      "n": 7808,
+      "distance_lower_bound": "1/14884"
+    }
+  ],
+  "sampling": [
+    {
+      "h": 1,
+      "max_variable_mode_incidence": 4,
+      "protected_cell_probability": "1/4",
+      "diagonal_leaf_selection_probability": "1/2"
+    },
+    {
+      "h": 2,
+      "max_variable_mode_incidence": 4,
+      "protected_cell_probability": "1/16",
+      "diagonal_leaf_selection_probability": "1/4"
+    },
+    {
+      "h": 3,
+      "max_variable_mode_incidence": 4,
+      "protected_cell_probability": "1/64",
+      "diagonal_leaf_selection_probability": "1/8"
+    },
+    {
+      "h": 4,
+      "max_variable_mode_incidence": 4,
+      "protected_cell_probability": "1/256",
+      "diagonal_leaf_selection_probability": "1/16"
+    },
+    {
+      "h": 5,
+      "max_variable_mode_incidence": 4,
+      "protected_cell_probability": "1/1024",
+      "diagonal_leaf_selection_probability": "1/32"
+    },
+    {
+      "h": 6,
+      "max_variable_mode_incidence": 4,
+      "protected_cell_probability": "1/4096",
+      "diagonal_leaf_selection_probability": "1/64"
+    },
+    {
+      "h": 7,
+      "max_variable_mode_incidence": 4,
+      "protected_cell_probability": "1/16384",
+      "diagonal_leaf_selection_probability": "1/128"
+    },
+    {
+      "h": 8,
+      "max_variable_mode_incidence": 4,
+      "protected_cell_probability": "1/65536",
+      "diagonal_leaf_selection_probability": "1/256"
+    }
+  ],
+  "arbitrary_path_edits": [
+    {
+      "h": 1,
+      "free_binary_assignments": 8,
+      "H_free_path_assignments": 0
+    },
+    {
+      "h": 2,
+      "free_binary_assignments": 128,
+      "H_free_path_assignments": 0
+    },
+    {
+      "h": 3,
+      "free_binary_assignments": 2048,
+      "H_free_path_assignments": 0
+    },
+    {
+      "h": 4,
+      "free_binary_assignments": 32768,
+      "H_free_path_assignments": 0
+    }
+  ],
+  "triangle_thresholds": {
+    "exceptional_triangle_threshold_cases": 74898,
+    "maximum_h": 6
+  },
+  "original_order_failure": {
+    "unexpected_copy": {
+      "h": 2,
+      "reordered": false,
+      "rows": [
+        {
+          "kind": "anchor",
+          "depth": -1,
+          "sign": "",
+          "node": -1,
+          "mode": [
+            "W",
+            2,
+            "+",
+            1
+          ],
+          "group": 1,
+          "weight": 4
+        },
+        {
+          "kind": "variable",
+          "depth": 2,
+          "sign": "L",
+          "node": 0,
+          "mode": [],
+          "group": -1,
+          "weight": 1
+        },
+        {
+          "kind": "variable",
+          "depth": 2,
+          "sign": "L",
+          "node": 3,
+          "mode": [],
+          "group": -1,
+          "weight": 1
+        }
+      ],
+      "cols": [
+        {
+          "kind": "anchor",
+          "depth": -1,
+          "sign": "",
+          "node": -1,
+          "mode": [
+            "V",
+            2,
+            "+",
+            -1
+          ],
+          "group": 0,
+          "weight": 4
+        },
+        {
+          "kind": "anchor",
+          "depth": -1,
+          "sign": "",
+          "node": -1,
+          "mode": [
+            "W",
+            2,
+            "+",
+            1
+          ],
+          "group": 0,
+          "weight": 4
+        },
+        {
+          "kind": "variable",
+          "depth": 2,
+          "sign": "L",
+          "node": 1,
+          "mode": [],
+          "group": -1,
+          "weight": 1
+        }
+      ]
+    }
+  },
+  "two_anchor_limitation": {
+    "h": 2,
+    "all_binary_2x2_patterns": 16,
+    "witnesses": {
+      "1111": {
+        "rows": [
+          0,
+          1
+        ],
+        "columns": [
+          0,
+          1
+        ]
+      },
+      "1010": {
+        "rows": [
+          0,
+          1
+        ],
+        "columns": [
+          0,
+          4
+        ]
+      },
+      "0000": {
+        "rows": [
+          0,
+          1
+        ],
+        "columns": [
+          4,
+          5
+        ]
+      },
+      "1011": {
+        "rows": [
+          0,
+          4
+        ],
+        "columns": [
+          0,
+          18
+        ]
+      },
+      "0001": {
+        "rows": [
+          0,
+          4
+        ],
+        "columns": [
+          4,
+          18
+        ]
+      },
+      "0011": {
+        "rows": [
+          0,
+          4
+        ],
+        "columns": [
+          18,
+          19
+        ]
+      },
+      "0010": {
+        "rows": [
+          0,
+          4
+        ],
+        "columns": [
+          18,
+          20
+        ]
+      },
+      "0101": {
+        "rows": [
+          4,
+          5
+        ],
+        "columns": [
+          4,
+          18
+        ]
+      },
+      "0111": {
+        "rows": [
+          4,
+          6
+        ],
+        "columns": [
+          8,
+          18
+        ]
+      },
+      "1110": {
+        "rows": [
+          4,
+          8
+        ],
+        "columns": [
+          0,
+          18
+        ]
+      },
+      "0110": {
+        "rows": [
+          4,
+          8
+        ],
+        "columns": [
+          4,
+          18
+        ]
+      },
+      "0100": {
+        "rows": [
+          4,
+          8
+        ],
+        "columns": [
+          10,
+          18
+        ]
+      },
+      "1100": {
+        "rows": [
+          4,
+          8
+        ],
+        "columns": [
+          18,
+          19
+        ]
+      },
+      "1000": {
+        "rows": [
+          4,
+          8
+        ],
+        "columns": [
+          18,
+          20
+        ]
+      },
+      "1101": {
+        "rows": [
+          6,
+          7
+        ],
+        "columns": [
+          10,
+          11
+        ]
+      },
+      "1001": {
+        "rows": [
+          8,
+          12
+        ],
+        "columns": [
+          4,
+          16
+        ]
+      }
+    },
+    "scope": "No 2x2 anchor can have pure anchor rigidity in this unchanged nonanchor host; not a lower bound on all obstruction constructions."
+  },
+  "scope": "Exact finite checks; universal theorem depends on proofs/five-by-five.md. No independent review or Lean verification."
+}

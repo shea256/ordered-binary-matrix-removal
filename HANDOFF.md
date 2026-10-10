@@ -1,55 +1,60 @@
 # Handoff — OPENAI-190
 
-**Current checkpoint:** complete candidate proof and exact checks for a
-15-by-15 fixed ordered binary obstruction. Keep the catalog at
-`Candidate result` until the mathematical claims receive independent
-verification; do not interpret the finite checks as universal proof.
+**Current checkpoint:** a complete candidate proof for a fixed **5×5**
+ordered binary obstruction, using a 3×3 anchor. Retain `Candidate result`:
+no independent reviewer or Lean kernel has verified the new theorem.
 
-The next decisive step is an independent adversarial review of
-[compressed-pattern.md](proofs/compressed-pattern.md), especially:
+Start with [five-by-five.md](proofs/five-by-five.md). The earlier
+[15×15 draft](proofs/compressed-pattern.md) is retained as history, not a
+proven premise. The new draft restates the host and arbitrary-edit argument.
 
-1. The three-column lemma: after same-class monotonicity, every pair
-   of a shattered three-class set must be supported by a variable row.
-   Check the unique terminal triangle and the nested leaf thresholds,
-   including h=1 and repeated column nodes.
-2. The anchor rigidity argument: the word rectangle starts at row 6,
-   overlapping the dense six-row prefix at its all-zero word. Check
-   both axes separately. The initial alternative is at least six
-   anchor rows **or** at least eleven anchor columns, not a symmetric
-   half-size split. Prefix density five must strictly exceed four.
-3. Repair distance: root/anchor/dummy selection probabilities are
-   exactly 1/m^2; intermediate variable entries are unprotected and
-   arbitrary; shared leaves are correlated. All edit directions and
-   changes to anchor blocks must be included.
-4. Exact count: only W_{h,d}^- leaf bodies survive, with b=floor(p/2),
-   exactly two parent column positions, m dummy row choices and no
-   duplicated embeddings across modes.
+The next decisive step is independent adversarial review of:
 
-The published 66-by-66 implementation is at
-`verification/upstream/lean/OAI/Combinatorics/MatrixRemoval/`; Main
-imports the copy-count and arbitrary-repair bounds. Its comparator is
-a statement template with `sorry`, not the solution. A future formal
-review should first rebuild the baseline on pinned Lean 4.34.1/Mathlib,
-then parameterize the host and prove the three-column lemma and
-13-by-13 prefix conditions. Do not replace every occurrence of 64
-with 13: the old dense-prefix identities and word rectangle change.
+1. **Nonanchor crown exclusion.** Only the three weight-two words are
+   needed. Verify same-class comparability, the unique terminal class
+   triangle, nested leaf traces, and the h=1 shared-leaf boundary.
+2. **Ordered laminar supports.** Every role is a whole class or parity
+   half. All strict containers must occur later on both axes. The mode
+   order is W+0,W+1,W−0,W−1,V+,V− within each increasing depth. Reverting
+   to V-before-W produces an unintended anchor copy at h=2.
+3. **3×3 rigidity.** Audit all cases for the counts a,b of selected
+   anchor positions. For a,b≥2, aligned mode order forces the crossed
+   anchor incidences into one mode. For one count≥2 and the other≤1,
+   proper containment would run backward. For a,b≤1, same-class
+   comparability or crown exclusion gives the contradiction.
+4. **Final theorem.** Unit signatures must exclude all other anchors;
+   original body localization and arbitrary-repair sampling must still
+   apply after reordering. Verify n=(20h+2)2^h, count 2·2^(8h), and the
+   all-c,C asymptotic implication with n^10 normalization. Preserve the
+   distinction between protected probabilities 1/m² and leaf probability
+   1/m. Do not replace arbitrary repair distance by original-copy hitting.
 
-The new theorem needs separate formal definitions of S_13, H_15,
-ordered copies, arbitrary binary edit distance and the constructed
-sequence. The final statement must quantify all c,C>0 and permit
-n,epsilon,A to depend on them while fixing H_15. No silent reliance
-on unlimited host labels or a ternary symbol is allowed.
+Reproduce all new finite checks offline:
 
-The two-column attack is decisively blocked for this host by an actual
-shattered pair. A smaller pattern may still be possible through a
-different anchor. There is no minimal-pattern theorem here.
+```sh
+python3 scripts/run_checks.py
+```
 
-Novelty screening found no direct stronger primary result or correction,
-but does not establish novelty. Check any further manuscript versions,
-reviews or unpublished refinements before claiming acceptance. The
-exact 4^-h density decay is already derivable for the baseline and
-must not be presented as a wholly new lower-bound mechanism.
+Compare parsed JSON with `verification/reference/refinement-report.json`. The checker
+searches every ordered S_3 copy through depth 6 and every ordered H_5 copy
+through depth 2, with exact twin-block weights. It checks role supports
+against a separate descriptor table, and reruns the existing exact path
+and sampling checks. These are same-agent checks, not independent review.
 
-Reproduce the checks with the commands in [RUNLOG.md](RUNLOG.md). All
-experiments use standard-library exact arithmetic; no paid tooling is
-required. Do not publish or contact authors without authorization.
+For further compression, the direct 2×2 anchor route is blocked in this
+host: all 16 patterns already occur among nonanchors at depth 2. A 4×4
+obstruction might require a different host, a different enforcement
+mechanism, or a proof that does not require pure-anchor rigidity. No
+universal lower bound of 5 is claimed.
+
+Upstream main still matched the audited commit
+`fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb` when rechecked on 2026-10-10.
+The original Lean implementation has not been rebuilt. Formalization of
+the new construction must include the changed mode order and new rigidity
+lemma; changing constants in the old formalization is insufficient.
+
+The earlier 15×15 package is preserved at commit
+`fa2aa33105d7d16ae782f4a0858a417e31de9f05` and in the retained earlier proof.
+The current manuscript and `results/current.json` describe the 5×5 candidate.
+Run `python3 scripts/run_checks.py` for the complete offline verification
+and package-integrity checks.

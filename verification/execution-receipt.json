@@ -5,12 +5,17 @@
     {
       "name": "compression",
       "reference_matches": true,
-      "elapsed_seconds": 2.101
+      "elapsed_seconds": 2.123
     },
     {
       "name": "adversarial",
       "reference_matches": true,
-      "elapsed_seconds": 4.3
+      "elapsed_seconds": 4.332
+    },
+    {
+      "name": "refinement",
+      "reference_matches": true,
+      "elapsed_seconds": 12.608
     }
   ]
 }

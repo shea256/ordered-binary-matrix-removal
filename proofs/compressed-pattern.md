@@ -1,5 +1,8 @@
 # A 15-by-15 ordered binary removal obstruction
 
+**Historical candidate:** see [five-by-five.md](five-by-five.md) for the
+current proposed refinement. This earlier proof remains unreviewed.
+
 Date: 2026-10-10. Category: candidate result with a complete human-readable
 proof draft; not independently reviewed or machine checked. All claims in
 this file concern induced copies preserving independently increasing row

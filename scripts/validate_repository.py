@@ -8,8 +8,13 @@ for name in ('README.md','BASELINE.md','ATTEMPT.md','RESULT.md','RUNLOG.md','HAN
 status = json.loads((ROOT / 'results/current.json').read_text())
 assert status['status'] == 'candidate'
 assert status['independent_review'] is False and status['new_result_formalized'] is False
-report = json.loads((ROOT / 'verification/reference/compression-report.json').read_text())
-assert len(report['anchor']['pattern']) == status['pattern_size'] == 15
+report = json.loads((ROOT / status['verification_report']).read_text())
+assert len(report['pattern']) == status['pattern_size'] == 5
+assert all(len(row) == 5 and set(row) <= {0,1} for row in report['pattern'])
+assert status['anchor_size'] == 3 and status['host_coefficient'] == 20
+proof = (ROOT / status['proof_file']).read_text()
+manuscript = (ROOT / 'manuscript.md').read_text()
+assert manuscript[manuscript.index('## Statement'):] == proof[proof.index('## Statement'):].replace('../verification/', 'verification/')
 receipt = json.loads((ROOT / 'results/paper_build.json').read_text())
 for name, expected in receipt['artifacts'].items():
     data = (ROOT / name).read_bytes()

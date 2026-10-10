@@ -1,68 +1,80 @@
 # Result — OPENAI-190
 
-**Category: Candidate result.** A complete proof draft constructs a fixed
-**15-by-15** binary pattern with no polynomial ordered induced removal
-bound, improving the **66-by-66** pattern in the pinned primary manuscript.
-Exact finite checks pass. Independent proof review, Lean verification,
-and a conclusive novelty assessment remain outstanding.
+**Category: Candidate result.** The current proposed obstruction is **5×5**,
+refining the earlier **15×15 candidate** and the pinned primary manuscript's
+**66×66** pattern. A complete [proof draft](proofs/five-by-five.md) and exact
+finite checks are included. Independent mathematical review, formalization,
+and a conclusive novelty assessment remain pending.
 
-For every integer h>=1, the explicit construction has
+The explicit fixed pattern is
 
 \[
- n_h=(80h+2)2^h,\quad \epsilon_h=(80h+2)^{-2},\quad
- \operatorname{dist}_H(A_h)\ge\epsilon_h,\quad
- N_H(A_h)=2\,2^{28h}.
+H=\begin{pmatrix}
+0&1&1&1&0\\
+1&0&1&0&1\\
+1&1&0&0&0\\
+1&0&0&1&0\\
+0&1&0&1&1
+\end{pmatrix}.
 \]
 
-Thus N_H(A_h)/n_h^30 = 2(80h+2)^-30 4^-h, and the ratio to
-epsilon_h^C tends to zero for **every** fixed C>0. The pattern is
-independent of h,c,C. Hosts are binary; copies match both zeros and
-ones and preserve independent axis orders; distance permits every
-binary change in either direction. The statement concerns arbitrarily
-large depths, not just the tested finite matrices.
+For every integer h≥1 the candidate construction has
 
-| Parameter | Primary baseline | Candidate |
-| --- | --- | --- |
-| Fixed forbidden pattern | 66-by-66 | 15-by-15 |
-| Anchor | 64-by-64 | 13-by-13 |
-| Trace obstruction used | Five columns | Three columns |
-| Host order | (386h+2)2^h | (80h+2)2^h |
-| Proven-in-draft distance lower bound | (386h+2)^-2, reproduced | (80h+2)^-2 |
-| Exact copy density derived from localization | 2(386h+2)^-132 4^-h | 2(80h+2)^-30 4^-h |
-| Machine-check stage in this workspace | Sources audited; no Lean build | Exact finite checks; no Lean proof |
+\[
+ n_h=(20h+2)2^h,\quad \epsilon_h=(20h+2)^{-2},\quad
+ \operatorname{dist}_H(A_h)\ge\epsilon_h,\quad N_H(A_h)=2\,2^{8h}.
+\]
 
-The baseline's exact count in the table is a stronger consequence of
-its existing construction than the headline density bound. It was
-recalculated, so the candidate is not being compared only against a
-weaker abstract. The new contribution proposed here is the smaller
-anchor and the all-depth lemma permitting it. The tree propagation,
-arbitrary-edit sampling argument and diagonal localization method are
-adaptations of the existing work.
+The exact normalized copy density is
+\(2(20h+2)^{-10}4^{-h}\). Dividing by \(\epsilon_h^C\) tends to zero
+for every fixed C>0. H is independent of h,c,C. Hosts are binary; copies
+match zeros and ones and preserve separate row and column orders; repairs
+permit arbitrary entry changes in both directions, including anchor cells.
+This is an all-depth claim, not a finite-example theorem.
 
-The canonical sampler consequence remains exp(Omega(epsilon^-1/2))
-sampled positions per axis along the sequence. In the explicit bound,
-the exponential denominator changes from 772 to 160. This is not a
-new exponent in epsilon and does not apply automatically to other
-tester models. An explicit dense host still has n^2 output entries;
-the experiment's weighted representation is not an algorithmic
-improvement to that output cost.
+| Parameter | Pinned primary construction | Earlier candidate | Current candidate |
+| --- | --- | --- | --- |
+| Fixed forbidden pattern | 66×66 | 15×15 | 5×5 |
+| Anchor | 64×64 | 13×13 | 3×3 |
+| Host order | (386h+2)2^h | (80h+2)2^h | (20h+2)2^h |
+| Distance lower bound | (386h+2)^−2 | (80h+2)^−2 | (20h+2)^−2 |
+| Exact density from localization | 2(386h+2)^−132 4^−h | 2(80h+2)^−30 4^−h | 2(20h+2)^−10 4^−h |
+| Verification stage here | Sources audited; no Lean build | Written draft; finite checks | Written draft; finite checks |
 
-**Verified finite facts:** all 13-by-13 anchor certificates; 156,576
-non-anchor triples; exact mode counts at h=1,...,6 for both anchors;
-74,898 threshold cases; 34,952 arbitrary path assignments; exact
-sampling marginals; integrity of 78 pinned text sources. These finite
-facts support the derivation but do not prove its universal quantifiers.
+The baseline's exact density is derived from its existing localization
+argument, stronger than its headline bound. Different pattern sizes have
+different density normalizations; this table is not a numerical ratio
+between densities for the same forbidden pattern.
 
-**Rigorous method limitation:** two-column nonshattering fails already
-at depth two. This does not prove minimality of the 15-by-15 pattern.
+The new proof uses three ingredients: the nonanchor host excludes the
+3×3 off-diagonal-one matrix; role supports are whole classes or parity
+halves; and ordering W modes before V modes makes containing supports
+come later. Together these force every copy of that 3×3 anchor into a
+single intended block. The original V-before-W order fails this rigidity
+property already at h=2; the report includes the explicit unintended copy.
+The tree host, arbitrary-repair propagation and sampling mechanism, and
+leaf localization remain adaptations of OpenAI's construction.
 
-**Unresolved:** independent scrutiny of the all-depth three-column
-lemma and asymmetric rigidity argument; formalization of the new
-statement; broader novelty review. No proof gap is presently identified
-in the draft, but same-agent inspection is not independent acceptance.
-This review package is intended for a private repository. Public release
-requires a separate decision; independent review remains pending.
+**Exact finite evidence:** 5,813,724 quotient row triples in exhaustive
+ordered anchor searches through h=6, with no unintended copies; all
+1,567,588 quotient row quintuples in full H searches at h=1,2; 156,576
+nonanchor column triples; role-support checks through h=8; weighted mode
+counts through h=6; 34,952 arbitrary path assignments; and 74,898 terminal
+threshold cases. The first two hosts have exactly 512 and 131,072 H copies.
+These checks support the proof but do not establish universal quantifiers.
 
-The mathematical artifact is [compressed-pattern.md](proofs/compressed-pattern.md).
-Source/model comparisons are in [BASELINE.md](BASELINE.md), executions
-in [RUNLOG.md](RUNLOG.md), and the next decisive audit in [HANDOFF.md](HANDOFF.md).
+**Method limitation:** all 16 binary 2×2 patterns occur among nonanchors
+at h=2. No 2×2 anchor can satisfy this same pure-anchor rigidity property
+in the unchanged nonanchor host. This does not prove that 5×5 is minimal
+among all possible obstruction constructions.
+
+The canonical sampler bound has exponential denominator 40, versus 160
+for the earlier candidate and 772 for the primary baseline; the dependence
+remains exp(Omega(epsilon^−1/2)). No arbitrary adaptive/two-sided tester or
+host-generation complexity improvement is claimed.
+
+See [BASELINE.md](BASELINE.md), [ATTEMPT.md](ATTEMPT.md),
+[RUNLOG.md](RUNLOG.md), and [HANDOFF.md](HANDOFF.md). The earlier 15×15 review package is preserved in the
+[initial commit](https://github.com/shea256/ordered-binary-matrix-removal/tree/fa2aa33105d7d16ae782f4a0858a417e31de9f05).
+This repository's current manuscript and verification reports describe the
+5×5 candidate. Independent review remains pending.

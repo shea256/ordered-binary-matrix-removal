@@ -1,10 +1,11 @@
 # Ordered binary matrix removal
 
-**Private review package · candidate result · October 10, 2026**
+**Candidate research manuscript · October 10, 2026**
 
 This repository proposes reducing the fixed obstruction to polynomial ordered
-induced removal from **66×66 to 15×15**. The manuscript contains the complete
-written argument and exact finite checks. Independent mathematical review,
+induced removal from **66×66 to 5×5**. The complete **5×5 forbidden pattern**
+contains a **3×3 anchor** plus two additional rows and columns. The manuscript contains the full written
+argument and exact finite checks. Independent mathematical review,
 formalization, and a conclusive novelty assessment remain pending.
 
 Read the [manuscript PDF](manuscript.pdf), [Markdown manuscript](manuscript.md),
@@ -14,9 +15,9 @@ baseline and its assumptions. The host and propagation mechanism adapt
 OpenAI's September 25, 2026 construction; [ATTRIBUTION.md](ATTRIBUTION.md)
 identifies the inherited and proposed ingredients.
 
-For every integer h ≥ 1, the candidate has order n=(80h+2)2^h, normalized
-repair distance at least (80h+2)^−2, and exactly 2·2^(28h) ordered copies.
-The density is 2(80h+2)^−30·4^−h. Copies match both binary values and preserve
+For every integer h ≥ 1, the candidate has order n=(20h+2)2^h, normalized
+repair distance at least (20h+2)^−2, and exactly 2·2^(8h) ordered copies.
+The density is 2(20h+2)^−10·4^−h. Copies match both binary values and preserve
 separate row and column orders. Repairs allow arbitrary binary changes.
 The pattern is fixed independently of h. Finite tests support the argument;
 they do not prove its universal quantifiers.
@@ -40,7 +41,7 @@ python3 verification/check_sources.py
 
 The 78-file source cache is ignored. Offline checks validate manifest metadata,
 not downloaded source bytes. The original source audit is preserved separately.
-No Lean build or proof of the new theorem is included.
+No Lean build or formal proof of the new theorem is included.
 
 Rebuild the PDF with `pdflatex` (TeX Live and the packages named in the build
 script): `python3 scripts/build_manuscript.py`. To regenerate the LaTeX source
@@ -52,8 +53,16 @@ from Markdown, install Pandoc 3.6.4 and use `--regenerate-tex`.
 arguments to audit. [ATTEMPT.md](ATTEMPT.md), [RUNLOG.md](RUNLOG.md), and
 [verification/README.md](verification/README.md) separate proofs, finite evidence,
 and remaining obligations. [results/current.json](results/current.json) is the
-machine-readable status. Two-column nonshattering fails; this is a limitation
-of the proposed method, not a minimality theorem for the pattern.
+machine-readable status. All binary 2×2 patterns occur in the nonanchor host,
+blocking a further reduction by the same pure-anchor rigidity method. This does not prove
+that a 5×5 obstruction is minimal.
+
+The earlier 15×15 candidate used a 13×13 anchor. Its
+[proof draft](proofs/compressed-pattern.md) and exact reports are retained;
+the original manuscript is available at the
+[initial commit](https://github.com/shea256/ordered-binary-matrix-removal/tree/fa2aa33105d7d16ae782f4a0858a417e31de9f05).
+The new [proof](proofs/five-by-five.md) uses a different order of the anchor
+blocks to make the smaller anchor rigid. See [IMPROVEMENTS.md](IMPROVEMENTS.md).
 
 Prepared by Ryan Shea with Codex assistance. AI assistance and same-agent
 second-pass checking are not independent peer review. Licensed under

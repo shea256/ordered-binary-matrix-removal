@@ -32,4 +32,31 @@ depth 6; 34,952 arbitrary path assignments through depth 4; anchor and sampling
 certificates. Two-column nonshattering fails at depth 2.
 
 Independent review, end-to-end formalization, and novelty assessment remain
-pending. This repository is a private review package, not a public release.
+pending. The initial package was prepared for private review; the repository was
+public when the 5×5 update was requested. Candidate status is unchanged.
+
+
+## 5×5 refinement package — 2026-10-10
+
+The current proof is `proofs/five-by-five.md`. The 5×5 pattern contains a
+3×3 anchor; both manuscript formats, the PDF, and results/current.json
+are updated together. The earlier 15×15 proof and exact reports remain.
+The initial package is preserved at commit
+`fa2aa33105d7d16ae782f4a0858a417e31de9f05`.
+
+`python3 scripts/run_checks.py` now also executes check_refinement.py and
+compares its JSON to verification/reference/refinement-report.json.
+The expected exact totals are 5,813,724 anchor row triples; 1,567,588 full
+pattern row quintuples; 156,576 nonanchor column triples; 28,944 role-support
+pairs; 34,952 path assignments; and 74,898 threshold cases. The full H counts
+at depths 1,2 are 512 and 131,072. Receipts record the actual successful
+executions; no execution is treated as independent mathematical review.
+
+The PDF build receipt also binds the current proof source, and the package
+validator checks that the manuscript contains that proof's full statement
+and body. The inherited 78-source audit and unchanged upstream pin remain
+separate from the offline finite checks.
+
+Actual standalone update validation: all three exact report comparisons
+passed; package integrity passed with 38 local links and matching manuscript
+artifacts. The PDF built with three pdflatex passes and no warnings.

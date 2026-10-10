@@ -13,7 +13,7 @@ if a.regenerate_tex:
     preamble = r'''\documentclass[11pt]{article}
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb,booktabs,longtable,array}
+\usepackage{amsmath,amssymb,booktabs,longtable,array,calc}
 \usepackage[margin=1in]{geometry}
 \usepackage[unicode,hidelinks]{hyperref}
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -31,7 +31,7 @@ with tempfile.TemporaryDirectory() as td:
     warnings = [line for line in run.stdout.splitlines() if 'Warning' in line or 'Overfull' in line]
 version = subprocess.run(['pdflatex', '--version'], check=True, capture_output=True, text=True).stdout.splitlines()[0]
 receipt = {'engine': version, 'passes': 3, 'shell_escape': False, 'warnings': warnings, 'artifacts': {}}
-for name in ('manuscript.md', 'tex/manuscript.tex', 'manuscript.pdf'):
+for name in ('manuscript.md', 'tex/manuscript.tex', 'manuscript.pdf', 'proofs/five-by-five.md'):
     data = (ROOT / name).read_bytes()
     receipt['artifacts'][name] = {'sha256': hashlib.sha256(data).hexdigest(), 'bytes': len(data)}
 (ROOT / 'results/paper_build.json').write_text(json.dumps(receipt, indent=2) + '\n')

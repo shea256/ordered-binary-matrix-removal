@@ -5,16 +5,20 @@
   "warnings": [],
   "artifacts": {
     "manuscript.md": {
-      "sha256": "e909942e1c5d8c5336745662abbec9ce9acf0419cd614c48dd9a24f63a6c5831",
-      "bytes": 19460
+      "sha256": "7b2d7f675fc96883beac6ccf241d048f4451c57e28ad981db6ea754346d860ed",
+      "bytes": 20058
     },
     "tex/manuscript.tex": {
-      "sha256": "d8192c3142731924e9f23d58e3db238ec3dc559e8ce4d01924141a8d463c718a",
-      "bytes": 21880
+      "sha256": "79be6a3d2df2fd7aa46df019ccf64efbb7cc18037c9a8c1d253df4a799e18d53",
+      "bytes": 22856
     },
     "manuscript.pdf": {
-      "sha256": "91f7d6a627a77e16d775b17d0322d9746d7e2988554c2a684db008133ca9b7b7",
-      "bytes": 193141
+      "sha256": "8f786d7b3e18442873f89022f8cbca5a1862f2f4ec4b008000cd74fd731dadf1",
+      "bytes": 199023
+    },
+    "proofs/five-by-five.md": {
+      "sha256": "72bc3713ee3b4e1e1c102d323bdee8f66e61f025583ce3a96566694ede7a0ffa",
+      "bytes": 18709
     }
   }
 }
