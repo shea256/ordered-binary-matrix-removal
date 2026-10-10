@@ -9,6 +9,8 @@ component** plus two additional rows and columns. The manuscript contains
 the full written argument and exact finite checks. Independent mathematical
 review, formalization, and a conclusive novelty assessment remain pending.
 
+![Forbidden pattern sizes decrease from OpenAI's 66×66 baseline to candidate patterns of 15×15, 5×5, and 4×4. The vertical axis is the pattern side length; stages show refinement order, not elapsed time. Independent mathematical review of the candidates remains pending.](assets/pattern-size-history.png)
+
 | Construction | Forbidden pattern | Anchor component | Status |
 | --- | --- | --- | --- |
 | [OpenAI baseline](BASELINE.md) | 66×66 | 64×64 | Released manuscript and Lean sources |
@@ -77,6 +79,12 @@ No Lean build or formal proof of the new theorem is included.
 Rebuild the PDF with `pdflatex` (TeX Live and the packages named in the build
 script): `python3 scripts/build_manuscript.py`. To regenerate the LaTeX source
 from Markdown, install Pandoc 3.6.4 and use `--regenerate-tex`.
+
+The comparison graphic is available as [PNG](assets/pattern-size-history.png)
+and [SVG](assets/pattern-size-history.svg). To rebuild it, install the optional
+plotting dependency `matplotlib==3.9.4` and run
+`python3 scripts/build_figure.py`. The exact verification suite uses only
+the Python standard library.
 
 ## Review
 

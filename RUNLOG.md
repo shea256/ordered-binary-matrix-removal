@@ -103,3 +103,29 @@ formulas were visually checked. The build receipt records all artifact hashes.
 After the final typesetting changes, package integrity passed again with
 49 local links, matching manuscript hashes, and candidate status. Whitespace
 checks passed. No independent mathematical review or Lean build was performed.
+
+## README comparison graphic — 2026-10-10
+
+The user requested a graphic in the style of a supplied scientific step
+chart. The 4×4 PR had already been merged, so this change starts from
+master commit `a5920eb` on `shea256/pattern-size-graphic`.
+
+Added a reproducible Matplotlib figure showing pattern side lengths
+66, 15, 5, and 4, with a zero-based linear vertical axis. The baseline date
+is the source manuscript's September 25, 2026 date; all three candidate
+drafts are dated October 10, 2026. The horizontal axis explicitly shows
+refinement order with equal spacing, not elapsed time. The graphic identifies
+the candidate review status and states that hosts can be arbitrarily large.
+
+Rendered `assets/pattern-size-history.png` (2400×1440) and the companion SVG
+using `scripts/build_figure.py` with Matplotlib 3.9.4, installed only in an
+ignored virtual environment. Matplotlib is optional and does not affect the
+standard-library verification suite. The README embeds the PNG, provides
+descriptive alternative text, and links both exports and rebuild instructions.
+
+Actual validation: visually inspected the PNG for labels, values, clipping,
+and comparison with the reference; parsed the SVG successfully. All five
+checks in `python3 scripts/run_checks.py` passed, including deterministic
+reference comparisons and package integrity (52 local links and matching
+manuscript hashes). `git diff --check` passed. The mathematical result and
+its candidate classification are unchanged.
