@@ -2,8 +2,8 @@
 
 **Outcome:** the separate reviewer found no material error, omitted case,
 or incorrect count in the complete written argument. Two separately written
-checkers reproduce its finite predictions. The Lean development proves
-conditional components, with the concrete host connections still open.
+checkers reproduce its finite predictions. The Lean development now constructs the actual host and proves its
+all-depth anchor classification. Localization and repair connections remain open.
 The pattern remains **4×4** and the result remains **candidate**.
 This checkpoint adds verification evidence, not a smaller obstruction or a
 new mathematical theorem. Separate-agent review is not independent peer review.
@@ -59,25 +59,30 @@ already proving the qualitative implication in the written argument.
 The exact enumeration strengthens the bound to
 `(33/4)(14h+2)⁻⁸4⁻ʰ`. Neither count is a replacement for the edit lower bound.
 
-Lean checks the anchor-count implication **assuming the structural
-certificate**, the arithmetic contradictions **assuming extracted entry
-and order inequalities**, the integer union bound **assuming incidence
-frequencies**, and the all-depth Boolean propagation. The formal project
-does not yet construct the actual host or connect these hypotheses to all
-of its copies and repairs. Its 34 helper theorems therefore do not constitute
-a formal proof of the final theorem. The original upstream formalization
-has not been rebuilt.
+Lean now defines the concrete host and its independent axis orders, proves
+crown exclusion and ordered support containment, extracts the certificate
+from every actual copy, and proves anchor counts (2,2) or (2,1). The indexed
+matrix theorem assumes only increasing row/column maps and the sixteen H4
+entries. Height-zero exclusion and a height-one witness are also checked.
+The [concrete-host review](four-concrete-host.md) found no semantic error.
+
+Local arithmetic still assumes extracted entry/order inequalities. The
+inherited three-seed mixer and fiber counts are now formalized, but concrete
+protected-cell incidence extraction and designated-body extension to arbitrary
+edited matrices are not. The finite union bound and all-depth Boolean
+propagation remain checked components. The full removal theorem is therefore
+not yet formalized. The original full upstream development has not been rebuilt.
 
 The [formal README](../../formal/README.md) gives the build command,
-all remaining interfaces, and the alternate three-seed sampler's written
-justification. The [archived formal audit](../reference/formal-audit.json)
+all remaining interfaces, and the inherited three-seed sampler's exact
+provenance and coverage. The [archived formal audit](../reference/formal-audit.json)
 records the actual theorem dependencies and source hashes.
 
 ## Next decisive step
 
-Formalize the concrete host and extract the anchor certificate and arithmetic
-cases from an arbitrary ordered copy. Until that connection, designated
-body extension, protected incidence counts, and final quantifiers are checked,
-keep `new_result_formalized=false`. Human independent review and novelty
-assessment are separate outstanding tasks. The earlier 3×3 construction
-limitations remain in the originating research track.
+Extract the balanced and unbalanced localization cases from the concrete
+copy model and prove membership in the fixed zero set T_h. Then connect
+designated body extension, protected incidence counts, arbitrary repairs,
+and final quantifiers. Keep `new_result_formalized=false`. Human independent
+review and novelty assessment are separate outstanding tasks. The earlier
+3×3 construction limitations remain in the originating research track.

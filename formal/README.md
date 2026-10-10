@@ -1,83 +1,88 @@
 # Partial Lean formalization of the 4×4 argument
 
-**Status: partial.** These files prove 34 helper theorems in Lean 4.34.1
-using only Std. They do not define the complete ordered host or prove the
-4×4 removal theorem. The result remains a candidate.
+**Status: partial, with concrete anchor classification proved.** Lean 4.34.1
+now checks the actual binary host, its independent row and column orders,
+and the theorem that every ordered H4 copy has anchor counts **(2,2) or
+(2,1)**. No structural certificate is assumed by that theorem. Localization,
+arbitrary-repair connections, and the final removal theorem remain open.
+The overall research result remains a candidate.
 
-From the repository root, with the pinned Lean/Lake toolchain available:
+With the pinned Lean/Lake toolchain available, from the repository root:
 
 ```sh
+(cd formal && lake exe cache get)
 python3 scripts/run_formal_checks.py
 ```
 
-The script builds the project, prints and checks the axioms of every exported
-theorem, and runs `leanchecker --fresh OrderedRemoval` to replay the imported
-and new declarations in a fresh Lean kernel environment. Only `propext`,
-`Quot.sound`, and `Classical.choice` are permitted in the dependency audit.
-No added axioms or admitted proofs are used. Kernel replay uses Lean itself;
-it is not verification by a different proof assistant or human peer review.
-The source hashes and actual results go to `.context/formal-checks-receipt.json`.
+Mathlib is pinned to commit `d13f23b723b8a846827a245b89c10fc7d3f11612`;
+`lake-manifest.json` pins its transitive dependencies. The initial dependency
+and cache download requires network access and substantial disk space.
+
+The script builds the project, discovers compiled declarations by owning
+module, and checks their transitive axiom dependencies. It also matches every
+source-declared theorem against the compiled environment, including nested
+namespaces and dotted names. Only `propext`, `Quot.sound`, and
+`Classical.choice` are permitted. No added axioms or admitted proofs are used.
+It then replays **each project module into its imported environment** using
+Lean's kernel. This does not freshly replay all Mathlib dependencies or use
+a different proof assistant. The earlier 34-helper Std-only checkpoint did
+use fresh-environment replay; these are different verification scopes.
+
+Source hashes and results go to `.context/formal-checks-receipt.json`.
 The archived run is [formal-audit.json](../verification/reference/formal-audit.json).
+The [separate-agent semantic review](../verification/reviews/four-concrete-host.md)
+checks agreement with the manuscript. It is not independent peer review.
 
 ## What is proved
 
-| Module | Universal statement checked | Main remaining connection |
+| Component | Checked statement | Remaining connection |
 | --- | --- | --- |
-| [AnchorClassification](OrderedRemoval/AnchorClassification.lean) | Explicit order, crown-exclusion, comparability, and containment hypotheses force anchor counts (2,2) or (2,1). H has distinct rows and columns. | Extract the `Certificate` from every actual host copy, including exclusion of duplicate twin blocks. |
-| [LocalArithmetic](OrderedRemoval/LocalArithmetic.lean) | All balanced and unbalanced threshold contradictions; equality of the terminal parent indices; the parity-order lemma and last-row exclusions. | Show every actual copy supplies one of the exhaustive case hypotheses, using the concrete tree order and role table. |
-| [Propagation](OrderedRemoval/Propagation.lean) | For arbitrary Boolean sequences and arbitrary depth, opposite root bits and a shared terminal bit force one of the four P bodies. | Extract the sequences and show the body extends to an ordered H copy when protected entries are unchanged. |
-| [ProtectedSampling](OrderedRemoval/ProtectedSampling.lean) | An integer union bound produces an untouched sample under an incidence-frequency budget; combining this with arbitrary-bit propagation forces a P body. | Construct the concrete sampler, prove its incidence bound, and supply the protected host entries. |
+| [ConcreteHost](OrderedRemoval/ConcreteHost.lean), [TreePositions](OrderedRemoval/TreePositions.lean), [AnchorFrames](OrderedRemoval/AnchorFrames.lean), [OrderedHost](OrderedRemoval/OrderedHost.lean) | The finite binary host has `(14h+2)2^h` positions, shared leaves, the revised mode ranks, and two independently enumerated axis orders. | Use these definitions in the remaining localization and repair arguments. |
+| [HostStructure](OrderedRemoval/HostStructure.lean), [RoleSupports](OrderedRemoval/RoleSupports.lean), [ConcreteCopies](OrderedRemoval/ConcreteCopies.lean) | Concrete crown exclusion, same-class comparability, forward support containment, twin exclusion, and dummy exclusions. | These structural facts are already connected to anchor classification. |
+| [ExtractAnchors](OrderedRemoval/ExtractAnchors.lean), [AnchorCertificate](OrderedRemoval/AnchorCertificate.lean), [IndexedHost](OrderedRemoval/IndexedHost.lean) | Every actual ordered copy supplies the certificate and has counts (2,2) or (2,1). The indexed matrix interface assumes only increasing index maps and the sixteen H4 entries. No copies at height zero; an explicit balanced copy at height one. | Localize the fixed zero in both surviving cases. |
+| [HostTreeOrder](OrderedRemoval/HostTreeOrder.lean), [LocalArithmetic](OrderedRemoval/LocalArithmetic.lean) | Four concrete parent/child order equivalences and the conditional arithmetic contradictions for localization. | Extract the complete balanced and unbalanced case hypotheses from actual copies. |
+| [ThreeSeedSampling](OrderedRemoval/ThreeSeedSampling.lean) | The inherited finite sampler, root/leaf and ancestor identities, and exact mixer fiber counts. | Instantiate the protected-cell incidence bound for edited host cells. |
+| [Propagation](OrderedRemoval/Propagation.lean), [ProtectedSampling](OrderedRemoval/ProtectedSampling.lean) | Arbitrary-depth Boolean propagation and a finite union bound under explicit incidence hypotheses. | Extend the resulting body to an ordered H4 copy in an arbitrary edited matrix. |
 
-These are unbounded mathematical theorems, rather than depth-limited
-computations. Their hypotheses are part of their statements. In particular,
-`Certificate` is a structure of assumptions; defining it does not prove
-those assumptions for the host.
+The key exports are `OrderedRemoval.Concrete.Copy.anchor_counts` and
+`OrderedRemoval.Concrete.matrix_anchor_counts`. Their quantifiers cover all
+natural depths and all ordered copies in the concrete host. The proof is
+not an enumeration of finitely many depths. The original conditional
+`AnchorClassification.anchor_counts` remains a reusable intermediate lemma.
 
-The files also contain an arithmetic counterexample to dropping the minus
-parity-order hypothesis. It explains why that hypothesis is substantive.
-The fresh [literal checker](../verification/check_four_literal.py) separately
-exhibits full nonlocalized host copies after reversing those modes.
-
-## The alternate three-seed sampler
+## Inherited three-seed sampler
 
 The paper chooses many representatives independently conditional on a leaf.
-Its probability space has more than `m³` outcomes. For the optional smaller
-finite parameterization, take independent uniform `z,u,v∈{0,...,m−1}`.
-Choose leaf z. In each ancestor block of size w on the row axis select
-offset `u mod w`; on the column axis use `v mod w`. Select offset u in every
-size-m row anchor/dummy block and offset v in every column anchor/dummy
-block. A shared leaf has w=1. This reuses offsets within an axis.
+The smaller three-seed parameterization already appears in upstream
+[ThreeSeedSampling.lean](https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/OAI/Combinatorics/MatrixRemoval/ThreeSeedSampling.lean).
+Our adapted module preserves that construction; it is not a new local result.
 
-For a variable position in a size-w block, there are w possible leaves z
-and m/w offsets giving the specified residue. Opposite anchor/dummy
-coordinates fix the other axis's offset. Each protected variable-to-anchor
-or variable-to-dummy cell therefore has exactly m preimages out of m³.
-For cells with both endpoints anchor/dummy, or both root positions, the
-two offsets are fixed and the leaf is free: again m preimages. Thus all
-protected cell probabilities are 1/m². A diagonal leaf cell has m²
-preimages and probability 1/m, and is deliberately unprotected.
+Take independent uniform `z,u,v∈{0,...,m−1}`. Choose leaf z. In each ancestor
+block of size w, select offset `u mod w` on rows and `v mod w` on columns.
+Select u in every size-m row anchor/dummy block and v in the column blocks.
+At a root the position is the axis seed; at a shared leaf it is z.
 
-The correlations within an axis do not matter for the union bound or path
-propagation. This is an alternate sampler with the same needed marginals,
-not a claim that the paper's independent sampler has m³ outcomes.
-The literal checker exhausts these frequencies through h=3.
-The preceding all-depth counting justification is **written mathematics**;
-the construction and incidence extraction are not yet Lean theorems.
+For a variable position in a size-w block, w leaves and m/w offsets yield
+the given position. Fixing an opposite anchor/dummy coordinate fixes the
+other seed. Every protected such cell has m preimages among m³ seeds.
+Two anchor/dummy endpoints or two root endpoints likewise fix the two axis
+seeds and leave the leaf free. The diagonal shared leaf has m² preimages
+and probability 1/m, so it is deliberately unprotected. Correlations within
+an axis do not invalidate the union bound or path propagation.
 
-## Next formalization steps
+The mixer and fiber statements are now Lean theorems. Identifying every
+protected host cell with the appropriate fiber and connecting the sampler
+to an arbitrary repair remain formal proof obligations.
 
-1. Define actual positions, block sizes, the two strict axis orders, roles,
-   binary entries, and ordered H embeddings. Prove leaf identification and
-   twin exclusion using those definitions.
-2. Prove the concrete crown, comparability, and ordered-support properties,
-   then construct `AnchorClassification.Certificate` from an arbitrary
-   embedding.
-3. Extract the balanced and unbalanced arithmetic cases and establish the
-   full zero-cell localization theorem for every h≥1.
-4. Connect protected sampling and designated body extension to arbitrary
-   edited matrices, yielding at least m² edits.
-5. Prove the copy bound and the final real-valued, every-c,C conclusion.
-   The coarse bound `2mn⁶` already suffices; exact enumeration can follow.
+## Next decisive steps
 
-The parent audit's [proof map](../verification/reviews/four-assurance.md)
-separates these gaps from the completed written review.
+1. Derive the complete balanced/unbalanced arithmetic cases and prove that
+   every copy's fixed zero lies in the leaf-to-parent-minus set `T_h`.
+2. Instantiate protected sampling and designated-body extension for an
+   arbitrary edited binary matrix, proving the `m²` edit lower bound.
+3. Combine localization with the coarse copy bound `2mn⁶` and prove the
+   final statement for every positive real c,C. Exact enumeration can follow.
+
+The original full 61-module upstream development has not been rebuilt here.
+Generic modules were adapted selectively with source headers and attribution;
+their theorem count is not a count of new mathematical contributions.

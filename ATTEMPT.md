@@ -264,10 +264,33 @@ literal implementation counts all copies through h=4 and expands the
 32×32 h=1 matrix; the counts and localization agree. Reversed parity order
 and zero-set flipping both trigger the expected failures.
 
-The Lean development proves 34 conditional helper theorems at arbitrary
+The initial Lean checkpoint proved 34 conditional helper theorems at arbitrary
 depth or over unbounded natural numbers. It covers the anchor-count
 implication, all localization inequalities, Boolean propagation, and a
 finite union bound. Axiom inspection and fresh kernel replay passed.
-The actual host has not yet been connected to the hypotheses, and the
-final theorem is unformalized. This is verification progress, not a new
+At that checkpoint the actual host had not yet been connected to the
+hypotheses. The final theorem remains unformalized. This is verification progress, not a new
 size reduction or independent mathematical peer review.
+
+
+## Concrete-host formalization — 2026-10-10
+
+Implemented the next proof-map connection: actual binary host and independent
+row/column enumerations → crown exclusion, class comparability, and revised
+support order → a certificate for every ordered H4 copy → anchor counts
+(2,2) or (2,1). The theorem now quantifies over arbitrary copies in the
+concrete matrix, rather than assuming the structural hypotheses. Explicit
+height-zero exclusion and a height-one witness check boundary/nonvacuity.
+
+The module adaptations retain upstream kind IDs but use `modeRank` for
+both anchor orders and certificate labels. This distinction is essential.
+The separate reviewer checked that bridge and all certificate fields and
+found no semantic error; its negative control detects failure of the old
+V-before-W order. This is separate-agent review, not independent peer review.
+
+The pinned upstream ThreeSeedSampling module already contains the compact
+sampler; it was adapted and built, not newly invented. The exact fiber
+lemmas still need to be connected to protected cells of arbitrary repairs.
+Localization, the copy bound, repair extension, and final quantifiers remain
+formal obligations. This changes verification coverage, not pattern size
+or the written theorem's strength.

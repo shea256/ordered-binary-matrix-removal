@@ -9,9 +9,10 @@ novelty assessment remain pending.
 
 A [separate-agent audit](verification/reviews/four-separate-agent.md) found
 no material error, missing case, or incorrect count. Two additional exact
-checkers and 34 Lean helper theorems now provide further evidence.
-The [formalization](formal/README.md) is partial: its concrete host
-connections and the final theorem are not yet checked. No pattern-size
+checkers and the [Lean development](formal/README.md) provide further evidence.
+The actual host, its two orders, and the all-depth anchor classification
+are now checked. Localization, arbitrary-repair connections, and the final
+theorem remain unformalized. No pattern-size
 or theorem-strength change is claimed at this assurance checkpoint.
 
 The explicit fixed forbidden pattern and its anchor component are

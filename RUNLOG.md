@@ -156,7 +156,7 @@ comparison; the mathematics and checked cases were unchanged.
 
 Installed the official Lean 4.34.1 release binary in the ignored workspace
 cache, commit `5045d0056413266e57c625dcd7c365b10e377c52`. The initial extraction
-needed the system zstd package. The formal project uses Std and has no
+needed the system zstd package. That initial formal checkpoint used Std and had no
 third-party packages. The original 61-module upstream development was
 not rebuilt. Initial compilation caught unfolding/decidability and tactic
 syntax issues; these were corrected before the successful build.
@@ -175,7 +175,9 @@ The formal build succeeded. All 34 exported helper theorems passed the
 dependency audit, using only `propext`, `Quot.sound`, and `Classical.choice`.
 `leanchecker --fresh OrderedRemoval` replayed imported and new declarations
 successfully in a fresh Lean kernel environment. Its exact source hashes
-are archived in `verification/reference/formal-audit.json`. No claim of a
+were archived in the initial `verification/reference/formal-audit.json`
+(now superseded by the concrete-host audit; the old receipt remains in git
+commit `6fa94c55c3763cef8a719846d7c37591eb093d9a`). No claim of a
 formalized concrete host or final removal theorem follows from these
 conditional statements. The three-seed sampler differs from the paper's
 independent representative sampler; its incidence extraction is unformalized.
@@ -193,5 +195,59 @@ warnings. The theorem statement is unchanged.
 The audit report, new exact scripts/references, and partial formal project
 were mirrored into the originating open-math-problems track. The catalog
 keeps Candidate result and records the next concrete host formalization
-checkpoint. No commit, push, PR, author contact, or paid action was made
-for this audit.
+checkpoint. No commit, push, PR, author contact, or paid action had been made
+at that initial local checkpoint. The subsequent PR is recorded below.
+
+## Concrete host and anchor classification — 2026-10-10
+
+After the user's instruction to proceed, committed the initial audit as
+`6fa94c55c3763cef8a719846d7c37591eb093d9a`, pushed branch
+`shea256/four-proof-audit`, and opened
+[PR #3](https://github.com/shea256/ordered-binary-matrix-removal/pull/3)
+against master. The upstream main commit was rechecked and still matched
+`fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb`.
+
+Added Mathlib at exact commit `d13f23b723b8a846827a245b89c10fc7d3f11612`
+and its locked dependencies with `lake update mathlib`. The cache downloaded
+8,908 module artifacts. No generated cache is tracked. Generic host/order
+and three-seed sampling modules were adapted selectively from pinned
+upstream sources; the original full 61-module project was not rebuilt.
+
+Implemented the concrete crown and role-support arguments, extracted all
+anchor-certificate fields from an arbitrary copy, and proved
+`Concrete.Copy.anchor_counts`. `Concrete.matrix_anchor_counts` transports
+the theorem to arbitrary increasing maps into the actual indexed matrix.
+Explicit boundary theorems exclude height zero and exhibit a height-one
+balanced copy. A separate semantic review found no missing hypothesis or
+mismatch with the manuscript. It did not claim compiler verification or
+independent peer review. The three-seed sampler's existing upstream
+provenance is now explicit.
+
+Actual formal command (with the pinned toolchain on PATH):
+
+```sh
+python3 scripts/run_formal_checks.py
+```
+
+The full local build succeeded. The audit checked 173 named theorems and
+695 compiled project declarations, including private/generated declarations,
+with only `propext`, `Quot.sound`, and `Classical.choice` as dependencies.
+All sixteen project modules passed sequential `leanchecker` replay into
+their respective imported environments. Unlike the original Std-only audit,
+this does not freshly replay all Mathlib dependencies. Exact outputs and
+source hashes are in `verification/reference/formal-audit.json`.
+The count includes inherited theorems and is not a novelty count.
+
+The manuscript's verification-status paragraph was updated, and
+`python3 scripts/build_manuscript.py --regenerate-tex` rebuilt the PDF with
+Pandoc 3.6.4 and three pdflatex passes, without warnings. The mathematical
+statement did not change. Localization, concrete arbitrary-repair connections,
+and the final real-valued removal theorem remain unformalized.
+
+Final checks: all seven exact scripts reproduced their reference reports;
+package integrity passed with 104 local links, matching source/PDF hashes,
+and candidate status. An owning-module scan without namespace filtering
+reproduced exactly the same 695 declarations and dependencies. The main
+research track's validator passed with 362 local links across 107 Markdown
+files, and its generated status view was refreshed. `git diff --check`
+passed in both repositories.

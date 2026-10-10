@@ -23,10 +23,13 @@ assert [x['h'] for x in reviewer['checks']] == list(range(1, 8))
 review = status['separate_agent_review']
 assert (ROOT / review['report']).is_file() and review['independent_peer_review'] is False
 formal = status['formalization']
-assert formal['status'] == 'partial' and formal['concrete_host_connections_formalized'] is False
+assert formal['status'] == 'partial' and formal['concrete_anchor_classification_formalized'] is True
 audit = json.loads((ROOT / formal['audit']).read_text())
 assert audit['end_to_end_removal_theorem_formalized'] is False
-assert audit['theorem_count'] == len(audit['axioms']) == formal['helper_theorems']
+assert audit['theorem_count'] == len(audit['axioms']) == formal['named_theorems']
+assert 'OrderedRemoval.Concrete.matrix_anchor_counts' in audit['axioms']
+assert all(set(info['axioms']) <= {'propext', 'Quot.sound', 'Classical.choice'}
+           for info in audit['all_declarations'].values())
 assert all(set(used) <= {'propext', 'Quot.sound', 'Classical.choice'} for used in audit['axioms'].values())
 for name, expected in audit['sources'].items():
     assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected, name
@@ -40,7 +43,7 @@ for name, expected in receipt['artifacts'].items():
     assert hashlib.sha256(data).hexdigest() == expected['sha256'], name
 links = 0
 for path in ROOT.rglob('*.md'):
-    if any(part in ('.git', '.context', 'upstream') for part in path.relative_to(ROOT).parts):
+    if any(part in ('.git', '.context', '.lake', 'upstream') for part in path.relative_to(ROOT).parts):
         continue
     for target in re.findall(r'\]\(([^)]+)\)', path.read_text()):
         if target.startswith(('https:', 'http:', '#', 'mailto:')):

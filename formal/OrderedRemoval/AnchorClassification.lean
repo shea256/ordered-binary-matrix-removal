@@ -8,8 +8,8 @@ copy. Its assumptions express anchor order, off-mode zero entries, crown
 exclusion, role-class comparability, and ordered laminar supports.
 
 The theorem proves that these assumptions force exactly (2,2) or (2,1)
-selected anchors. It does NOT prove that the concrete host satisfies all
-the assumptions. That connection remains an explicit formalization boundary.
+selected anchors. AnchorCertificate.lean now derives these assumptions
+from an arbitrary ordered copy in the concrete host.
 -/
 
 namespace OrderedRemoval.AnchorClassification

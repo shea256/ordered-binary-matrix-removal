@@ -25,7 +25,13 @@
     "status": "partial",
     "coverage": "formal/README.md",
     "audit": "verification/reference/formal-audit.json",
-    "helper_theorems": 34,
-    "concrete_host_connections_formalized": false
+    "named_theorems": 173,
+    "checked_declarations": 695,
+    "concrete_host_defined": true,
+    "concrete_anchor_classification_formalized": true,
+    "zero_cell_localization_formalized": false,
+    "arbitrary_repair_bound_formalized": false,
+    "final_removal_theorem_formalized": false,
+    "semantic_review": "verification/reviews/four-concrete-host.md"
   }
 }

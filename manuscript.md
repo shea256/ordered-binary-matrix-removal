@@ -557,9 +557,11 @@ nonanchor crown exclusion, laminar role supports, protected sampling
 probabilities, and arbitrary path assignments. The all-depth proof above
 is separate from finite evidence. A subsequent separate-agent adversarial
 review found no material error; it is not independent mathematical peer
-review. Lean checks conditional helper theorems, including anchor-count
-classification, local arithmetic, and arbitrary-depth propagation.
-The concrete-host connections and the final removal theorem remain
+review. Lean now defines the concrete host and its two orders and proves
+the anchor-count classification for every actual ordered copy at every
+depth. Local arithmetic, arbitrary-depth propagation, and inherited
+sampling lemmas are also checked. Zero-cell localization, the concrete
+arbitrary-repair connections, and the final removal theorem remain
 unformalized; novelty screening remains inconclusive. See the
 [assurance checkpoint](verification/reviews/four-assurance.md).
 

@@ -32,7 +32,10 @@ independent acceptance is asserted.
 
 The [separate-agent report](verification/reviews/four-separate-agent.md)
 and its checker retain reviewer provenance. The coordinating agent wrote
-the additional literal checker and the partial Lean modules. The latter
-formalize conditional parts of the current argument; propagation and
-sampling are inherited methods, not new mathematical contributions.
-Their actual coverage is described in [formal/README.md](formal/README.md).
+the additional literal checker and the new formal bridges. Generic host,
+order, and sampling modules were adapted from the pinned upstream Lean
+sources with attribution headers. In particular, the three-seed sampler is
+already present in upstream `ThreeSeedSampling.lean`; neither it nor the
+propagation/sampling methods are new mathematical contributions.
+The full original upstream development has not been rebuilt. Actual formal
+coverage is described in [formal/README.md](formal/README.md).
