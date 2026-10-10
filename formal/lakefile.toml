@@ -1,0 +1,6 @@
+name = "orderedRemovalAudit"
+version = "0.1.0"
+defaultTargets = ["OrderedRemoval"]
+
+[[lean_lib]]
+name = "OrderedRemoval"

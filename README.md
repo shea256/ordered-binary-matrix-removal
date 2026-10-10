@@ -7,7 +7,12 @@ induced removal from **66×66 to 4×4**, refining our earlier 15×15 and 5×5
 candidates. The complete **4×4 forbidden pattern** contains a **2×2 anchor
 component** plus two additional rows and columns. The manuscript contains
 the full written argument and exact finite checks. Independent mathematical
-review, formalization, and a conclusive novelty assessment remain pending.
+review, end-to-end formalization, and a conclusive novelty assessment remain pending.
+
+A [separate-agent adversarial review](verification/reviews/four-separate-agent.md)
+found no material error in the written argument. Two additional exact checkers
+and a [partial Lean development](formal/README.md) are included. This is
+additional evidence; the result retains candidate status.
 
 ![Forbidden pattern sizes decrease from OpenAI's 66×66 baseline to candidate patterns of 15×15, 5×5, and 4×4. The vertical axis is the pattern side length; stages show refinement order, not elapsed time. Independent mathematical review of the candidates remains pending.](assets/pattern-size-history.png)
 
@@ -63,7 +68,9 @@ This regenerates exact reports, compares them to checked-in references, and
 validates repository artifacts. Receipts go to ignored `.context/` files.
 The 4×4 census checks all copies through depth 4 without assuming the
 localization theorem, and the separate count calculation runs through
-depth 8. The suite retains the earlier candidates' checks.
+depth 8. A fresh literal implementation repeats the full census and negative
+controls, and the separate reviewer's checker examines unbalanced copies
+through depth 7. The suite retains the earlier candidates' checks.
 
 For optional network source verification:
 
@@ -74,7 +81,12 @@ python3 verification/check_sources.py
 
 The 78-file source cache is ignored. Offline checks validate manifest metadata,
 not downloaded source bytes. The original source audit is preserved separately.
-No Lean build or formal proof of the new theorem is included.
+The original upstream Lean formalization has not been rebuilt here.
+For the new partial Lean development, install the pinned Lean 4.34.1 toolchain
+and run `python3 scripts/run_formal_checks.py`. This audits 34 helper theorems
+and replays their dependencies in the Lean kernel. The concrete host
+connections and full removal theorem remain unformalized; see
+[formalization coverage](formal/README.md).
 
 Rebuild the PDF with `pdflatex` (TeX Live and the packages named in the build
 script): `python3 scripts/build_manuscript.py`. To regenerate the LaTeX source
@@ -100,6 +112,6 @@ The earlier [15×15](proofs/compressed-pattern.md) and
 previous 5×5 manuscript is available at its
 [release commit](https://github.com/shea256/ordered-binary-matrix-removal/tree/f16d432d9a918c694f0b404a12f744c0c8b0db03).
 
-Prepared by Ryan Shea with Codex assistance. AI assistance and same-agent
-second-pass checking are not independent peer review. Licensed under
+Prepared by Ryan Shea with Codex assistance. AI assistance, same-agent checks,
+and separate-agent review are not independent peer review. Licensed under
 [Apache 2.0](LICENSE); see [NOTICE](NOTICE).

@@ -15,6 +15,21 @@ assert status['anchor_size'] == 2 and status['host_coefficient'] == 14
 assert report['anchor'] == [[0, 1], [1, 0]]
 repair = json.loads((ROOT / status['repair_verification_report']).read_text())
 assert sum(row['leaf_choices_checked'] for row in repair['flipped_parent_zero_set']) == 510
+literal = json.loads((ROOT / status['literal_verification_report']).read_text())
+assert [x['copies'] for x in literal['literal_censuses']] == [128, 18944, 1687552, 123207680, 128]
+assert all(x['copies_outside_zero_set'] == 0 for x in literal['literal_censuses'])
+reviewer = json.loads((ROOT / status['reviewer_verification_report']).read_text())
+assert [x['h'] for x in reviewer['checks']] == list(range(1, 8))
+review = status['separate_agent_review']
+assert (ROOT / review['report']).is_file() and review['independent_peer_review'] is False
+formal = status['formalization']
+assert formal['status'] == 'partial' and formal['concrete_host_connections_formalized'] is False
+audit = json.loads((ROOT / formal['audit']).read_text())
+assert audit['end_to_end_removal_theorem_formalized'] is False
+assert audit['theorem_count'] == len(audit['axioms']) == formal['helper_theorems']
+assert all(set(used) <= {'propext', 'Quot.sound', 'Classical.choice'} for used in audit['axioms'].values())
+for name, expected in audit['sources'].items():
+    assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected, name
 proof = (ROOT / status['proof_file']).read_text()
 manuscript = (ROOT / 'manuscript.md').read_text()
 assert manuscript[manuscript.index('## Statement'):] == proof[proof.index('## Statement'):].replace('../verification/', 'verification/')

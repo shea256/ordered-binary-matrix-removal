@@ -1,7 +1,8 @@
 # Attribution and scope
 
-Author: Ryan Shea. Developed with Codex assistance; no independent reviewer
-or specific model configuration is claimed by this package.
+Author: Ryan Shea. Developed with Codex assistance. A separate Codex reviewer
+audited the 4×4 argument; this is not independent mathematical peer review.
+No specific model configuration is claimed by this package.
 
 The construction adapts OpenAI, *Polynomial removal fails for ordered binary
 matrices*, September 25, 2026, pinned at
@@ -28,3 +29,10 @@ track. The current manuscript describes the 4×4 candidate; the 5×5 and
 literature and the unresolved novelty check are recorded in
 [BASELINE.md](BASELINE.md). No Lean certificate for the new result or
 independent acceptance is asserted.
+
+The [separate-agent report](verification/reviews/four-separate-agent.md)
+and its checker retain reviewer provenance. The coordinating agent wrote
+the additional literal checker and the partial Lean modules. The latter
+formalize conditional parts of the current argument; propagation and
+sampling are inherited methods, not new mathematical contributions.
+Their actual coverage is described in [formal/README.md](formal/README.md).

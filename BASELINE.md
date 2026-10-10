@@ -62,9 +62,10 @@ MatrixRemoval source modules were scanned: no lexical `sorry`, `axiom`,
 or `admit` hits. Their imports outside that namespace are only Mathlib.
 The comparator allows `propext`, `Quot.sound`, and `Classical.choice`.
 The pinned toolchain is Lean 4.34.1; the Mathlib revision is recorded in
-the downloaded lake manifest. No Lean/lake executable is installed in
-this workspace, and no build, kernel axiom audit, or Comparator run was
-performed. Source inspection and lexical checks are weaker than a build.
+the downloaded lake manifest. At that initial source audit no Lean/lake
+executable was installed, and no upstream build, kernel axiom audit, or
+Comparator run was performed. Source inspection and lexical checks are
+weaker than a build. The later partial development below is separate.
 
 The paper's construction, arbitrary-repair propagation, mode localization
 and asymptotic calculation were recalculated in this attempt; a second
@@ -210,3 +211,17 @@ The all-c,C conclusion follows with the same fixed 4×4 H. See
 [four-by-four.md](proofs/four-by-four.md). The 5×5 pure-anchor proof and
 its two-by-two limitation are preserved as history: this refinement
 changes the localization requirement, not that limitation's truth.
+
+## Assurance checkpoint — 2026-10-10
+
+Both the coordinating agent and a user-authorized separate reviewer rechecked
+upstream main; it still matched the pinned commit. The reviewer also inspected
+the primary introduction, localization, and arbitrary-repair sections.
+Additional title/correction/4×4 searches found no stronger direct primary
+follow-up. The previous companion audit remains; novelty is unresolved.
+
+The separate reviewer found no material error in the 4×4 written argument.
+The new local Lean 4.34.1 development proves conditional parts of that
+argument using Std only. It does not rebuild or supersede the original
+61-module formalization and does not certify the final 4×4 theorem.
+See the [assurance checkpoint](verification/reviews/four-assurance.md).

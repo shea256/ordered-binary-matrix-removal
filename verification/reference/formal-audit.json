@@ -1,0 +1,154 @@
+{
+  "status": "partial_formalization",
+  "end_to_end_removal_theorem_formalized": false,
+  "lean_version": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "theorem_count": 34,
+  "axioms": {
+    "OrderedRemoval.AnchorClassification.rows_distinct": [],
+    "OrderedRemoval.AnchorClassification.columns_distinct": [],
+    "OrderedRemoval.AnchorClassification.balanced_counts": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.AnchorClassification.anchor_counts": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.parity_order": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.terminal_crown_impossible": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.balanced_v_plus": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.balanced_v_minus": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.balanced_w_plus": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.balanced_w_minus_internal": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.balanced_w_minus_leaf": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.unbalanced_v_plus_parent": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.unbalanced_v_plus_own": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.unbalanced_v_plus_leaf_minus": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.unbalanced_v_minus_own": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.unbalanced_v_minus_parent": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.unbalanced_w_plus_own": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.unbalanced_w_plus_parent": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.unbalanced_w_plus_leaf_minus": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.unbalanced_w_minus_parent_minus": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.unbalanced_w_minus_internal": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.unbalanced_w_minus_leaf": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.unbalanced_w_minus_leaf_plus": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.last_row_leaf_case": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.last_row_parent_case": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.LocalArithmetic.reversed_parity_arithmetic_witness": [],
+    "OrderedRemoval.Propagation.one_step": [
+      "propext"
+    ],
+    "OrderedRemoval.Propagation.propagate": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Propagation.exists_body": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.ProtectedSampling.count_or_le": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.ProtectedSampling.union_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.ProtectedSampling.sum_frequency_bound": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.ProtectedSampling.exists_untouched": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.ProtectedSampling.exists_body_of_small_edit_set": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "kernel_replay": "replaying OrderedRemoval with --fresh",
+  "sources": {
+    "formal/OrderedRemoval/AnchorClassification.lean": "620b609eb2a5686e79001eef884528fe680bcbf7d7af912015c6b7913127eda0",
+    "formal/OrderedRemoval/LocalArithmetic.lean": "b9f55d52d32724f5f8380ccd422d0ffaf9fcf666db8a4b2543377db6c0a89b18",
+    "formal/OrderedRemoval/Propagation.lean": "d77f4202dcb78cfdd9f5219f281a59d1239ba93d9585b78f267486e707df0506",
+    "formal/OrderedRemoval/ProtectedSampling.lean": "f605783e63155e48c8708a01d8d6371bf36e926c32f60ae4669ff9b0a1feafc0",
+    "formal/OrderedRemoval.lean": "f5f105c3960a5062916798bb4ef7c856801627b017cbfb866539c0f0476496f5",
+    "formal/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "formal/lakefile.toml": "ad923a60006008e7ab61ccba4c0113840fb9c0d9f238a8b7120708582d1ea1da",
+    "formal/lake-manifest.json": "fac9261b31dfcb9f8dda61804affc383eab5f8256561da699c314b18aef254bf"
+  }
+}

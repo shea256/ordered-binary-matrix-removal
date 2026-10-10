@@ -1,0 +1,111 @@
+{
+  "checks": [
+    {
+      "h": 1,
+      "role_support_pairs": 288,
+      "earlier_minus_support_cases": 0,
+      "relaxed_unbalanced_configurations": {
+        "W-": 9
+      },
+      "complete_unbalanced_quotient_configurations": 0,
+      "weighted_unbalanced_families": {},
+      "weighted_unbalanced_total": 0
+    },
+    {
+      "h": 2,
+      "role_support_pairs": 1152,
+      "earlier_minus_support_cases": 3,
+      "relaxed_unbalanced_configurations": {
+        "W-": 22
+      },
+      "complete_unbalanced_quotient_configurations": 9,
+      "weighted_unbalanced_families": {
+        "parent_full": 8192,
+        "leaf_plus": 1536,
+        "leaf_minus": 1024
+      },
+      "weighted_unbalanced_total": 10752
+    },
+    {
+      "h": 3,
+      "role_support_pairs": 2592,
+      "earlier_minus_support_cases": 6,
+      "relaxed_unbalanced_configurations": {
+        "W-": 44
+      },
+      "complete_unbalanced_quotient_configurations": 58,
+      "weighted_unbalanced_families": {
+        "parent_half": 131072,
+        "parent_full": 786432,
+        "leaf_plus": 147456,
+        "leaf_minus": 98304
+      },
+      "weighted_unbalanced_total": 1163264
+    },
+    {
+      "h": 4,
+      "role_support_pairs": 4608,
+      "earlier_minus_support_cases": 9,
+      "relaxed_unbalanced_configurations": {
+        "W-": 88
+      },
+      "complete_unbalanced_quotient_configurations": 276,
+      "weighted_unbalanced_families": {
+        "parent_half": 12582912,
+        "parent_full": 58720256,
+        "leaf_plus": 11010048,
+        "leaf_minus": 7340032
+      },
+      "weighted_unbalanced_total": 89653248
+    },
+    {
+      "h": 5,
+      "role_support_pairs": 7200,
+      "earlier_minus_support_cases": 12,
+      "relaxed_unbalanced_configurations": {
+        "W-": 176
+      },
+      "complete_unbalanced_quotient_configurations": 1192,
+      "weighted_unbalanced_families": {
+        "parent_half": 939524096,
+        "parent_full": 4026531840,
+        "leaf_plus": 754974720,
+        "leaf_minus": 503316480
+      },
+      "weighted_unbalanced_total": 6224347136
+    },
+    {
+      "h": 6,
+      "role_support_pairs": 10368,
+      "earlier_minus_support_cases": 15,
+      "relaxed_unbalanced_configurations": {
+        "W-": 352
+      },
+      "complete_unbalanced_quotient_configurations": 4944,
+      "weighted_unbalanced_families": {
+        "parent_half": 64424509440,
+        "parent_full": 266287972352,
+        "leaf_plus": 49928994816,
+        "leaf_minus": 33285996544
+      },
+      "weighted_unbalanced_total": 413927473152
+    },
+    {
+      "h": 7,
+      "role_support_pairs": 14112,
+      "earlier_minus_support_cases": 18,
+      "relaxed_unbalanced_configurations": {
+        "W-": 704
+      },
+      "complete_unbalanced_quotient_configurations": 20128,
+      "weighted_unbalanced_families": {
+        "parent_half": 4260607557632,
+        "parent_full": 17317308137472,
+        "leaf_plus": 3246995275776,
+        "leaf_minus": 2164663517184
+      },
+      "weighted_unbalanced_total": 26989574488064
+    }
+  ],
+  "scope": "Separate-agent finite support/localization audit; no full-copy census or universal certification."
+}

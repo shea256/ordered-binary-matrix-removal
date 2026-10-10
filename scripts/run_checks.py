@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 out = ROOT / ".context"
 out.mkdir(exist_ok=True)
 receipt = {"python": platform.python_version(), "platform": platform.platform(), "checks": []}
-for name in ("compression", "adversarial", "refinement", "four", "four_repair"):
+for name in ("compression", "adversarial", "refinement", "four", "four_repair", "four_literal", "four_reviewer"):
     start = time.monotonic()
     result = subprocess.run([sys.executable, str(ROOT / "verification" / ("check_" + name + ".py"))], check=True, capture_output=True, text=True)
     report = json.loads(result.stdout)

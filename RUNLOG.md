@@ -129,3 +129,69 @@ checks in `python3 scripts/run_checks.py` passed, including deterministic
 reference comparisons and package integrity (52 local links and matching
 manuscript hashes). `git diff --check` passed. The mathematical result and
 its candidate classification are unchanged.
+
+## Separate-agent audit and partial Lean formalization — 2026-10-10
+
+The user confirmed the 4×4 and graphic merges. PR #2 was verified merged
+as `0b8b039`. This work starts from that commit on local branch
+`shea256/four-proof-audit`. The user explicitly authorized a separate
+reviewer; it received a fresh task context and wrote a detailed report
+and separate support/unbalanced-copy checker. No model override was set.
+The report found no material error, missing case, or incorrect count.
+This is a separate-agent audit, not independent mathematical peer review.
+
+Rechecked upstream main and title/correction/smaller-pattern searches.
+The source pin remained `fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb`.
+No stronger direct primary follow-up was found; novelty remains unresolved.
+
+The coordinating agent wrote `verification/check_four_literal.py` without
+research-code imports, using sorted tree-interval endpoints and a column
+dynamic program. It reproduced all copy totals through h=4 and the
+expanded 32×32 h=1 host. Its exact alternate three-seed sampler check
+covered h=1,2,3. Reversing minus modes gave 131,072 nonlocalized copies
+at h=3; flipping the original zero set produced 256 new copies at h=1.
+The reviewer separately checked supports and unbalanced copies through h=7.
+Its script's runtime-version output field was removed for portable JSON
+comparison; the mathematics and checked cases were unchanged.
+
+Installed the official Lean 4.34.1 release binary in the ignored workspace
+cache, commit `5045d0056413266e57c625dcd7c365b10e377c52`. The initial extraction
+needed the system zstd package. The formal project uses Std and has no
+third-party packages. The original 61-module upstream development was
+not rebuilt. Initial compilation caught unfolding/decidability and tactic
+syntax issues; these were corrected before the successful build.
+
+Actual commands, with the pinned Lean/Lake and Pandoc binaries on PATH:
+
+```sh
+python3 scripts/run_formal_checks.py
+python3 scripts/run_checks.py
+python3 scripts/build_manuscript.py --regenerate-tex
+python3 scripts/validate_repository.py
+git diff --check
+```
+
+The formal build succeeded. All 34 exported helper theorems passed the
+dependency audit, using only `propext`, `Quot.sound`, and `Classical.choice`.
+`leanchecker --fresh OrderedRemoval` replayed imported and new declarations
+successfully in a fresh Lean kernel environment. Its exact source hashes
+are archived in `verification/reference/formal-audit.json`. No claim of a
+formalized concrete host or final removal theorem follows from these
+conditional statements. The three-seed sampler differs from the paper's
+independent representative sampler; its incidence extraction is unformalized.
+
+All seven exact checks and deterministic reference comparisons passed on
+Python 3.9.25: compression, adversarial, refinement, four, four_repair,
+four_literal, and four_reviewer. The recorded elapsed times were 1.585,
+3.186, 9.181, 3.818, 0.684, 4.544, and 0.622 seconds respectively, under
+this run's shared machine load; these are execution records, not benchmarks.
+Package integrity passed with 93 local links and matching manuscript hashes.
+After the reviewer's three wording clarifications and verification update,
+Pandoc 3.6.4 and three pdflatex passes produced a nine-page PDF with no
+warnings. The theorem statement is unchanged.
+
+The audit report, new exact scripts/references, and partial formal project
+were mirrored into the originating open-math-problems track. The catalog
+keeps Candidate result and records the next concrete host formalization
+checkpoint. No commit, push, PR, author contact, or paid action was made
+for this audit.
