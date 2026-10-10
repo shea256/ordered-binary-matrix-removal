@@ -1,0 +1,8 @@
+.context/
+verification/upstream/
+__pycache__/
+*.pyc
+*.aux
+*.log
+*.out
+*.toc

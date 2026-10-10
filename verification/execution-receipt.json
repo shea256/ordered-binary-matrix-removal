@@ -1,0 +1,16 @@
+{
+  "python": "3.9.25",
+  "platform": "Linux-6.18.49-x86_64-with-glibc2.34",
+  "checks": [
+    {
+      "name": "compression",
+      "reference_matches": true,
+      "elapsed_seconds": 2.101
+    },
+    {
+      "name": "adversarial",
+      "reference_matches": true,
+      "elapsed_seconds": 4.3
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "upstream_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "source_hashes_checked": 78,
+  "local_lean_modules_scanned": 61,
+  "lexical_hole_hits": [],
+  "lean_build_performed": false,
+  "audit_date": "2026-10-10",
+  "origin": "shea256/open-math-problems, OPENAI-190; same-agent source inspection",
+  "scope": "Historical source integrity and lexical scan, not a Lean build or kernel axiom audit."
+}

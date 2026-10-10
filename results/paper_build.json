@@ -1,0 +1,20 @@
+{
+  "engine": "pdfTeX 3.141592653-2.6-1.40.22 (TeX Live 2021)",
+  "passes": 3,
+  "shell_escape": false,
+  "warnings": [],
+  "artifacts": {
+    "manuscript.md": {
+      "sha256": "e909942e1c5d8c5336745662abbec9ce9acf0419cd614c48dd9a24f63a6c5831",
+      "bytes": 19460
+    },
+    "tex/manuscript.tex": {
+      "sha256": "d8192c3142731924e9f23d58e3db238ec3dc559e8ce4d01924141a8d463c718a",
+      "bytes": 21880
+    },
+    "manuscript.pdf": {
+      "sha256": "91f7d6a627a77e16d775b17d0322d9746d7e2988554c2a684db008133ca9b7b7",
+      "bytes": 193141
+    }
+  }
+}

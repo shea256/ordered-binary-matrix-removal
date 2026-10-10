@@ -1,0 +1,474 @@
+{
+  "upstream_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "retrieved_utc": "2026-10-10T06:20:56.489343+00:00",
+  "files": [
+    {
+      "path": "CONTENTS.md",
+      "sha256": "cc7c0b8a1cdedd845a777e77cf682657308503daf8346c1349e06e9259d063c2",
+      "bytes": 638727,
+      "local_path": "CONTENTS.md.source"
+    },
+    {
+      "path": "lean/docs/190.md",
+      "sha256": "49953f7f760a262f20bf5b8876d42e0ce43f0d361505a05d51aa3d805a67595b",
+      "bytes": 1029,
+      "local_path": "lean/docs/190.md.source"
+    },
+    {
+      "path": "lean/ComparatorChallenges/MatrixRemoval.lean",
+      "sha256": "1db0fac5a4ddc57a90e9950cfd4e7e4e1681b4c8ce755e6ba5c169f3656b77e9",
+      "bytes": 2104,
+      "local_path": "lean/ComparatorChallenges/MatrixRemoval.lean"
+    },
+    {
+      "path": "lean/ComparatorChallenges/MatrixRemoval.json",
+      "sha256": "f746b2a374277d201eea7f901128a4833c7b637d1a8d17f33d0835a6fbfe5430",
+      "bytes": 336,
+      "local_path": "lean/ComparatorChallenges/MatrixRemoval.json"
+    },
+    {
+      "path": "lean/formalization.yaml",
+      "sha256": "5a8a164259591208886cd018416e61552665265ec9e20cff636f9d51117c2278",
+      "bytes": 79482,
+      "local_path": "lean/formalization.yaml"
+    },
+    {
+      "path": "lean/lean-toolchain",
+      "sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+      "bytes": 25,
+      "local_path": "lean/lean-toolchain"
+    },
+    {
+      "path": "lean/lakefile.lean",
+      "sha256": "4cca977ebece444b6c999d99755c1ad3c93119bafc127ea761f7f703c7279e74",
+      "bytes": 15457,
+      "local_path": "lean/lakefile.lean"
+    },
+    {
+      "path": "lean/lake-manifest.json",
+      "sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+      "bytes": 14622,
+      "local_path": "lean/lake-manifest.json"
+    },
+    {
+      "path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/README.md",
+      "sha256": "042572470214dc8d05cb38c043bebdad24fff72f0ea164987baeb4a591db85da",
+      "bytes": 646,
+      "local_path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/README.md.source"
+    },
+    {
+      "path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/build/paper.tex",
+      "sha256": "c064cb2b0696fc0e8b038cb2c0434a81f2d0b808925dec3adc4bddacc543cf15",
+      "bytes": 1791,
+      "local_path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/build/paper.tex"
+    },
+    {
+      "path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/build/references.bib",
+      "sha256": "f002b86465ec74533a3f1ecef38c0bc4d244a5327a6b12dad217d2cfada5dda1",
+      "bytes": 2481,
+      "local_path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/build/references.bib"
+    },
+    {
+      "path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/build/sections/01-introduction.tex",
+      "sha256": "88d6ccc55361ba0409a9d532a8b075f3f688c44568a376c5f5b27f437bf110b2",
+      "bytes": 6813,
+      "local_path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/build/sections/01-introduction.tex"
+    },
+    {
+      "path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/build/sections/02-construction.tex",
+      "sha256": "19dbe8eea7abc5165a27f450bb4fab0d9c2f59caf40eaec47c6ace73819916ec",
+      "bytes": 8195,
+      "local_path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/build/sections/02-construction.tex"
+    },
+    {
+      "path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/build/sections/03-pinning.tex",
+      "sha256": "bda96d50abbf389ef99fdc0a8888b3068c6d25d79c213f15edf7d66907c89467",
+      "bytes": 8738,
+      "local_path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/build/sections/03-pinning.tex"
+    },
+    {
+      "path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/build/sections/03b-count.tex",
+      "sha256": "11c3c67a6c042ef1d03387ac2c3e76a89703d508efbb24480f7d1ada0f6f47be",
+      "bytes": 3807,
+      "local_path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/build/sections/03b-count.tex"
+    },
+    {
+      "path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/build/sections/04-distance.tex",
+      "sha256": "4f7e9ca6e5f9a88d3a091758acf76dade80096f06a978089b3b232d355125acb",
+      "bytes": 5606,
+      "local_path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/build/sections/04-distance.tex"
+    },
+    {
+      "path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/build/sections/05-conclusion.tex",
+      "sha256": "69887cbbce732bcf32e271b8bb4c1823e6d17a82e22e920572b4b3f886c78da9",
+      "bytes": 2447,
+      "local_path": "preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/build/sections/05-conclusion.tex"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/AnchorFrames.lean",
+      "sha256": "cb9ec45e6c69d6078645957ce7bb8afd48af9f823de93a0df7b48dce750142c0",
+      "bytes": 6490,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/AnchorFrames.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/AnchorGroups.lean",
+      "sha256": "f43e1b4d74eb621c8c8efff315bb009158b91174e8c3ddb3afce56c85b224c3e",
+      "bytes": 7563,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/AnchorGroups.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/AnchorPatternBridge.lean",
+      "sha256": "11b386d6c5b839c5fd912b2f43e36439ddd51d3bb5943d121c8d1d0d317901e6",
+      "bytes": 6001,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/AnchorPatternBridge.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/AnchorPatternFixed.lean",
+      "sha256": "cb679642fc8f10683d7c97f2d859c01acd67a9ce0a77b2def7cb50ad36cb7f66",
+      "bytes": 3082,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/AnchorPatternFixed.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/AnchorProperties.lean",
+      "sha256": "f1c7e2ed9227ec6fb4faddaa1484d8cef3085fcb66e5dd528a6f1d718bf926cf",
+      "bytes": 4477,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/AnchorProperties.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/AnchorRigidity.lean",
+      "sha256": "f7f37e1bf6facd820ad0f0821ea760be6f0cacd27604f91379ad486e8a2d0c2c",
+      "bytes": 8362,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/AnchorRigidity.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/AnchorRigidityFixed.lean",
+      "sha256": "a1f54f5587e0c2bf7df2d510e93b4fc22b831c90eae87740fdcb39032993aaa1",
+      "bytes": 5563,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/AnchorRigidityFixed.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/Asymptotics.lean",
+      "sha256": "f97ca3d114583c3e6a47b5ea23a0e077ee8118d66a2fb6758c585d50f833e2f8",
+      "bytes": 2630,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/Asymptotics.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/BodyExtension.lean",
+      "sha256": "6c2dfcce9ffac09370c5217bf9445a304089f645ab920fb7f4809381de0ac51c",
+      "bytes": 5050,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/BodyExtension.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/BodyRoles.lean",
+      "sha256": "39fc7582de0e209afaf55338570652ebc7fb38786e1b7b33ca4842cb8c1e3110",
+      "bytes": 2826,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/BodyRoles.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/CanonicalCopyBound.lean",
+      "sha256": "e28a4f9a4589b1afa157cd47b44e06afb905adca0a6333b58d5dfeca4024b14e",
+      "bytes": 1348,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/CanonicalCopyBound.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/CanonicalHorizontal.lean",
+      "sha256": "253e242fee779345559b3a607d2ad116d3358ae4a126e6b5e5697219489c29bd",
+      "bytes": 2214,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/CanonicalHorizontal.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/CanonicalModeEntries.lean",
+      "sha256": "660a795beacd178d23d281b4259134d40b0a04fed1dcd86bd4458d90f7fc0823",
+      "bytes": 2410,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/CanonicalModeEntries.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/Consequence.lean",
+      "sha256": "175b9d685666729b293f4b81d433c1a924607ddf0f2539996676cd2ffe5137fc",
+      "bytes": 1793,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/Consequence.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/CopyBound.lean",
+      "sha256": "39500fa77a03270e55f8b1c7c54e7581d8e3f2550043c01d670780ae8f743ac7",
+      "bytes": 2563,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/CopyBound.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/CopyBoundFixed.lean",
+      "sha256": "3c5d3ceee4a948e3ffef4cf5613b6ce1e7c4211ae70c002e5337a7992f094122",
+      "bytes": 3335,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/CopyBoundFixed.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/DirectNonshattering.lean",
+      "sha256": "37f4fd9a29a164cccc4536cb80493dc7963a2cb5a92451bc6258e1a3e88eeb5c",
+      "bytes": 12231,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/DirectNonshattering.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/GuardContainment.lean",
+      "sha256": "843944d0859fe47fffd9ed01366868dc8b3bd1c83e15a5484796133009e728b8",
+      "bytes": 6678,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/GuardContainment.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/GuardedFrame.lean",
+      "sha256": "fdb5ee6a6a9cb482c6754f20c9055dc05c9bfc8e6e0f10f8e545f7bc3bbbbf97",
+      "bytes": 2899,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/GuardedFrame.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/GuardedPath.lean",
+      "sha256": "f3609fcd68954f2002cdb92c6e709f39a65de3a2f75f8cb9e57c05a7e6572c3f",
+      "bytes": 6182,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/GuardedPath.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/Host.lean",
+      "sha256": "edb6c4c55143cf8b7db2bd0bdeef49ae7371b60969e3f9e4be5376107e2fe206",
+      "bytes": 5742,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/Host.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostAnchorFrames.lean",
+      "sha256": "1ede630260ca229b51a03a8d0934bb0f1b4777a83058f5b35830804be12056ef",
+      "bytes": 4163,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostAnchorFrames.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostAnchorGroups.lean",
+      "sha256": "26bc520b98ee30865e4026eb1626389b67854346e060a9cc1d79babdc0147858",
+      "bytes": 4222,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostAnchorGroups.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostAnchorPinning.lean",
+      "sha256": "afe91fe22c38a9b3a47b14af52e0f4aa8117089705b78a599e7922e3663f72d8",
+      "bytes": 8872,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostAnchorPinning.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostAnchorRigidity.lean",
+      "sha256": "e34d5123d61821d4db9ffafa0b322214bf65e7f9cecd37a48b6d3dbc94ab6f24",
+      "bytes": 12361,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostAnchorRigidity.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostBodyModes.lean",
+      "sha256": "e492705d6c030a6b84e049dbaac69b5d0b93a21b6f9f172095e0688a48906b84",
+      "bytes": 5566,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostBodyModes.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostBodyOrder.lean",
+      "sha256": "85248a08aff02858825936cfb1dbfff6c54c28c61a2f757ea5d3b5c0e555f48f",
+      "bytes": 7377,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostBodyOrder.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostCopyBound.lean",
+      "sha256": "5f448edfabebe7e5d8b1d9ee4ffbc8476dfafc1170d84e1bf4fc0080bdd72378",
+      "bytes": 4550,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostCopyBound.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostModeIncidence.lean",
+      "sha256": "16db00997488f3b6e6a3a0cb6d31118ffe8c1ccf4b481fcdf2a5e7553cfe7a2b",
+      "bytes": 7289,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostModeIncidence.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostNonshattering.lean",
+      "sha256": "1bec1944f5d0bb71866a4e926eaf18e707a3c6a01b3c9558e77fde85cd645513",
+      "bytes": 7000,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostNonshattering.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostRepairDistance.lean",
+      "sha256": "7d2f875c88ea891c283d6f972d5de3ec0170d6aa2e0174e7ff3e2013f63a4dfc",
+      "bytes": 4314,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostRepairDistance.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostRoleExtraction.lean",
+      "sha256": "bf78b6e951e6dc8257c77e60971966963b74afe7d3f5d01f3b5d85fdba6f4522",
+      "bytes": 6003,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostRoleExtraction.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostRootLeaf.lean",
+      "sha256": "a1a248cacc3165d27bad6e19ed81a83379414d84cbd924ae6c557fe715181815",
+      "bytes": 5090,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostRootLeaf.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostSampledPath.lean",
+      "sha256": "2b3187522699e44b2088d0a034fb94a8a1d8bae64948833cac38625ea3a59fed",
+      "bytes": 6354,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostSampledPath.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostSampledSelection.lean",
+      "sha256": "f222dcd878f251fe3dc2833cbf13a43a87564924d8fb61cf8efe5d854afc34ca",
+      "bytes": 10496,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostSampledSelection.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostSampling.lean",
+      "sha256": "f5d34ca59cec4e40af0880e16cf477868c8c2a2885a13d867ecfdc80c08a3409",
+      "bytes": 6652,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostSampling.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostSamplingCompatibility.lean",
+      "sha256": "ca9a99889c6e9d014f9180e5631122b5293006d2f89721653eaabd5140267ccb",
+      "bytes": 5754,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostSamplingCompatibility.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostTreeOrder.lean",
+      "sha256": "d161bb525408ccb3a922f6935673e13a4a719cac19ead94043795f2015e0a611",
+      "bytes": 3947,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostTreeOrder.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostTwins.lean",
+      "sha256": "34cf2f8a07ab4aea36ced4d8e0ac91ac24aacb36f9c7cbb6322e153142ce48fe",
+      "bytes": 5101,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostTwins.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/HostVerticalLocalization.lean",
+      "sha256": "af44a59ce5f0576b6a9ea1353e12dcb243abecde4788ad7f1d383db2128c5cec",
+      "bytes": 5509,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/HostVerticalLocalization.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/Main.lean",
+      "sha256": "d4cf1a3df649c78f65a3b703307f7870dfc91907ef40c26b884f5cf9c4ba398e",
+      "bytes": 1280,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/Main.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/ModeIncidence.lean",
+      "sha256": "e4bea20a05d5708f474eed3ba1cdf3be6c13a54b3eac3c5c2edf89006191c978",
+      "bytes": 9905,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/ModeIncidence.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/ModeLocalization.lean",
+      "sha256": "f61330401e862688e9dfb519b9b02bde3f517942c130e82e8eea2ee674ade00e",
+      "bytes": 2572,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/ModeLocalization.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/Model.lean",
+      "sha256": "0a752abd9bf68c4b99c0586a78ad7afb0ff441e74b098f2ab685b70d1143e731",
+      "bytes": 1796,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/Model.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/OrderedAnchorGroups.lean",
+      "sha256": "590c6ea6420203659a64621f1ca44f0d991fd13ed6a0bd7ab8a082a8c8b8c2e5",
+      "bytes": 2668,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/OrderedAnchorGroups.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/OrderedAnchorRigidity.lean",
+      "sha256": "a61bce44057a97a78410d3097bcc7e12229e859e7d975ddda8b35ced8fff25bb",
+      "bytes": 4734,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/OrderedAnchorRigidity.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/OrderedBodyLocalization.lean",
+      "sha256": "843688f1ec3d486cec12b3ca8833a29ae1e4df08149b96168b38283275d042a9",
+      "bytes": 2436,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/OrderedBodyLocalization.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/OrderedHost.lean",
+      "sha256": "dd957e81c006a0b1283b47e12e899dd0d6906087f22e55d5286990e70ce40e59",
+      "bytes": 8337,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/OrderedHost.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/OrderedHostCopy.lean",
+      "sha256": "bd16c7f6cf1a3c3cd4b83a3854f847a89b5927adcdf87e70d9e7bdadc658dddf",
+      "bytes": 2102,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/OrderedHostCopy.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/OrderedRepairDistance.lean",
+      "sha256": "484061d5b1c17e6723b2973df90b8f524943f869be71a44932ff55ecf289843c",
+      "bytes": 1438,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/OrderedRepairDistance.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/OrderedSampledSelection.lean",
+      "sha256": "4437d9dc8553614eabe04f1a5df0dfa215dcf2cc6fa8378d079665c315f91938",
+      "bytes": 2297,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/OrderedSampledSelection.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/PathPropagation.lean",
+      "sha256": "e0d4067d7b4b12bd5764760c7af386727a125f58a0e2bae9c2e4a892610bee0b",
+      "bytes": 5201,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/PathPropagation.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/PinnedHostCopy.lean",
+      "sha256": "2b3895398b1ab8ae9a9e5cb99b204ad457db2f3fd94b178a81c39ef3562b0bdb",
+      "bytes": 4870,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/PinnedHostCopy.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/SampledPath.lean",
+      "sha256": "4191cc7f463edb37a80199114cc40195210ce56924bd9d9e23c3ab5e801be950",
+      "bytes": 5880,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/SampledPath.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/SampledPathOrder.lean",
+      "sha256": "32ea2bc39ebff0cdaec1b52dbd85c7b0a63c0793c6890728cb05f430dbfbc0cb",
+      "bytes": 4623,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/SampledPathOrder.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/SamplingAvoidance.lean",
+      "sha256": "5123d3d03a665a03644e3d93bb6cb8b4b06fceee076fdf5781bd70ce0558e8c0",
+      "bytes": 7675,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/SamplingAvoidance.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/SamplingDistance.lean",
+      "sha256": "7e7ed42812f51415b416d3a7d3e27eb30bbb3e95428335886f359f85df4f180f",
+      "bytes": 3365,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/SamplingDistance.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/SelectedAnchorSparsity.lean",
+      "sha256": "b877ab258761c537e3369b6f046cc1d8133f0c03f1b1d7134936363707f46bfc",
+      "bytes": 8432,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/SelectedAnchorSparsity.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/SequenceAssembly.lean",
+      "sha256": "4f01dac023b5b14a9d8a92fd6daf6220d16d862140e88f6ee744398bd60c4ab6",
+      "bytes": 3634,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/SequenceAssembly.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/ThreeSeedSampling.lean",
+      "sha256": "37d9ecb9d62ce11ed8083e78e5c5c3172a85b6c57dc0cf0207f3e510d31a5be8",
+      "bytes": 8771,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/ThreeSeedSampling.lean"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/MatrixRemoval/TreePositions.lean",
+      "sha256": "2823af1fb5561ee19cb3682338e8b53aa29dd8805d69e04a141a91f3b86c8419",
+      "bytes": 10498,
+      "local_path": "lean/OAI/Combinatorics/MatrixRemoval/TreePositions.lean"
+    }
+  ]
+}

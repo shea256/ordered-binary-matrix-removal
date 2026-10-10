@@ -1,0 +1,8 @@
+Ordered Binary Matrix Removal
+Copyright 2026 Ryan Shea
+
+This work adapts constructions and arguments from OpenAI's
+"Polynomial removal fails for ordered binary matrices" (September 25, 2026),
+from the Apache-2.0-licensed openai/math repository at commit
+fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb.
+See ATTRIBUTION.md for inherited methods and proposed changes.

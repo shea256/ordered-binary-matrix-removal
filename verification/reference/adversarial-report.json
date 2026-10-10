@@ -1,0 +1,54 @@
+{
+  "anchor": {
+    "explicit_pattern_matches_independent_formula": true
+  },
+  "thresholds": {
+    "exceptional_triangle_threshold_cases": 74898,
+    "maximum_h": 6
+  },
+  "arbitrary_path_edits": [
+    {
+      "h": 1,
+      "free_binary_assignments": 8,
+      "H_free_path_assignments": 0
+    },
+    {
+      "h": 2,
+      "free_binary_assignments": 128,
+      "H_free_path_assignments": 0
+    },
+    {
+      "h": 3,
+      "free_binary_assignments": 2048,
+      "H_free_path_assignments": 0
+    },
+    {
+      "h": 4,
+      "free_binary_assignments": 32768,
+      "H_free_path_assignments": 0
+    }
+  ],
+  "failed_two_column_attack": {
+    "h": 2,
+    "rows": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "all_four_words": true
+  },
+  "scope": "Same-agent exact finite second pass; universal proof is in proofs/compressed-pattern.md."
+}
