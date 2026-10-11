@@ -3,7 +3,9 @@
 **Outcome:** the separate reviewer found no material error, omitted case,
 or incorrect count in the complete written argument. Two separately written
 checkers reproduce its finite predictions. The Lean development now constructs the actual host and proves its
-all-depth anchor classification. Localization and repair connections remain open.
+all-depth anchor classification and zero-cell localization, as well as the
+dummy last row and zero-set size bound. Copy counting and repair connections
+remain open.
 The pattern remains **4×4** and the result remains **candidate**.
 This checkpoint adds verification evidence, not a smaller obstruction or a
 new mathematical theorem. Separate-agent review is not independent peer review.
@@ -66,8 +68,14 @@ matrix theorem assumes only increasing row/column maps and the sixteen H4
 entries. Height-zero exclusion and a height-one witness are also checked.
 The [concrete-host review](four-concrete-host.md) found no semantic error.
 
-Local arithmetic still assumes extracted entry/order inequalities. The
-inherited three-seed mixer and fiber counts are now formalized, but concrete
+The [localization review](four-localization.md) checks the common-frame
+argument for both anchor configurations. Lean now extracts its role, entry,
+and order hypotheses from every actual copy, proves localization and the
+dummy last row, and injects the zero set into leaves × parity bits to prove
+`|T_h|≤2m`. Exact equality and the final copy-count inequality are not yet
+formalized.
+
+The inherited three-seed mixer and fiber counts are now formalized, but concrete
 protected-cell incidence extraction and designated-body extension to arbitrary
 edited matrices are not. The finite union bound and all-depth Boolean
 propagation remain checked components. The full removal theorem is therefore
@@ -80,9 +88,8 @@ records the actual theorem dependencies and source hashes.
 
 ## Next decisive step
 
-Extract the balanced and unbalanced localization cases from the concrete
-copy model and prove membership in the fixed zero set T_h. Then connect
-designated body extension, protected incidence counts, arbitrary repairs,
-and final quantifiers. Keep `new_result_formalized=false`. Human independent
+Derive the coarse copy count from the checked localization and zero-set
+size bound. Then connect designated body extension, protected incidence
+counts, arbitrary repairs, and final quantifiers. Keep `new_result_formalized=false`. Human independent
 review and novelty assessment are separate outstanding tasks. The earlier
 3×3 construction limitations remain in the originating research track.

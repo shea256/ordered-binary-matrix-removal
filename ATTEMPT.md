@@ -294,3 +294,32 @@ lemmas still need to be connected to protected cells of arbitrary repairs.
 Localization, the copy bound, repair extension, and final quantifiers remain
 formal obligations. This changes verification coverage, not pattern size
 or the written theorem's strength.
+
+## Concrete zero-cell localization — 2026-10-11
+
+The new Lean argument unifies balanced and unbalanced copies. The actual
+zero at (3,4) forces variable endpoints; crossed anchor ones identify a
+common mode B and its orientation. A dummy third column would force a
+balanced vertical mode and contradict the row order. The remaining third
+column is variable. Concrete column comparisons and the class-entry formula
+then exclude every nonleaf case. The minus-mode exclusion uses the revised
+parity order through an earlier-support parity inequality.
+
+The capstone takes an arbitrary ordered copy, with no supplied structural
+certificate or localization premise. It proves the fixed zero belongs to
+the leaf-to-parent-minus set. A separate argument forces the last row to
+be dummy: in the unbalanced case, a variable last row would have to be a
+leaf, and row antimonotonicity would contradict an earlier zero.
+
+Encoding a target cell by its leaf coordinate and the column coordinate's
+parity gives an injection into `Fin (2^h) × Fin 2`. This proves the upper
+bound `|T_h|≤2m` needed for `N_H≤2mn⁶`; the latter counting implication
+is still a formal obligation. Exact zero-set equality and the sharper
+copy formula are not claimed as formalized.
+
+The separate reviewer found no semantic error and preserved an independent
+finite transcription in `verification/check_four_localization.py`. It
+checks the generic lemma's weaker premises, not just full-copy cases, and
+includes a counterexample when the mode-order condition is omitted. This
+is verification progress for the existing 4×4 candidate, not a new size
+reduction, an independent peer review, or a complete removal theorem.

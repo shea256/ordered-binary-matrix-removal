@@ -1,0 +1,145 @@
+{
+  "python": "3.9.25",
+  "scope": "Separate-agent exact finite checks; no candidate-package imports, Lean build, or universal certification.",
+  "generic": {
+    "records": [
+      {
+        "h": 1,
+        "one_zero_triples": 9,
+        "ordered_survivors": 9
+      },
+      {
+        "h": 2,
+        "one_zero_triples": 76,
+        "ordered_survivors": 22
+      },
+      {
+        "h": 3,
+        "one_zero_triples": 626,
+        "ordered_survivors": 44
+      },
+      {
+        "h": 4,
+        "one_zero_triples": 5110,
+        "ordered_survivors": 88
+      },
+      {
+        "h": 5,
+        "one_zero_triples": 41246,
+        "ordered_survivors": 176
+      },
+      {
+        "h": 6,
+        "one_zero_triples": 331246,
+        "ordered_survivors": 352
+      },
+      {
+        "h": 7,
+        "one_zero_triples": 2654606,
+        "ordered_survivors": 704
+      }
+    ],
+    "missing_mode_order_counterexample": {
+      "h": 3,
+      "A": [
+        2,
+        "W",
+        "-",
+        1
+      ],
+      "B": [
+        2,
+        "W",
+        "-",
+        0
+      ],
+      "r": [
+        2,
+        "-",
+        2
+      ],
+      "c": [
+        2,
+        "-",
+        3
+      ],
+      "d": [
+        1,
+        "-",
+        1
+      ]
+    }
+  },
+  "bounds": {
+    "depths": [
+      0,
+      6
+    ],
+    "ordered_actual_position_pairs": 419513,
+    "all_six_implications_passed": true
+  },
+  "zeros": {
+    "records": [
+      {
+        "h": 0,
+        "zero_cells": 0,
+        "distinct_codes": 0
+      },
+      {
+        "h": 1,
+        "zero_cells": 4,
+        "distinct_codes": 4
+      },
+      {
+        "h": 2,
+        "zero_cells": 8,
+        "distinct_codes": 8
+      },
+      {
+        "h": 3,
+        "zero_cells": 16,
+        "distinct_codes": 16
+      },
+      {
+        "h": 4,
+        "zero_cells": 32,
+        "distinct_codes": 32
+      },
+      {
+        "h": 5,
+        "zero_cells": 64,
+        "distinct_codes": 64
+      },
+      {
+        "h": 6,
+        "zero_cells": 128,
+        "distinct_codes": 128
+      },
+      {
+        "h": 7,
+        "zero_cells": 256,
+        "distinct_codes": 256
+      },
+      {
+        "h": 8,
+        "zero_cells": 512,
+        "distinct_codes": 512
+      },
+      {
+        "h": 9,
+        "zero_cells": 1024,
+        "distinct_codes": 1024
+      },
+      {
+        "h": 10,
+        "zero_cells": 2048,
+        "distinct_codes": 2048
+      }
+    ],
+    "last_row_class_intersections": 200,
+    "class_intersection_depths": [
+      1,
+      100
+    ]
+  }
+}

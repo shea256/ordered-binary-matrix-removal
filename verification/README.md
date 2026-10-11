@@ -67,8 +67,18 @@ are separate from the old host code, but this is not independent peer review.
 The [review report](reviews/four-separate-agent.md) found no material error;
 the [assurance checkpoint](reviews/four-assurance.md) summarizes its scope.
 
-The optional [Lean project](../formal/README.md) verifies 34 conditional
-helper theorems, with an axiom audit and fresh Lean kernel replay. The
+The [Lean project](../formal/README.md) now verifies the concrete host,
+all-depth anchor classification, fixed-zero localization, dummy last row,
+and zero-set size bound, alongside conditional propagation/sampling lemmas.
+The audit checks every project declaration and replays each local module
+into its imported Lean environment; it does not freshly replay Mathlib. The
 archived receipt binds the exact sources. The default Python suite checks
-that binding but does not run Lean. Concrete host connections and the final
-removal theorem remain unformalized; finite checks cannot fill those gaps.
+that binding but does not run Lean. Copy counting, concrete arbitrary-repair
+connections, and the final removal theorem remain unformalized.
+
+The [localization review](reviews/four-localization.md) and its separate
+[checker](check_four_localization.py) cover the weaker generic localization
+premises through h=7, 419,513 ordered position pairs for column bounds,
+the zero code through h=10, and last-row class intersections through h=100.
+Its [output](reference/four-localization-report.json) is finite evidence;
+the Lean theorems supply the all-depth proofs for this checkpoint.

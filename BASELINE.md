@@ -225,3 +225,11 @@ The new local Lean 4.34.1 development proves conditional parts of that
 argument using Std only. It does not rebuild or supersede the original
 61-module formalization and does not certify the final 4×4 theorem.
 See the [assurance checkpoint](verification/reviews/four-assurance.md).
+
+### Localization checkpoint source recheck — 2026-10-11
+
+`gh api repos/openai/math/commits/main --jq '.sha'` again returned
+`fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb`. This checkpoint extends
+formal verification of the existing 4×4 candidate; it makes no new
+pattern-size or novelty claim. The strongest baseline comparison and
+outstanding independent-review/novelty qualifications above are unchanged.

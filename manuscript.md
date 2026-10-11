@@ -558,11 +558,12 @@ probabilities, and arbitrary path assignments. The all-depth proof above
 is separate from finite evidence. A subsequent separate-agent adversarial
 review found no material error; it is not independent mathematical peer
 review. Lean now defines the concrete host and its two orders and proves
-the anchor-count classification for every actual ordered copy at every
-depth. Local arithmetic, arbitrary-depth propagation, and inherited
-sampling lemmas are also checked. Zero-cell localization, the concrete
-arbitrary-repair connections, and the final removal theorem remain
-unformalized; novelty screening remains inconclusive. See the
+anchor-count classification, fixed-zero localization, and a dummy last row
+for every actual ordered copy at every depth. The zero-set cardinality upper
+bound of 2m, arbitrary-depth propagation, and inherited sampling lemmas are
+also checked. Copy counting, concrete arbitrary-repair connections, and the
+final removal theorem remain unformalized; novelty screening remains
+inconclusive. See the
 [assurance checkpoint](verification/reviews/four-assurance.md).
 
 [check_four_repair.py](verification/check_four_repair.py) additionally

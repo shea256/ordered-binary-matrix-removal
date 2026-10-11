@@ -11,3 +11,5 @@ import OrderedRemoval.ConcreteCopies
 import OrderedRemoval.ExtractAnchors
 import OrderedRemoval.AnchorCertificate
 import OrderedRemoval.IndexedHost
+import OrderedRemoval.LastRow
+import OrderedRemoval.ZeroSetSize

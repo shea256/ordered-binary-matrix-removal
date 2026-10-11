@@ -12,8 +12,8 @@ review, end-to-end formalization, and a conclusive novelty assessment remain pen
 A [separate-agent adversarial review](verification/reviews/four-separate-agent.md)
 found no material error in the written argument. Two additional exact checkers
 and a [partial Lean development](formal/README.md) are included. Lean now
-proves the anchor classification for every copy in the actual host at every
-depth. The full removal theorem remains unformalized; the result retains
+proves anchor classification, fixed-zero localization, and the dummy last
+row for every copy at every depth, plus the zero-set size bound `|T_h|≤2·2^h`. The full removal theorem remains unformalized; the result retains
 candidate status.
 
 ![Forbidden pattern sizes decrease from OpenAI's 66×66 baseline to candidate patterns of 15×15, 5×5, and 4×4. The vertical axis is the pattern side length; stages show refinement order, not elapsed time. Independent mathematical review of the candidates remains pending.](assets/pattern-size-history.png)
@@ -88,8 +88,9 @@ For the partial Lean development, install the pinned Lean 4.34.1 toolchain,
 fetch the pinned Mathlib cache with `(cd formal && lake exe cache get)`,
 and run `python3 scripts/run_formal_checks.py`. This audits the project
 axiom dependencies and replays each local module in Lean's kernel.
-The concrete host and anchor classification are checked; localization,
-arbitrary-repair connections, and the full theorem remain open. See
+The concrete host, anchor classification, localization, last row, and zero-set
+size bound are checked. Copy counting, arbitrary-repair connections, and
+the full theorem remain open. See
 [formalization coverage](formal/README.md).
 
 Rebuild the PDF with `pdflatex` (TeX Live and the packages named in the build
