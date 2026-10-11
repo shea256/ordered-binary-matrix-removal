@@ -1,0 +1,41 @@
+{
+  "current_result_id": "asymmetric-three-by-four-2026-10-11",
+  "pattern_shapes": [
+    [
+      66,
+      66
+    ],
+    [
+      15,
+      15
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      3,
+      4
+    ]
+  ],
+  "entries": [
+    4356,
+    225,
+    25,
+    16,
+    12
+  ],
+  "y_scale": "logarithmic",
+  "x_order": "selected constructions ordered by size, not publication date",
+  "current_theorem_formalized": true,
+  "matplotlib": "3.9.4",
+  "artifacts": {
+    "scripts/build_figure.py": "1778c49775f1418880795a919da091de8045020760bf7534707169d047440779",
+    "assets/pattern-size-history.png": "8bc2829d026f9d11c78987a7d77ba956efbaf7b319b74c94cb9ed864f718259e",
+    "assets/pattern-size-history.svg": "8d4c2bebe630005cf552ff43015548b6fd93a475a153f2a9f69bbd928dfea851"
+  }
+}

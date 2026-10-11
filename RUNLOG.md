@@ -1,6 +1,38 @@
 # Reproduction log
 
 
+## October 11 — restore the README chart through 3×4
+
+The merged 3×4 README omitted its earlier image embedding and the old renderer
+still expected square-pattern metadata. Restored the embedding and updated
+`scripts/build_figure.py` for rectangular dimensions. It now plots specified
+entry counts 4,356 → 225 → 25 → 16 → 12 on a labeled logarithmic scale.
+Stage positions order selected constructions by size; the figure and caption
+credit Erebos's earlier 4×4 theorem and ProveIt's earlier 5×5 work/H4 candidate.
+The final callout compares 16 with 12 entries and records the existing Lean
+verification. Candidate status and independent-review requirements are retained.
+
+Rendered PNG and SVG with Matplotlib 3.9.4 using:
+
+```sh
+python3 scripts/build_figure.py
+```
+
+In this workspace the rendering interpreter was
+`/home/vercel-sandbox/open-math-problems/.context/figure-tools/bin/python`.
+Visually inspected the generated PNG. Added `assets/README.md` and a generated
+receipt binding the plotted data, renderer, and image hashes. The existing
+package validator now rejects a removed README embedding, stale dimensions,
+or changed graphic artifacts. Updated the README's obsolete draft wording
+because PR #6 is merged. This is a presentation update to the existing theorem.
+
+Validation: `python3 scripts/run_checks.py` passed all 14 exact-check suites
+and deterministic reference comparisons. Package integrity passed 180 local
+links plus graphic, formal-source and manuscript hashes. `git diff --check`
+passed. The SVG parsed successfully and the plotted entry counts were
+recalculated from the five pattern dimensions. No Lean source changed.
+
+
 ## October 11 — 3×4 draft PR and complete Lean theorem
 
 Final package validation: `python3 scripts/run_checks.py` passed all 14 exact
