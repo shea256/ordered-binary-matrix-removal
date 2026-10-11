@@ -1,0 +1,118 @@
+{
+  "literal_censuses": [
+    {
+      "depth": 1,
+      "expanded": false,
+      "axis_blocks": 17,
+      "row_choices": 2380,
+      "copies": 128,
+      "anchor_configurations": {
+        "2,2": 128
+      },
+      "copies_outside_zero_set": 0,
+      "copies_without_dummy_last_row": 0
+    },
+    {
+      "depth": 2,
+      "expanded": false,
+      "axis_blocks": 35,
+      "row_choices": 52360,
+      "copies": 18944,
+      "anchor_configurations": {
+        "2,1": 10752,
+        "2,2": 8192
+      },
+      "copies_outside_zero_set": 0,
+      "copies_without_dummy_last_row": 0
+    },
+    {
+      "depth": 3,
+      "expanded": false,
+      "axis_blocks": 59,
+      "row_choices": 455126,
+      "copies": 1687552,
+      "anchor_configurations": {
+        "2,1": 1163264,
+        "2,2": 524288
+      },
+      "copies_outside_zero_set": 0,
+      "copies_without_dummy_last_row": 0
+    },
+    {
+      "depth": 4,
+      "expanded": false,
+      "axis_blocks": 95,
+      "row_choices": 3183545,
+      "copies": 123207680,
+      "anchor_configurations": {
+        "2,1": 89653248,
+        "2,2": 33554432
+      },
+      "copies_outside_zero_set": 0,
+      "copies_without_dummy_last_row": 0
+    },
+    {
+      "depth": 1,
+      "expanded": true,
+      "axis_blocks": 32,
+      "row_choices": 35960,
+      "copies": 128,
+      "anchor_configurations": {
+        "2,2": 128
+      },
+      "copies_outside_zero_set": 0,
+      "copies_without_dummy_last_row": 0
+    }
+  ],
+  "three_seed_guard_frequencies": [
+    {
+      "depth": 1,
+      "samples": 8,
+      "protected_actual_cells": 1004,
+      "frequency_of_each_protected_cell": 2,
+      "diagonal_leaf_frequency": 4
+    },
+    {
+      "depth": 2,
+      "samples": 64,
+      "protected_actual_cells": 14064,
+      "frequency_of_each_protected_cell": 4,
+      "diagonal_leaf_frequency": 16
+    },
+    {
+      "depth": 3,
+      "samples": 512,
+      "protected_actual_cells": 121024,
+      "frequency_of_each_protected_cell": 8,
+      "diagonal_leaf_frequency": 64
+    }
+  ],
+  "negative_controls": {
+    "reversed_minus_order": {
+      "depth": 3,
+      "expanded": false,
+      "axis_blocks": 59,
+      "row_choices": 455126,
+      "copies": 1867776,
+      "anchor_configurations": {
+        "2,1": 1343488,
+        "2,2": 524288
+      },
+      "copies_outside_zero_set": 131072,
+      "copies_without_dummy_last_row": 0
+    },
+    "flip_original_zero_set": {
+      "depth": 1,
+      "expanded": true,
+      "axis_blocks": 32,
+      "row_choices": 35960,
+      "copies": 256,
+      "anchor_configurations": {
+        "2,2": 256
+      },
+      "copies_outside_zero_set": 256,
+      "copies_without_dummy_last_row": 256
+    }
+  },
+  "scope": "Separate literal implementation and exact finite audit; no universal theorem or independent peer review."
+}

@@ -2,15 +2,21 @@
 
 **Current checkpoint:** a complete candidate proof for a fixed **4×4**
 ordered binary obstruction, with a 2×2 anchor component. Retain
-`Candidate result`: no independent reviewer or Lean kernel has verified
-this new theorem. The smaller anchor is not itself rigid.
+`Candidate result`: a separate-agent adversarial audit found no material
+error, and Lean checks the concrete host and anchor classification, but independent peer review
+and an end-to-end Lean theorem remain outstanding. The smaller anchor
+is not itself rigid.
 
 Start with [four-by-four.md](proofs/four-by-four.md). The earlier
 [5×5](proofs/five-by-five.md) and [15×15](proofs/compressed-pattern.md)
 drafts remain as research history. The current draft restates its required
 host properties and the arbitrary-edit argument.
 
-The next decisive step is independent adversarial review of:
+The [separate-agent review](verification/reviews/four-separate-agent.md)
+covers the four issues below. Its verdict is favorable, not independent
+peer review. The concrete host and anchor classification are now formalized. The next
+implementation step is extracting the localization cases for arbitrary copies;
+see [formal/README.md](formal/README.md). Human reviewers should still inspect:
 
 1. **Full-pattern anchor classification.** Check the complete split by
    counts a,b of selected anchors; crown exclusion, same-class comparability,
@@ -48,6 +54,8 @@ includes a witness for failure of the old hitting set and a nonleaf H copy
 when the minus parity modes are reversed. It also reruns the inherited
 crown, role-support, path-assignment, and sampling checks. Finite tests and
 same-agent proof review do not constitute independent mathematical review.
+The suite additionally runs a fresh full-census checker using interval
+coordinates, and the separate reviewer's support/unbalanced-copy checker.
 The same command also reproduces `verification/reference/four-repair-report.json` and
 checks that flipping the zero-cell hitting set creates new designated copies.
 
@@ -57,11 +65,29 @@ alone would not establish it.
 
 Upstream main still matched the audited commit
 `fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb` when rechecked on 2026-10-10.
-The original Lean implementation has not been rebuilt. Formalizing this
-refinement requires replacing anchor rigidity by full-pattern localization,
-including the additional copies, rather than only changing size constants.
+The original full Lean implementation has not been rebuilt. Selected generic
+modules were adapted with explicit attribution. The current partial
+development uses Lean 4.34.1 and pinned Mathlib. Run
+`python3 scripts/run_formal_checks.py` from the repository root to build,
+audit every project declaration's axiom dependencies, and replay each local
+module into its imported Lean environment. This is not fresh replay of all
+Mathlib. The key exports are `Concrete.Copy.anchor_counts` and
+`Concrete.matrix_anchor_counts`; they concern all actual ordered copies and
+assume no structural certificate. The boundary proofs rule out h=0 and
+exhibit a balanced copy at h=1.
+
+Remaining formal obligations are zero-cell localization for both anchor
+count cases, the coarse copy bound, protected incidence extraction and
+body extension for arbitrary edited matrices, and the every-c,C conclusion.
+Keep both `independent_review` and `new_result_formalized` false.
 
 The previous 5×5 release is preserved at commit
 `f16d432d9a918c694f0b404a12f744c0c8b0db03`. The current manuscript, PDF,
 and results/current.json describe the 4×4 candidate. All previous proof
 drafts and deterministic reference reports remain available.
+
+The 4×4 release and comparison-graphic PRs were merged as `a5920eb` and
+`0b8b039` respectively. The audit and concrete-host formalization are on
+`shea256/four-proof-audit` in
+[PR #3](https://github.com/shea256/ordered-binary-matrix-removal/pull/3).
+The pattern size and final written theorem have not changed in this PR.

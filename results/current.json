@@ -13,5 +13,25 @@
   "new_result_formalized": false,
   "novelty": "unresolved",
   "upstream_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
-  "repair_verification_report": "verification/reference/four-repair-report.json"
+  "repair_verification_report": "verification/reference/four-repair-report.json",
+  "literal_verification_report": "verification/reference/four-literal-report.json",
+  "reviewer_verification_report": "verification/reference/four-reviewer-report.json",
+  "separate_agent_review": {
+    "report": "verification/reviews/four-separate-agent.md",
+    "verdict": "no_material_issue_found",
+    "independent_peer_review": false
+  },
+  "formalization": {
+    "status": "partial",
+    "coverage": "formal/README.md",
+    "audit": "verification/reference/formal-audit.json",
+    "named_theorems": 173,
+    "checked_declarations": 695,
+    "concrete_host_defined": true,
+    "concrete_anchor_classification_formalized": true,
+    "zero_cell_localization_formalized": false,
+    "arbitrary_repair_bound_formalized": false,
+    "final_removal_theorem_formalized": false,
+    "semantic_review": "verification/reviews/four-concrete-host.md"
+  }
 }

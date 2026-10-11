@@ -44,3 +44,31 @@ pretend to rehash absent source files.
 
 Finite tests cannot prove the all-depth classification, localization, or
 arbitrary repair bound. Those obligations are the manuscript's mathematical argument.
+
+## Subsequent separate-agent audit and partial Lean development
+
+[check_four_literal.py](check_four_literal.py) imports no candidate-package
+code. It constructs variable order using binary-interval endpoints, counts
+all copies by a column dynamic program through h=4, and expands all actual
+positions at h=1. It checks protected frequencies for an alternate
+three-seed sampler through h=3 and includes two negative controls:
+reversing minus parity order and flipping the original zero set.
+
+[check_four_reviewer.py](check_four_reviewer.py) was written by the
+user-authorized separate reviewer. It checks supports, the precise earlier
+minus-half restriction, relaxed unbalanced configurations, every possible
+last row, and weighted unbalanced counts through h=7. It assumes the
+already-classified unbalanced sector; it is not a full census.
+Only the runtime-version output field was removed for portable reference
+comparison. The original review used Python 3.9.25.
+
+Both new reports are compared by `scripts/run_checks.py`. Their implementations
+are separate from the old host code, but this is not independent peer review.
+The [review report](reviews/four-separate-agent.md) found no material error;
+the [assurance checkpoint](reviews/four-assurance.md) summarizes its scope.
+
+The optional [Lean project](../formal/README.md) verifies 34 conditional
+helper theorems, with an axiom audit and fresh Lean kernel replay. The
+archived receipt binds the exact sources. The default Python suite checks
+that binding but does not run Lean. Concrete host connections and the final
+removal theorem remain unformalized; finite checks cannot fill those gaps.

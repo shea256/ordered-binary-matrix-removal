@@ -4,8 +4,16 @@
 refining the earlier **5×5** and **15×15 candidates** and the pinned primary
 manuscript's **66×66** pattern. A complete [proof draft](proofs/four-by-four.md)
 and [exact finite checks](verification/reference/four-report.json) are included.
-Independent mathematical review, formal verification, and a conclusive
+Independent mathematical review, end-to-end formal verification, and a conclusive
 novelty assessment remain pending.
+
+A [separate-agent audit](verification/reviews/four-separate-agent.md) found
+no material error, missing case, or incorrect count. Two additional exact
+checkers and the [Lean development](formal/README.md) provide further evidence.
+The actual host, its two orders, and the all-depth anchor classification
+are now checked. Localization, arbitrary-repair connections, and the final
+theorem remain unformalized. No pattern-size
+or theorem-strength change is claimed at this assurance checkpoint.
 
 The explicit fixed forbidden pattern and its anchor component are
 
@@ -93,8 +101,16 @@ family. A separate integer node-pair sum matches the closed formula through
 h=8. Crown exclusion, laminar supports, strict tree orders, 34,952 arbitrary
 path assignments, and exact protected-cell probabilities also pass.
 
-These are same-agent checks, not independent review or a universal
-machine-checked proof. No global minimality claim is made: 3×3 and other
+The original checks above were same-agent checks. A fresh literal checker
+reproduces the full census through h=4 and expands the actual h=1 matrix;
+the separate reviewer's checker verifies supports and unbalanced-copy
+counts through h=7. Both include their explicit scope in their reports.
+The Lean development checks conditional classification, local inequalities,
+propagation, and the protected-sample union bound, with only the standard
+logical axioms. None of this is independent peer review or a universal
+machine-checked removal theorem. See the
+[assurance checkpoint](verification/reviews/four-assurance.md).
+No global minimality claim is made: 3×3 and other
 smaller patterns remain unresolved here. The canonical sampler bound has
 exponential denominator 28, with prefactor sqrt(rho/2), and remains
 exp(Omega(epsilon^−1/2)). No arbitrary adaptive/two-sided tester or

@@ -247,3 +247,50 @@ A same-agent review corrected the direction of both inequalities in the
 aligned-mode chain in Lemma 3; the corrected chain forces the same equality.
 No independent peer review or universal machine-checked proof is claimed.
 No claim that 4×4 is globally minimal is made.
+
+## Adversarial audit and partial formalization — 2026-10-10
+
+Executed three attacks: look for omitted anchor configurations and nonleaf
+unbalanced copies; reconstruct the host without importing the old code;
+and attack the arbitrary-repair proof using anchor edits, correlated leaves,
+and the difference between destroying old copies and reaching H-freeness.
+The detailed [assurance checkpoint](verification/reviews/four-assurance.md)
+records the proof map, results, negative controls, and formal boundaries.
+
+The user authorized a separate reviewer, which found no material gap in
+the all-depth written proof. Its separate implementation checks ordered
+supports and the unbalanced sector through h=7. The coordinating agent's
+literal implementation counts all copies through h=4 and expands the
+32×32 h=1 matrix; the counts and localization agree. Reversed parity order
+and zero-set flipping both trigger the expected failures.
+
+The initial Lean checkpoint proved 34 conditional helper theorems at arbitrary
+depth or over unbounded natural numbers. It covers the anchor-count
+implication, all localization inequalities, Boolean propagation, and a
+finite union bound. Axiom inspection and fresh kernel replay passed.
+At that checkpoint the actual host had not yet been connected to the
+hypotheses. The final theorem remains unformalized. This is verification progress, not a new
+size reduction or independent mathematical peer review.
+
+
+## Concrete-host formalization — 2026-10-10
+
+Implemented the next proof-map connection: actual binary host and independent
+row/column enumerations → crown exclusion, class comparability, and revised
+support order → a certificate for every ordered H4 copy → anchor counts
+(2,2) or (2,1). The theorem now quantifies over arbitrary copies in the
+concrete matrix, rather than assuming the structural hypotheses. Explicit
+height-zero exclusion and a height-one witness check boundary/nonvacuity.
+
+The module adaptations retain upstream kind IDs but use `modeRank` for
+both anchor orders and certificate labels. This distinction is essential.
+The separate reviewer checked that bridge and all certificate fields and
+found no semantic error; its negative control detects failure of the old
+V-before-W order. This is separate-agent review, not independent peer review.
+
+The pinned upstream ThreeSeedSampling module already contains the compact
+sampler; it was adapted and built, not newly invented. The exact fiber
+lemmas still need to be connected to protected cells of arbitrary repairs.
+Localization, the copy bound, repair extension, and final quantifiers remain
+formal obligations. This changes verification coverage, not pattern size
+or the written theorem's strength.

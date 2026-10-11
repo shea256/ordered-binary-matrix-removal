@@ -1,7 +1,7 @@
 # A candidate 4-by-4 ordered binary removal obstruction
 
 Date: 2026-10-10. **Candidate with a complete written proof draft.**
-Independent mathematical review, formal verification, and conclusive novelty
+Independent mathematical review, end-to-end formal verification, and conclusive novelty
 assessment remain pending. This further refines the earlier 5-by-5 candidate.
 
 The tree host and arbitrary-repair propagation adapt OpenAI's September 25,
@@ -304,6 +304,7 @@ the first column has group 1, and
 Let A be the mode of the first anchor row. Its role support contains both
 \(c_2\) and \(c_3\), so these columns belong to one class K. The entries against
 \(r_3\) are 0 and 1, so K is not dummy. The mode order gives \(A\le B\).
+If \(A=B\), increasing anchor row order forces the first row into group 1.
 We now treat each possible B; all selected columns satisfy \(c_3<c_4\).
 
 * **\(B=V_i^+\).** Write \(r_3=R_i^+(p)\), \(c_4=C_{i-1}^+(b)\). The zero gives
@@ -379,6 +380,9 @@ so a node pair has multiplicity four. Half-class supports restrict a and b
 to the same parity. The remaining possible full parent-plus support belongs
 to \(V_h^+\), later than B, so cannot occur. Whole leaf supports do not exist
 on the column axis within the available levels.
+
+The parent-half family contributes zero at \(h=2\), when \(b\in\{0,1\}\);
+its first positive contribution is at \(h=3\).
 
 Conversely every pair listed gives the displayed H, in order: the first
 anchor mode is earlier than B (or is B with group 1), all required role
@@ -484,8 +488,9 @@ For \(\epsilon_h=(14h+2)^{-2}\), the exact count gives, for every fixed \(C>0\),
 Choosing h sufficiently large for any prescribed \(c>0\) proves the announced
 failure of every polynomial removal bound, with H fixed first.
 
-For canonical sampling of q uniform rows and independently q uniform columns,
-observing H requires sampling a cell in \(T_h\). Therefore
+For canonical sampling, choose a uniform q-element subset of rows and,
+independently, a uniform q-element subset of columns, with \(0\le q\le n\).
+Observing H requires sampling a cell in \(T_h\). Therefore
 
 \[
  \Pr(\text{reject})\le2m(q/n)^2=2\epsilon_h2^{-h}q^2.
@@ -517,9 +522,22 @@ weights of twin blocks. A separate node-pair summation checks the closed
 count through depth 8. The checker also tests the required tree orders,
 nonanchor crown exclusion, laminar role supports, protected sampling
 probabilities, and arbitrary path assignments. The all-depth proof above
-is separate from finite evidence. No independent review or Lean kernel
-verification is claimed; novelty screening remains inconclusive.
+is separate from finite evidence. A subsequent separate-agent adversarial
+review found no material error; it is not independent mathematical peer
+review. Lean now defines the concrete host and its two orders and proves
+the anchor-count classification for every actual ordered copy at every
+depth. Local arithmetic, arbitrary-depth propagation, and inherited
+sampling lemmas are also checked. Zero-cell localization, the concrete
+arbitrary-repair connections, and the final removal theorem remain
+unformalized; novelty screening remains inconclusive. See the
+[assurance checkpoint](../verification/reviews/four-assurance.md).
 
 [check_four_repair.py](../verification/check_four_repair.py) additionally
 checks the explicit new copies produced by flipping \(T_h\), for every leaf
 through depth 8.
+
+[check_four_literal.py](../verification/check_four_literal.py) reconstructs
+the host without importing the original code and repeats the full census
+through depth 4, including an expanded depth-one check and negative controls.
+[check_four_reviewer.py](../verification/check_four_reviewer.py) preserves
+the separate reviewer's support and unbalanced-copy checks through depth 7.
