@@ -1,5 +1,140 @@
 # Reproduction log
 
+
+## October 11 — 3×4 draft PR and complete Lean theorem
+
+Final package validation: `python3 scripts/run_checks.py` passed all 14 exact
+checks and deterministic reference comparisons under Python 3.9.25;
+the individual checks totalled 57.518 seconds on this workspace.
+The package validator passed 166 local links, source-bound Lean receipts,
+proof/manuscript agreement and PDF hashes. `git diff --check` passed.
+The PDF was rebuilt with Pandoc 3.6.4 and three pdflatex passes; its receipt
+records no warnings. The first page and formalization page were visually
+inspected. All 24 formal-review source hashes match the compiled snapshot.
+
+The root research mirror passed `python3 scripts/validate_repository.py --write`
+and `python3 scripts/validate_repository.py`: 34 tracks in 7 groups,
+448 local links across 116 Markdown files. The catalog remains Candidate.
+
+
+Prepared branch `shea256/three-by-four-obstruction` in the existing public
+standalone repository, based on the merged previous PR. Preserved the prior
+H4 source-bound audit and both older result metadata files. The 3×4 proof,
+finite reports, independent implementations, limitation certificate and
+required discovery dependencies are included in the review package.
+
+Lean 4.34.1 and Mathlib `d13f23b723b8a846827a245b89c10fc7d3f11612`
+checked the literal new host, independent orders, complete anchor classification,
+fixed-zero localization, 2mn⁵ count, arbitrary m² repair bound, decay, and
+uniform blowups. The final theorem chooses ε before an arbitrary host-size
+threshold, preserving the strong quantifiers. The formal sampler uses the
+inherited three seeds with m-sized row subgroups; its cell bound is 1/m².
+The blowup argument proves the sufficient q⁷ count upper bound and handles
+arbitrary repairs by partitioning all cells into offset slices.
+
+The new development has 24 modules, 98
+named theorems and 462 compiled declarations. Including
+inherited historical code, the audit checked 485 named
+theorems and 1906 declarations, and replayed all
+73 project modules. These counts include inherited
+arguments and do not measure novelty. Only `propext`, `Quot.sound`, and
+`Classical.choice` occur as transitive axioms. Replay imports each module's
+environment; it does not freshly replay all Mathlib or use a second proof checker.
+
+Actual formal command, with the pinned toolchain on PATH:
+
+```sh
+python3 scripts/run_rectangular_formal_checks.py
+```
+
+The receipt is `verification/reference/rectangular-formal-audit.json` and
+complete local output `.context/rectangular-formal-checks.txt`. Early builds
+caught porting/syntax errors and an overlarge arithmetic search; the final
+proof uses explicit class cases before exact arithmetic. No assumptions were
+weakened and no admitted proof was used. The final build has the unchanged
+historical `if_false` deprecation warning in DistanceMeaning; new modules
+compile without warnings.
+
+The authorized separate agent reviewed all new modules and found no required
+mathematical correction. Its review and exact execution limitations are in
+`verification/reviews/three-by-four-formal.md`; this is not independent peer
+review. Its early targeted repair declaration check succeeded, while a later
+attempted import encountered a file temporarily absent during rebuilding.
+The coordinating agent's completed audit supplies the full compiler evidence.
+
+The shipped discovery script was also run through h=2, reproducing 1,632 and
+101,888 copies; the certificate generator's CLI/imports were checked. OpenAI
+and Erebos main commits were reread and matched the pinned baselines. Additional
+bounded smaller-pattern searches located no new primary result.
+
+## October 11 — optimized global order, exact repair and prior-work correction
+
+Environment: Python 3.9.25; Linux-6.18.49-x86_64-with-glibc2.34. Work was carried out in the standalone
+checkout `.context/ordered-binary-matrix-removal` on branch
+`shea256/optimized-mode-order`, based on fetched origin/master after PR #5 merged.
+No external publication or author contact was performed.
+
+Read Erebos's current theorem, exact-count manuscript and full terminal-anchor
+repair proof at `6d21ce36e83b71d8a44015016cf3ac77e44b55ff`. Rechecked current main
+via GitHub API and the source listing for OpenAI #190. Prior baseline/priority
+corrections are in BASELINE.md; earlier missed searches are not novelty evidence.
+
+Executed initial literal full-copy censuses for four within-depth orders at
+h=2,3, then the global minus-first order at h=1..4. The final repeatable checker
+uses a column-quadruple/row-DP census and a separately written reviewer uses
+recursive axes and explicit row-quadruple enumeration. Neither final census
+assumes localization or the closed formula.
+
+Commands executed from the standalone project root:
+
+```sh
+python3 verification/check_optimized_order.py > .context/optimized-order-report.json
+PATH=/home/vercel-sandbox/open-math-problems/.context/pandoc-3.6.4/bin:$PATH python3 scripts/build_manuscript.py --regenerate-tex
+python3 scripts/run_checks.py > .context/optimized-package-checks.txt 2>&1
+python3 scripts/validate_repository.py
+```
+
+The separate reviewer first ran its checker from ignored scratch space; the
+unchanged implementation is now `verification/check_optimized_order_reviewer.py`
+and was rerun by the full suite. Its review covers the actual proof text and
+corrected a stale old-host statement about the leaf diagonal. The global order
+makes that diagonal an original-copy hitting set; that does not make flipping
+it a valid repair. This is separate AI review, not independent peer review.
+
+Actual results, h=1,2,3,4 respectively:
+
+| Host order | Exact copies |
+| --- | --- |
+| Erebos | 128; 23040; 2080768; 152567808 |
+| Previous local order | 128; 18944; 1687552; 123207680 |
+| Minus-first within each depth | 128; 9216; 753664; 53477376 |
+| Global minus-first | 128; 9216; 622592; 40894464 |
+
+The terminal-anchor repair has zero copies with exactly 4,16,64,256 physical
+edits at these depths. The expanded h=1 scans agree. Intrinsic-family sums run
+through h=10; the reviewer exhausts support/generic localization cases through
+h=7. These are finite implementation checks, not proofs of universal claims.
+The all-depth enumeration, unrestricted repair equality, restricted permutation
+optimum and blowup quantifiers are written in proofs/optimized-order.md.
+
+All **11** suite commands matched their reference reports; package integrity
+passed with 128 local links, manuscript hashes, and candidate status. New-check
+runtimes in the suite were optimized_order 20.852 seconds, optimized_order_reviewer 10.916 seconds. The PDF build completed with three pdflatex
+passes and no warnings. Initial build failures from plain Unicode mathematics
+and TeX's non-UTF-8 diagnostic output were corrected; the successful build uses
+explicit math syntax and replacement decoding for diagnostics.
+
+All 53 paths in the historical formal source manifest still match their hashes.
+No new Lean build was claimed or needed to verify those unchanged sources. The
+old capstone covers the previous host order; new order/count/exact repair and
+optimality flags remain false. The announcement draft qualifies 75.6% as an
+asymptotic reduction and credits Erebos. Its lead post has 276 characters under
+the usual 23-character URL accounting.
+
+Parent catalog regeneration/validation and whitespace checks were also run.
+The 3×3 limitations and previous research artifacts were preserved.
+
+
 ## Originating research workspace — 2026-10-10
 
 Python 3.9.25, standard library, exact integer/Fraction/bitset calculations.

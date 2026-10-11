@@ -6,3 +6,7 @@ This work adapts constructions and arguments from OpenAI's
 from the Apache-2.0-licensed openai/math repository at commit
 fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb.
 See ATTRIBUTION.md for inherited methods and proposed changes.
+
+The October 11 quantitative refinement credits Erebos's earlier H4 results
+and adapts its terminal-anchor repair argument, with the earlier ProveIt
+manuscript also credited. See BASELINE.md and ATTRIBUTION.md for pinned sources.

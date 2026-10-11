@@ -5,7 +5,48 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 for name in ('README.md','BASELINE.md','ATTEMPT.md','RESULT.md','RUNLOG.md','HANDOFF.md','ATTRIBUTION.md','NOTICE','LICENSE','manuscript.md','manuscript.pdf','tex/manuscript.tex'):
     assert (ROOT / name).is_file(), name
-status = json.loads((ROOT / 'results/current.json').read_text())
+current = json.loads((ROOT / 'results/current.json').read_text())
+assert current['status'] == 'candidate' and current['independent_review'] is False
+assert current['new_result_formalized'] is True
+assert (current['pattern_rows'],current['pattern_columns']) == (3,4)
+assert current['normalization_exponent'] == 7
+assert current['formalization']['applies_to_current_host'] is True
+report34=json.loads((ROOT/current['verification_report']).read_text())
+assert report34['pattern'] == current['pattern']
+assert [x['copies'] for x in report34['results']] == [1632,101888,4743168,197525504,7757365248,293769052160]
+assert all(x['bad_localization_copies']==0 for x in report34['results'])
+review34=json.loads((ROOT/current['reviewer_verification_report']).read_text())
+assert [x['copies'] for x in review34['census']] == [x['copies'] for x in report34['results'][:4]]
+assert (ROOT/current['separate_agent_review']['report']).is_file()
+# The rectangular certificate has its own scope and immutable source binding.
+rect=current['formalization']
+rect_audit=json.loads((ROOT/rect['audit']).read_text())
+assert rect['status']==rect_audit['status']=='rectangular_removal_theorem_formalized'
+assert rect_audit['pattern']==['1001','1010','0111']
+for flag in ('arbitrarily_small_epsilon_formalized',
+             'arbitrarily_large_hosts_at_fixed_epsilon_formalized',
+             'coarse_copy_count_formalized','arbitrary_repair_bound_formalized',
+             'zero_cell_localization_formalized'):
+    assert rect[flag] is True and rect_audit[flag] is True, flag
+assert rect_audit['end_to_end_removal_theorem_formalized'] is True
+assert rect['final_removal_theorem_formalized'] is True
+assert rect['exact_copy_count_formalized'] is False
+assert rect['exact_repair_equality_formalized'] is False
+assert rect['named_theorems']==rect_audit['theorem_count']==len(rect_audit['axioms'])
+assert rect['checked_declarations']==rect_audit['declaration_count']==len(rect_audit['all_declarations'])
+rect_modules={'.'.join(p.relative_to(ROOT/'formal').with_suffix('').parts)
+              for p in (ROOT/'formal/OrderedRemoval').rglob('*.lean')}
+assert set(rect_audit['kernel_replay'])==rect_modules
+assert rect['modules_replayed']==len(rect_modules)
+assert 'OrderedRemoval.Rectangular.no_polynomial_removal_bound' in rect_audit['axioms']
+assert all(set(info['axioms']) <= {'propext','Quot.sound','Classical.choice'}
+           for info in rect_audit['all_declarations'].values())
+for name, expected in rect_audit['sources'].items():
+    assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==expected, name
+assert (ROOT/rect['semantic_review']).is_file()
+# The existing Lean certificate concerns the previous host order. Retain its
+# integrity checks without relabeling it as a certificate for the refinement.
+status = json.loads((ROOT / current['formalization']['historical_metadata']).read_text())
 assert status['status'] == 'candidate'
 assert status['independent_review'] is False and status['new_result_formalized'] is True
 report = json.loads((ROOT / status['verification_report']).read_text())
@@ -56,9 +97,9 @@ assert all(set(info['axioms']) <= {'propext', 'Quot.sound', 'Classical.choice'}
 assert all(set(used) <= {'propext', 'Quot.sound', 'Classical.choice'} for used in audit['axioms'].values())
 for name, expected in audit['sources'].items():
     assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected, name
-proof = (ROOT / status['proof_file']).read_text()
+proof = (ROOT / current['proof_file']).read_text()
 manuscript = (ROOT / 'manuscript.md').read_text()
-assert manuscript[manuscript.index('## Statement'):] == proof[proof.index('## Statement'):].replace('../verification/', 'verification/')
+assert manuscript[manuscript.index('## Statement'):] == proof[proof.index('## Statement'):].replace('../verification/', 'verification/').replace('../BASELINE.md', 'BASELINE.md')
 receipt = json.loads((ROOT / 'results/paper_build.json').read_text())
 for name, expected in receipt['artifacts'].items():
     data = (ROOT / name).read_bytes()

@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-11",
+  "reviewer": "/root/four_proof_reviewer",
+  "scope": "Separate-agent semantic review; not human peer review or Lean verification.",
+  "snapshots": [
+    {
+      "path": "problems/190-ordered-binary-removal/proofs/three-by-four.md",
+      "sha256": "e02bd9938930d043cfadd71738020b8993acfcc3ebe317f63cbcfc66520ad226"
+    },
+    {
+      "path": "problems/190-ordered-binary-removal/experiments/host.py",
+      "sha256": "c5323af5e36c1d52518fcbcd769895f22f9d25de6762ce2a4d6803c9a1b7610a"
+    },
+    {
+      "path": "problems/190-ordered-binary-removal/experiments/search_asymmetric_templates.py",
+      "sha256": "941fffc76ef8bc99fc0369394230b3b5dc164f0698e101256995b59fb67e68db"
+    },
+    {
+      "path": "problems/190-ordered-binary-removal/experiments/search_asymmetric_completion.py",
+      "sha256": "7f7b53a9d18a766f084199a40ac2bb47525de8516f9905dbc1fa21eb63ec7494"
+    },
+    {
+      "path": "problems/190-ordered-binary-removal/verification/check_three_by_four.py",
+      "sha256": "0fd08596b9a6f6c72cc31c5ef414f7dcc5f799cf0577261525cb915d357f5219"
+    },
+    {
+      "path": ".context/asymmetric-190/reviewer-three-by-four-checks.py",
+      "sha256": "6eace45d002a86243d597dced381ea59effa83271fcf2dfb4eb55ba0410939dd"
+    },
+    {
+      "path": ".context/asymmetric-190/reviewer-three-by-four-output.json",
+      "sha256": "ca9b90ef3f7a7fa2ad63c00597061417673d0fa9eff9fe5cb57ecacce2988d60"
+    }
+  ]
+}

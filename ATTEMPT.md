@@ -1,5 +1,65 @@
 # Executed attempts — OPENAI-190
 
+## October 11 — asymmetric 3×4 search and candidate theorem
+
+Three attacks were executed:
+
+1. One row anchor and two column anchors, retaining the original nonanchor
+   body. Enumerated all 256 borders around P, then constant fills and arbitrary
+   finite unused-anchor completions. The nonanchor screen eliminated 163
+   borders. Of 93 survivors, 52 survived all four single-mode completion
+   screens. The full finite completion search on those 52 reported 21 SAT,
+   one UNSAT, and 30 round limits; these outcomes were discovery only.
+2. Change unsupported nonanchor entries from zero to one. This eliminated
+   181 of 256 borders immediately. Five constant-fill candidates survived
+   the three-level trunk, but all failed one level later. A complete exact
+   certificate now covers all 16,384 uniform templates across both backgrounds.
+   See [the scoped limitation](proofs/asymmetric-limitations.md).
+3. Allow more nonuniform entries while retaining the protected propagation
+   frame. Four small free-body completions were tested; the useful lead came
+   from retaining the original body and varying unused anchor incidences.
+   `1001/1010/0111` survived trunk searches through six levels. Full-host
+   localization searches at h=1..4 led to a simple depth-independent rule:
+   all W anchor rows see dummy columns as one, and nonterminal even W-minus
+   rows additionally see odd minus children as one. The common leaves do
+   not receive that extra entry.
+
+The resulting [written proof](proofs/three-by-four.md) handles every copy
+and every binary repair. Complete weighted censuses agree through h=6 in
+two implementations; the separate reviewer also reproduced h=1..4 and
+checked structural sublemmas through h=7. Removing either new entry rule
+creates nonlocalized copies. The proof, rather than finite SAT survival,
+supplies the universal removal theorem. The result remains a candidate
+pending independent mathematical review. The subsequent formalization now
+checks the main theorem and all quantifiers; see [formal/README.md](formal/README.md).
+
+
+## Previous checkpoint record
+
+# Executed attempts — OPENAI-190
+
+## October 11 — stronger-baseline comparison and executed order refinement
+
+After discovering prior H4 and Lean results, the attack target changed to the
+exact density constant at fixed H, n, and unrestricted repair distance.
+
+1. Compare the existing within-depth order with Erebos: exact census verified
+   leading coefficients 33/4 versus 41/4 (19.5% asymptotic reduction).
+2. Move minus modes ahead of plus modes within each level: exact census gives
+   (7/2)m⁶−5m⁵ for h≥2, but cross-level parent-plus families remain.
+3. Put all minus modes before every plus and vertical mode: removes those families,
+   yielding (5/2)m⁶−m⁵ for all h≥1. Written localization and exact repair arguments
+   survive. Copies contained in one mode give a matching lower bound for every
+   permutation of intact mode blocks, proving restricted optimality.
+
+All three attacks were executed. Full censuses compare the four orders through
+h=4. The globally reordered host passes terminal-anchor repair checks through
+h=4 and a separately written reviewer audit. See
+[optimized-order.md](proofs/optimized-order.md). The known terminal-anchor repair
+is credited to Erebos; this is a quantitative refinement, not a new H4 or a new
+proof of its already known qualitative obstruction.
+
+
 Date: 2026-10-10. Current proof draft: [four-by-four.md](proofs/four-by-four.md).
 Earlier attempts are retained below. The third refinement gives the current
 4×4 candidate by localizing complete copies without a rigid anchor.

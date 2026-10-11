@@ -1,0 +1,1243 @@
+{
+  "pattern": [
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ]
+  ],
+  "scope": "Exact finite evidence, not an all-depth certificate or peer review.",
+  "comparison_censuses": [
+    {
+      "depth": 1,
+      "order": "erebos",
+      "expanded": false,
+      "repaired": false,
+      "n": 32,
+      "copies": 128,
+      "anchor_column_counts": {
+        "2": 128
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 2,
+      "order": "erebos",
+      "expanded": false,
+      "repaired": false,
+      "n": 120,
+      "copies": 23040,
+      "anchor_column_counts": {
+        "1": 14848,
+        "2": 8192
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 3,
+      "order": "erebos",
+      "expanded": false,
+      "repaired": false,
+      "n": 352,
+      "copies": 2080768,
+      "anchor_column_counts": {
+        "1": 1556480,
+        "2": 524288
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 4,
+      "order": "erebos",
+      "expanded": false,
+      "repaired": false,
+      "n": 928,
+      "copies": 152567808,
+      "anchor_column_counts": {
+        "1": 119013376,
+        "2": 33554432
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 1,
+      "order": "previous",
+      "expanded": false,
+      "repaired": false,
+      "n": 32,
+      "copies": 128,
+      "anchor_column_counts": {
+        "2": 128
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 2,
+      "order": "previous",
+      "expanded": false,
+      "repaired": false,
+      "n": 120,
+      "copies": 18944,
+      "anchor_column_counts": {
+        "1": 10752,
+        "2": 8192
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 3,
+      "order": "previous",
+      "expanded": false,
+      "repaired": false,
+      "n": 352,
+      "copies": 1687552,
+      "anchor_column_counts": {
+        "1": 1163264,
+        "2": 524288
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 4,
+      "order": "previous",
+      "expanded": false,
+      "repaired": false,
+      "n": 928,
+      "copies": 123207680,
+      "anchor_column_counts": {
+        "1": 89653248,
+        "2": 33554432
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 1,
+      "order": "within_depth_minus_first",
+      "expanded": false,
+      "repaired": false,
+      "n": 32,
+      "copies": 128,
+      "anchor_column_counts": {
+        "2": 128
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 2,
+      "order": "within_depth_minus_first",
+      "expanded": false,
+      "repaired": false,
+      "n": 120,
+      "copies": 9216,
+      "anchor_column_counts": {
+        "1": 1024,
+        "2": 8192
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 3,
+      "order": "within_depth_minus_first",
+      "expanded": false,
+      "repaired": false,
+      "n": 352,
+      "copies": 753664,
+      "anchor_column_counts": {
+        "1": 229376,
+        "2": 524288
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 4,
+      "order": "within_depth_minus_first",
+      "expanded": false,
+      "repaired": false,
+      "n": 928,
+      "copies": 53477376,
+      "anchor_column_counts": {
+        "1": 19922944,
+        "2": 33554432
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 1,
+      "order": "optimized",
+      "expanded": false,
+      "repaired": false,
+      "n": 32,
+      "copies": 128,
+      "anchor_column_counts": {
+        "2": 128
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 2,
+      "order": "optimized",
+      "expanded": false,
+      "repaired": false,
+      "n": 120,
+      "copies": 9216,
+      "anchor_column_counts": {
+        "1": 1024,
+        "2": 8192
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 3,
+      "order": "optimized",
+      "expanded": false,
+      "repaired": false,
+      "n": 352,
+      "copies": 622592,
+      "anchor_column_counts": {
+        "1": 98304,
+        "2": 524288
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 4,
+      "order": "optimized",
+      "expanded": false,
+      "repaired": false,
+      "n": 928,
+      "copies": 40894464,
+      "anchor_column_counts": {
+        "1": 7340032,
+        "2": 33554432
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    }
+  ],
+  "terminal_anchor_repairs": [
+    {
+      "depth": 1,
+      "order": "optimized",
+      "expanded": false,
+      "repaired": true,
+      "n": 32,
+      "copies": 0,
+      "anchor_column_counts": {},
+      "copies_outside_zero_set": 0,
+      "edits": 4
+    },
+    {
+      "depth": 2,
+      "order": "optimized",
+      "expanded": false,
+      "repaired": true,
+      "n": 120,
+      "copies": 0,
+      "anchor_column_counts": {},
+      "copies_outside_zero_set": 0,
+      "edits": 16
+    },
+    {
+      "depth": 3,
+      "order": "optimized",
+      "expanded": false,
+      "repaired": true,
+      "n": 352,
+      "copies": 0,
+      "anchor_column_counts": {},
+      "copies_outside_zero_set": 0,
+      "edits": 64
+    },
+    {
+      "depth": 4,
+      "order": "optimized",
+      "expanded": false,
+      "repaired": true,
+      "n": 928,
+      "copies": 0,
+      "anchor_column_counts": {},
+      "copies_outside_zero_set": 0,
+      "edits": 256
+    }
+  ],
+  "expanded_depth_one": [
+    {
+      "depth": 1,
+      "order": "optimized",
+      "expanded": true,
+      "repaired": false,
+      "n": 32,
+      "copies": 128,
+      "anchor_column_counts": {
+        "2": 128
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 1,
+      "order": "optimized",
+      "expanded": true,
+      "repaired": true,
+      "n": 32,
+      "copies": 0,
+      "anchor_column_counts": {},
+      "copies_outside_zero_set": 0,
+      "edits": 4
+    }
+  ],
+  "intrinsic_counts": [
+    {
+      "depth": 1,
+      "balanced": 128,
+      "unbalanced": 0
+    },
+    {
+      "depth": 2,
+      "balanced": 8192,
+      "unbalanced": 1024
+    },
+    {
+      "depth": 3,
+      "balanced": 524288,
+      "unbalanced": 98304
+    },
+    {
+      "depth": 4,
+      "balanced": 33554432,
+      "unbalanced": 7340032
+    },
+    {
+      "depth": 5,
+      "balanced": 2147483648,
+      "unbalanced": 503316480
+    },
+    {
+      "depth": 6,
+      "balanced": 137438953472,
+      "unbalanced": 33285996544
+    },
+    {
+      "depth": 7,
+      "balanced": 8796093022208,
+      "unbalanced": 2164663517184
+    },
+    {
+      "depth": 8,
+      "balanced": 562949953421312,
+      "unbalanced": 139637976727552
+    },
+    {
+      "depth": 9,
+      "balanced": 36028797018963968,
+      "unbalanced": 8972014882652160
+    },
+    {
+      "depth": 10,
+      "balanced": 2305843009213693952,
+      "unbalanced": 575334852396580864
+    }
+  ],
+  "depth_two_24_orders": [
+    {
+      "order": [
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 18944,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 19456,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 16384,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 13824,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 16896,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 14336,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 18944,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 19456,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 16384,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 14336,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 17408,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 14848,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 13824,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 11264,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 13824,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 11776,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 9216,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 9216,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 14848,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 12288,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 14848,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 12288,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 9728,
+      "outside_zero_set": 0
+    },
+    {
+      "order": [
+        [
+          "W",
+          "-",
+          1
+        ],
+        [
+          "W",
+          "-",
+          0
+        ],
+        [
+          "W",
+          "+",
+          1
+        ],
+        [
+          "W",
+          "+",
+          0
+        ],
+        [
+          "V",
+          "+",
+          -1
+        ],
+        [
+          "V",
+          "-",
+          -1
+        ]
+      ],
+      "copies": 9728,
+      "outside_zero_set": 0
+    }
+  ],
+  "limiting_copy_ratio_to_erebos": "10/41",
+  "limiting_fraction_fewer": "31/41"
+}

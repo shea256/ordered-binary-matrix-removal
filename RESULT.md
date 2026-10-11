@@ -1,128 +1,77 @@
-# Result — OPENAI-190
+# Current result — candidate 3×4 removal obstruction
 
-**Category: Candidate result.** The current proposed obstruction is **4×4**,
-refining the earlier **5×5** and **15×15 candidates** and the pinned primary
-manuscript's **66×66** pattern. A complete [proof draft](proofs/four-by-four.md)
-and [exact finite checks](verification/reference/four-report.json) are included.
-Independent mathematical review and a conclusive novelty assessment remain
-pending. The qualitative removal obstruction is now formalized in Lean.
+A new [written all-depth proof](proofs/three-by-four.md) gives the fixed
+rectangular pattern
 
-A [separate-agent audit](verification/reviews/four-separate-agent.md) found
-no material error, missing case, or incorrect count. Two additional exact
-checkers and the [Lean development](formal/README.md) provide further evidence.
-The actual host, its two orders, all-depth anchor classification, fixed-zero
-localization, dummy last row, and the zero-set size bound are now checked.
-The new capstone also proves the coarse count `N_H≤2mn⁶`, the `m²` lower
-bound for every H4-free binary repair, and the failure of every polynomial
-removal bound. No host-existence, localization, sampling, or anchor-preservation
-hypothesis survives into the final theorem. This is verification progress;
-the pattern remains 4×4. The sharper exact enumeration and canonical sampler
-statement below remain outside the formal certificate.
+```text
+1 0 0 1
+1 0 1 0
+0 1 1 1
+```
 
-The explicit fixed forbidden pattern and its anchor component are
+For every h≥1, m=2^h, n=(14h+2)m, its explicit square binary host requires
+at least m² arbitrary binary edits to become pattern-free and has at most
+2mn⁵ ordered copies. Therefore its density is at most
+2(14h+2)⁻²2⁻ʰ, while its certified distance is (14h+2)⁻². The proof preserves
+failure of every polynomial removal bound, arbitrarily small ε, and
+arbitrarily large hosts via blowups.
 
-\[
-H=\begin{pmatrix}
-0&1&1&0\\
-1&0&0&1\\
-1&0&1&0\\
-0&1&1&1
-\end{pmatrix},\qquad
-S=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
-\]
+This is a **candidate pattern-size advance over the known 4×4 result**:
+one fewer row, 12 rather than 16 entries (25% fewer). It is rectangular,
+not a 3×3 result. No global minimality, exact repair equality, or exact
+all-depth count is claimed for the new host. The broader novelty search
+remains bounded; see [BASELINE.md](BASELINE.md).
 
-For every integer h≥1 the candidate host has
+Verification: two full weighted censuses agree at h=1..6, covering square
+hosts of order 32, 120, 352, 928, 2,304, and 5,504; physical h=1 and
+adversarial entry-rule variants were checked. A separately written agent
+checker agrees through h=4 and checks structural sublemmas through h=7.
+See the [exact report](verification/reference/three-by-four-report.json)
+and [review](verification/reviews/three-by-four.md).
+The main 3×4 theorem is **checked in Lean**, including arbitrarily small ε
+and arbitrarily large hosts at that same ε. The source-bound audit and
+separate-agent semantic review are linked in [formal/README.md](formal/README.md).
+The result has **not received independent mathematical peer review**.
+The older H4 formalization and its receipt remain separate.
 
-\[
- m=2^h,\quad n_h=(14h+2)m,\quad
- \operatorname{dist}_H(A_h)\ge\epsilon_h=(14h+2)^{-2}.
-\]
+A complementary [limitation certificate](proofs/asymmetric-limitations.md)
+excludes 16,384 uniform templates at the inherited certified distance.
+The successful candidate uses nonuniform anchor entries outside that class.
+The user-authorized draft PR packages the proof and formal certificate.
+No social announcement or author contact has been performed.
 
-At h=1 there are exactly 128 copies. For h≥2 the exact count is
 
-\[
- N_H(A_h)=\frac{33}{4}m^6-\frac{29}{2}m^5.
-\]
+## Previous checkpoint record
 
-For all h the normalized density is at most
-\(\frac{33}{4}(14h+2)^{-8}4^{-h}\). Its ratio to \(\epsilon_h^C\) tends
-to zero for every fixed C>0. Thus for every c,C>0 the same fixed H has a
-binary host at least epsilon-far from H-freeness with fewer than
-\(c\epsilon^C n^8\) copies. Copies match zeros and ones and preserve
-independent row and column orders. Repairs may change any cells in either
-direction. These universal statements rest on the written proof, not on
-extrapolation from finite tests.
+# Current result — candidate quantitative refinement
 
-| Parameter | Pinned primary | Earlier candidate | Earlier candidate | Current candidate |
-| --- | --- | --- | --- | --- |
-| Forbidden pattern | 66×66 | 15×15 | 5×5 | 4×4 |
-| Anchor component | 64×64 | 13×13 | 3×3 | 2×2 |
-| Host order | (386h+2)2^h | (80h+2)2^h | (20h+2)2^h | (14h+2)2^h |
-| Distance lower bound | (386h+2)^−2 | (80h+2)^−2 | (20h+2)^−2 | (14h+2)^−2 |
-| Density bound | 2(386h+2)^−132 4^−h | 2(80h+2)^−30 4^−h | 2(20h+2)^−10 4^−h | (33/4)(14h+2)^−8 4^−h |
-| Verification here | Sources audited; no Lean build | Draft; finite checks | Draft; finite checks | Draft; finite checks |
+The same H4 and its qualitative Lean obstruction were already released by
+Erebos on October 9, before our 4×4 PR. Those headline results are not a new
+advance here. The corrected comparison is in [BASELINE.md](BASELINE.md).
 
-The first three densities are exact, derived from their localization proofs;
-the last is a uniform upper bound with the exact count above. Different
-pattern sizes have different normalizations, so the table does not give a
-ratio of removal bounds for the same pattern.
+The [new written proof](proofs/optimized-order.md) globally orders all minus
+horizontal modes first, then plus horizontal modes, then vertical modes.
+For every h≥1, m=2^h and n=(14h+2)m, it gives:
 
-## What changed mathematically
+- Exact copies N=(5/2)m⁶−m⁵, versus Erebos's (41m⁶−74m⁵)/4 for h≥2.
+- Exact minimum unrestricted binary repair cost m², adapting Erebos's known repair.
+- Limiting count and density ratio 10/41 at identical host size and exact distance:
+  asymptotically 75.6098% fewer copies. The finite reductions differ; h=1 is equal.
+- Minimum copy count within the class obtained by independently permuting intact
+  anchor-mode blocks on the two axes with entries, weights, group orders and
+  nonanchor orders fixed. No broader optimality is established.
+- The inherited failure of every polynomial removal bound, including arbitrarily
+  small ε and arbitrarily large hosts, with the same pattern and density exponent.
 
-All 16 binary 2×2 patterns already occur among nonanchors. Consequently
-pure two-by-two anchor rigidity remains impossible in this host. The new
-argument avoids that requirement: it classifies **full H copies**. Every
-copy has two anchor rows and either two or one anchor columns. The extra
-one-anchor-column copies are allowed and counted explicitly.
+The complete finite census reproduces the formula through h=4 and the explicit
+repair is H-free with m² edits at each checked depth. Separate physical h=1
+checks and a separately written reviewer implementation support the result.
+These are evidence for the written theorem, not a replacement for its proof.
+The new construction/count/exact equality are not yet checked in Lean; the
+existing Lean certificate applies to the previous host order and qualitative
+H4 theorem. Independent mathematical peer review remains pending.
 
-Every full copy sends its fixed zero cell (3,4) to a leaf row and that leaf's
-parent-minus column block. There are only 2m such zero cells. The previous
-leaf-diagonal set does not meet every copy; an explicit depth-two
-counterexample is in the report. The new zero-cell localization yields the
-copy bound and the canonical sampling bound. The inherited arbitrary-repair
-argument needs only designated mode embeddings, so it still applies without
-pure anchor rigidity.
-
-Even the coarse count obtained from those 2m zero cells suffices for the
-universal obstruction; the exact formula is a further density refinement.
-Flipping all those zeros creates new copies, illustrating why original-copy
-hitting and arbitrary repair distance must be kept distinct.
-
-The new proof uses crown exclusion and ordered laminar role supports from
-the 5×5 draft. Within each depth, the order is W+0,W+1,W−0,W−1,V+,V−.
-Reversing the minus parity modes creates nonleaf copies already at h=3;
-the report includes that boundary witness. The tree host and arbitrary-edit
-propagation remain adaptations of OpenAI's construction.
-
-## Exact finite evidence and limits
-
-The checker exhaustively examines 3,693,411 quotient row quadruples across
-h=1,...,4 and all matching increasing column quadruples, with exact block
-multiplicities. It assumes no copy localization. The actual host orders are
-32, 120, 352, 928 and the exact copy counts are 128; 18,944; 1,687,552; 123,207,680.
-Every copy satisfies the stated zero-cell localization and falls in a listed
-family. A separate integer node-pair sum matches the closed formula through
-h=8. Crown exclusion, laminar supports, strict tree orders, 34,952 arbitrary
-path assignments, and exact protected-cell probabilities also pass.
-
-The original checks above were same-agent checks. A fresh literal checker
-reproduces the full census through h=4 and expands the actual h=1 matrix;
-the separate reviewer's checker verifies supports and unbalanced-copy
-counts through h=7. Both include their explicit scope in their reports.
-The Lean development checks concrete all-depth classification and localization,
-the last row and zero-set size bound, propagation, and the conditional
-protected-sample union bound, with only the standard logical axioms. None of this is independent peer review or a universal
-machine-checked removal theorem. See the
-[assurance checkpoint](verification/reviews/four-assurance.md).
-No global minimality claim is made: 3×3 and other
-smaller patterns remain unresolved here. The canonical sampler bound has
-exponential denominator 28, with prefactor sqrt(rho/2), and remains
-exp(Omega(epsilon^−1/2)). No arbitrary adaptive/two-sided tester or
-host-generation complexity improvement is claimed.
-
-See [BASELINE.md](BASELINE.md), [ATTEMPT.md](ATTEMPT.md),
-[RUNLOG.md](RUNLOG.md), and [HANDOFF.md](HANDOFF.md). The previous 5×5
-mathematical release is preserved at commit
-`f16d432d9a918c694f0b404a12f744c0c8b0db03`; its proof and finite checks remain
-in this repository. The current manuscript and metadata describe the 4×4
-candidate. Independent mathematical review remains pending.
+The result remains **candidate**. A bounded search found no earlier global-order
+count refinement in the inspected sources; this is not proof of novelty.
+No pattern-size reduction, new asymptotic exponent, global construction optimum,
+or improvement for arbitrary adaptive testers is claimed.

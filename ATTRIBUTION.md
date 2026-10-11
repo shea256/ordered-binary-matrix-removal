@@ -1,5 +1,51 @@
 # Attribution and scope
 
+## New asymmetric 3×4 candidate — October 11
+
+The [new proof](proofs/three-by-four.md) inherits OpenAI's binary tree,
+threshold body, mode roles, protected-path sampling, and four-step
+propagation. It uses the global mode order explored in the preceding
+local H4 refinement. The new construction replaces two anchor row groups
+with one, while adding W-dummy ones and parity-dependent nonterminal
+minus-child ones. Its new all-copy classification proves a 3×4 obstruction.
+Erebos's earlier H4 and formalization remain the external pattern baseline;
+no priority claim for H4 is restored. Erebos's exact repair upper bound
+is not transferred or needed for the new theorem.
+
+The coordinating agent discovered the rule and wrote the candidate proof
+and two check implementations. The existing user-authorized reviewer
+agent separately analyzed the proof and wrote another checker. This is
+separate AI review, not independent mathematical peer review. The new Lean
+formalization adapts the inherited path and sampling framework to the rectangular
+pattern and proves the new localization and full removal theorem. Its uniform
+blowup proof uses offset slices to handle arbitrary repairs. No Erebos Lean code
+is copied. The user-authorized draft PR is the review channel; no social
+announcement or author contact has been performed.
+
+
+## Previous checkpoint record
+
+# Attribution and scope
+
+## Prior-work correction and current contribution — October 11
+
+[Erebos v1.0.0](https://github.com/erebos-labs/ordered-matrix-removal-4x4/releases/tag/v1.0.0) already gives the same H4, complete
+localization, and qualitative Lean theorem; [v1.1.0](https://github.com/erebos-labs/ordered-matrix-removal-4x4/releases/tag/v1.1.0)
+adds exact repair via the terminal-anchor edit. [ProveIt](https://github.com/VladimirReshetnikov/ProveIt/tree/bfbfe915186310fdf745a7a089e7dd88eeb773b1/Combinatorics/OrderedMatrices/Research/ordered-matrix-removal) earlier gave a
+5×5 obstruction, exact repair and sampling results, and the explicit H4 candidate.
+Both sources preceded our 4×4 PR and were missed by our initial search. We do
+not imply we consulted them before that discovery. Older novelty descriptions
+below are historical and superseded by this correction.
+
+The current manuscript proposes a global anchor-mode ordering and the exact
+count (5/2)m⁶−m⁵, optimal over the stated block-permutation class. Its repair
+upper bound explicitly adapts Erebos's terminal-anchor argument. The tree,
+propagation, sampling and blowup mechanisms remain inherited. No Erebos Lean
+code is copied into the unchanged local Lean project; the new refinement is
+not yet formalized. New coordinating-agent and separate-reviewer checks have
+distinct implementations but are not independent mathematical peer review.
+
+
 Author: Ryan Shea. Developed with Codex assistance. A separate Codex reviewer
 audited the 4×4 argument; this is not independent mathematical peer review.
 No specific model configuration is claimed by this package.

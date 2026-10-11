@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-11",
+  "reviewer": "/root/four_proof_reviewer",
+  "erebos_commit": "6d21ce36e83b71d8a44015016cf3ac77e44b55ff",
+  "sha256": {
+    ".context/ordered-binary-matrix-removal/proofs/optimized-order.md": "b9999c71e37e41430b8094cd41494ffddfbec2200db2cb88b71fbbcf8df78ce4",
+    ".context/ordered-binary-matrix-removal/manuscript.md": "e0ec4e87fc4d1d638fa1d257794b8d1a5f28dcadcaa079100dc8eb900af302e3",
+    ".context/ordered-binary-matrix-removal/formal/OrderedRemoval/ConcreteHost.lean": "0d001376656b7c9ce344a23b50a86694a026fe1571afceb1a6f92c88f25da5f0",
+    ".context/erebos-ordered-matrix-removal-4x4/paper/report.tex": "c1acaf9709bb1741a56ccdeb0e6576e77a67ca95084645f8786ba1d0bf816e51",
+    ".context/erebos-ordered-matrix-removal-4x4/paper/terminal-anchor-proof.md": "62ebec03c3bc44006844ae2a0e468e3767dc64c19fe6c4e54635303fd2efba39",
+    ".context/erebos-ordered-matrix-removal-4x4/OrderedMatrixRemoval4/TerminalAnchorRepair.lean": "02879148814a79ac761fbc2ae95add2eb6781d355a1cb8651ba8da257c9d9925",
+    ".context/erebos-ordered-matrix-removal-4x4/OrderedMatrixRemoval4/TerminalAnchorCount.lean": "52f172736aa6353916b8fe756a6315214af4bda1889de5a2fa9d930d964fc5a8",
+    ".context/erebos-ordered-matrix-removal-4x4/OrderedMatrixRemoval4/Blowup.lean": "44748e0ce4b5c3145d79705920631a9ab48e7346615ae836401736f0b71a65c1",
+    ".context/refinement-work/reviewer-global-order-checks.py": "e07c6a8598e2ceba68d76dfb6e4cfd3b89733335ef2dc1c31ea98c6574d91f5f",
+    ".context/refinement-work/reviewer-global-order-output.json": "338f54f83aecbedd8217270c42c7c35faa2c9e09e3ce0321bb1e8230427f4bfb"
+  }
+}

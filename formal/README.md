@@ -1,4 +1,61 @@
+# Lean verification of the 3×4 theorem
+
+**The main theorem is checked end to end**, including arbitrarily small ε
+and arbitrarily large square hosts at the same chosen ε. The pattern is
+`1001/1010/0111`, with separately increasing row and column maps matching
+all twelve binary entries. Every H-free binary repair is quantified over,
+including anchor edits and changes in both directions.
+
+The principal export is `OrderedRemoval.Rectangular.no_polynomial_removal_bound`
+in [Complete.lean](OrderedRemoval/Rectangular/Complete.lean). For all real
+c,C,ε₀>0, it chooses 0<ε<ε₀ such that, for every threshold N, there is an
+n≥max(1,N) square host requiring at least εn² edits in every H-free repair
+and containing fewer than c ε^C n⁷ ordered copies.
+
+| Component | Checked conclusion |
+| --- | --- |
+| [Model](OrderedRemoval/Rectangular/Model.lean), [Host](OrderedRemoval/Rectangular/Host.lean), [OrderedHost](OrderedRemoval/Rectangular/OrderedHost.lean) | The literal 3×4 pattern, full host entry rule, global W−/W+/V order, and independent axis orders. |
+| [AnchorClassification](OrderedRemoval/Rectangular/AnchorClassification.lean), [ZeroLocalization](OrderedRemoval/Rectangular/ZeroLocalization.lean) | Every copy has one anchor row and one or two anchor columns; its fixed zero belongs to the terminal parent-minus set. |
+| [CoarseCopyBound](OrderedRemoval/Rectangular/CoarseCopyBound.lean) | Every copy is encoded by a cell in a set of at most 2m cells and five remaining indices, giving N_H≤2mn⁵. |
+| [RepairDistance](OrderedRemoval/Rectangular/RepairDistance.lean) | Every H-free repair of the actual new host changes at least m² entries. |
+| [Main](OrderedRemoval/Rectangular/Main.lean), [Blowup](OrderedRemoval/Rectangular/Blowup.lean), [Complete](OrderedRemoval/Rectangular/Complete.lean) | Normalization, exponential decay, and uniform blowup give the full quantifier order. |
+
+The formal sampler selects from both m-sized subgroups of each 2m anchor
+row block, then uses only the second row in copy completion. This differs
+from the paper's uniform 2m representative; the per-cell bound is still
+1/m². Blowup repair is proved by partitioning all cells into q² offset
+slices. Distinct pattern rows and columns give the sufficient q⁷ upper
+bound on the blowup copy count.
+
+With the pinned Lean 4.34.1/Lake toolchain, from the repository root:
+
+```sh
+(cd formal && lake exe cache get)
+python3 scripts/run_rectangular_formal_checks.py
+```
+
+The [source-bound audit](../verification/reference/rectangular-formal-audit.json)
+checks every declaration in both historical and rectangular project modules,
+including generated declarations, for transitive axiom dependencies. Only
+`propext`, `Quot.sound`, and `Classical.choice` occur. Each module is replayed
+into its imported Lean environment. This does not freshly replay all Mathlib.
+The [separate-agent semantic review](../verification/reviews/three-by-four-formal.md)
+checks agreement with the written theorem and is not independent peer review.
+Exact all-depth enumeration, repair equality, and global minimality are
+outside the certificate. The repository retains candidate status pending
+independent mathematical review.
+
+The following record concerns the older H4 proof only.
+
 # Lean formalization of the 4×4 removal obstruction
+
+**Scope after the October 11 ordering refinement:** the historical top-level Lean sources
+use the previous within-depth order W+0,W+1,W−0,W−1,V+,V−.
+They establish the qualitative theorem for the same H4, already known from
+Erebos's earlier release. They do not certify the newly proposed global order,
+its exact copy count, repair equality, or optimality statement. The source-bound
+387-theorem audit remains a receipt for those unchanged historical sources.
+
 
 **The qualitative theorem is formalized end to end.** For the explicit fixed
 4×4 binary pattern, Lean proves that every proposed polynomial removal bound
@@ -28,11 +85,11 @@ Lean is pinned to 4.34.1 and Mathlib to
 `lake-manifest.json` also pins transitive dependencies. The initial dependency
 and cache download requires network access and substantial disk space.
 
-The script builds the project and audits **every compiled project declaration's
-transitive axioms**, matching each named source theorem to its owning module.
+The script builds the project and audits **every compiled declaration in the historical H4 modules
+and its transitive axioms**, matching each named source theorem to its owning module.
 Only `propext`, `Quot.sound`, and `Classical.choice` are permitted. No added
 axioms, admitted proofs, or native decision shortcuts are used. It replays
-**each project module into its imported environment** using Lean's kernel.
+**each historical H4 module into its imported environment** using Lean's kernel.
 This does not freshly replay all Mathlib or use another proof assistant.
 The earlier Std-only checkpoint had a different replay scope.
 
