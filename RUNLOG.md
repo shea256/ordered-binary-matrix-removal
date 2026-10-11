@@ -1,6 +1,36 @@
 # Reproduction log
 
 
+## October 11 — date axis and Erebos release timestamp
+
+The user requested real dates and attribution of Erebos Labs' repository
+result. Checked GitHub API records for Erebos's repository and releases,
+OpenAI's commit adding the paper, ProveIt's intake commit, and our relevant
+commits/PRs. Erebos v1.0.0 has `published_at=2026-10-09T12:40:51Z`; repository
+creation was 12:39:06Z. The chart uses the result-bearing release timestamp,
+without inferring a discovery date or the presence/absence of an X announcement.
+
+Changed the x-axis to proportional UTC time using explicit GitHub event types.
+OpenAI's paper date (September 25) is separated from its October 6 commit.
+ProveIt's October 7 written 5×5 result and Erebos's October 9 4×4 release
+precede our October 10 intermediate stages. Those stages now appear as hollow
+markers; the line follows the minimum entry count among the plotted records.
+The final point is our October 11 3×4 PR opening. The vertical axis remains
+logarithmic with standard decade ticks. The theorem and Lean sources are unchanged.
+
+Archived the seven timestamp records, pinned commits, event types and source
+URLs in `assets/pattern-size-events.json`; refreshed the generated figure
+receipt. Updated README, chart documentation, baseline date notes, and
+package-integrity checks. Regenerated PNG/SVG with Matplotlib 3.9.4 via
+`python3 scripts/build_figure.py` using the existing figure-tools interpreter.
+Visually inspected the final chart and adjusted crowded labels.
+
+Validation: `python3 scripts/run_checks.py` passed all 14 suites and reference
+comparisons. Package integrity passed 177 local links plus all formal,
+manuscript and figure hashes. UTC timestamp order, entry counts, Erebos's
+release time and SVG parsing were checked. `git diff --check` passed.
+
+
 ## October 11 — standard logarithmic chart ticks
 
 Replaced the irregular data-value ticks with equally spaced base-10 decade

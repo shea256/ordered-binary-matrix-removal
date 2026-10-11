@@ -109,7 +109,14 @@ for name, expected in receipt['artifacts'].items():
 figure = json.loads((ROOT / 'assets/pattern-size-history.json').read_text())
 assert figure['current_result_id'] == current['result_id']
 assert figure['pattern_shapes'][-1] == [current['pattern_rows'], current['pattern_columns']]
-assert figure['pattern_shapes'][-2] == [current['baseline_pattern_rows'], current['baseline_pattern_columns']]
+events = json.loads((ROOT / 'assets/pattern-size-events.json').read_text())['events']
+event_by_id = {event['id']: event for event in events}
+assert event_by_id['erebos-4']['shape'] == [current['baseline_pattern_rows'], current['baseline_pattern_columns']]
+assert figure['event_ids'] == [event['id'] for event in events]
+assert figure['pattern_shapes'] == [event['shape'] for event in events]
+assert figure['timestamps'] == sorted(event['timestamp'] for event in events)
+assert figure['timestamps'] == [event['timestamp'] for event in events]
+assert figure['x_scale'] == 'linear UTC time'
 assert figure['entries'] == [rows * columns for rows, columns in figure['pattern_shapes']]
 assert figure['current_theorem_formalized'] == current['new_result_formalized']
 assert figure['y_scale'] == 'logarithmic'
