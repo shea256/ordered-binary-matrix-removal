@@ -1,6 +1,21 @@
 # Reproduction log
 
 
+## October 11 — standard logarithmic chart ticks
+
+Replaced the irregular data-value ticks with equally spaced base-10 decade
+ticks: 10, 100, 1,000 and 10,000. The chart was already logarithmic; its
+axis now explicitly says log₁₀, while the exact entry counts stay beside
+each point. Regenerated PNG, SVG and the artifact receipt with Matplotlib
+3.9.4 using `python3 scripts/build_figure.py`, and visually checked the PNG.
+The plotted values and theorem statements are unchanged. The chart readme
+now explains the tick spacing. PR #7 was merged before this adjustment.
+
+Validation: all 14 suites in `python3 scripts/run_checks.py` passed,
+including reference comparisons and package integrity (180 local links
+and source/artifact hashes). Visual inspection and `git diff --check` passed.
+
+
 ## October 11 — restore the README chart through 3×4
 
 The merged 3×4 README omitted its earlier image embedding and the old renderer
