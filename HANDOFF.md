@@ -1,100 +1,76 @@
 # Handoff — OPENAI-190
 
-**Current checkpoint:** a complete candidate proof for a fixed **4×4**
-ordered binary obstruction, with a 2×2 anchor component. Retain
-`Candidate result`: a separate-agent adversarial audit found no material
-error, and Lean checks the concrete host, anchor classification, localization,
-dummy last row, and zero-set size bound, but independent peer review
-and an end-to-end Lean theorem remain outstanding. The smaller anchor
-is not itself rigid.
+**Current checkpoint:** the qualitative obstruction for the fixed **4×4**
+ordered binary pattern is formalized end to end. The result remains
+`Candidate result` pending independent mathematical review and conclusive
+novelty assessment. This checkpoint changes verification coverage, not the
+pattern size or the written theorem.
 
-Start with [four-by-four.md](proofs/four-by-four.md). The earlier
-[5×5](proofs/five-by-five.md) and [15×15](proofs/compressed-pattern.md)
-drafts remain as research history. The current draft restates its required
-host properties and the arbitrary-edit argument.
+Start with [Main.lean](formal/OrderedRemoval/Main.lean),
+[formal coverage](formal/README.md), and the [manuscript](proofs/four-by-four.md).
+The capstone `OrderedRemoval.no_polynomial_removal_bound` quantifies over every
+positive real c,C. Its explicit arbitrary-repairs variant quantifies over every
+H4-free binary B. No anchor-preservation, localization, sampling, or host-existence
+hypothesis remains. [DistanceMeaning](formal/OrderedRemoval/DistanceMeaning.lean)
+proves that the finite minimum is attained by an actual repair.
 
-The [separate-agent review](verification/reviews/four-separate-agent.md)
-covers the four issues below. Its verdict is favorable, not independent
-peer review. Concrete classification and localization are now formalized.
-The next implementation step is the coarse copy count and the arbitrary-repair bound;
-see [formal/README.md](formal/README.md). Human reviewers should still inspect:
+The proof combines bounds for the **same actual host**: for h≥1, m=2^h and
+n=(14h+2)m, every repair changes at least m² entries and the copy count is at
+most 2mn⁶. The normalized density is at most 2(14h+2)⁻²2⁻ʰ, sufficient to defeat
+every polynomial in the distance scale (14h+2)⁻². The factor two is essential
+to this coarse localization argument and is retained throughout.
 
-1. **Full-pattern anchor classification.** Check the complete split by
-   counts a,b of selected anchors; crown exclusion, same-class comparability,
-   and ordered support containment leave only (2,2) and (2,1). Unit signatures
-   alone cannot exclude unintended anchors when the anchor size is two.
-2. **Unbalanced copies.** In the (2,1) case check the orientation of the
-   second anchor row and first anchor column, all four possible mode types,
-   and every column class having a one against row 3. The W− case below the
-   leaves crucially uses the parity-mode order. Verify that row 4 must be
-   dummy, and the fixed zero (3,4) lies in the leaf-to-parent-minus set T_h.
-3. **Exact count.** Audit all four unbalanced families and the factors from
-   actual block sizes. The balanced count is 2m^6. The total is 128 at h=1,
-   and (33/4)m^6−(29/2)m^5 for h≥2. The h=1 exception is essential; the
-   summation uses that m/2 is even only when h≥2. The old leaf-diagonal
-   hitting set fails on valid unbalanced copies with no leaf columns.
-   The weaker bound N_H≤2mn^6 follows immediately from localization and
-   already suffices for failure of polynomial removal; the exact count is
-   a separate refinement.
-4. **Final theorem and arbitrary repairs.** Designated mode anchors suffice
-   for propagation even though other S copies occur. Preserve the protected
-   probability 1/m², as opposed to 1/m on shared leaf diagonals. Verify the
-   m² edit lower bound, n=(14h+2)m, n^8 density normalization, fixed H and all
-   c,C quantifiers. Hitting original copies is not an arbitrary repair bound.
+## Next decisive work
 
-Reproduce the current finite checks offline:
+1. Obtain independent mathematical review, especially of the correspondence
+   between the literal H4, independent axis orders, unrestricted repairs,
+   manuscript, and formal capstone. The favorable
+   [separate-agent review](verification/reviews/four-removal.md) is not peer review.
+2. Formalize the sharper exact count: 128 for h=1 and
+   (33/4)m⁶−(29/2)m⁵ for h≥2. This refines the certified density rate beyond
+   the coarse bound; the h=1 exception must be preserved.
+3. Formalize the canonical sampler consequence separately, including its
+   quantifiers. It does not establish a bound for every adaptive tester.
+4. Finish novelty screening against primary literature. No global minimality
+   claim for 4×4 is made. A smaller pattern needs its own copy-density and
+   arbitrary-repair arguments.
+
+The exact equality |T_h|=2m for positive h is also outside the certificate;
+the checked upper bound suffices for the capstone. Historical 15×15 and 5×5
+proofs and reports are retained. The two-by-two anchor itself is not rigid;
+the full-pattern classification permits both (2,2) and (2,1) anchor counts.
+
+## Reproduce and interpret verification
 
 ```sh
+python3 scripts/run_formal_checks.py
 python3 scripts/run_checks.py
 ```
 
-Compare parsed JSON with `verification/reference/four-report.json`. The full census
-checks every ordered H_4 copy through depth 4 without assuming localization;
-a separate node-pair sum checks the closed count through depth 8. The checker
-includes a witness for failure of the old hitting set and a nonleaf H copy
-when the minus parity modes are reversed. It also reruns the inherited
-crown, role-support, path-assignment, and sampling checks. Finite tests and
-same-agent proof review do not constitute independent mathematical review.
-The suite additionally runs a fresh full-census checker using interval
-coordinates, and the separate reviewer's support/unbalanced-copy checker.
-The same command also reproduces `verification/reference/four-repair-report.json` and
-checks that flipping the zero-cell hitting set creates new designated copies.
+The first command requires pinned Lean 4.34.1 and the Mathlib cache, audits
+all project declarations for transitive axioms, and replays each local module
+into its imported Lean environment. It is not fresh replay of all Mathlib.
+The second runs nine exact Python checkers and validates the source-bound
+audit receipt and manuscript artifacts. Finite tests are not universal proofs.
+See [RUNLOG.md](RUNLOG.md) for actual outputs and
+[verification/README.md](verification/README.md) for evidence scope.
 
-No global minimality claim is made. A smaller obstruction would require
-its own copy-density and arbitrary-repair arguments; finite pattern searches
-alone would not establish it.
+The new reviewer checker independently reconstructs all m³ sampled paths for
+h=1..4, checks each protected zero and one, and confirms maximum guard frequency
+m. An unprotected common-leaf diagonal has frequency m², a useful negative control.
+Neither the script nor a finite original-copy hitting set proves arbitrary-repair
+hardness; the guarded-path Lean chain supplies that proof.
 
-Upstream main still matched the audited commit
-`fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb` when rechecked on 2026-10-11.
-The original full Lean implementation has not been rebuilt. Selected generic
-modules were adapted with explicit attribution. The current partial
-development uses Lean 4.34.1 and pinned Mathlib. Run
-`python3 scripts/run_formal_checks.py` from the repository root to build,
-audit every project declaration's axiom dependencies, and replay each local
-module into its imported Lean environment. This is not fresh replay of all
-Mathlib. The key exports are `Concrete.Copy.anchor_counts` and
-`Concrete.matrix_anchor_counts`; they concern all actual ordered copies and
-assume no structural certificate. The boundary proofs rule out h=0 and
-exhibit a balanced copy at h=1.
+Upstream main still matched `fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb` on
+2026-10-11. The original full upstream Lean implementation has not been rebuilt.
+Selected sampling, guarded-path, normalization, and analytic modules were adapted
+with attribution. Their methods are inherited, not new contributions.
 
-The new exports `Concrete.Copy.zero_localization`,
-`Concrete.matrix_zero_localization`, `Concrete.Copy.last_row_dummy`, and
-`Concrete.card_zeroCells_le` close the localization checkpoint. The size
-statement is an upper bound, sufficient for the coarse count; exact equality
-and the sharper copy formula are not claimed as formalized.
+Keep `independent_review` false and `status` candidate. The qualitative
+`new_result_formalized` flag is true; exact enumeration and the canonical sampler
+flags remain false. The explicit coverage fields in
+[results/current.json](results/current.json) distinguish those statements.
 
-Remaining formal obligations are the coarse copy bound, protected incidence
-extraction and body extension for arbitrary edited matrices, and the
-every-c,C conclusion.
-Keep both `independent_review` and `new_result_formalized` false.
-
-The previous 5×5 release is preserved at commit
-`f16d432d9a918c694f0b404a12f744c0c8b0db03`. The current manuscript, PDF,
-and results/current.json describe the 4×4 candidate. All previous proof
-drafts and deterministic reference reports remain available.
-
-The 4×4 release and comparison-graphic PRs were merged as `a5920eb` and
-`0b8b039` respectively. The audit and concrete-host formalization were merged in
-[PR #3](https://github.com/shea256/ordered-binary-matrix-removal/pull/3),
-commit `4e707a25ccf86c0e165e476de01dd1d8c627ce4d`. This localization
-checkpoint preserves the pattern size and final written theorem.
+The localization checkpoint was merged in
+[PR #4](https://github.com/shea256/ordered-binary-matrix-removal/pull/4),
+commit `6e7711ffdc51280ff8b9c882a77c3af2982ddaa2`. This checkpoint builds on it.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build and audit the partial Lean development; never certify the final theorem."""
+"""Build and audit the qualitative 4×4 removal theorem and its dependencies."""
 import hashlib
 import json
 from pathlib import Path
@@ -74,6 +74,11 @@ run_cmd do
     for name in ("Copy.zero_localization", "matrix_zero_localization",
                  "Copy.last_row_dummy", "card_zeroCells_le"):
         assert "OrderedRemoval.Concrete." + name in axioms
+    for name in ("fixedH_eq_H4", "exists_optimal_repair", "Concrete.copyCount_le",
+                 "OrderedHost.hammingDistance_ge", "concrete_host_bounds",
+                 "counterexample_sequence", "no_polynomial_removal_bound",
+                 "no_polynomial_removal_bound_arbitrary_repairs"):
+        assert "OrderedRemoval." + name in axioms, name
     # Replay each local module into its imported environment, sequentially to
     # bound memory. This checks local proof terms again; it does not replay all
     # of Mathlib into a fresh environment or use a different proof assistant.
@@ -83,8 +88,12 @@ run_cmd do
     source_files = files + [FORMAL / "OrderedRemoval.lean", FORMAL / "lean-toolchain",
                             FORMAL / "lakefile.toml", FORMAL / "lake-manifest.json"]
     receipt = {
-        "status": "partial_formalization",
-        "end_to_end_removal_theorem_formalized": False,
+        "status": "qualitative_removal_theorem_formalized",
+        "end_to_end_removal_theorem_formalized": True,
+        "coarse_copy_count_formalized": True,
+        "arbitrary_repair_bound_formalized": True,
+        "exact_copy_count_formalized": False,
+        "canonical_sampler_bound_formalized": False,
         "concrete_anchor_classification_formalized": True,
         "zero_cell_localization_formalized": True,
         "dummy_last_row_formalized": True,
@@ -103,7 +112,7 @@ run_cmd do
     out.mkdir(exist_ok=True)
     (out / "formal-checks-receipt.json").write_text(json.dumps(receipt, indent=2) + "\n")
     print(f"{len(axioms)} named Lean theorems; {len(declarations)} declarations audited; module kernel replay passed.")
-    print("Coverage is partial. Copy counting, arbitrary-repair connections, and the final theorem remain unformalized.")
+    print("The qualitative 4×4 removal theorem is formalized end to end. The sharper exact copy formula and canonical sampler bound are not formalized.")
 
 
 if __name__ == "__main__":

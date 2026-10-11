@@ -5,20 +5,20 @@
   "warnings": [],
   "artifacts": {
     "manuscript.md": {
-      "sha256": "66f67f9b1c1987b8d8a7ea960c478dc35fec203ec3cc49c34b7a7a69659895b8",
-      "bytes": 28761
+      "sha256": "1aed1968ac952d29e75c3a9c419be30f8976be2df5a68b02f3d5203c23d9444b",
+      "bytes": 29242
     },
     "tex/manuscript.tex": {
-      "sha256": "0c49db8b7da77136c7779b8d33ad8c7e34fb0483cf2e76506ef92e8aafceb651",
-      "bytes": 32601
+      "sha256": "1a41e32dd1e20c218e82408188124d0c178281e625e3331bcfe580081b88e36b",
+      "bytes": 33082
     },
     "manuscript.pdf": {
-      "sha256": "3912e550af9f19991381346497c4286e981b7808c5b95d35a91d0569cdbdd8c1",
-      "bytes": 242181
+      "sha256": "4e889b151e5b888761cc758f62885ab782b1577fdb08fbd076e4ca38aeb01f93",
+      "bytes": 242765
     },
     "proofs/four-by-four.md": {
-      "sha256": "fe88f93ad0238c0ddc885bc0dee8537c2bb2109c7bc714edc53a0feb86a48c64",
-      "bytes": 27181
+      "sha256": "6294281510e7c0e8d0efef99e26158c04c4c593e25a73d3f97991c71b48fffa8",
+      "bytes": 27550
     }
   }
 }

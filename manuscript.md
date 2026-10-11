@@ -2,11 +2,13 @@
 
 **Ryan Shea**
 
-October 10, 2026
+October 11, 2026
 
 **Candidate research manuscript.** Complete written argument and exact finite
-checks; independent mathematical review, end-to-end formalization, and
-conclusive novelty assessment remain pending. Developed with Codex assistance.
+checks, with the qualitative removal obstruction formalized in Lean. Independent
+mathematical review and conclusive novelty assessment remain pending. The sharper
+exact enumeration and canonical sampler bound are not formalized. Developed with
+Codex assistance.
 
 ## Abstract
 
@@ -557,14 +559,18 @@ nonanchor crown exclusion, laminar role supports, protected sampling
 probabilities, and arbitrary path assignments. The all-depth proof above
 is separate from finite evidence. A subsequent separate-agent adversarial
 review found no material error; it is not independent mathematical peer
-review. Lean now defines the concrete host and its two orders and proves
-anchor-count classification, fixed-zero localization, and a dummy last row
-for every actual ordered copy at every depth. The zero-set cardinality upper
-bound of 2m, arbitrary-depth propagation, and inherited sampling lemmas are
-also checked. Copy counting, concrete arbitrary-repair connections, and the
-final removal theorem remain unformalized; novelty screening remains
-inconclusive. See the
-[assurance checkpoint](verification/reviews/four-assurance.md).
+review. Lean now proves the qualitative removal obstruction end to end for
+this exact 4×4 pattern and the actual host with its independent axis orders.
+The capstone uses the sufficient coarse count \(N_H(A_h)\le2mn^6\), the
+\(m^2\) lower bound for every H-free binary repair, and exponential decay of
+\(2(14h+2)^{-2}2^{-h}\) against every fixed power of the distance scale.
+The inherited three-seed sampler supplies an alternate finite proof of the
+same repair argument. No localization, sampling, host-existence, or restricted
+repair hypothesis remains in the final theorem. The sharper exact copy
+formula and canonical sampler lower bound above are not formalized. The
+project's transitive axiom audit and per-module kernel replay are distinct
+from independent mathematical peer review; novelty screening remains
+inconclusive. See the [formal theorem review](verification/reviews/four-removal.md).
 
 [check_four_repair.py](verification/check_four_repair.py) additionally
 checks the explicit new copies produced by flipping \(T_h\), for every leaf

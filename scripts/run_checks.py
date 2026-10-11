@@ -6,14 +6,14 @@ ROOT = Path(__file__).resolve().parents[1]
 out = ROOT / ".context"
 out.mkdir(exist_ok=True)
 receipt = {"python": platform.python_version(), "platform": platform.platform(), "checks": []}
-for name in ("compression", "adversarial", "refinement", "four", "four_repair", "four_literal", "four_reviewer", "four_localization"):
+for name in ("compression", "adversarial", "refinement", "four", "four_repair", "four_literal", "four_reviewer", "four_localization", "four_removal"):
     start = time.monotonic()
     result = subprocess.run([sys.executable, str(ROOT / "verification" / ("check_" + name + ".py"))], check=True, capture_output=True, text=True)
     report = json.loads(result.stdout)
     (out / (name.replace("_", "-") + "-report.json")).write_text(result.stdout)
     expected = json.loads((ROOT / "verification" / "reference" / (name.replace("_", "-") + "-report.json")).read_text())
-    # The localization reviewer records Python separately from mathematical output.
-    if name == "four_localization":
+    # The semantic reviewers record Python separately from mathematical output.
+    if name in ("four_localization", "four_removal"):
         report = {k: v for k, v in report.items() if k != "python"}
         expected = {k: v for k, v in expected.items() if k != "python"}
     assert report == expected, name + " reference differs"

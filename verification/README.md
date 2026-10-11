@@ -45,7 +45,7 @@ pretend to rehash absent source files.
 Finite tests cannot prove the all-depth classification, localization, or
 arbitrary repair bound. Those obligations are the manuscript's mathematical argument.
 
-## Subsequent separate-agent audit and partial Lean development
+## Separate-agent audits and Lean development
 
 [check_four_literal.py](check_four_literal.py) imports no candidate-package
 code. It constructs variable order using binary-interval endpoints, counts
@@ -69,12 +69,13 @@ the [assurance checkpoint](reviews/four-assurance.md) summarizes its scope.
 
 The [Lean project](../formal/README.md) now verifies the concrete host,
 all-depth anchor classification, fixed-zero localization, dummy last row,
-and zero-set size bound, alongside conditional propagation/sampling lemmas.
+zero-set size bound, coarse copy count, arbitrary-repair lower bound, and
+the unconditional every-c,C removal theorem.
 The audit checks every project declaration and replays each local module
 into its imported Lean environment; it does not freshly replay Mathlib. The
 archived receipt binds the exact sources. The default Python suite checks
-that binding but does not run Lean. Copy counting, concrete arbitrary-repair
-connections, and the final removal theorem remain unformalized.
+that binding but does not run Lean. The sharper exact copy count and canonical
+sampler lower bound remain unformalized.
 
 The [localization review](reviews/four-localization.md) and its separate
 [checker](check_four_localization.py) cover the weaker generic localization
@@ -82,3 +83,19 @@ premises through h=7, 419,513 ordered position pairs for column bounds,
 the zero code through h=10, and last-row class intersections through h=100.
 Its [output](reference/four-localization-report.json) is finite evidence;
 the Lean theorems supply the all-depth proofs for this checkpoint.
+
+## End-to-end removal checkpoint
+
+[Main.lean](../formal/OrderedRemoval/Main.lean) closes the qualitative theorem
+using the sufficient coarse count, unrestricted binary repair bound, and
+real-valued decay. [four-removal.md](reviews/four-removal.md) records the
+separate-agent semantic review and its original snapshot hashes.
+
+[check_four_removal.py](check_four_removal.py) imports no candidate code. It
+reconstructs all three-seed paths through h=4, checks all four frames per edge
+and both binary labels, confirms guard containment and maximum cell frequency
+m, and includes the unprotected leaf-diagonal frequency m² as a negative
+control. It also checks normalization with exact fractions. The ninth default
+check compares its output with [four-removal-report.json](reference/four-removal-report.json),
+ignoring only the Python-version metadata. This finite audit is distinct from
+the universal Lean proof and from independent mathematical peer review.

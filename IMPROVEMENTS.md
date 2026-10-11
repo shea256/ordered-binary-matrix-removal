@@ -34,3 +34,13 @@ The qualitative failure of polynomial removal is inherited. The proposed
 three-column lemma permits the smaller anchor. The full theorem remains a
 candidate pending independent proof review, formalization, and novelty review.
 See RESULT.md and results/current.json.
+
+## Formal verification checkpoint — October 11, 2026
+
+The pattern remains **4×4**. Lean now proves its qualitative failure of every
+polynomial removal bound end to end, using the actual host, coarse copy bound
+2mn⁶, and m² lower bound for arbitrary binary repairs. The sharper exact count
+and canonical sampler consequence remain outside the formal certificate.
+See [formal coverage](formal/README.md). Independent mathematical review and
+novelty assessment remain pending; this is a verification milestone, not a
+further pattern-size reduction.

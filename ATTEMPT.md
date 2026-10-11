@@ -323,3 +323,34 @@ checks the generic lemma's weaker premises, not just full-copy cases, and
 includes a counterexample when the mode-order condition is omitted. This
 is verification progress for the existing 4×4 candidate, not a new size
 reduction, an independent peer review, or a complete removal theorem.
+
+## End-to-end qualitative theorem — 2026-10-11
+
+Executed the coarse-count route: delete the designated row and column from
+each copy, record its localized cell and the six remaining indices, and use
+injectivity to get N_H≤|T_h|n⁶≤2mn⁶. This suffices without enumerating the
+unbalanced families exactly.
+
+Adapted the pinned upstream guarded-path repair framework to the two-group
+anchor. Every protected cell belongs to at most m of the m³ three-seed
+selections, so fewer than m² changes leave a selected guard set untouched.
+All roots, dummies, anchor zeros and ones, and signatures survive in that
+selection. Boolean propagation then forces a body in the edited matrix, and
+its designated frame extends it to this exact ordered H4. No pure-anchor
+rigidity or restriction on edited cells is needed.
+
+Both bounds are instantiated for the same separately indexed concrete host.
+Normalization gives distance d⁻² and density at most 2d⁻²2⁻ʰ, d=14h+2. The
+analytic decay lemma is applied at c/2, retaining the localization factor two.
+The minimum-distance definition is proved to have an actual optimal repair;
+a second capstone states the quantifier over all repairs explicitly.
+
+The separate reviewer caught three old index-65 case splits left during the
+4×4 adaptation of BodyExtension. Replacing them with index 3 fixes this
+mechanical porting error; no invalid compiled theorem was accepted. Its
+independent host/sampler check through h=4 found maximum guard frequencies
+2,4,8,16 and a leaf-diagonal negative control with frequency m².
+
+This completes the qualitative formal proof. Exact copy enumeration, the
+canonical sampler bound, independent peer review, and novelty assessment
+remain separate obligations.

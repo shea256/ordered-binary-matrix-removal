@@ -1,14 +1,20 @@
-# Partial Lean formalization of the 4×4 argument
+# Lean formalization of the 4×4 removal obstruction
 
-**Status: partial, with concrete zero-cell localization proved.** Lean 4.34.1
-checks the actual host and its independent axis orders, anchor counts
-**(2,2) or (2,1)**, and localization of every ordered H4 copy at every
-depth. The fixed zero (third row, fourth column) lies in the
-leaf-to-parent-minus set; that set has at most `2·2^h` cells, all zero,
-and the last selected row is dummy. No structural certificate or
-localization hypothesis is assumed by the copy theorems. Copy counting,
-arbitrary-repair connections, and the final removal theorem remain open.
-The overall research result remains a candidate.
+**The qualitative theorem is formalized end to end.** For the explicit fixed
+4×4 binary pattern, Lean proves that every proposed polynomial removal bound
+fails. The construction uses independent increasing row and column maps and
+allows every binary repair, including changes to anchors and both edit directions.
+The overall research record remains **candidate** pending independent mathematical
+review and a conclusive novelty assessment.
+
+The sharper exact copy formula and the canonical sampler lower bound in the
+manuscript are **not formalized**. The capstone instead uses the sufficient
+coarse estimate `N_H(A_h) ≤ 2mn⁶`, together with the `m²` arbitrary-repair bound.
+For `m=2^h`, `d=14h+2`, and `n=dm`, this gives distance at least `d⁻²` and
+copy density at most `2d⁻²2⁻ʰ`. Exponential decay beats every fixed power of
+the distance scale. The factor two is retained throughout the formal proof.
+
+## Reproduce
 
 With the pinned Lean/Lake toolchain available, from the repository root:
 
@@ -17,86 +23,73 @@ With the pinned Lean/Lake toolchain available, from the repository root:
 python3 scripts/run_formal_checks.py
 ```
 
-Mathlib is pinned to commit `d13f23b723b8a846827a245b89c10fc7d3f11612`;
-`lake-manifest.json` pins its transitive dependencies. The initial dependency
+Lean is pinned to 4.34.1 and Mathlib to
+`d13f23b723b8a846827a245b89c10fc7d3f11612`;
+`lake-manifest.json` also pins transitive dependencies. The initial dependency
 and cache download requires network access and substantial disk space.
 
-The script builds the project, discovers compiled declarations by owning
-module, and checks their transitive axiom dependencies. It also matches every
-source-declared theorem against the compiled environment, including nested
-namespaces and dotted names. Only `propext`, `Quot.sound`, and
-`Classical.choice` are permitted. No added axioms or admitted proofs are used.
-It then replays **each project module into its imported environment** using
-Lean's kernel. This does not freshly replay all Mathlib dependencies or use
-a different proof assistant. The earlier 34-helper Std-only checkpoint did
-use fresh-environment replay; these are different verification scopes.
+The script builds the project and audits **every compiled project declaration's
+transitive axioms**, matching each named source theorem to its owning module.
+Only `propext`, `Quot.sound`, and `Classical.choice` are permitted. No added
+axioms, admitted proofs, or native decision shortcuts are used. It replays
+**each project module into its imported environment** using Lean's kernel.
+This does not freshly replay all Mathlib or use another proof assistant.
+The earlier Std-only checkpoint had a different replay scope.
 
-Source hashes and results go to `.context/formal-checks-receipt.json`.
-The archived run is [formal-audit.json](../verification/reference/formal-audit.json).
-The [host review](../verification/reviews/four-concrete-host.md) and
-[localization review](../verification/reviews/four-localization.md) check
-agreement with the manuscript. These are separate-agent semantic reviews,
-not independent peer review.
+The source-bound receipt is written to `.context/formal-checks-receipt.json`;
+the archived run is [formal-audit.json](../verification/reference/formal-audit.json).
+The default Python suite validates this binding but does not execute Lean.
 
-## What is proved
+## Proof map
 
-| Component | Checked statement | Remaining connection |
-| --- | --- | --- |
-| [ConcreteHost](OrderedRemoval/ConcreteHost.lean), [TreePositions](OrderedRemoval/TreePositions.lean), [AnchorFrames](OrderedRemoval/AnchorFrames.lean), [OrderedHost](OrderedRemoval/OrderedHost.lean) | The finite binary host has `(14h+2)2^h` positions, shared leaves, the revised mode ranks, and two independently enumerated axis orders. | Use these definitions in the remaining repair arguments. |
-| [HostStructure](OrderedRemoval/HostStructure.lean), [RoleSupports](OrderedRemoval/RoleSupports.lean), [ConcreteCopies](OrderedRemoval/ConcreteCopies.lean) | Concrete crown exclusion, same-class comparability, forward support containment, twin exclusion, and dummy exclusions. | These structural facts are already connected to anchor classification. |
-| [ExtractAnchors](OrderedRemoval/ExtractAnchors.lean), [AnchorCertificate](OrderedRemoval/AnchorCertificate.lean), [IndexedHost](OrderedRemoval/IndexedHost.lean) | Every actual ordered copy supplies the certificate and has counts (2,2) or (2,1). The indexed matrix interface assumes only increasing index maps and the sixteen H4 entries. No copies at height zero; an explicit balanced copy at height one. | Used by the concrete localization theorem. |
-| [HostTreeOrder](OrderedRemoval/HostTreeOrder.lean), [LocalArithmetic](OrderedRemoval/LocalArithmetic.lean) | Four concrete parent/child order equivalences and the conditional arithmetic contradictions for localization. | Connected to actual copies by the localization modules below. |
-| [TreeComparisons](OrderedRemoval/TreeComparisons.lean), [LocalizationFrame](OrderedRemoval/LocalizationFrame.lean), [LocalizationArithmetic](OrderedRemoval/LocalizationArithmetic.lean), [ThirdColumn](OrderedRemoval/ThirdColumn.lean) | Concrete order bounds, common mode frame, variable third column, and all mode cases including the essential earlier-minus parity condition. | Connected to every copy in ZeroLocalization. |
-| [ZeroLocalization](OrderedRemoval/ZeroLocalization.lean), [LastRow](OrderedRemoval/LastRow.lean), [ZeroSetSize](OrderedRemoval/ZeroSetSize.lean) | Every copy localizes to a zero cell in T_h; its last row is dummy; an injection into leaves × parity bits proves cardinality at most 2m. | Count copies from the fixed cell. Exact cardinality 2m for h≥1 and the sharper exact copy formula are not formalized here. |
-| [ThreeSeedSampling](OrderedRemoval/ThreeSeedSampling.lean) | The inherited finite sampler, root/leaf and ancestor identities, and exact mixer fiber counts. | Instantiate the protected-cell incidence bound for edited host cells. |
-| [Propagation](OrderedRemoval/Propagation.lean), [ProtectedSampling](OrderedRemoval/ProtectedSampling.lean) | Arbitrary-depth Boolean propagation and a finite union bound under explicit incidence hypotheses. | Extend the resulting body to an ordered H4 copy in an arbitrary edited matrix. |
+| Component | Checked conclusion |
+| --- | --- |
+| [Model](OrderedRemoval/Model.lean), [DistanceMeaning](OrderedRemoval/DistanceMeaning.lean) | Copies match all sixteen entries under separate increasing maps; the literal pattern equals the previously localized H4; minimum edit distance is attained by an actual H4-free binary repair. |
+| [ConcreteHost](OrderedRemoval/ConcreteHost.lean), [OrderedHost](OrderedRemoval/OrderedHost.lean) | The actual host has `(14h+2)2^h` positions, the revised mode ordering, and separate row/column orders. |
+| [AnchorCertificate](OrderedRemoval/AnchorCertificate.lean), [IndexedHost](OrderedRemoval/IndexedHost.lean) | Every concrete copy has anchor counts (2,2) or (2,1); no structural certificate is assumed. Height zero has no copies; an explicit height-one copy shows nonvacuity. |
+| [ZeroLocalization](OrderedRemoval/ZeroLocalization.lean), [LastRow](OrderedRemoval/LastRow.lean), [ZeroSetSize](OrderedRemoval/ZeroSetSize.lean) | The fixed zero lies in the leaf-to-parent-minus set, the last selected row is dummy, and the set has at most 2m cells. |
+| [CountingInjection](OrderedRemoval/CountingInjection.lean), [CoarseCopyBound](OrderedRemoval/CoarseCopyBound.lean) | Encode each copy by its fixed zero and remaining six indices to obtain `N_H ≤ 2mn⁶`. |
+| [HostSampling](OrderedRemoval/HostSampling.lean), [GuardContainment](OrderedRemoval/GuardContainment.lean), [HostSamplingCompatibility](OrderedRemoval/HostSamplingCompatibility.lean) | Every protected edited cell is incident to at most m of the m³ three-seed selections. There is no extra factor for modes, levels, or roles. |
+| [BodyExtension](OrderedRemoval/BodyExtension.lean), [GuardedPath](OrderedRemoval/GuardedPath.lean), [OrderedSampledSelection](OrderedRemoval/OrderedSampledSelection.lean) | A surviving selected path gives an ordered copy of the fixed H4 in an arbitrarily edited matrix; all host, order, and signature premises are discharged. |
+| [OrderedRepairDistance](OrderedRemoval/OrderedRepairDistance.lean) | Every H4-free binary repair of the actual host changes at least m² cells for h≥1. |
+| [SequenceAssembly](OrderedRemoval/SequenceAssembly.lean), [Asymptotics](OrderedRemoval/Asymptotics.lean), [Consequence](OrderedRemoval/Consequence.lean), [Main](OrderedRemoval/Main.lean) | Both estimates concern the same concrete host; normalization and decay yield the unconditional theorem for every positive real c,C. |
 
-The key exports in `OrderedRemoval.Concrete` are:
+The principal export is `OrderedRemoval.no_polynomial_removal_bound`:
+for every real `c,C>0`, there exist `n≥1`, `0<ε<1`, and a binary n×n matrix
+whose normalized repair distance is at least ε and whose ordered H4-copy
+count is strictly less than `c ε^C n⁸`.
 
-- `Copy.zero_localization` and `matrix_zero_localization`: all ordered
-  copies, including both anchor-count cases, with independent axis maps.
-- `Copy.last_row_dummy`: the last selected row is dummy in every copy.
-- `zeroSet_entry` and `card_zeroCells_le`: the designated cells are zeros
-  and their number is at most `2·2^h`, including the h=0 boundary.
+`OrderedRemoval.no_polynomial_removal_bound_arbitrary_repairs` states the
+same conclusion directly as `εn² ≤ hammingDistance A B` for **every** H4-free
+binary matrix B. Neither capstone has a localization, sampling, host-existence,
+or anchor-preservation premise.
 
-These statements concern all natural depths, not an enumeration of finitely
-many hosts. The matrix interface assumes only strict row/column order and
-the sixteen H4 entries. The earlier height-zero exclusion and explicit
-height-one copy witness nonvacuity and boundary behavior.
+## Inherited sampler and attribution
 
-## Inherited three-seed sampler
-
-The paper chooses many representatives independently conditional on a leaf.
-The smaller three-seed parameterization already appears in upstream
+The three-seed sampler already appears in upstream
 [ThreeSeedSampling.lean](https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/OAI/Combinatorics/MatrixRemoval/ThreeSeedSampling.lean).
-Our adapted module preserves that construction; it is not a new local result.
+Take uniform `z,u,v` among m choices. Choose leaf z; in a size-w ancestor
+block use row offset `u mod w` and column offset `v mod w`. Anchors and dummies
+use the corresponding axis seed. Every protected cell has m preimages among
+m³ seeds. The common-leaf diagonal has m² preimages and is deliberately
+unprotected. The finite incidence bound does not require independent choices
+at different depths. All of these connections are now formalized.
 
-Take independent uniform `z,u,v∈{0,...,m−1}`. Choose leaf z. In each ancestor
-block of size w, select offset `u mod w` on rows and `v mod w` on columns.
-Select u in every size-m row anchor/dummy block and v in the column blocks.
-At a root the position is the axis seed; at a shared leaf it is z.
+OpenAI's guarded-path, sampling, counting-injection, normalization, and
+asymptotic modules were adapted selectively with attribution headers.
+The original full upstream development has not been rebuilt. These inherited
+arguments and their theorem counts are not new mathematical contributions.
+See [ATTRIBUTION.md](../ATTRIBUTION.md).
 
-For a variable position in a size-w block, w leaves and m/w offsets yield
-the given position. Fixing an opposite anchor/dummy coordinate fixes the
-other seed. Every protected such cell has m preimages among m³ seeds.
-Two anchor/dummy endpoints or two root endpoints likewise fix the two axis
-seeds and leave the leaf free. The diagonal shared leaf has m² preimages
-and probability 1/m, so it is deliberately unprotected. Correlations within
-an axis do not invalidate the union bound or path propagation.
+The [host](../verification/reviews/four-concrete-host.md),
+[localization](../verification/reviews/four-localization.md), and
+[final theorem](../verification/reviews/four-removal.md) reviews examine
+agreement between the Lean statements and intended mathematics. They are
+separate-agent reviews, not independent mathematical peer review.
 
-The mixer and fiber statements are now Lean theorems. Identifying every
-protected host cell with the appropriate fiber and connecting the sampler
-to an arbitrary repair remain formal proof obligations.
+## Remaining scope
 
-## Next decisive steps
-
-1. Encode copies by their localized zero and the remaining six indices,
-   deriving the coarse copy bound `2mn⁶` from the checked `|T_h|≤2m`.
-2. Instantiate protected sampling and designated-body extension for an
-   arbitrary edited binary matrix, proving the `m²` edit lower bound.
-3. Combine the copy and repair bounds and prove the final statement for
-   every positive real c,C. Exact enumeration can follow.
-
-The original full 61-module upstream development has not been rebuilt here.
-Generic modules were adapted selectively with source headers and attribution;
-their theorem count is not a count of new mathematical contributions.
+The exact zero-set cardinality, sharper exact copy formula (including its
+h=1 exception), and canonical sampler asymptotics remain outside this formal
+certificate. Independent mathematical review and novelty assessment remain
+open. No global minimality claim for 4×4 is made.
