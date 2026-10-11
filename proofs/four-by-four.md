@@ -1,5 +1,13 @@
 # A candidate 4-by-4 ordered binary removal obstruction
 
+**Historical host order.** The current refinement is
+[optimized-order.md](optimized-order.md). Erebos had already published this H4
+and its qualitative Lean theorem before our 4×4 PR; see the corrected
+[baseline](../BASELINE.md). Novelty descriptions below reflect the earlier,
+incomplete source screen. The retained Lean development certifies this older
+host's qualitative theorem, not the new exact-count refinement.
+
+
 Date: 2026-10-10. **Candidate with a complete written proof draft.**
 Independent mathematical review, end-to-end formal verification, and conclusive novelty
 assessment remain pending. This further refines the earlier 5-by-5 candidate.

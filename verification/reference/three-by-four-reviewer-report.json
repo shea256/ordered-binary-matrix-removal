@@ -1,0 +1,100 @@
+{
+  "python": "3.9.25",
+  "scope": "Separate-agent finite checks, not human peer review or formal verification.",
+  "census": [
+    {
+      "h": 1,
+      "expanded": false,
+      "copies": 1632,
+      "literal_quotient_witnesses": 19,
+      "anchor_counts": {
+        "(1, 2)": 1600,
+        "(1, 1)": 32
+      }
+    },
+    {
+      "h": 2,
+      "expanded": false,
+      "copies": 101888,
+      "literal_quotient_witnesses": 83,
+      "anchor_counts": {
+        "(1, 2)": 79872,
+        "(1, 1)": 22016
+      }
+    },
+    {
+      "h": 3,
+      "expanded": false,
+      "copies": 4743168,
+      "literal_quotient_witnesses": 306,
+      "anchor_counts": {
+        "(1, 2)": 3473408,
+        "(1, 1)": 1269760
+      }
+    },
+    {
+      "h": 4,
+      "expanded": false,
+      "copies": 197525504,
+      "literal_quotient_witnesses": 1092,
+      "anchor_counts": {
+        "(1, 2)": 140509184,
+        "(1, 1)": 57016320
+      }
+    }
+  ],
+  "expanded_height_one": {
+    "h": 1,
+    "expanded": true,
+    "copies": 1632,
+    "literal_quotient_witnesses": 1632,
+    "anchor_counts": {
+      "(1, 2)": 1600,
+      "(1, 1)": 32
+    }
+  },
+  "structural": [
+    {
+      "h": 1,
+      "crossing_anchor_support_pairs": 0,
+      "terminal_generic_triples": 5,
+      "vertical_dummy_generic_triples": 1
+    },
+    {
+      "h": 2,
+      "crossing_anchor_support_pairs": 3,
+      "terminal_generic_triples": 10,
+      "vertical_dummy_generic_triples": 6
+    },
+    {
+      "h": 3,
+      "crossing_anchor_support_pairs": 6,
+      "terminal_generic_triples": 20,
+      "vertical_dummy_generic_triples": 28
+    },
+    {
+      "h": 4,
+      "crossing_anchor_support_pairs": 9,
+      "terminal_generic_triples": 40,
+      "vertical_dummy_generic_triples": 120
+    },
+    {
+      "h": 5,
+      "crossing_anchor_support_pairs": 12,
+      "terminal_generic_triples": 80,
+      "vertical_dummy_generic_triples": 496
+    },
+    {
+      "h": 6,
+      "crossing_anchor_support_pairs": 15,
+      "terminal_generic_triples": 160,
+      "vertical_dummy_generic_triples": 2016
+    },
+    {
+      "h": 7,
+      "crossing_anchor_support_pairs": 18,
+      "terminal_generic_triples": 320,
+      "vertical_dummy_generic_triples": 8128
+    }
+  ]
+}

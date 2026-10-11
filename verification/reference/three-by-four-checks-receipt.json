@@ -1,0 +1,76 @@
+{
+  "python": "3.9.25",
+  "platform": "Linux-6.18.49-x86_64-with-glibc2.34",
+  "checks": [
+    {
+      "name": "compression",
+      "reference_matches": true,
+      "elapsed_seconds": 1.636
+    },
+    {
+      "name": "adversarial",
+      "reference_matches": true,
+      "elapsed_seconds": 3.276
+    },
+    {
+      "name": "refinement",
+      "reference_matches": true,
+      "elapsed_seconds": 9.2
+    },
+    {
+      "name": "four",
+      "reference_matches": true,
+      "elapsed_seconds": 3.841
+    },
+    {
+      "name": "four_repair",
+      "reference_matches": true,
+      "elapsed_seconds": 0.725
+    },
+    {
+      "name": "four_literal",
+      "reference_matches": true,
+      "elapsed_seconds": 4.938
+    },
+    {
+      "name": "four_reviewer",
+      "reference_matches": true,
+      "elapsed_seconds": 0.621
+    },
+    {
+      "name": "four_localization",
+      "reference_matches": true,
+      "elapsed_seconds": 1.937
+    },
+    {
+      "name": "four_removal",
+      "reference_matches": true,
+      "elapsed_seconds": 2.854
+    },
+    {
+      "name": "optimized_order",
+      "reference_matches": true,
+      "elapsed_seconds": 14.271
+    },
+    {
+      "name": "optimized_order_reviewer",
+      "reference_matches": true,
+      "elapsed_seconds": 7.1
+    },
+    {
+      "name": "three_by_four",
+      "reference_matches": true,
+      "elapsed_seconds": 2.138
+    },
+    {
+      "name": "three_by_four_reviewer",
+      "reference_matches": true,
+      "elapsed_seconds": 4.463
+    },
+    {
+      "name": "asymmetric",
+      "reference_matches": true,
+      "elapsed_seconds": 0.518
+    }
+  ]
+}

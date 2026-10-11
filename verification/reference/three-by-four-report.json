@@ -1,0 +1,124 @@
+{
+  "status": "passed",
+  "pattern": [
+    [
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ]
+  ],
+  "results": [
+    {
+      "h": 1,
+      "n": 32,
+      "copies": 1632,
+      "bad_localization_copies": 0,
+      "by_anchor_counts": {
+        "(1, 2)": 1600,
+        "(1, 1)": 32
+      },
+      "designated_role_checks": 26
+    },
+    {
+      "h": 2,
+      "n": 120,
+      "copies": 101888,
+      "bad_localization_copies": 0,
+      "by_anchor_counts": {
+        "(1, 1)": 22016,
+        "(1, 2)": 79872
+      },
+      "designated_role_checks": 72
+    },
+    {
+      "h": 3,
+      "n": 352,
+      "copies": 4743168,
+      "bad_localization_copies": 0,
+      "by_anchor_counts": {
+        "(1, 1)": 1269760,
+        "(1, 2)": 3473408
+      },
+      "designated_role_checks": 158
+    },
+    {
+      "h": 4,
+      "n": 928,
+      "copies": 197525504,
+      "bad_localization_copies": 0,
+      "by_anchor_counts": {
+        "(1, 1)": 57016320,
+        "(1, 2)": 140509184
+      },
+      "designated_role_checks": 324
+    },
+    {
+      "h": 5,
+      "n": 2304,
+      "copies": 7757365248,
+      "bad_localization_copies": 0,
+      "by_anchor_counts": {
+        "(1, 1)": 2321547264,
+        "(1, 2)": 5435817984
+      },
+      "designated_role_checks": 650
+    },
+    {
+      "h": 6,
+      "n": 5504,
+      "copies": 293769052160,
+      "bad_localization_copies": 0,
+      "by_anchor_counts": {
+        "(1, 1)": 89758105600,
+        "(1, 2)": 204010946560
+      },
+      "designated_role_checks": 1296
+    }
+  ],
+  "physical_depth_one": {
+    "h": 1,
+    "n": 32,
+    "copies": 1632,
+    "bad_localization_copies": 0,
+    "by_anchor_counts": {
+      "(1, 2)": 1600,
+      "(1, 1)": 32
+    }
+  },
+  "negative_controls": {
+    "without_W_dummy_ones": {
+      "h": 2,
+      "n": 120,
+      "copies": 488960,
+      "bad_localization_copies": 296960,
+      "by_anchor_counts": {
+        "(1, 2)": 466944,
+        "(1, 1)": 22016
+      }
+    },
+    "without_odd_minus_ones": {
+      "h": 2,
+      "n": 120,
+      "copies": 196096,
+      "bad_localization_copies": 94208,
+      "by_anchor_counts": {
+        "(1, 1)": 50688,
+        "(1, 2)": 145408
+      }
+    }
+  },
+  "scope": "Exact finite checks from an independent implementation; not Lean or peer review."
+}

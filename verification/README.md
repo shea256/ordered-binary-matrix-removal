@@ -1,6 +1,53 @@
 # Verification scope
 
-`check_four.py` checks the current 4×4 candidate. It exhaustively examines
+
+The **current 3×4 main theorem is checked in Lean**, with arbitrarily small
+ε and arbitrarily large hosts for the same ε. Run
+`python3 scripts/run_rectangular_formal_checks.py` with the pinned toolchain.
+The [new audit](reference/rectangular-formal-audit.json) covers all
+73 project modules and their compiled declarations;
+[formal/README.md](../formal/README.md) describes the precise scope.
+The [semantic review](reviews/three-by-four-formal.md) is separate AI review,
+not independent mathematical peer review. Exact all-depth enumeration,
+repair equality, and minimality are outside this certificate.
+
+## Current 3×4 candidate
+
+[check_three_by_four.py](check_three_by_four.py) independently constructs the
+host and performs a complete weighted census through h=6, physical h=1,
+role-signature checks and adverse entry variants.
+[check_three_by_four_reviewer.py](check_three_by_four_reviewer.py) was written
+by a separate agent, with full census through h=4 and structural checks
+through h=7. [Review](reviews/three-by-four.md).
+
+The [3×4 proof](../proofs/three-by-four.md) supplies the universal argument.
+The main theorem is Lean verified; independent mathematical peer review remains pending.
+The [uniform-template certificate](../proofs/asymmetric-limitations.md)
+covers 16,384 templates outside the successful nonuniform family.
+
+## Historical verification
+
+
+### Earlier refinement: global mode order
+
+[check_optimized_order.py](check_optimized_order.py) compares four mode orders
+through h=4 with a full column-quadruple/row-DP census, and checks the explicit
+terminal-anchor repair. It reuses the historical literal entry table, not its
+copy counter. [check_optimized_order_reviewer.py](check_optimized_order_reviewer.py)
+was written by a separate AI reviewer with no candidate-code imports; it builds
+axes recursively and enumerates all matching row quadruples. It also checks the
+support and generic localization cases through h=7. Both include expanded h=1
+physical checks. Reports are in [reference](reference/optimized-order-report.json)
+and [reviewer reference](reference/optimized-order-reviewer-report.json).
+
+The written proof is [optimized-order.md](../proofs/optimized-order.md).
+The new order, exact count, exact repair equality, and restricted optimum are
+not yet formalized in Lean. Historical formal and Python reports below remain
+valid for their original host orders and must not be reinterpreted as proving
+the new refinement. Separate AI review is not mathematical peer review.
+
+
+`check_four.py` checks the earlier 4×4 candidate. It exhaustively examines
 3,693,411 quotient row quadruples and all matching ordered column choices
 through depth 4, with exact twin-block multiplicities and no assumed
 localization. The copy counts are 128; 18,944; 1,687,552; and 123,207,680.
@@ -67,11 +114,11 @@ are separate from the old host code, but this is not independent peer review.
 The [review report](reviews/four-separate-agent.md) found no material error;
 the [assurance checkpoint](reviews/four-assurance.md) summarizes its scope.
 
-The [Lean project](../formal/README.md) now verifies the concrete host,
+The historical H4 part of the [Lean project](../formal/README.md) verifies its concrete host,
 all-depth anchor classification, fixed-zero localization, dummy last row,
 zero-set size bound, coarse copy count, arbitrary-repair lower bound, and
 the unconditional every-c,C removal theorem.
-The audit checks every project declaration and replays each local module
+The historical audit checks every H4 project declaration and replays each H4 module
 into its imported Lean environment; it does not freshly replay Mathlib. The
 archived receipt binds the exact sources. The default Python suite checks
 that binding but does not run Lean. The sharper exact copy count and canonical

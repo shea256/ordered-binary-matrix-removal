@@ -1,5 +1,86 @@
 # Baseline audit — OPENAI-190
 
+## October 11 — rectangular refinement baseline
+
+The strongest verified external pattern baseline for this attempt remains
+Erebos's **4×4**, at `6d21ce36e83b71d8a44015016cf3ac77e44b55ff`;
+OpenAI remains at `fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb` and the relevant
+ProveIt path at `bfbfe915186310fdf745a7a089e7dd88eeb773b1`. The versions,
+exact statements, stronger companion results, and verification differences
+are recorded below. They were rechecked before this search. Additional
+phrase searches for ordered removal and 3×4 patterns found no matching
+primary result; this bounded search is not proof of novelty.
+
+The new [3×4 candidate](proofs/three-by-four.md) changes the host's anchor
+encoding, rather than simply deleting a row of the previous host. Its fixed
+pattern is `1001/1010/0111`, on square n×n binary hosts. The intended advance
+is one fewer forbidden row and 12 instead of 16 specified entries; it is
+not a 3×3 or a smaller maximum side length. Distances still allow all
+binary edits, and the same arbitrarily-small-ε/arbitrarily-large-n
+quantifiers are retained. Densities now normalize by n⁷ rather than n⁸.
+
+**Proof map:** one row anchor plus two column anchors, with W-dummy ones
+and nonterminal even-W-minus/odd-child ones → every full H copy has one
+anchor row and one or two anchor columns → its fixed zero uses a leaf
+and its own parent-minus column → at most 2mn⁵ copies. Prescribed role
+signatures survive → inherited guarded propagation against arbitrary
+repairs still gives m² edits → density ≤2ε_h 2⁻ʰ at ε_h=(14h+2)⁻².
+Uniform blowups preserve the bounds. This is a written candidate theorem;
+the old H4 Lean certificate does not verify it. Exact repair equality
+and the earlier H4 exact count are not transferred.
+
+
+## Previous checkpoint record
+
+# Baseline audit — OPENAI-190
+
+## Current baseline correction — October 11, 2026
+
+The prior searches recorded below missed two relevant public sources. Their
+historical “no stronger follow-up found” statements are superseded. The same
+4×4 pattern and qualitative Lean theorem were published before our 4×4 PR.
+The present contribution is a narrower copy-density refinement of that known
+pattern. It is not a new pattern-size record or the first formal proof.
+
+| Primary source | Version / public record | Relevant result |
+| --- | --- | --- |
+| [ProveIt research manuscript](https://github.com/VladimirReshetnikov/ProveIt/tree/bfbfe915186310fdf745a7a089e7dd88eeb773b1/Combinatorics/OrderedMatrices/Research/ordered-matrix-removal) | `bfbfe915186310fdf745a7a089e7dd88eeb773b1`, October 7 | 5×5 obstruction, exact m² repair, canonical sampling threshold; displays the same H4 candidate |
+| [Erebos v1.0.0](https://github.com/erebos-labs/ordered-matrix-removal-4x4/releases/tag/v1.0.0) | `45248e57ab1c2197419981bba04e1cde050494ca`, published October 9 at 12:40:51 UTC | Same H4, complete localization, qualitative Lean obstruction, exact written copy count |
+| [Erebos v1.1.0](https://github.com/erebos-labs/ordered-matrix-removal-4x4/releases/tag/v1.1.0) | `6d21ce36e83b71d8a44015016cf3ac77e44b55ff`, published October 9 at 15:12:02 UTC | Exact unrestricted repair distance m² via terminal-anchor repair; Lean theorem |
+| [Our first 4×4 PR](https://github.com/shea256/ordered-binary-matrix-removal/pull/1) | Created October 10 at 18:48:25 UTC | Later H4 construction with a different mode order |
+
+Erebos's current pinned [theorem](https://github.com/erebos-labs/ordered-matrix-removal-4x4/blob/6d21ce36e83b71d8a44015016cf3ac77e44b55ff/THEOREM.md)
+and [paper](https://github.com/erebos-labs/ordered-matrix-removal-4x4/blob/6d21ce36e83b71d8a44015016cf3ac77e44b55ff/paper/report.tex)
+use m=2^h, n=(14h+2)m, the literal H=0110/1001/1010/0111, independently
+increasing axes, all sixteen binary constraints and arbitrary binary repairs.
+Their count is 128 at h=1 and (41m⁶−74m⁵)/4 at h≥2. The exact repair distance
+is (14h+2)⁻². Their qualitative capstone uses the coarser count 2mn⁶; do not
+compare only against that weaker number. The stronger quantifiers permit
+ε arbitrarily small and n beyond any prescribed ε-dependent threshold.
+Their exact count is written mathematics, not the count used in their Lean
+capstone. We inspected sources and published audit records, but did not rerun
+the Erebos or ProveIt Lean builds. These public records establish precedence
+relative to our PR, not worldwide priority or independent peer review.
+
+We rechecked Erebos main at the v1.1.0 hash on October 11; ProveIt's path history
+still showed the pinned October 7 intake. OpenAI CONTENTS still lists one
+#190 manuscript; its pinned baseline below remains relevant to provenance.
+Phrase searches for follow-ups were unproductive and are not exhaustive.
+The two finite physical hosts exported by Erebos (h=1,2) match our transcription
+of its mode order entry for entry, including all 1,024 and 14,400 entries.
+The new comparison checker also reproduces its count through h=4.
+
+**New proof map:** global minus-before-plus-before-vertical mode order →
+ordered support property and zero localization survive → every unbalanced
+copy uses one terminal minus mode and two same-parity leaf columns →
+N=(5/2)m⁶−m⁵. Inherited arbitrary-repair lower bound + transferred Erebos
+terminal-anchor upper bound → exact m² edits. Hence the limiting copy-density
+ratio to Erebos is 10/41 at the same n and exact distance. Intrinsic copies
+survive arbitrary permutations of intact mode blocks on each axis, proving
+optimality only within that fixed class. The new order/count/equality are
+written claims pending independent mathematical review and Lean formalization.
+
+
 Audit date: 2026-10-10. Upstream `openai/math` commit:
 `fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb`, dated 2026-10-08.
 The repository checkout used for this attempt initially had HEAD
@@ -245,3 +326,17 @@ copy estimate 2mn⁶, not the manuscript's sharper exact enumeration. The earlie
 partial-coverage statements above describe historical checkpoints. The
 current coverage and inherited-module attribution are in
 [formal/README.md](formal/README.md) and [ATTRIBUTION.md](ATTRIBUTION.md).
+
+
+## Formalization checkpoint source refresh — October 11
+
+A fresh GitHub API read still gives OpenAI main as
+`fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb` and Erebos main as
+`6d21ce36e83b71d8a44015016cf3ac77e44b55ff`. OpenAI's pinned CONTENTS.md
+lists the September 25 manuscript and its Lean documentation for #190,
+with no additional companion result in that family. The known H4 baseline
+and priority attribution above remain unchanged.
+
+Additional searches for ordered matrix removal with “3x4”, “3×4”, and
+OpenAI #190 smaller patterns returned no additional primary smaller-pattern
+result. This is a bounded search, not a certification of worldwide novelty.

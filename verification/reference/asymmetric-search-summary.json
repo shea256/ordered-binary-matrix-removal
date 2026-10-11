@@ -1,0 +1,563 @@
+{
+  "scope": "Discovery log only. SAT models are finite; UNSAT claims here are solver outcomes, not independently checked limitation certificates. Round limits are unresolved. Solver copy oracles use distinct block representatives; arbitrary-pattern SAT outputs do not certify all twin-reusing copies. The successful pattern has distinct rows and columns and was subsequently checked by complete weighted censuses.",
+  "python": "3.9.25",
+  "platform": "Linux-6.18.49-x86_64-with-glibc2.34",
+  "z3_version": "4.15.4.0",
+  "reports": {
+    "partial-plus.json": {
+      "background": 0,
+      "nonanchor_witnesses": 163,
+      "completion_statuses": {
+        "sat": 60,
+        "unsat": 33
+      }
+    },
+    "partial-minus.json": {
+      "background": 0,
+      "nonanchor_witnesses": 163,
+      "completion_statuses": {
+        "sat": 68,
+        "unsat": 25
+      }
+    },
+    "partial-vplus.json": {
+      "background": 0,
+      "nonanchor_witnesses": 163,
+      "completion_statuses": {
+        "sat": 90,
+        "unsat": 3
+      }
+    },
+    "partial-vminus.json": {
+      "background": 0,
+      "nonanchor_witnesses": 163,
+      "completion_statuses": {
+        "sat": 92,
+        "unsat": 1
+      }
+    },
+    "partial-one-plus.json": {
+      "background": 1,
+      "nonanchor_witnesses": 181,
+      "completion_statuses": {
+        "sat": 64,
+        "unsat": 11
+      }
+    },
+    "partial-one-minus.json": {
+      "background": 1,
+      "nonanchor_witnesses": 181,
+      "completion_statuses": {
+        "sat": 68,
+        "unsat": 7
+      }
+    },
+    "partial-one-vplus.json": {
+      "background": 1,
+      "nonanchor_witnesses": 181,
+      "completion_statuses": {
+        "sat": 75
+      }
+    },
+    "partial-one-vminus.json": {
+      "background": 1,
+      "nonanchor_witnesses": 181,
+      "completion_statuses": {
+        "sat": 73,
+        "unsat": 2
+      }
+    },
+    "completion-zero.json": {
+      "levels": 3,
+      "order": "global",
+      "background": 0,
+      "free_body": false,
+      "completed": true,
+      "statuses": {
+        "round_limit": 30,
+        "sat": 21,
+        "unsat": 1
+      },
+      "patterns": [
+        {
+          "pattern": "000100100111",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "000100101011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "000101101011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "001001100011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "001001100111",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "001001101011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "001011100011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "001101100111",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "001101101011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "001110100111",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "010000100111",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "010001100111",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "010001101011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "010011101011",
+          "status": "sat",
+          "cuts": 998
+        },
+        {
+          "pattern": "010100100111",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "010100101011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "010101100111",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "010101101011",
+          "status": "sat",
+          "cuts": 498
+        },
+        {
+          "pattern": "010111100011",
+          "status": "sat",
+          "cuts": 140
+        },
+        {
+          "pattern": "010111101011",
+          "status": "sat",
+          "cuts": 123
+        },
+        {
+          "pattern": "011010100011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "011011100011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "011100101011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "100000101011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "100001101011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "100010100111",
+          "status": "sat",
+          "cuts": 2990
+        },
+        {
+          "pattern": "100100101011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "100101100011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "100101101011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "100110100011",
+          "status": "sat",
+          "cuts": 562
+        },
+        {
+          "pattern": "100110100111",
+          "status": "sat",
+          "cuts": 117
+        },
+        {
+          "pattern": "100111100011",
+          "status": "sat",
+          "cuts": 88
+        },
+        {
+          "pattern": "100111100111",
+          "status": "sat",
+          "cuts": 16
+        },
+        {
+          "pattern": "101000101011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "101001101011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "101011100011",
+          "status": "sat",
+          "cuts": 620
+        },
+        {
+          "pattern": "101011100111",
+          "status": "sat",
+          "cuts": 416
+        },
+        {
+          "pattern": "101011101011",
+          "status": "sat",
+          "cuts": 213
+        },
+        {
+          "pattern": "101100100111",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "101111100111",
+          "status": "sat",
+          "cuts": 26
+        },
+        {
+          "pattern": "110000101011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "110001101011",
+          "status": "unsat",
+          "cuts": 266
+        },
+        {
+          "pattern": "110010100011",
+          "status": "sat",
+          "cuts": 652
+        },
+        {
+          "pattern": "110010100111",
+          "status": "sat",
+          "cuts": 354
+        },
+        {
+          "pattern": "110011100111",
+          "status": "sat",
+          "cuts": 1046
+        },
+        {
+          "pattern": "110100101011",
+          "status": "round_limit",
+          "cuts": 7680
+        },
+        {
+          "pattern": "110101100011",
+          "status": "sat",
+          "cuts": 37
+        },
+        {
+          "pattern": "110101101011",
+          "status": "sat",
+          "cuts": 16
+        },
+        {
+          "pattern": "110110100111",
+          "status": "sat",
+          "cuts": 34
+        },
+        {
+          "pattern": "110111100011",
+          "status": "sat",
+          "cuts": 53
+        },
+        {
+          "pattern": "110111100111",
+          "status": "sat",
+          "cuts": 53
+        },
+        {
+          "pattern": "111000101011",
+          "status": "round_limit",
+          "cuts": 7680
+        }
+      ]
+    },
+    "focus-fixed.json": {
+      "levels": 3,
+      "order": "global",
+      "background": 0,
+      "free_body": false,
+      "off_corner": "00",
+      "completed": true,
+      "statuses": {
+        "unsat": 3,
+        "sat": 1
+      },
+      "patterns": [
+        {
+          "pattern": "000100100111",
+          "status": "unsat",
+          "cuts": 2368
+        },
+        {
+          "pattern": "011010100011",
+          "status": "unsat",
+          "cuts": 256
+        },
+        {
+          "pattern": "100110100111",
+          "status": "sat",
+          "cuts": 117
+        },
+        {
+          "pattern": "110110100111",
+          "status": "unsat",
+          "cuts": 32
+        }
+      ]
+    },
+    "focus-free-body.json": {
+      "levels": 2,
+      "order": "global",
+      "background": 0,
+      "free_body": true,
+      "off_corner": "00",
+      "completed": true,
+      "statuses": {
+        "unsat": 1,
+        "sat": 3
+      },
+      "patterns": [
+        {
+          "pattern": "000100100111",
+          "status": "unsat",
+          "cuts": 4096
+        },
+        {
+          "pattern": "011010100011",
+          "status": "sat",
+          "cuts": 384
+        },
+        {
+          "pattern": "100110100111",
+          "status": "sat",
+          "cuts": 15
+        },
+        {
+          "pattern": "110110100111",
+          "status": "sat",
+          "cuts": 2
+        }
+      ]
+    },
+    "focus-four.json": {
+      "levels": 4,
+      "order": "global",
+      "background": 0,
+      "free_body": false,
+      "off_corner": "00",
+      "completed": true,
+      "statuses": {
+        "unsat": 3,
+        "sat": 1
+      },
+      "patterns": [
+        {
+          "pattern": "000100100111",
+          "status": "unsat",
+          "cuts": 4160
+        },
+        {
+          "pattern": "011010100011",
+          "status": "unsat",
+          "cuts": 192
+        },
+        {
+          "pattern": "100110100111",
+          "status": "sat",
+          "cuts": 373
+        },
+        {
+          "pattern": "110110100111",
+          "status": "unsat",
+          "cuts": 192
+        }
+      ]
+    },
+    "focus-five.json": {
+      "levels": 5,
+      "order": "global",
+      "background": 0,
+      "free_body": false,
+      "off_corner": "00",
+      "completed": true,
+      "statuses": {
+        "sat": 1
+      },
+      "patterns": [
+        {
+          "pattern": "100110100111",
+          "status": "sat",
+          "cuts": 960
+        }
+      ]
+    },
+    "focus-six.json": {
+      "levels": 6,
+      "order": "global",
+      "background": 0,
+      "free_body": false,
+      "off_corner": "00",
+      "completed": true,
+      "statuses": {
+        "sat": 1
+      },
+      "patterns": [
+        {
+          "pattern": "100110100111",
+          "status": "sat",
+          "cuts": 2112
+        }
+      ]
+    },
+    "localize-1.json": {
+      "levels": 1,
+      "order": "global",
+      "background": 0,
+      "free_body": false,
+      "off_corner": "00",
+      "full_host": true,
+      "localize_zero": true,
+      "completed": true,
+      "statuses": {
+        "sat": 1
+      },
+      "patterns": [
+        {
+          "pattern": "100110100111",
+          "status": "sat",
+          "cuts": 0
+        }
+      ]
+    },
+    "localize-2.json": {
+      "levels": 2,
+      "order": "global",
+      "background": 0,
+      "free_body": false,
+      "off_corner": "00",
+      "full_host": true,
+      "localize_zero": true,
+      "completed": true,
+      "statuses": {
+        "sat": 1
+      },
+      "patterns": [
+        {
+          "pattern": "100110100111",
+          "status": "sat",
+          "cuts": 45
+        }
+      ]
+    },
+    "localize-3.json": {
+      "levels": 3,
+      "order": "global",
+      "background": 0,
+      "free_body": false,
+      "off_corner": "00",
+      "full_host": true,
+      "localize_zero": true,
+      "completed": true,
+      "statuses": {
+        "sat": 1
+      },
+      "patterns": [
+        {
+          "pattern": "100110100111",
+          "status": "sat",
+          "cuts": 192
+        }
+      ]
+    },
+    "localize-4.json": {
+      "levels": 4,
+      "order": "global",
+      "background": 0,
+      "free_body": false,
+      "off_corner": "00",
+      "full_host": true,
+      "localize_zero": true,
+      "completed": true,
+      "statuses": {
+        "sat": 1
+      },
+      "patterns": [
+        {
+          "pattern": "100110100111",
+          "status": "sat",
+          "cuts": 604
+        }
+      ]
+    }
+  }
+}

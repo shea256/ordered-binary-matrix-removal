@@ -1,5 +1,28 @@
 # Improvement record
 
+## October 11 — asymmetric 3×4 candidate
+
+The new [proof](proofs/three-by-four.md) reduces the known 4×4 pattern to
+3×4. One anchor row, W-dummy ones and nonterminal odd-minus-child ones
+retain localization and the arbitrary-repair lower bound. Exact checks and
+a separate AI review support the all-depth written proof. The main theorem is
+now checked in Lean with its full quantifiers; the result remains a candidate
+pending independent mathematical review.
+
+
+## October 11 — global ordering and prior-work correction
+
+The H4 result and qualitative Lean proof were already public in Erebos's October 9
+release; ProveIt's October 7 manuscript supplied earlier smaller-pattern work.
+The size progression below records our development, not priority or advances over
+the strongest baseline now located. See [BASELINE.md](BASELINE.md).
+
+The current refinement gives (5/2)m⁶−m⁵ copies at the same exact m² repair cost,
+with limiting density ratio 10/41 to Erebos and an optimum within the fixed
+block-permutation class. It has a written all-depth argument and finite checks;
+the new order and count are not yet checked in Lean.
+
+
 ## 2026-10-10 — whole-pattern localization, candidate 4×4 obstruction
 
 Fixed pattern: 5×5 → 4×4; anchor component: 3×3 → 2×2. The smaller anchor

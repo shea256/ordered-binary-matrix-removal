@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "patterns": 256,
+  "backgrounds": 2,
+  "fills_per_pattern": 32,
+  "templates_covered": 16384,
+  "literal_witnesses": 3579,
+  "mode_levels": 4,
+  "maximum_variable_depth": 3,
+  "minimum_witness_copy_counts_at_checked_depths": {
+    "5": 1048576,
+    "6": 134217728,
+    "10": 36028797018963968
+  },
+  "all_depth_implication": "See proofs/asymmetric-limitations.md; fixed witnesses persist for h >= 5.",
+  "scope": "Uniform prefix-anchor template limitation at the inherited certified distance; no global 3x4 minimality."
+}

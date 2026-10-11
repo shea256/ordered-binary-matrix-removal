@@ -1,0 +1,38 @@
+{
+  "result_id": "global-mode-order-2026-10-11",
+  "status": "candidate",
+  "pattern_size": 4,
+  "anchor_size": 2,
+  "host_coefficient": 14,
+  "baseline_pattern_size": 4,
+  "original_openai_pattern_size": 66,
+  "baseline_commit": "6d21ce36e83b71d8a44015016cf3ac77e44b55ff",
+  "baseline_repository": "https://github.com/erebos-labs/ordered-matrix-removal-4x4",
+  "proof_file": "proofs/optimized-order.md",
+  "verification_report": "verification/reference/optimized-order-report.json",
+  "reviewer_verification_report": "verification/reference/optimized-order-reviewer-report.json",
+  "independent_review": false,
+  "new_result_formalized": false,
+  "novelty": "candidate quantitative refinement; H4 and qualitative Lean theorem are prior work",
+  "exact_count": "(5/2)*m^6-m^5 for h>=1, m=2^h",
+  "exact_repair_cost": "m^2",
+  "limiting_copy_ratio_to_baseline": "10/41",
+  "limiting_fraction_fewer": "31/41",
+  "optimality_scope": "Permutations of intact anchor-mode blocks independently on the two axes; fixed entries, weights, internal group orders, and nonanchor orders.",
+  "qualitative_fixed_pattern_theorem_formalized": true,
+  "formalization": {
+    "applies_to_current_host": false,
+    "current_exact_count_formalized": false,
+    "current_exact_repair_formalized": false,
+    "current_optimality_formalized": false,
+    "historical_metadata": "results/previous-four.json",
+    "coverage": "formal/README.md",
+    "audit": "verification/reference/formal-audit.json"
+  },
+  "separate_agent_review": {
+    "report": "verification/reviews/optimized-order.md",
+    "independent_peer_review": false,
+    "verdict": "no_material_issue_found_after_corrections"
+  },
+  "announcement_draft": "ANNOUNCEMENT.md"
+}

@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-11",
+  "reviewer": "/root/four_proof_reviewer",
+  "independent_peer_review": false,
+  "scope": "Separate-agent source semantic review. Final compiled source snapshot archived by the coordinator; compiler and kernel audit are separate.",
+  "original_reviewed_mathematical_proof_sha256": "e02bd9938930d043cfadd71738020b8993acfcc3ebe317f63cbcfc66520ad226",
+  "sources": {
+    "formal/OrderedRemoval/Rectangular/AnchorClassification.lean": "b4543170a95ed47977311fa48b6225b056eb25026e58e9efe820989e85a8da83",
+    "formal/OrderedRemoval/Rectangular/Asymptotics.lean": "f4fde896e4a6e037692db4dfc7baf1d1c4cb833ab956562a66c6bdee9dd46aa7",
+    "formal/OrderedRemoval/Rectangular/Blowup.lean": "0dcaefbb49fa9ded8e24a0da0c57e529b975e158353109e83b3898624b9429b1",
+    "formal/OrderedRemoval/Rectangular/CoarseCopyBound.lean": "84e9f433e3fe28668ce293fd08c8a41e06a8a93fcbe7e9bda3a3a064faca342d",
+    "formal/OrderedRemoval/Rectangular/Complete.lean": "d31c506195cf36f4a8c53ff64fc85e9fe461032171610e19453ce34b12f04100",
+    "formal/OrderedRemoval/Rectangular/ConcreteCopies.lean": "ff61fd4140c3c79bbd20283840053080cc43c18e184309c9ca7db32580c75ef9",
+    "formal/OrderedRemoval/Rectangular/CopyStructure.lean": "11afa5d445cd05b0d2b9fb841c72dae34100b79c6b582effa3ad2ff386e8b46b",
+    "formal/OrderedRemoval/Rectangular/CountingInjection.lean": "b486a1a261e925758987be679abf55fe1e3d824324b165944d24bfe7fa266c9d",
+    "formal/OrderedRemoval/Rectangular/GuardedFrame.lean": "d26e691b2a16668a4887caedb84f5caee582e25257fa9aaeb6636ddd05f65ebd",
+    "formal/OrderedRemoval/Rectangular/GuardedPath.lean": "0321c98262f6e49e09bf96ebc8d0c6b1297774d18157d94a4eab7c35b1e14ace",
+    "formal/OrderedRemoval/Rectangular/Host.lean": "51cf23073d234e177c28a313074d0abb870dc33ec9740568a43b5ea56d349196",
+    "formal/OrderedRemoval/Rectangular/HostSampledSelection.lean": "d6546f0bbc4ef3f4110b7959d9516b83b3139e8f90e0f34fd7bd9ab82cc99918",
+    "formal/OrderedRemoval/Rectangular/LocalizationArithmetic.lean": "8deb6a85f95b154e5e8d294dfa0574473738665a0dae1840034a68fd9ee4eaff",
+    "formal/OrderedRemoval/Rectangular/Main.lean": "4e46d7f6f9f977f44b76ba0fc1782f9526fa7413aed3b4c8e1f80cdced6efe61",
+    "formal/OrderedRemoval/Rectangular/Model.lean": "b49bb4ce377af75ada2922c25e91a31faa943936e2415ec13ec3c83cea39b48e",
+    "formal/OrderedRemoval/Rectangular/NoAnchorColumns.lean": "b769b36aa944638d9d0c6da4ce6b8167d52a734bfb710773237e51c3a8b805be",
+    "formal/OrderedRemoval/Rectangular/OneAnchorArithmetic.lean": "efcc9dee13003d4d41c5534155bf028901c978e85279554750b7a1df1447a492",
+    "formal/OrderedRemoval/Rectangular/OrderedHost.lean": "c0cd62239178e02abd4e06db5b4d8d3b68a9ad0f27fb8f60a4f8c196544d4bfe",
+    "formal/OrderedRemoval/Rectangular/OrderedSampledSelection.lean": "2165562269da96390287769d82a0d25e4bbb568514794ad18a1a33474e31e4fe",
+    "formal/OrderedRemoval/Rectangular/RepairDistance.lean": "f364c729b02d3859e541524fa7f19487599ef4e5704b2d252ef4388cf6f88492",
+    "formal/OrderedRemoval/Rectangular/RowArithmetic.lean": "0cb55dc0e95e63bf27bfef4319eefc257f44c9b2a5be101f0f69cef1dcb72091",
+    "formal/OrderedRemoval/Rectangular/SupportArithmetic.lean": "789fe52fd00799a66182bbb3827f3f6aa441eb53a62a5f3b94762c9d97c61e4b",
+    "formal/OrderedRemoval/Rectangular/VerticalArithmetic.lean": "10ab7608b227868c2072074e2a188052ca1f41002e6539398db8a2426e235c7e",
+    "formal/OrderedRemoval/Rectangular/ZeroLocalization.lean": "ddd7888675921d7a37873885beef07a532e23ecfb6d82b1da55dede10d958d78"
+  }
+}
