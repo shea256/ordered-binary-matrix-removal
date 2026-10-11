@@ -105,6 +105,17 @@ for name, expected in receipt['artifacts'].items():
     data = (ROOT / name).read_bytes()
     assert len(data) == expected['bytes']
     assert hashlib.sha256(data).hexdigest() == expected['sha256'], name
+# Keep the README graphic attached and synchronized with the selected result.
+figure = json.loads((ROOT / 'assets/pattern-size-history.json').read_text())
+assert figure['current_result_id'] == current['result_id']
+assert figure['pattern_shapes'][-1] == [current['pattern_rows'], current['pattern_columns']]
+assert figure['pattern_shapes'][-2] == [current['baseline_pattern_rows'], current['baseline_pattern_columns']]
+assert figure['entries'] == [rows * columns for rows, columns in figure['pattern_shapes']]
+assert figure['current_theorem_formalized'] == current['new_result_formalized']
+assert figure['y_scale'] == 'logarithmic'
+for name, expected in figure['artifacts'].items():
+    assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected, name
+assert re.search(r'!\[[^\]]*\]\(assets/pattern-size-history\.png\)', (ROOT / 'README.md').read_text())
 links = 0
 for path in ROOT.rglob('*.md'):
     if any(part in ('.git', '.context', '.lake', 'upstream') for part in path.relative_to(ROOT).parts):

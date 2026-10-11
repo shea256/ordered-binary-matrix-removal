@@ -1,6 +1,14 @@
 # Ordered binary matrix removal
 
-**Candidate 3×4 obstruction · Draft for review · October 11, 2026**
+**Candidate 3×4 obstruction · Main theorem checked in Lean · October 11, 2026**
+
+![Selected forbidden patterns shrink from 66×66 through 15×15, 5×5 and 4×4 to 3×4. The logarithmic vertical axis counts entries: 4,356, 225, 25, 16 and 12. Erebos has the earlier 4×4 result; the current 3×4 theorem is checked in Lean.](assets/pattern-size-history.png)
+
+The chart shows selected constructions ordered by size. The 15×15 and 5×5
+points record this project's development, not worldwide priority.
+Erebos published the earlier 4×4 theorem; ProveIt supplied earlier 5×5 work
+and the H4 candidate. See [baseline and attribution](BASELINE.md) and
+[chart sources and regeneration](assets/README.md).
 
 We give a construction with a Lean-checked main theorem for the fixed ordered binary pattern
 
@@ -27,7 +35,7 @@ arbitrarily small distance parameters and arbitrarily large hosts at the same
 chosen parameter. See the [formal proof](formal/README.md),
 [source-bound audit](verification/reference/rectangular-formal-audit.json), and
 [semantic review](verification/reviews/three-by-four-formal.md).
-The release remains a draft for review; no announcement has been posted.
+The proof and certificate were merged in [PR #6](https://github.com/shea256/ordered-binary-matrix-removal/pull/6).
 Independent mathematical peer review and a broader novelty assessment remain
 pending. This is a rectangular result, not 3×3 or a minimality theorem.
 Neither exact repair equality nor an exact all-depth count is claimed.

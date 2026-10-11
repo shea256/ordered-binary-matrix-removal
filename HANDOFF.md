@@ -1,5 +1,14 @@
 # Handoff — 3×4 theorem checked in Lean
 
+
+## Current publication checkpoint — October 11
+
+PR #6 is merged. A follow-up branch, `shea256/restore-pattern-progress-chart`,
+restores the README chart and extends it through 3×4, using entry counts on a
+logarithmic axis with explicit Erebos/ProveIt attribution. The Lean sources,
+mathematical result, and candidate classification are unchanged.
+The draft-PR descriptions below are the earlier checkpoint record.
+
 The pattern is `1001/1010/0111`. For h≥1, its explicit square host has
 n=(14h+2)2^h, repair cost at least m², and at most 2mn⁵ copies.
 The full quantified no-polynomial-bound theorem is checked in Lean.
