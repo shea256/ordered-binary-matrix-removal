@@ -1,9 +1,26 @@
 {
   "current_result_id": "asymmetric-three-by-four-2026-10-11",
+  "event_ids": [
+    "openai-66",
+    "proveit-5",
+    "erebos-4",
+    "project-15",
+    "project-5",
+    "project-4",
+    "project-3x4"
+  ],
   "pattern_shapes": [
     [
       66,
       66
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      4,
+      4
     ],
     [
       15,
@@ -24,10 +41,21 @@
   ],
   "entries": [
     4356,
+    25,
+    16,
     225,
     25,
     16,
     12
+  ],
+  "timestamps": [
+    "2026-10-06T21:58:50Z",
+    "2026-10-07T21:24:26Z",
+    "2026-10-09T12:40:51Z",
+    "2026-10-10T06:37:28Z",
+    "2026-10-10T15:10:23Z",
+    "2026-10-10T18:48:25Z",
+    "2026-10-11T18:38:32Z"
   ],
   "y_scale": "logarithmic",
   "y_ticks": [
@@ -36,12 +64,14 @@
     1000,
     10000
   ],
-  "x_order": "selected constructions ordered by size, not publication date",
+  "x_scale": "linear UTC time",
+  "x_order": "documented GitHub record timestamps",
   "current_theorem_formalized": true,
   "matplotlib": "3.9.4",
   "artifacts": {
-    "scripts/build_figure.py": "040353b2e94397cd742e1568aab83656ecb5b113eea551b1cbba12b84d8e1e45",
-    "assets/pattern-size-history.png": "1e1d71e819d361fc15bf0f2441a68d04aa3db869e3f4e7d0f4644e4a44b22be1",
-    "assets/pattern-size-history.svg": "7794fe826f122f6e8a99d00b1004a587ee8bd7acb06fb03e1e3255d51e88efe1"
+    "scripts/build_figure.py": "d46c4b814a07738a2d74785dc18752778bb88bb4da3e1afd00c0d4cca29cdd64",
+    "assets/pattern-size-events.json": "b7634cb13f17d50ef0cae9da983de62644cb4a5ffc36066a25d8fc529df904ab",
+    "assets/pattern-size-history.png": "77b69b1a772ce40f0784631f2bb1dd16244effe77e7217bade8f7cc4650ad066",
+    "assets/pattern-size-history.svg": "367411b0ef8ef26f11abf108be0c46de727c43dee042b094155370fdb6d203ed"
   }
 }

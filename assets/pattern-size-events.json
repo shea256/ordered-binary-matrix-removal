@@ -1,0 +1,115 @@
+{
+  "checked_date": "2026-10-11",
+  "timezone": "UTC",
+  "scope": "Selected documented GitHub records, not discovery dates or an exhaustive priority history. Commit timestamps do not prove when code first became public. Release published_at and PR created_at identify the stated GitHub events.",
+  "openai_date_note": "The OpenAI manuscript is dated September 25. The time-axis point uses its October 6 repository commit, so the plotted dates all refer to GitHub records.",
+  "events": [
+    {
+      "id": "openai-66",
+      "owner": "OpenAI",
+      "shape": [
+        66,
+        66
+      ],
+      "series": "milestone",
+      "timestamp": "2026-10-06T21:58:50Z",
+      "timestamp_kind": "Git commit",
+      "timestamp_field": "commit.committer.date",
+      "source_url": "https://github.com/openai/math/commit/adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "source_api": "https://api.github.com/repos/openai/math/commits/adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "manuscript_date": "2026-09-25"
+    },
+    {
+      "id": "proveit-5",
+      "owner": "ProveIt",
+      "shape": [
+        5,
+        5
+      ],
+      "series": "milestone",
+      "timestamp": "2026-10-07T21:24:26Z",
+      "timestamp_kind": "Git commit",
+      "timestamp_field": "commit.committer.date",
+      "source_url": "https://github.com/VladimirReshetnikov/ProveIt/commit/bfbfe915186310fdf745a7a089e7dd88eeb773b1",
+      "source_api": "https://api.github.com/repos/VladimirReshetnikov/ProveIt/commits/bfbfe915186310fdf745a7a089e7dd88eeb773b1",
+      "commit": "bfbfe915186310fdf745a7a089e7dd88eeb773b1"
+    },
+    {
+      "id": "erebos-4",
+      "owner": "Erebos Labs",
+      "shape": [
+        4,
+        4
+      ],
+      "series": "milestone",
+      "timestamp": "2026-10-09T12:40:51Z",
+      "timestamp_kind": "GitHub release",
+      "timestamp_field": "published_at",
+      "source_url": "https://github.com/erebos-labs/ordered-matrix-removal-4x4/releases/tag/v1.0.0",
+      "source_api": "https://api.github.com/repos/erebos-labs/ordered-matrix-removal-4x4/releases/tags/v1.0.0",
+      "tag": "v1.0.0",
+      "commit": "45248e57ab1c2197419981bba04e1cde050494ca"
+    },
+    {
+      "id": "project-15",
+      "owner": "This project",
+      "shape": [
+        15,
+        15
+      ],
+      "series": "project_stage",
+      "timestamp": "2026-10-10T06:37:28Z",
+      "timestamp_kind": "Git commit",
+      "timestamp_field": "commit.committer.date",
+      "source_url": "https://github.com/shea256/ordered-binary-matrix-removal/commit/fa2aa33105d7d16ae782f4a0858a417e31de9f05",
+      "source_api": "https://api.github.com/repos/shea256/ordered-binary-matrix-removal/commits/fa2aa33",
+      "commit": "fa2aa33105d7d16ae782f4a0858a417e31de9f05"
+    },
+    {
+      "id": "project-5",
+      "owner": "This project",
+      "shape": [
+        5,
+        5
+      ],
+      "series": "project_stage",
+      "timestamp": "2026-10-10T15:10:23Z",
+      "timestamp_kind": "Git commit",
+      "timestamp_field": "commit.committer.date",
+      "source_url": "https://github.com/shea256/ordered-binary-matrix-removal/commit/f16d432d9a918c694f0b404a12f744c0c8b0db03",
+      "source_api": "https://api.github.com/repos/shea256/ordered-binary-matrix-removal/commits/f16d432",
+      "commit": "f16d432d9a918c694f0b404a12f744c0c8b0db03"
+    },
+    {
+      "id": "project-4",
+      "owner": "This project",
+      "shape": [
+        4,
+        4
+      ],
+      "series": "project_stage",
+      "timestamp": "2026-10-10T18:48:25Z",
+      "timestamp_kind": "PR opened",
+      "timestamp_field": "created_at",
+      "source_url": "https://github.com/shea256/ordered-binary-matrix-removal/pull/1",
+      "source_api": "https://api.github.com/repos/shea256/ordered-binary-matrix-removal/pulls/1",
+      "commit": "4c55827f48f9b416727157116dc88fe2d875028f"
+    },
+    {
+      "id": "project-3x4",
+      "owner": "This project",
+      "shape": [
+        3,
+        4
+      ],
+      "series": "milestone",
+      "timestamp": "2026-10-11T18:38:32Z",
+      "timestamp_kind": "PR opened",
+      "timestamp_field": "created_at",
+      "source_url": "https://github.com/shea256/ordered-binary-matrix-removal/pull/6",
+      "source_api": "https://api.github.com/repos/shea256/ordered-binary-matrix-removal/pulls/6",
+      "commit": "fbc3e0010700821d20480d340afa61a05e6ef747"
+    }
+  ]
+}

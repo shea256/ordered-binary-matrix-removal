@@ -2,13 +2,15 @@
 
 **Candidate 3×4 obstruction · Main theorem checked in Lean · October 11, 2026**
 
-![Selected forbidden patterns shrink from 66×66 through 15×15, 5×5 and 4×4 to 3×4. The logarithmic vertical axis counts entries: 4,356, 225, 25, 16 and 12. Erebos has the earlier 4×4 result; the current 3×4 theorem is checked in Lean.](assets/pattern-size-history.png)
+![Ordered matrix-removal results on a proportional UTC date axis and logarithmic entry-count axis. OpenAI's October 6 commit is followed by ProveIt's October 7 commit, Erebos Labs' October 9 release, and our October 11 3×4 PR. Hollow markers show our later intermediate constructions.](assets/pattern-size-history.png)
 
-The chart shows selected constructions ordered by size. The 15×15 and 5×5
-points record this project's development, not worldwide priority.
-Erebos published the earlier 4×4 theorem; ProveIt supplied earlier 5×5 work
-and the H4 candidate. See [baseline and attribution](BASELINE.md) and
-[chart sources and regeneration](assets/README.md).
+The x-axis uses dated **GitHub records**, with proportional time spacing.
+Erebos Labs' 4×4 [v1.0.0 release](https://github.com/erebos-labs/ordered-matrix-removal-4x4/releases/tag/v1.0.0)
+was published **October 9, 2026 at 12:40:51 UTC**. The line tracks the smallest
+entry count among the displayed results; hollow markers show our later
+intermediate stages. OpenAI's paper is dated September 25; the chart uses
+its October 6 repository commit. See [timestamp sources and scope](assets/README.md)
+and [baseline attribution](BASELINE.md).
 
 We give a construction with a Lean-checked main theorem for the fixed ordered binary pattern
 

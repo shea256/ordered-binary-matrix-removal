@@ -1,5 +1,23 @@
 # Baseline audit — OPENAI-190
 
+
+## October 11 — chart timestamp audit
+
+The dated chart uses GitHub record times and labels the event type.
+Erebos Labs' v1.0.0 `published_at` is **2026-10-09T12:40:51Z**, for commit
+`45248e57ab1c2197419981bba04e1cde050494ca`; its repository creation time is
+12:39:06Z. The result-bearing public release is the chart milestone.
+This establishes availability by that time, not the private discovery time
+or whether a social announcement happened.
+
+OpenAI's paper is dated September 25, but the Git commit adding it is
+`adc7f1241b42e322a6451854ab7e4b4c146bf78a`, dated October 6 at 21:58:50Z.
+ProveIt's pinned 5×5 manuscript commit is dated October 7 at 21:24:26Z.
+The chart explicitly uses those GitHub commit records, whose dates alone
+cannot establish first public visibility. Our 3×4 PR opened October 11
+at 18:38:32Z. See [the timestamp table](assets/README.md) and archived
+[event data](assets/pattern-size-events.json) for all seven points.
+
 ## October 11 — rectangular refinement baseline
 
 The strongest verified external pattern baseline for this attempt remains
