@@ -10,9 +10,10 @@ novelty assessment remain pending.
 A [separate-agent audit](verification/reviews/four-separate-agent.md) found
 no material error, missing case, or incorrect count. Two additional exact
 checkers and the [Lean development](formal/README.md) provide further evidence.
-The actual host, its two orders, and the all-depth anchor classification
-are now checked. Localization, arbitrary-repair connections, and the final
-theorem remain unformalized. No pattern-size
+The actual host, its two orders, all-depth anchor classification, fixed-zero
+localization, dummy last row, and the zero-set size bound are now checked.
+Copy counting, arbitrary-repair connections, and the final theorem remain
+unformalized. No pattern-size
 or theorem-strength change is claimed at this assurance checkpoint.
 
 The explicit fixed forbidden pattern and its anchor component are
@@ -105,9 +106,9 @@ The original checks above were same-agent checks. A fresh literal checker
 reproduces the full census through h=4 and expands the actual h=1 matrix;
 the separate reviewer's checker verifies supports and unbalanced-copy
 counts through h=7. Both include their explicit scope in their reports.
-The Lean development checks conditional classification, local inequalities,
-propagation, and the protected-sample union bound, with only the standard
-logical axioms. None of this is independent peer review or a universal
+The Lean development checks concrete all-depth classification and localization,
+the last row and zero-set size bound, propagation, and the conditional
+protected-sample union bound, with only the standard logical axioms. None of this is independent peer review or a universal
 machine-checked removal theorem. See the
 [assurance checkpoint](verification/reviews/four-assurance.md).
 No global minimality claim is made: 3×3 and other

@@ -71,6 +71,9 @@ run_cmd do
             axioms[name] = declarations[name]["axioms"]
     assert "OrderedRemoval.Concrete.Copy.anchor_counts" in axioms
     assert "OrderedRemoval.Concrete.matrix_anchor_counts" in axioms
+    for name in ("Copy.zero_localization", "matrix_zero_localization",
+                 "Copy.last_row_dummy", "card_zeroCells_le"):
+        assert "OrderedRemoval.Concrete." + name in axioms
     # Replay each local module into its imported environment, sequentially to
     # bound memory. This checks local proof terms again; it does not replay all
     # of Mathlib into a fresh environment or use a different proof assistant.
@@ -83,6 +86,9 @@ run_cmd do
         "status": "partial_formalization",
         "end_to_end_removal_theorem_formalized": False,
         "concrete_anchor_classification_formalized": True,
+        "zero_cell_localization_formalized": True,
+        "dummy_last_row_formalized": True,
+        "zero_set_cardinality_bound_formalized": True,
         "lean_version": version,
         "theorem_count": len(axioms),
         "declaration_count": len(declarations),
@@ -97,7 +103,7 @@ run_cmd do
     out.mkdir(exist_ok=True)
     (out / "formal-checks-receipt.json").write_text(json.dumps(receipt, indent=2) + "\n")
     print(f"{len(axioms)} named Lean theorems; {len(declarations)} declarations audited; module kernel replay passed.")
-    print("Coverage is partial. Localization, arbitrary-repair connections, and the final theorem remain unformalized.")
+    print("Coverage is partial. Copy counting, arbitrary-repair connections, and the final theorem remain unformalized.")
 
 
 if __name__ == "__main__":

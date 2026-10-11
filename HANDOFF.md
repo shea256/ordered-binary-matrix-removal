@@ -3,7 +3,8 @@
 **Current checkpoint:** a complete candidate proof for a fixed **4×4**
 ordered binary obstruction, with a 2×2 anchor component. Retain
 `Candidate result`: a separate-agent adversarial audit found no material
-error, and Lean checks the concrete host and anchor classification, but independent peer review
+error, and Lean checks the concrete host, anchor classification, localization,
+dummy last row, and zero-set size bound, but independent peer review
 and an end-to-end Lean theorem remain outstanding. The smaller anchor
 is not itself rigid.
 
@@ -14,8 +15,8 @@ host properties and the arbitrary-edit argument.
 
 The [separate-agent review](verification/reviews/four-separate-agent.md)
 covers the four issues below. Its verdict is favorable, not independent
-peer review. The concrete host and anchor classification are now formalized. The next
-implementation step is extracting the localization cases for arbitrary copies;
+peer review. Concrete classification and localization are now formalized.
+The next implementation step is the coarse copy count and the arbitrary-repair bound;
 see [formal/README.md](formal/README.md). Human reviewers should still inspect:
 
 1. **Full-pattern anchor classification.** Check the complete split by
@@ -64,7 +65,7 @@ its own copy-density and arbitrary-repair arguments; finite pattern searches
 alone would not establish it.
 
 Upstream main still matched the audited commit
-`fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb` when rechecked on 2026-10-10.
+`fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb` when rechecked on 2026-10-11.
 The original full Lean implementation has not been rebuilt. Selected generic
 modules were adapted with explicit attribution. The current partial
 development uses Lean 4.34.1 and pinned Mathlib. Run
@@ -76,9 +77,15 @@ Mathlib. The key exports are `Concrete.Copy.anchor_counts` and
 assume no structural certificate. The boundary proofs rule out h=0 and
 exhibit a balanced copy at h=1.
 
-Remaining formal obligations are zero-cell localization for both anchor
-count cases, the coarse copy bound, protected incidence extraction and
-body extension for arbitrary edited matrices, and the every-c,C conclusion.
+The new exports `Concrete.Copy.zero_localization`,
+`Concrete.matrix_zero_localization`, `Concrete.Copy.last_row_dummy`, and
+`Concrete.card_zeroCells_le` close the localization checkpoint. The size
+statement is an upper bound, sufficient for the coarse count; exact equality
+and the sharper copy formula are not claimed as formalized.
+
+Remaining formal obligations are the coarse copy bound, protected incidence
+extraction and body extension for arbitrary edited matrices, and the
+every-c,C conclusion.
 Keep both `independent_review` and `new_result_formalized` false.
 
 The previous 5×5 release is preserved at commit
@@ -87,7 +94,7 @@ and results/current.json describe the 4×4 candidate. All previous proof
 drafts and deterministic reference reports remain available.
 
 The 4×4 release and comparison-graphic PRs were merged as `a5920eb` and
-`0b8b039` respectively. The audit and concrete-host formalization are on
-`shea256/four-proof-audit` in
-[PR #3](https://github.com/shea256/ordered-binary-matrix-removal/pull/3).
-The pattern size and final written theorem have not changed in this PR.
+`0b8b039` respectively. The audit and concrete-host formalization were merged in
+[PR #3](https://github.com/shea256/ordered-binary-matrix-removal/pull/3),
+commit `4e707a25ccf86c0e165e476de01dd1d8c627ce4d`. This localization
+checkpoint preserves the pattern size and final written theorem.

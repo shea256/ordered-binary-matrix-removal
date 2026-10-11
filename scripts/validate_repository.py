@@ -28,6 +28,12 @@ audit = json.loads((ROOT / formal['audit']).read_text())
 assert audit['end_to_end_removal_theorem_formalized'] is False
 assert audit['theorem_count'] == len(audit['axioms']) == formal['named_theorems']
 assert 'OrderedRemoval.Concrete.matrix_anchor_counts' in audit['axioms']
+for flag in ('zero_cell_localization_formalized', 'dummy_last_row_formalized',
+             'zero_set_cardinality_bound_formalized'):
+    assert formal[flag] is True and audit[flag] is True, flag
+for name in ('Copy.zero_localization', 'matrix_zero_localization',
+             'Copy.last_row_dummy', 'card_zeroCells_le'):
+    assert 'OrderedRemoval.Concrete.' + name in audit['axioms'], name
 assert all(set(info['axioms']) <= {'propext', 'Quot.sound', 'Classical.choice'}
            for info in audit['all_declarations'].values())
 assert all(set(used) <= {'propext', 'Quot.sound', 'Classical.choice'} for used in audit['axioms'].values())

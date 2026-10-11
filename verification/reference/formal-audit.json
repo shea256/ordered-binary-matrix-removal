@@ -2,9 +2,12 @@
   "status": "partial_formalization",
   "end_to_end_removal_theorem_formalized": false,
   "concrete_anchor_classification_formalized": true,
+  "zero_cell_localization_formalized": true,
+  "dummy_last_row_formalized": true,
+  "zero_set_cardinality_bound_formalized": true,
   "lean_version": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
-  "theorem_count": 173,
-  "declaration_count": 695,
+  "theorem_count": 214,
+  "declaration_count": 957,
   "axioms": {
     "OrderedRemoval.AnchorClassification.anchor_counts": [
       "Classical.choice",
@@ -97,12 +100,37 @@
       "Quot.sound",
       "propext"
     ],
+    "OrderedRemoval.Concrete.Copy.anchor_rows_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "OrderedRemoval.Concrete.Copy.col_anchor_prefix": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
+    "OrderedRemoval.Concrete.Copy.col_nonanchor": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "OrderedRemoval.Concrete.Copy.col_rank_strict": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.Copy.first_col_anchor": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.Copy.last_row_dummy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.Copy.mode_frame": [
       "Classical.choice",
       "Quot.sound",
       "propext"
@@ -132,12 +160,40 @@
       "Quot.sound",
       "propext"
     ],
+    "OrderedRemoval.Concrete.Copy.zero_localization": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.ModeFrame.balanced_alignment": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.ModeFrame.localization_data": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.ModeFrame.minus_mode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.ModeFrame.third_column_variable": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "OrderedRemoval.Concrete.anchor_col_role": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
     "OrderedRemoval.Concrete.anchor_col_twins": [
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.anchor_one_mode_groups": [
       "propext"
     ],
     "OrderedRemoval.Concrete.anchor_one_rank": [
@@ -156,12 +212,23 @@
       "Quot.sound",
       "propext"
     ],
+    "OrderedRemoval.Concrete.atLevel_self_even": [
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.atLevel_self_odd": [
+      "propext"
+    ],
     "OrderedRemoval.Concrete.card_position": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
     "OrderedRemoval.Concrete.card_variablePosition": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.card_zeroCells_le": [
       "Classical.choice",
       "Quot.sound",
       "propext"
@@ -206,12 +273,52 @@
       "Quot.sound",
       "propext"
     ],
+    "OrderedRemoval.Concrete.column_child_before_plus": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.column_child_lt_parent_minus_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.column_minus_before_child": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.column_minus_before_plus": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "OrderedRemoval.Concrete.column_minus_lt_iff": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
+    "OrderedRemoval.Concrete.column_node_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.column_parent_plus_lt_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.column_plus_before_minus": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "OrderedRemoval.Concrete.column_plus_lt_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.column_same_class_node_le": [
       "Classical.choice",
       "Quot.sound",
       "propext"
@@ -222,6 +329,11 @@
       "propext"
     ],
     "OrderedRemoval.Concrete.depth_le": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.earlier_minus_child_parity": [
+      "Classical.choice",
       "Quot.sound",
       "propext"
     ],
@@ -253,6 +365,14 @@
     "OrderedRemoval.Concrete.host_variable_variable": [
       "propext"
     ],
+    "OrderedRemoval.Concrete.inZeroSet_variables": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.isAnchor_iff_exists": [
+      "Quot.sound",
+      "propext"
+    ],
     "OrderedRemoval.Concrete.kind_lt": [],
     "OrderedRemoval.Concrete.level_le": [
       "Quot.sound",
@@ -267,12 +387,22 @@
       "Quot.sound",
       "propext"
     ],
+    "OrderedRemoval.Concrete.matrix_zero_localization": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "OrderedRemoval.Concrete.modeRank_eq": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
     "OrderedRemoval.Concrete.modeRank_injective": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.mode_zero_localization": [
+      "Classical.choice",
       "Quot.sound",
       "propext"
     ],
@@ -341,6 +471,11 @@
       "Quot.sound",
       "propext"
     ],
+    "OrderedRemoval.Concrete.row_leaf_node_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "OrderedRemoval.Concrete.row_minus_lt_iff": [
       "Classical.choice",
       "Quot.sound",
@@ -386,6 +521,35 @@
     ],
     "OrderedRemoval.Concrete.variable_crown_absent": [
       "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.variable_role_orientation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.variable_wrong_roles": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.vertical_zero_impossible": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.zeroCode_injective_on_zeros": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.zeroSet_entry": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.zero_coordinate_quotients": [
       "Quot.sound",
       "propext"
     ],
@@ -614,7 +778,17 @@
       "Quot.sound",
       "propext"
     ],
+    "OrderedRemoval.TreePositions.column_plus_child_lt_minus_parent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "OrderedRemoval.TreePositions.column_plus_parent_lt_child": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.TreePositions.column_plus_parent_lt_minus_child": [
       "Classical.choice",
       "Quot.sound",
       "propext"
@@ -625,6 +799,16 @@
       "propext"
     ],
     "OrderedRemoval.TreePositions.earlyKey_parent_lt_leafKey": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.TreePositions.early_child_lt_late_parent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.TreePositions.early_parent_lt_late_child": [
       "Classical.choice",
       "Quot.sound",
       "propext"
@@ -640,6 +824,18 @@
       "Quot.sound"
     ],
     "OrderedRemoval.TreePositions.keyCoordinate_orderKey": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.TreePositions.key_endpoint_le": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.TreePositions.key_endpoint_lt_of_phase_gt": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.TreePositions.key_endpoint_lt_of_tie_gt": [
       "Quot.sound",
       "propext"
     ],
@@ -1595,6 +1791,90 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.ColumnBounds": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ColumnBounds.casesOn": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ColumnBounds.child_parent": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ColumnBounds.child_plus": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ColumnBounds.minus_child": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ColumnBounds.minus_plus": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ColumnBounds.mk": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ColumnBounds.mk._flat_ctor": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ColumnBounds.parent_child": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ColumnBounds.rec": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ColumnBounds.recOn": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ColumnBounds.same": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.Copy": {
       "module": "OrderedRemoval.ConcreteCopies",
       "kind": "declaration",
@@ -1874,6 +2154,15 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.Copy.anchor_rows_iff": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.Copy.casesOn": {
       "module": "OrderedRemoval.ConcreteCopies",
       "kind": "declaration",
@@ -1894,6 +2183,24 @@
     },
     "OrderedRemoval.Concrete.Copy.col_anchor_prefix": {
       "module": "OrderedRemoval.ExtractAnchors",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.Copy.col_nonanchor": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.Copy.col_nonanchor._proof_1_1": {
+      "module": "OrderedRemoval.LocalizationFrame",
       "kind": "theorem",
       "axioms": [
         "Classical.choice",
@@ -1954,6 +2261,60 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.Copy.first_col_anchor": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.Copy.first_col_anchor._proof_1_1": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.Copy.last_row_dummy": {
+      "module": "OrderedRemoval.LastRow",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.Copy.last_row_dummy._proof_1_1": {
+      "module": "OrderedRemoval.LastRow",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.Copy.last_row_dummy._proof_1_2": {
+      "module": "OrderedRemoval.LastRow",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.Copy.last_row_dummy._proof_1_3": {
+      "module": "OrderedRemoval.LastRow",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.Copy.mk": {
       "module": "OrderedRemoval.ConcreteCopies",
       "kind": "declaration",
@@ -2004,6 +2365,23 @@
       "kind": "theorem",
       "axioms": [
         "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.Copy.mode_frame": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.Copy.mode_frame._proof_1_1": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
         "Quot.sound",
         "propext"
       ]
@@ -2132,6 +2510,71 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.Copy.zero_localization": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.InZeroSet": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.InZeroSet._sparseCasesOn_1": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.InZeroSet._sparseCasesOn_1.else_eq": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.InZeroSet._sparseCasesOn_2": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.InZeroSet._sparseCasesOn_2.else_eq": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.InZeroSet.eq_1": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.InZeroSet.eq_2": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.InZeroSet.match_1": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.IsAnchor": {
       "module": "OrderedRemoval.ConcreteCopies",
       "kind": "declaration",
@@ -2164,6 +2607,402 @@
       "module": "OrderedRemoval.ConcreteHost",
       "kind": "declaration",
       "axioms": []
+    },
+    "OrderedRemoval.Concrete.ModeFrame": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.A": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.B": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame._sizeOf_1": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame._sizeOf_inst": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.balanced_alignment": {
+      "module": "OrderedRemoval.ThirdColumn",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.balanced_alignment._proof_1_1": {
+      "module": "OrderedRemoval.ThirdColumn",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.balanced_alignment._proof_1_2": {
+      "module": "OrderedRemoval.ThirdColumn",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.c_role": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.casesOn": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.col0": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.col3": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.ctorIdx": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.d": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.d_role": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.group": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.localization_data": {
+      "module": "OrderedRemoval.LastRow",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.minus_mode": {
+      "module": "OrderedRemoval.LastRow",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.minus_mode._proof_1_1": {
+      "module": "OrderedRemoval.LastRow",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.minus_mode._proof_1_2": {
+      "module": "OrderedRemoval.LastRow",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.minus_mode._proof_1_3": {
+      "module": "OrderedRemoval.LastRow",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.minus_mode._proof_1_4": {
+      "module": "OrderedRemoval.LastRow",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.minus_mode._proof_1_5": {
+      "module": "OrderedRemoval.LastRow",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.mk": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.mk._flat_ctor": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.mk.inj": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.mk.injEq": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.mk.noConfusion": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.mk.sizeOf_spec": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.mode_le": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.noConfusion": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.noConfusionType": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.r": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.r_role": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.rec": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.recOn": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.row0": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.row1": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.row2": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.third_column_variable": {
+      "module": "OrderedRemoval.ThirdColumn",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.third_column_variable._proof_1_1": {
+      "module": "OrderedRemoval.ThirdColumn",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.x": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.y": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.ModeFrame.z": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     "OrderedRemoval.Concrete.Position": {
       "module": "OrderedRemoval.ConcreteHost",
@@ -2352,6 +3191,13 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.anchor_one_mode_groups": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.anchor_one_rank": {
       "module": "OrderedRemoval.ExtractAnchors",
       "kind": "theorem",
@@ -2411,6 +3257,20 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.atLevel_self_even": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.atLevel_self_odd": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.card_position": {
       "module": "OrderedRemoval.ConcreteHost",
       "kind": "theorem",
@@ -2422,6 +3282,15 @@
     },
     "OrderedRemoval.Concrete.card_variablePosition": {
       "module": "OrderedRemoval.ConcreteHost",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.card_zeroCells_le": {
+      "module": "OrderedRemoval.ZeroSetSize",
       "kind": "theorem",
       "axioms": [
         "Classical.choice",
@@ -2865,6 +3734,74 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.column_child_before_plus": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_child_before_plus._proof_1_1": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_child_lt_parent_minus_iff": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_child_lt_parent_minus_iff._proof_1_1": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_minus_before_child": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_minus_before_child._proof_1_1": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_minus_before_plus": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_minus_before_plus._proof_1_1": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.column_minus_lt_iff": {
       "module": "OrderedRemoval.HostTreeOrder",
       "kind": "theorem",
@@ -2882,6 +3819,97 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.column_node_bounds": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_node_bounds._proof_1_1": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_node_bounds._proof_1_2": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_node_bounds._proof_1_3": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_node_bounds._proof_1_4": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_node_bounds._proof_1_5": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_node_bounds._proof_1_6": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_parent_plus_lt_iff": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_parent_plus_lt_iff._proof_1_1": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_plus_before_minus": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_plus_before_minus._proof_1_1": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.column_plus_lt_iff": {
       "module": "OrderedRemoval.HostTreeOrder",
       "kind": "theorem",
@@ -2893,6 +3921,39 @@
     },
     "OrderedRemoval.Concrete.column_plus_lt_iff._proof_1_1": {
       "module": "OrderedRemoval.HostTreeOrder",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_same_class_node_le": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_same_class_node_le._proof_1_1": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_same_class_node_le._proof_1_2": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.column_same_class_node_le._proof_1_3": {
+      "module": "OrderedRemoval.TreeComparisons",
       "kind": "theorem",
       "axioms": [
         "Quot.sound",
@@ -2968,6 +4029,71 @@
     },
     "OrderedRemoval.Concrete.depth_le._proof_1_1": {
       "module": "OrderedRemoval.ConcreteHost",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.earlier_minus_child_parity": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.earlier_minus_child_parity._proof_1_1": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.earlier_minus_child_parity._proof_1_2": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.earlier_minus_child_parity._proof_1_3": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.earlier_minus_child_parity._proof_1_4": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.earlier_minus_child_parity._proof_1_5": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.earlier_minus_child_parity._proof_1_6": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.earlier_minus_child_parity._proof_1_7": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
       "kind": "theorem",
       "axioms": [
         "Quot.sound",
@@ -3143,6 +4269,14 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.inZeroSet_variables": {
+      "module": "OrderedRemoval.ZeroSetSize",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.instDecidableAtLevel": {
       "module": "OrderedRemoval.ConcreteHost",
       "kind": "declaration",
@@ -3160,6 +4294,34 @@
     "OrderedRemoval.Concrete.instDecidableColRole": {
       "module": "OrderedRemoval.ConcreteHost",
       "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.instDecidableInZeroSet": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.instDecidableInZeroSet._proof_1": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.instDecidableInZeroSet._proof_2": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.instDecidableInZeroSet._proof_3": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "theorem",
       "axioms": [
         "propext"
       ]
@@ -3224,6 +4386,14 @@
       "module": "OrderedRemoval.ConcreteHost",
       "kind": "theorem",
       "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.isAnchor_iff_exists": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
         "propext"
       ]
     },
@@ -3302,6 +4472,15 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.matrix_zero_localization": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.modeOrder": {
       "module": "OrderedRemoval.ConcreteHost",
       "kind": "declaration",
@@ -3339,6 +4518,772 @@
     },
     "OrderedRemoval.Concrete.modeRank_injective._proof_1_1": {
       "module": "OrderedRemoval.ConcreteHost",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_1": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_10": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_11": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_13": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_14": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_15": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_16": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_17": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_18": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_19": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_2": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_20": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_21": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_22": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_23": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_24": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_25": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_26": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_27": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_28": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_29": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_3": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_30": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_31": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_32": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_33": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_34": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_35": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_36": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_37": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_38": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_39": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_4": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_40": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_41": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_42": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_43": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_44": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_45": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_46": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_47": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_48": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_49": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_5": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_50": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_51": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_52": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_54": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_55": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_56": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_57": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_58": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_59": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_6": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_60": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_61": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_62": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_63": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_64": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_65": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_66": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_67": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_68": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_69": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_7": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_70": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_71": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_72": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_73": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_74": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_75": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_76": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_77": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_78": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_79": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_8": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_80": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_81": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_82": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_83": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_84": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_86": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_87": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_88": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_89": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_9": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_90": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_91": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_93": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.mode_zero_localization._proof_1_94": {
+      "module": "OrderedRemoval.LocalizationArithmetic",
       "kind": "theorem",
       "axioms": [
         "Quot.sound",
@@ -3832,6 +5777,31 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.row_leaf_node_lt": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.row_leaf_node_lt._proof_1_2": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.row_leaf_node_lt._simp_1_1": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.row_minus_lt_iff": {
       "module": "OrderedRemoval.HostTreeOrder",
       "kind": "theorem",
@@ -4019,6 +5989,45 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.variableCoordinate": {
+      "module": "OrderedRemoval.ZeroSetSize",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.variableCoordinate._proof_1": {
+      "module": "OrderedRemoval.ZeroSetSize",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.variableCoordinate._sparseCasesOn_1": {
+      "module": "OrderedRemoval.ZeroSetSize",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.variableCoordinate._sparseCasesOn_2": {
+      "module": "OrderedRemoval.ZeroSetSize",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.variableCoordinate.match_1": {
+      "module": "OrderedRemoval.ZeroSetSize",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.variableEntry": {
       "module": "OrderedRemoval.ConcreteHost",
       "kind": "declaration",
@@ -4170,6 +6179,145 @@
     },
     "OrderedRemoval.Concrete.variable_crown_absent._proof_1_3": {
       "module": "OrderedRemoval.HostStructure",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.variable_role_orientation": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.variable_wrong_roles": {
+      "module": "OrderedRemoval.LocalizationFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.vertical_zero_impossible": {
+      "module": "OrderedRemoval.ThirdColumn",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.vertical_zero_impossible._proof_1_1": {
+      "module": "OrderedRemoval.ThirdColumn",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.vertical_zero_impossible._proof_1_2": {
+      "module": "OrderedRemoval.ThirdColumn",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.zeroCells": {
+      "module": "OrderedRemoval.ZeroSetSize",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.zeroCells.eq_1": {
+      "module": "OrderedRemoval.ZeroSetSize",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.zeroCode": {
+      "module": "OrderedRemoval.ZeroSetSize",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.zeroCode._proof_1": {
+      "module": "OrderedRemoval.ZeroSetSize",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.zeroCode_injective_on_zeros": {
+      "module": "OrderedRemoval.ZeroSetSize",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.zeroCode_injective_on_zeros._proof_1_1": {
+      "module": "OrderedRemoval.ZeroSetSize",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.zeroCode_injective_on_zeros._proof_1_2": {
+      "module": "OrderedRemoval.ZeroSetSize",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.zeroSet_entry": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.zeroSet_entry._proof_1_3": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.zero_coordinate_quotients": {
+      "module": "OrderedRemoval.ZeroSetSize",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.zero_coordinate_quotients._proof_1_1": {
+      "module": "OrderedRemoval.ZeroSetSize",
       "kind": "theorem",
       "axioms": [
         "Quot.sound",
@@ -4998,6 +7146,47 @@
         "propext"
       ]
     },
+    "OrderedRemoval.TreePositions.column_plus_child_lt_minus_parent": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.column_plus_child_lt_minus_parent._proof_1_1": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.column_plus_child_lt_minus_parent._proof_1_2": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.column_plus_child_lt_minus_parent._proof_1_3": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.column_plus_child_lt_minus_parent._proof_1_4": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.TreePositions.column_plus_parent_lt_child": {
       "module": "OrderedRemoval.TreePositions",
       "kind": "theorem",
@@ -5033,6 +7222,55 @@
     },
     "OrderedRemoval.TreePositions.column_plus_parent_lt_child._proof_1_5": {
       "module": "OrderedRemoval.TreePositions",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.column_plus_parent_lt_minus_child": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.column_plus_parent_lt_minus_child._proof_1": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.column_plus_parent_lt_minus_child._proof_1_1": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.column_plus_parent_lt_minus_child._proof_1_2": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.column_plus_parent_lt_minus_child._proof_1_3": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.column_plus_parent_lt_minus_child._proof_1_4": {
+      "module": "OrderedRemoval.TreeComparisons",
       "kind": "theorem",
       "axioms": [
         "Quot.sound",
@@ -5097,6 +7335,58 @@
         "propext"
       ]
     },
+    "OrderedRemoval.TreePositions.early_child_lt_late_parent": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.early_child_lt_late_parent._proof_1_2": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.early_child_lt_late_parent._simp_1_1": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.early_parent_lt_late_child": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.early_parent_lt_late_child._proof_1_2": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.early_parent_lt_late_child._simp_1_1": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.TreePositions.key": {
       "module": "OrderedRemoval.TreePositions",
       "kind": "declaration",
@@ -5149,6 +7439,78 @@
     },
     "OrderedRemoval.TreePositions.keyCoordinate_orderKey": {
       "module": "OrderedRemoval.TreePositions",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.key_endpoint_le": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.key_endpoint_le._proof_1_2": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.key_endpoint_le._simp_1_1": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.key_endpoint_lt_of_phase_gt": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.key_endpoint_lt_of_phase_gt._proof_1_2": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.key_endpoint_lt_of_phase_gt._simp_1_1": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.key_endpoint_lt_of_tie_gt": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.key_endpoint_lt_of_tie_gt._proof_1_2": {
+      "module": "OrderedRemoval.TreeComparisons",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.TreePositions.key_endpoint_lt_of_tie_gt._simp_1_1": {
+      "module": "OrderedRemoval.TreeComparisons",
       "kind": "theorem",
       "axioms": [
         "Quot.sound",
@@ -6156,6 +8518,27 @@
       "axioms": [
         "propext"
       ]
+    },
+    "_private.OrderedRemoval.ZeroLocalization.0.OrderedRemoval.Concrete.InZeroSet.match_1.eq_1": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "_private.OrderedRemoval.ZeroLocalization.0.OrderedRemoval.Concrete.InZeroSet.match_1.eq_2": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "_private.OrderedRemoval.ZeroLocalization.0.OrderedRemoval.Concrete.InZeroSet.match_1.splitter": {
+      "module": "OrderedRemoval.ZeroLocalization",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
     }
   },
   "kernel_replay_scope": "each project module into its imported environment",
@@ -6169,13 +8552,20 @@
     "OrderedRemoval.HostStructure": "replaying OrderedRemoval.HostStructure",
     "OrderedRemoval.HostTreeOrder": "replaying OrderedRemoval.HostTreeOrder",
     "OrderedRemoval.IndexedHost": "replaying OrderedRemoval.IndexedHost",
+    "OrderedRemoval.LastRow": "replaying OrderedRemoval.LastRow",
     "OrderedRemoval.LocalArithmetic": "replaying OrderedRemoval.LocalArithmetic",
+    "OrderedRemoval.LocalizationArithmetic": "replaying OrderedRemoval.LocalizationArithmetic",
+    "OrderedRemoval.LocalizationFrame": "replaying OrderedRemoval.LocalizationFrame",
     "OrderedRemoval.OrderedHost": "replaying OrderedRemoval.OrderedHost",
     "OrderedRemoval.Propagation": "replaying OrderedRemoval.Propagation",
     "OrderedRemoval.ProtectedSampling": "replaying OrderedRemoval.ProtectedSampling",
     "OrderedRemoval.RoleSupports": "replaying OrderedRemoval.RoleSupports",
+    "OrderedRemoval.ThirdColumn": "replaying OrderedRemoval.ThirdColumn",
     "OrderedRemoval.ThreeSeedSampling": "replaying OrderedRemoval.ThreeSeedSampling",
-    "OrderedRemoval.TreePositions": "replaying OrderedRemoval.TreePositions"
+    "OrderedRemoval.TreeComparisons": "replaying OrderedRemoval.TreeComparisons",
+    "OrderedRemoval.TreePositions": "replaying OrderedRemoval.TreePositions",
+    "OrderedRemoval.ZeroLocalization": "replaying OrderedRemoval.ZeroLocalization",
+    "OrderedRemoval.ZeroSetSize": "replaying OrderedRemoval.ZeroSetSize"
   },
   "sources": {
     "formal/OrderedRemoval/AnchorCertificate.lean": "bc38900a6bad2c3634fbe38b84906ef5bf07b76ac211548b5b89862d59dc80e6",
@@ -6187,14 +8577,21 @@
     "formal/OrderedRemoval/HostStructure.lean": "c626130354bb889d719f0e84d7a42d0e61f92364324aa8f34d0da017c123cc9c",
     "formal/OrderedRemoval/HostTreeOrder.lean": "d6a0970eb8b6e851838d189e563dde49aa8062bbaf871e2161bfe12d9f0c6255",
     "formal/OrderedRemoval/IndexedHost.lean": "9171c4009956b29e8a134456f48ee752935eb661758b0ddbf06d94f54e8d5457",
+    "formal/OrderedRemoval/LastRow.lean": "8a93f0d4f11c601d74e3da6452f0e8b154ddb00762687a13702db4b71238ebe5",
     "formal/OrderedRemoval/LocalArithmetic.lean": "b9f55d52d32724f5f8380ccd422d0ffaf9fcf666db8a4b2543377db6c0a89b18",
+    "formal/OrderedRemoval/LocalizationArithmetic.lean": "76fc67f64f5eb468346595c81fe8492f84717392b7b28f1397fa99e3b78e865b",
+    "formal/OrderedRemoval/LocalizationFrame.lean": "f997fbf287137b2c40c3156c2b03439278ee629442dacadab6d5211a75ff3dfb",
     "formal/OrderedRemoval/OrderedHost.lean": "49d5830d669ba1efa7aefab55b54187279c09afe40099795907d4d692b20f385",
     "formal/OrderedRemoval/Propagation.lean": "d77f4202dcb78cfdd9f5219f281a59d1239ba93d9585b78f267486e707df0506",
     "formal/OrderedRemoval/ProtectedSampling.lean": "f605783e63155e48c8708a01d8d6371bf36e926c32f60ae4669ff9b0a1feafc0",
     "formal/OrderedRemoval/RoleSupports.lean": "539af46e47b3f79ada672bab16092cba712438539ff433a16c0a5baf0c0ca70e",
+    "formal/OrderedRemoval/ThirdColumn.lean": "e1844cb48e2943ab03636809b36a2ac4e8f0d5c93ed9439a05198f65f7c48258",
     "formal/OrderedRemoval/ThreeSeedSampling.lean": "71dee41bd1f5981d7abd5e27b56d1a96ce19e7a798e1e222c0efec04c9ae5498",
+    "formal/OrderedRemoval/TreeComparisons.lean": "a402122506dbc0dd8e3ade3451682f30411d90dce9b92f79115a75afa77aa23a",
     "formal/OrderedRemoval/TreePositions.lean": "df83d4681e4a47281a960888d14551c0359964e51260c2897de3fd0daf406927",
-    "formal/OrderedRemoval.lean": "eaba9c5e10d4e5a36b8a3549fdb44d9aaa47ec79004766728fc1f8509f7183cc",
+    "formal/OrderedRemoval/ZeroLocalization.lean": "b317dd10d2347bdcdcb244f9c910d772326483da1351be9976079dd5c4afc5e7",
+    "formal/OrderedRemoval/ZeroSetSize.lean": "bcbef9fc64b1c0a2d53b37cab712a4e7d7e2ea8e1fc43e391d7629d4f3263559",
+    "formal/OrderedRemoval.lean": "3bdd26acd9bdbf3ad059607ed158bc3c8965dcdf3269995dde01e33c214da49f",
     "formal/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
     "formal/lakefile.toml": "4fb7ab5a685ff624279b673cdb70f0fc27d4d2f285bc5e183e21e5f3390915b2",
     "formal/lake-manifest.json": "c1ae45156cf8ce00629518514bcbc658602841fdf7eb3fbf786e0ba3ab009b52"

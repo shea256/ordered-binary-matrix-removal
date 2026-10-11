@@ -251,3 +251,59 @@ reproduced exactly the same 695 declarations and dependencies. The main
 research track's validator passed with 362 local links across 107 Markdown
 files, and its generated status view was refreshed. `git diff --check`
 passed in both repositories.
+
+## Zero-cell localization formalization — 2026-10-11
+
+Confirmed PR #3 merged as `4e707a25ccf86c0e165e476de01dd1d8c627ce4d`,
+then created standalone branch `shea256/four-zero-localization` from that
+merge without renaming the previous branch. Rechecked upstream main; it
+remained `fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb`.
+
+Implemented seven Lean modules: concrete order comparisons, a common mode
+frame for both anchor configurations, mode arithmetic, third-column
+classification, concrete zero-cell localization, the dummy last row, and
+the zero-set cardinality upper bound. The initial combined arithmetic tactic
+was too expensive; the final proof instantiates applicable order bounds
+from the class cases before invoking exact Presburger arithmetic. No theorem
+hypothesis or mathematical claim was weakened.
+
+With the pinned Lean 4.34.1 toolchain and Mathlib on PATH, ran:
+
+```sh
+python3 scripts/run_formal_checks.py
+```
+
+Actual output: `214 named Lean theorems; 957 declarations audited; module
+kernel replay passed.` All 23 local modules replayed into their imported
+environments, with only `propext`, `Quot.sound`, and `Classical.choice` in
+the transitive dependencies. No added axioms or admitted proofs. This is
+not fresh replay of all Mathlib and not independent peer review. The receipt
+in `verification/reference/formal-audit.json` binds all compiled sources.
+The headline exports are `Copy.zero_localization`, `matrix_zero_localization`,
+`Copy.last_row_dummy`, and `card_zeroCells_le` in `OrderedRemoval.Concrete`.
+
+The user-authorized separate reviewer found no semantic error and supplied
+a standalone finite transcription, archived as
+`verification/check_four_localization.py` with report and source snapshots.
+It checks generic localization through h=7, all six column bounds on
+419,513 ordered position pairs, zero-code injection through h=10, and 200
+last-row class intersections through h=100. Omitting mode order has an
+explicit nonleaf counterexample. The review did not claim compiler verification.
+
+Updated the manuscript's verification paragraph, preserving the mathematical
+statement. `python3 scripts/build_manuscript.py --regenerate-tex` used
+Pandoc 3.6.4 and three pdflatex passes, with no warnings. Copy counting,
+arbitrary-repair connections, exact zero-set equality and exact enumeration,
+and the final every-c,C theorem remain formal obligations.
+
+Final validation: `python3 scripts/run_checks.py` passed all eight exact
+checkers and reference comparisons, including the newly archived reviewer
+localization checker. Package integrity passed with 119 local links, source
+and PDF hashes, and candidate status. The runtime-version field in the new
+reviewer output is excluded from mathematical reference comparison for
+portability. Actual timings/environment are in `verification/execution-receipt.json`.
+The main research validator passed with 376 local links across 108 Markdown
+files and no generated-view discrepancy. `git diff --check` passed in both
+repositories. Compared with the merged audit, this adds 41 named theorems
+and 262 compiled declarations and removes none; these are verification
+counts, not claims of new mathematical results.

@@ -25,13 +25,19 @@
     "status": "partial",
     "coverage": "formal/README.md",
     "audit": "verification/reference/formal-audit.json",
-    "named_theorems": 173,
-    "checked_declarations": 695,
+    "named_theorems": 214,
+    "checked_declarations": 957,
     "concrete_host_defined": true,
     "concrete_anchor_classification_formalized": true,
-    "zero_cell_localization_formalized": false,
+    "zero_cell_localization_formalized": true,
     "arbitrary_repair_bound_formalized": false,
     "final_removal_theorem_formalized": false,
-    "semantic_review": "verification/reviews/four-concrete-host.md"
-  }
+    "semantic_review": "verification/reviews/four-concrete-host.md",
+    "dummy_last_row_formalized": true,
+    "zero_set_cardinality_bound_formalized": true,
+    "localization_semantic_review": "verification/reviews/four-localization.md",
+    "coarse_copy_count_formalized": false,
+    "exact_copy_count_formalized": false
+  },
+  "localization_reviewer_verification_report": "verification/reference/four-localization-report.json"
 }
