@@ -27,8 +27,9 @@ These proof drafts and verification scripts were prepared for this research
 track. The current manuscript describes the 4×4 candidate; the 5×5 and
 15×15 drafts and exact reports are retained for provenance. Companion
 literature and the unresolved novelty check are recorded in
-[BASELINE.md](BASELINE.md). No Lean certificate for the new result or
-independent acceptance is asserted.
+[BASELINE.md](BASELINE.md). The qualitative 4×4 removal theorem now has a
+Lean certificate; the sharper exact count and canonical sampler bound do not.
+Independent acceptance is not asserted.
 
 The [separate-agent report](verification/reviews/four-separate-agent.md)
 and its checker retain reviewer provenance. The coordinating agent wrote
@@ -39,3 +40,24 @@ already present in upstream `ThreeSeedSampling.lean`; neither it nor the
 propagation/sampling methods are new mathematical contributions.
 The full original upstream development has not been rebuilt. Actual formal
 coverage is described in [formal/README.md](formal/README.md).
+
+## End-to-end certificate — 2026-10-11
+
+The added upstream adaptations are `Model`, `CopyBound` (renamed
+`CountingInjection`), `SamplingAvoidance`, `SamplingDistance`, `BodyExtension`,
+`PathPropagation`, `GuardedFrame`, `GuardedPath`, `GuardContainment`,
+`HostSampling`, `SampledPath`, `HostSampledPath`, `SampledPathOrder`,
+`HostRootLeaf`, `HostAnchorFrames`, `HostSampledSelection`,
+`HostSamplingCompatibility`, `HostRepairDistance`, `OrderedSampledSelection`,
+`OrderedRepairDistance`, `SequenceAssembly`, `Asymptotics`, and `Consequence`.
+All derive from the pinned Apache-2.0 source manifest. Namespace and host
+interfaces are adapted to the local construction; two anchor groups and four
+pattern positions replace 64 and 66. The sequence has coefficient 14, copy
+normalization exponent 8, and the required factor two in the coarse bound.
+
+`CoarseCopyBound` connects the previously checked local zero set to the generic
+encoding. `DistanceMeaning` verifies that the sentinel minimum denotes an
+actual optimal repair. `Main` discharges the concrete-host premises and gives
+the final theorem, including an explicit arbitrary-repairs variant. The local
+all-copy classification/localization supplies the essential refinement over
+the baseline; the sampling/propagation/decay machinery is inherited.

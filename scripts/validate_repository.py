@@ -7,7 +7,7 @@ for name in ('README.md','BASELINE.md','ATTEMPT.md','RESULT.md','RUNLOG.md','HAN
     assert (ROOT / name).is_file(), name
 status = json.loads((ROOT / 'results/current.json').read_text())
 assert status['status'] == 'candidate'
-assert status['independent_review'] is False and status['new_result_formalized'] is False
+assert status['independent_review'] is False and status['new_result_formalized'] is True
 report = json.loads((ROOT / status['verification_report']).read_text())
 assert len(report['pattern']) == status['pattern_size'] == 4
 assert all(len(row) == 4 and set(row) <= {0,1} for row in report['pattern'])
@@ -23,17 +23,34 @@ assert [x['h'] for x in reviewer['checks']] == list(range(1, 8))
 review = status['separate_agent_review']
 assert (ROOT / review['report']).is_file() and review['independent_peer_review'] is False
 formal = status['formalization']
-assert formal['status'] == 'partial' and formal['concrete_anchor_classification_formalized'] is True
+assert formal['status'] == 'qualitative_removal_theorem_formalized'
+assert formal['concrete_anchor_classification_formalized'] is True
 audit = json.loads((ROOT / formal['audit']).read_text())
-assert audit['end_to_end_removal_theorem_formalized'] is False
+assert audit['end_to_end_removal_theorem_formalized'] is True
+assert formal['final_removal_theorem_formalized'] is True
+assert formal['exact_copy_count_formalized'] is False and audit['exact_copy_count_formalized'] is False
+assert formal['canonical_sampler_bound_formalized'] is False and audit['canonical_sampler_bound_formalized'] is False
 assert audit['theorem_count'] == len(audit['axioms']) == formal['named_theorems']
+assert audit['declaration_count'] == len(audit['all_declarations']) == formal['checked_declarations']
 assert 'OrderedRemoval.Concrete.matrix_anchor_counts' in audit['axioms']
 for flag in ('zero_cell_localization_formalized', 'dummy_last_row_formalized',
-             'zero_set_cardinality_bound_formalized'):
+             'zero_set_cardinality_bound_formalized', 'coarse_copy_count_formalized',
+             'arbitrary_repair_bound_formalized'):
     assert formal[flag] is True and audit[flag] is True, flag
 for name in ('Copy.zero_localization', 'matrix_zero_localization',
              'Copy.last_row_dummy', 'card_zeroCells_le'):
     assert 'OrderedRemoval.Concrete.' + name in audit['axioms'], name
+for name in ('fixedH_eq_H4', 'exists_optimal_repair', 'Concrete.copyCount_le',
+             'OrderedHost.hammingDistance_ge', 'concrete_host_bounds',
+             'counterexample_sequence', 'no_polynomial_removal_bound',
+             'no_polynomial_removal_bound_arbitrary_repairs'):
+    assert 'OrderedRemoval.' + name in audit['axioms'], name
+assert len(audit['kernel_replay']) == len(list((ROOT / 'formal/OrderedRemoval').glob('*.lean')))
+assert (ROOT / formal['removal_semantic_review']).is_file()
+removal = json.loads((ROOT / status['removal_reviewer_verification_report']).read_text())
+assert [r['maximum_guard_frequency'] for r in removal['records']] == [2, 4, 8, 16]
+assert all(r['unprotected_leaf_diagonal_frequency'] == r['required_upper_bound'] ** 2
+           for r in removal['records'])
 assert all(set(info['axioms']) <= {'propext', 'Quot.sound', 'Classical.choice'}
            for info in audit['all_declarations'].values())
 assert all(set(used) <= {'propext', 'Quot.sound', 'Classical.choice'} for used in audit['axioms'].values())

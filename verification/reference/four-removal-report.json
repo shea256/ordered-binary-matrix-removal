@@ -1,0 +1,54 @@
+{
+  "python": "3.9.25",
+  "scope": "Finite source-independent host/sampler audit, not universal certification.",
+  "records": [
+    {
+      "h": 1,
+      "seeds": 8,
+      "frames_checked": 32,
+      "distinct_guard_cells": 288,
+      "guard_incidences": 448,
+      "maximum_guard_frequency": 2,
+      "required_upper_bound": 2,
+      "zero_guard_incidences": 200,
+      "one_guard_incidences": 248,
+      "unprotected_leaf_diagonal_frequency": 4
+    },
+    {
+      "h": 2,
+      "seeds": 64,
+      "frames_checked": 512,
+      "distinct_guard_cells": 2240,
+      "guard_incidences": 6912,
+      "maximum_guard_frequency": 4,
+      "required_upper_bound": 4,
+      "zero_guard_incidences": 3136,
+      "one_guard_incidences": 3776,
+      "unprotected_leaf_diagonal_frequency": 16
+    },
+    {
+      "h": 3,
+      "seeds": 512,
+      "frames_checked": 6144,
+      "distinct_guard_cells": 13312,
+      "guard_incidences": 81920,
+      "maximum_guard_frequency": 8,
+      "required_upper_bound": 8,
+      "zero_guard_incidences": 37376,
+      "one_guard_incidences": 44544,
+      "unprotected_leaf_diagonal_frequency": 64
+    },
+    {
+      "h": 4,
+      "seeds": 4096,
+      "frames_checked": 65536,
+      "distinct_guard_cells": 70656,
+      "guard_incidences": 868352,
+      "maximum_guard_frequency": 16,
+      "required_upper_bound": 16,
+      "zero_guard_incidences": 397312,
+      "one_guard_incidences": 471040,
+      "unprotected_leaf_diagonal_frequency": 256
+    }
+  ]
+}

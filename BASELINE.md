@@ -233,3 +233,15 @@ See the [assurance checkpoint](verification/reviews/four-assurance.md).
 formal verification of the existing 4×4 candidate; it makes no new
 pattern-size or novelty claim. The strongest baseline comparison and
 outstanding independent-review/novelty qualifications above are unchanged.
+
+### End-to-end certificate source recheck — 2026-10-11
+
+Upstream main was rechecked through the GitHub API and still matched
+`fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb`. The selected original source files
+were also checked against the 78-file manifest by the separate reviewer. This
+checkpoint completes Lean verification of the qualitative 4×4 obstruction;
+it makes no new size or novelty claim. It uses the weaker but sufficient
+copy estimate 2mn⁶, not the manuscript's sharper exact enumeration. The earlier
+partial-coverage statements above describe historical checkpoints. The
+current coverage and inherited-module attribution are in
+[formal/README.md](formal/README.md) and [ATTRIBUTION.md](ATTRIBUTION.md).

@@ -1,13 +1,17 @@
 {
-  "status": "partial_formalization",
-  "end_to_end_removal_theorem_formalized": false,
+  "status": "qualitative_removal_theorem_formalized",
+  "end_to_end_removal_theorem_formalized": true,
+  "coarse_copy_count_formalized": true,
+  "arbitrary_repair_bound_formalized": true,
+  "exact_copy_count_formalized": false,
+  "canonical_sampler_bound_formalized": false,
   "concrete_anchor_classification_formalized": true,
   "zero_cell_localization_formalized": true,
   "dummy_last_row_formalized": true,
   "zero_set_cardinality_bound_formalized": true,
   "lean_version": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
-  "theorem_count": 214,
-  "declaration_count": 957,
+  "theorem_count": 387,
+  "declaration_count": 1444,
   "axioms": {
     "OrderedRemoval.AnchorClassification.anchor_counts": [
       "Classical.choice",
@@ -165,6 +169,151 @@
       "Quot.sound",
       "propext"
     ],
+    "OrderedRemoval.Concrete.HostSampling.FrameChosen.cell_good": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.core_good": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.edge_good": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.guard_good": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.colChosen_path": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.colChosen_path_anchor": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.colChosen_path_dummy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.coordinate_anchor": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.coordinate_path_dummy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.coordinate_path_position": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.goodCell_of_chosen": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.guard_frequency": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.path_guard_frequency": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.protected_anchor_left": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.protected_anchor_right": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.protected_dummy_left": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.protected_dummy_right": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.protected_event_card_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.protected_path_roots": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.protected_roots": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.protected_selected_anchor_path": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.protected_selected_path_anchor": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.rowChosen_path": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.rowChosen_path_anchor": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.rowChosen_path_dummy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.selected_fiber_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.selected_fiber_card_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.selected_filter_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.selected_path_positions": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.HostSampling.transported_guard_frequency": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "OrderedRemoval.Concrete.ModeFrame.balanced_alignment": [
       "Classical.choice",
       "Quot.sound",
@@ -182,6 +331,74 @@
     ],
     "OrderedRemoval.Concrete.ModeFrame.third_column_variable": [
       "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.SampledSelection.edge_of_lt": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.SampledSelection.frame_chosen": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.SampledSelection.frame_valid": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.SampledSelection.hammingDistance_ge": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.SampledSelection.horizontal_minus_valid": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.SampledSelection.horizontal_plus_valid": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.SampledSelection.path_of_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.SampledSelection.selection_chosen": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.SampledSelection.selection_guard_frequency": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.SampledSelection.selection_valid": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.SampledSelection.vertical_minus_valid": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.SampledSelection.vertical_plus_valid": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.SelectedAnchor.frame_valid": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.SelectedAnchor.matrix_apply": [
       "Quot.sound",
       "propext"
     ],
@@ -216,6 +433,11 @@
       "propext"
     ],
     "OrderedRemoval.Concrete.atLevel_self_odd": [
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.card_indexedZeroCells_le": [
+      "Classical.choice",
+      "Quot.sound",
       "propext"
     ],
     "OrderedRemoval.Concrete.card_position": [
@@ -328,8 +550,23 @@
       "Quot.sound",
       "propext"
     ],
+    "OrderedRemoval.Concrete.copyCount_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "OrderedRemoval.Concrete.depth_le": [
       "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.depth_root_minus": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.depth_root_plus": [
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.depth_shared_leaf": [
       "propext"
     ],
     "OrderedRemoval.Concrete.earlier_minus_child_parity": [
@@ -356,7 +593,37 @@
     "OrderedRemoval.Concrete.host_anchor_same": [
       "propext"
     ],
+    "OrderedRemoval.Concrete.host_col_role_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.host_col_role_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "OrderedRemoval.Concrete.host_dummy_variable": [
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.host_root_minus": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.host_root_plus": [
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.host_row_role_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.host_row_role_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.host_shared_leaf_diagonal": [
       "propext"
     ],
     "OrderedRemoval.Concrete.host_variable_dummy": [
@@ -416,7 +683,16 @@
       "Quot.sound",
       "propext"
     ],
+    "OrderedRemoval.Concrete.node_eq_coordinate_of_leaf": [
+      "propext"
+    ],
     "OrderedRemoval.Concrete.node_eq_level_node": [
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.node_eq_zero_of_depth_zero": [
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.node_shared_leaf": [
       "propext"
     ],
     "OrderedRemoval.Concrete.nonanchor_col_comparable": [
@@ -436,6 +712,13 @@
     ],
     "OrderedRemoval.Concrete.nonanchor_zero_variables": [
       "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.plus_root_minus": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.plus_root_plus": [
       "propext"
     ],
     "OrderedRemoval.Concrete.prefixCount_le": [
@@ -509,9 +792,30 @@
       "Quot.sound",
       "propext"
     ],
+    "OrderedRemoval.Concrete.variableEntry_leaf_of_depth": [
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.variableEntry_root_minus": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.variableEntry_root_minus_of_atLevel": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.variableEntry_root_plus": [
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.variableEntry_root_plus_of_atLevel": [
+      "Quot.sound",
+      "propext"
+    ],
     "OrderedRemoval.Concrete.variableEntry_row_antimono": [
       "Classical.choice",
       "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Concrete.variableEntry_shared_leaf": [
       "propext"
     ],
     "OrderedRemoval.Concrete.variableEntry_true_iff": [
@@ -550,6 +854,189 @@
       "propext"
     ],
     "OrderedRemoval.Concrete.zero_coordinate_quotients": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.CopyBound.card_le_card_mul_pow": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.not_HFree": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.transfer": [
+      "propext"
+    ],
+    "OrderedRemoval.GuardedPath.Selection.Valid.not_HFree": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.GuardedPath.Selection.Valid.transfer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.GuardedPath.Selection.mem_guards": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.GuardedPath.Selection.not_HFree_of_agree": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.GuardedPath.Selection.repair_hits_guards": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.column_minus_sample_child_lt_parent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.column_minus_sample_order": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.column_plus_sample_order": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.column_plus_sample_parent_lt_child": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.horizontal_minus_col_first": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.horizontal_minus_col_second": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.horizontal_plus_col_first": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.horizontal_plus_col_second": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.horizontal_row_first": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.horizontal_row_second": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.mode_kind": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.mode_level": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.parity_eq_false": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.parity_eq_true": [
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.position_shared_leaf": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.row_minus_sample_order": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.row_minus_sample_parent_lt_child": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.row_plus_sample_child_lt_parent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.row_plus_sample_order": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.sample_atLevel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.sample_hostNode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.sample_minus_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.sample_plus_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.treeNode_mixFin": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.vertical_col_first": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.vertical_col_second": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.vertical_minus_row_first": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.vertical_minus_row_second": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.vertical_plus_row_first": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.HostSampledPath.vertical_plus_row_second": [
+      "Classical.choice",
       "Quot.sound",
       "propext"
     ],
@@ -681,6 +1168,11 @@
       "Quot.sound",
       "propext"
     ],
+    "OrderedRemoval.OrderedHost.hammingDistance_ge": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "OrderedRemoval.OrderedHost.rowIndex_lt_iff": [
       "Classical.choice",
       "Quot.sound",
@@ -721,6 +1213,42 @@
       "Quot.sound",
       "propext"
     ],
+    "OrderedRemoval.OrderedHost.sampledAxisConditions": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.OrderedHost.sampledSelection_guard_frequency": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.OrderedHost.sampledSelection_valid": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.PathPropagation.exists_modeBody": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.PathPropagation.horizontal_minus": [
+      "propext"
+    ],
+    "OrderedRemoval.PathPropagation.horizontal_plus": [
+      "propext"
+    ],
+    "OrderedRemoval.PathPropagation.propagate": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.PathPropagation.vertical_minus": [
+      "propext"
+    ],
+    "OrderedRemoval.PathPropagation.vertical_plus": [
+      "propext"
+    ],
     "OrderedRemoval.Propagation.exists_body": [
       "Classical.choice",
       "Quot.sound",
@@ -752,6 +1280,183 @@
       "propext"
     ],
     "OrderedRemoval.ProtectedSampling.union_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.ancestor_parent": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.blockSize_mul_nodes": [
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.blockSize_pos": [
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.classAt_depth": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.classAt_internal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.classAt_leaf": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.classAt_leaf_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.classAt_signs_eq_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.mixFin_leaf": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.mixFin_node": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.mixFin_root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.mix_div": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.mix_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.mix_mod": [
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.sample_depth": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.sample_leaf_offset": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.sample_node": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.sample_node_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.sample_nodes_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.sample_parent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.sample_root_node": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.sample_root_offset": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SampledPath.sample_shared_leaf": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Sampling.exists_agreement_of_changed_card_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Sampling.exists_agreement_three_seed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Sampling.exists_avoiding_of_card_mul_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Sampling.exists_avoiding_of_sum_card_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Sampling.exists_avoiding_of_uniform_ratio_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Sampling.exists_selection_avoiding": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Sampling.guard_frequency_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Sampling.hammingDistance_ge_of_guard_sampling": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Sampling.hammingDistance_ge_of_three_seed_guards": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.Sampling.sq_le_changed_card_of_forcing": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SequenceAssembly.copyDensity_le_of_integer_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SequenceAssembly.counterexample_sequence_of_integer_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SequenceAssembly.fixedDistance_ge_of_integer_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.SequenceAssembly.fixedMinEdits_ge_of_repairs": [
       "Classical.choice",
       "Quot.sound",
       "propext"
@@ -892,6 +1597,11 @@
       "Quot.sound",
       "propext"
     ],
+    "OrderedRemoval.TreeSampling.atLevel_eq_mixFin": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "OrderedRemoval.TreeSampling.atLevel_leaf": [
       "Classical.choice",
       "Quot.sound",
@@ -971,6 +1681,104 @@
       "propext"
     ],
     "OrderedRemoval.TreeSampling.mix_val": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.appendTwo_first": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.appendTwo_initial": [
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.appendTwo_matches_fixedH": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.appendTwo_second": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.concrete_host_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.counterexample_sequence": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.exists_depth_decay_without_factor": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.exists_depth_polynomial_decay": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.exists_optimal_repair": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.fixedDistance_le_repair": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.fixedH_eq_H4": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.fixedMinEdits_le_repair": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.fixedMinEdits_le_square": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.hammingDistance_le_square": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.no_polynomial_removal_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.no_polynomial_removal_bound_arbitrary_repairs": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.no_polynomial_removal_bound_of_sequence": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.not_HFree_of_anchor_body": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.strictMono_appendTwo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OrderedRemoval.zero_HFree": [
       "Classical.choice",
       "Quot.sound",
       "propext"
@@ -1770,6 +2578,11 @@
         "propext"
       ]
     },
+    "OrderedRemoval.BinaryMatrix": {
+      "module": "OrderedRemoval.Model",
+      "kind": "declaration",
+      "axioms": []
+    },
     "OrderedRemoval.Concrete.AnchorPosition": {
       "module": "OrderedRemoval.ConcreteHost",
       "kind": "declaration",
@@ -2519,6 +3332,865 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.HostSampling.ColChosen": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.ColChosen.eq_1": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.FrameChosen": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.FrameChosen.casesOn": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.FrameChosen.cell_good": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.FrameChosen.col_chosen": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.FrameChosen.col_independent": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.FrameChosen.mk": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.FrameChosen.mk._flat_ctor": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.FrameChosen.rec": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.FrameChosen.recOn": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.FrameChosen.row_chosen": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.FrameChosen.row_independent": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.GoodCell": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.casesOn": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.core_good": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.edge_good": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.guard_good": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.horizontal_minus": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.horizontal_plus": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.mk": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.mk._flat_ctor": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.rec": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.recOn": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.root_minus": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.root_plus": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.vertical_minus": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.vertical_plus": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.xd_chosen": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.xd_independent": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.xm_chosen": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.xp_chosen": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.yd_chosen": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.yd_independent": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.ym_chosen": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.PathChosen.yp_chosen": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.Protected": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "declaration",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.Protected._proof_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.Protected._proof_2": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.Protected.eq_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.RowChosen": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.RowChosen.eq_1": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.Selected": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.Selected.eq_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.colChosen_path": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.colChosen_path_anchor": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.colChosen_path_anchor._simp_1": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.colChosen_path_dummy": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.colChosen_path_dummy._simp_1": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.coordinate": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.coordinate.eq_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.coordinate.eq_2": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.coordinate.eq_3": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.coordinate_anchor": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.coordinate_path_dummy": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.coordinate_path_position": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.goodCell_of_chosen": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.guard_frequency": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.instDecidableSelected": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.instDecidableSelected._aux_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.offset": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.offset.eq_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.offset.eq_2": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.offset.eq_3": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.offset.match_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.path_guard_frequency": {
+      "module": "OrderedRemoval.GuardContainment",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.protected_anchor_left": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.protected_anchor_left._simp_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.protected_anchor_right": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.protected_anchor_right._simp_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.protected_dummy_left": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.protected_dummy_left._simp_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.protected_dummy_right": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.protected_dummy_right._simp_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.protected_event_card_le": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.protected_event_card_le._simp_1_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.protected_event_card_le._simp_1_2": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.protected_path_roots": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.protected_roots": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.protected_selected_anchor_path": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.protected_selected_path_anchor": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.rowChosen_path": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.rowChosen_path_anchor": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.rowChosen_path_anchor._simp_1": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.rowChosen_path_dummy": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.rowChosen_path_dummy._simp_1": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.sampleDepth": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "declaration",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.sampleDepth._proof_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.sampleDepth.eq_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.sampleDepth.eq_2": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.sampleDepth.eq_3": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.sampleDepth.match_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.selected_fiber_card": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.selected_fiber_card._simp_1_6": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.selected_fiber_card_mul": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.selected_filter_card": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.selected_path_positions": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.HostSampling.transported_guard_frequency": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.InZeroSet": {
       "module": "OrderedRemoval.ZeroLocalization",
       "kind": "declaration",
@@ -3011,6 +4683,449 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions._proof_1": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions._proof_2": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions.anchor_before_cols": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions.anchor_before_rows": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions.anchor_cols": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions.anchor_rows": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions.casesOn": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions.col_minus": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions.col_plus": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions.dummy_before_variable": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions.mk": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions.mk._flat_ctor": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions.rec": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions.recOn": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions.row_minus": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions.row_plus": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.AxisConditions.variable_before_dummy": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.edge": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "declaration",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.edge._proof_1": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.edge._proof_2": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.edge.congr_simp": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.edge_of_lt": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.frame": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.frame.congr_simp": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.frame.eq_1": {
+      "module": "OrderedRemoval.HostRepairDistance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.frame_chosen": {
+      "module": "OrderedRemoval.HostRepairDistance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.frame_valid": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.hammingDistance_ge": {
+      "module": "OrderedRemoval.HostRepairDistance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.horizontalMode": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "declaration",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.horizontalMode.congr_simp": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.horizontalMode.eq_1": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.horizontal_minus_valid": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.horizontal_plus_valid": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.path": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.path.eq_1": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.path_of_le": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.selection": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.selection.eq_1": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.selection_chosen": {
+      "module": "OrderedRemoval.HostRepairDistance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.selection_guard_frequency": {
+      "module": "OrderedRemoval.HostRepairDistance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.selection_valid": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.selection_valid._proof_1_7": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.vertical_minus_valid": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SampledSelection.vertical_plus_valid": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SelectedAnchor.frame": {
+      "module": "OrderedRemoval.HostAnchorFrames",
+      "kind": "declaration",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SelectedAnchor.frame.eq_1": {
+      "module": "OrderedRemoval.HostRepairDistance",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SelectedAnchor.frame_valid": {
+      "module": "OrderedRemoval.HostAnchorFrames",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SelectedAnchor.matrix": {
+      "module": "OrderedRemoval.HostAnchorFrames",
+      "kind": "declaration",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SelectedAnchor.matrix.eq_1": {
+      "module": "OrderedRemoval.HostAnchorFrames",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.SelectedAnchor.matrix_apply": {
+      "module": "OrderedRemoval.HostAnchorFrames",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.Support": {
       "module": "OrderedRemoval.RoleSupports",
       "kind": "declaration",
@@ -3268,6 +5383,15 @@
       "module": "OrderedRemoval.LocalizationArithmetic",
       "kind": "theorem",
       "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.card_indexedZeroCells_le": {
+      "module": "OrderedRemoval.CoarseCopyBound",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
         "propext"
       ]
     },
@@ -3978,6 +6102,15 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.copyCount_le": {
+      "module": "OrderedRemoval.CoarseCopyBound",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.copyOfIndices": {
       "module": "OrderedRemoval.IndexedHost",
       "kind": "declaration",
@@ -4032,6 +6165,36 @@
       "kind": "theorem",
       "axioms": [
         "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.depth_root_minus": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.depth_root_minus._proof_1": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.depth_root_plus": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.depth_shared_leaf": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
         "propext"
       ]
     },
@@ -4248,8 +6411,66 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.host_col_role_one": {
+      "module": "OrderedRemoval.HostAnchorFrames",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.host_col_role_zero": {
+      "module": "OrderedRemoval.HostAnchorFrames",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.host_dummy_variable": {
       "module": "OrderedRemoval.ConcreteHost",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.host_root_minus": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.host_root_plus": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.host_row_role_one": {
+      "module": "OrderedRemoval.HostAnchorFrames",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.host_row_role_zero": {
+      "module": "OrderedRemoval.HostAnchorFrames",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.host_shared_leaf_diagonal": {
+      "module": "OrderedRemoval.HostRootLeaf",
       "kind": "theorem",
       "axioms": [
         "propext"
@@ -4273,6 +6494,15 @@
       "module": "OrderedRemoval.ZeroSetSize",
       "kind": "theorem",
       "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.indexedZeroCells": {
+      "module": "OrderedRemoval.CoarseCopyBound",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
         "Quot.sound",
         "propext"
       ]
@@ -5340,8 +7570,29 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.node_eq_coordinate_of_leaf": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.node_eq_level_node": {
       "module": "OrderedRemoval.HostTreeOrder",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.node_eq_zero_of_depth_zero": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.node_shared_leaf": {
+      "module": "OrderedRemoval.HostRootLeaf",
       "kind": "theorem",
       "axioms": [
         "propext"
@@ -5426,6 +7677,21 @@
     },
     "OrderedRemoval.Concrete.plus.eq_1": {
       "module": "OrderedRemoval.HostTreeOrder",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.plus_root_minus": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.plus_root_plus": {
+      "module": "OrderedRemoval.HostRootLeaf",
       "kind": "theorem",
       "axioms": [
         "propext"
@@ -6035,6 +8301,13 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.variableEntry.eq_1": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.variableEntry_class_shape": {
       "module": "OrderedRemoval.HostStructure",
       "kind": "theorem",
@@ -6062,6 +8335,84 @@
         "propext"
       ]
     },
+    "OrderedRemoval.Concrete.variableEntry_leaf_of_depth": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.variableEntry_root_minus": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.variableEntry_root_minus._proof_1_1": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.variableEntry_root_minus._proof_1_5": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.variableEntry_root_minus_of_atLevel": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.variableEntry_root_minus_of_atLevel._proof_1_1": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.variableEntry_root_minus_of_atLevel._proof_1_3": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.variableEntry_root_plus": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.variableEntry_root_plus_of_atLevel": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.variableEntry_root_plus_of_atLevel._proof_1_1": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.Concrete.variableEntry_row_antimono": {
       "module": "OrderedRemoval.HostStructure",
       "kind": "theorem",
@@ -6077,6 +8428,13 @@
       "axioms": [
         "Classical.choice",
         "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Concrete.variableEntry_shared_leaf": {
+      "module": "OrderedRemoval.HostRootLeaf",
+      "kind": "theorem",
+      "axioms": [
         "propext"
       ]
     },
@@ -6321,6 +8679,1200 @@
       "kind": "theorem",
       "axioms": [
         "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.CopyBound.card_le_card_mul_pow": {
+      "module": "OrderedRemoval.CountingInjection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Cell": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.anchor": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.casesOn": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.col_before": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.col_lt": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.col_one": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.col_zero": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.mk": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.mk._flat_ctor": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.not_HFree": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.rec": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.recOn": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.row_before": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.row_lt": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.row_one": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.row_zero": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.Valid.transfer": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame._sizeOf_1": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame._sizeOf_inst": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.casesOn": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.cols": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.ctorIdx": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.mk": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.mk._flat_ctor": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.mk.inj": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.mk.injEq": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.mk.noConfusion": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.mk.sizeOf_spec": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.noConfusion": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.noConfusionType": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.rec": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.recOn": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.AnchorFrame.rows": {
+      "module": "OrderedRemoval.GuardedFrame",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.CoreCell": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.EdgeCell": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.GuardCell": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.casesOn": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.dummy_col": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.dummy_row": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.horizontal_minus": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.horizontal_plus": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.leaf_col": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.leaf_row": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.mk": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.mk._flat_ctor": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.not_HFree": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.rec": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.recOn": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.root_minus": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.root_plus": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.transfer": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.vertical_minus": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.Valid.vertical_plus": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection._sizeOf_1": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection._sizeOf_inst": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.casesOn": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.ctorIdx": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.guards": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.guards.eq_1": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.mem_guards": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.mem_guards._simp_1": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.mk": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.mk._flat_ctor": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.mk.inj": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.mk.injEq": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.mk.noConfusion": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.mk.sizeOf_spec": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.noConfusion": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.noConfusionType": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.not_HFree_of_agree": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.rec": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.recOn": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.repair_hits_guards": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.vMinus": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.vPlus": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.wMinus": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.wPlus": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.xd": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.xm": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.xp": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.yd": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.ym": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.GuardedPath.Selection.yp": {
+      "module": "OrderedRemoval.GuardedPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HFree": {
+      "module": "OrderedRemoval.Model",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.column_minus_sample_child_lt_parent": {
+      "module": "OrderedRemoval.SampledPathOrder",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.column_minus_sample_order": {
+      "module": "OrderedRemoval.SampledPathOrder",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.column_plus_sample_order": {
+      "module": "OrderedRemoval.SampledPathOrder",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.column_plus_sample_parent_lt_child": {
+      "module": "OrderedRemoval.SampledPathOrder",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.dummy": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.dummy.eq_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.horizontal": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "declaration",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.horizontal.eq_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.horizontalKind": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.horizontalKind.eq_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.horizontalKind.eq_2": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.horizontalKind.eq_3": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.horizontalKind.eq_4": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.horizontalKind.match_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "declaration",
+      "axioms": []
+    },
+    "OrderedRemoval.HostSampledPath.horizontal_minus_col_first": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.horizontal_minus_col_second": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.horizontal_plus_col_first": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.horizontal_plus_col_second": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.horizontal_row_first": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.horizontal_row_second": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.mode": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "declaration",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.mode._proof_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.mode._proof_2": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.mode_kind": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.mode_kind._proof_1_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.mode_level": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.mode_level._proof_1_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.parity": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "declaration",
+      "axioms": []
+    },
+    "OrderedRemoval.HostSampledPath.parity.eq_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": []
+    },
+    "OrderedRemoval.HostSampledPath.parity_eq_false": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.parity_eq_false._proof_1_3": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.parity_eq_false._simp_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.parity_eq_false._simp_1_2": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.parity_eq_true": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.parity_eq_true._simp_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.position": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.position.congr_simp": {
+      "module": "OrderedRemoval.HostSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.position.eq_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.position_shared_leaf": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.row_minus_sample_order": {
+      "module": "OrderedRemoval.SampledPathOrder",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.row_minus_sample_parent_lt_child": {
+      "module": "OrderedRemoval.SampledPathOrder",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.row_plus_sample_child_lt_parent": {
+      "module": "OrderedRemoval.SampledPathOrder",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.row_plus_sample_child_lt_parent._proof_1": {
+      "module": "OrderedRemoval.SampledPathOrder",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.row_plus_sample_child_lt_parent._proof_2": {
+      "module": "OrderedRemoval.SampledPathOrder",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.row_plus_sample_order": {
+      "module": "OrderedRemoval.SampledPathOrder",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.sample_atLevel": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.sample_atLevel._simp_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.sample_hostNode": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.sample_minus_eq": {
+      "module": "OrderedRemoval.SampledPathOrder",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.sample_plus_eq": {
+      "module": "OrderedRemoval.SampledPathOrder",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.sample_plus_eq._proof_1_1": {
+      "module": "OrderedRemoval.SampledPathOrder",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.treeNode_mixFin": {
+      "module": "OrderedRemoval.SampledPathOrder",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.vertical": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "declaration",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.vertical.eq_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.verticalKind": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.verticalKind._proof_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.verticalKind.eq_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.verticalKind.eq_2": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.verticalKind.match_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "declaration",
+      "axioms": []
+    },
+    "OrderedRemoval.HostSampledPath.vertical_col_first": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.vertical_col_second": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.vertical_minus_row_first": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.vertical_minus_row_second": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.vertical_plus_row_first": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.vertical_plus_row_first._proof_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.vertical_plus_row_second": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.HostSampledPath.vertical_plus_row_second._proof_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.IncreasingMap": {
+      "module": "OrderedRemoval.Model",
+      "kind": "declaration",
+      "axioms": [
         "propext"
       ]
     },
@@ -6761,6 +10313,15 @@
         "propext"
       ]
     },
+    "OrderedRemoval.OrderedHost.hammingDistance_ge": {
+      "module": "OrderedRemoval.OrderedRepairDistance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.OrderedHost.rowIndex": {
       "module": "OrderedRemoval.OrderedHost",
       "kind": "declaration",
@@ -6867,9 +10428,116 @@
         "propext"
       ]
     },
+    "OrderedRemoval.OrderedHost.sampledAxisConditions": {
+      "module": "OrderedRemoval.OrderedSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.OrderedHost.sampledSelection": {
+      "module": "OrderedRemoval.OrderedSampledSelection",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.OrderedHost.sampledSelection_guard_frequency": {
+      "module": "OrderedRemoval.OrderedRepairDistance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.OrderedHost.sampledSelection_valid": {
+      "module": "OrderedRemoval.OrderedSampledSelection",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.OrderedHost.size": {
       "module": "OrderedRemoval.OrderedHost",
       "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.PathPropagation.Body": {
+      "module": "OrderedRemoval.PathPropagation",
+      "kind": "declaration",
+      "axioms": []
+    },
+    "OrderedRemoval.PathPropagation.ModeBody": {
+      "module": "OrderedRemoval.PathPropagation",
+      "kind": "declaration",
+      "axioms": []
+    },
+    "OrderedRemoval.PathPropagation.exists_modeBody": {
+      "module": "OrderedRemoval.PathPropagation",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.PathPropagation.horizontal_minus": {
+      "module": "OrderedRemoval.PathPropagation",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.PathPropagation.horizontal_plus": {
+      "module": "OrderedRemoval.PathPropagation",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.PathPropagation.propagate": {
+      "module": "OrderedRemoval.PathPropagation",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.PathPropagation.propagate._proof_1_1": {
+      "module": "OrderedRemoval.PathPropagation",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.PathPropagation.propagate._proof_1_2": {
+      "module": "OrderedRemoval.PathPropagation",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.PathPropagation.vertical_minus": {
+      "module": "OrderedRemoval.PathPropagation",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.PathPropagation.vertical_plus": {
+      "module": "OrderedRemoval.PathPropagation",
+      "kind": "theorem",
       "axioms": [
         "propext"
       ]
@@ -7022,6 +10690,565 @@
     },
     "OrderedRemoval.ProtectedSampling.union_bound._proof_1_1": {
       "module": "OrderedRemoval.ProtectedSampling",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.VariablePosition": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.ancestor_parent": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.ancestor_parent._proof_1_1": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.blockSize": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.blockSize.eq_1": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.blockSize_mul_nodes": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.blockSize_pos": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.classAt": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.classAt._proof_1": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.classAt._proof_2": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.classAt._proof_3": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.classAt.congr_simp": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.classAt.eq_1": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.classAt_depth": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.classAt_depth._proof_1_1": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.classAt_depth._proof_1_2": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.classAt_internal": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.classAt_leaf": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.classAt_leaf_iff": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.classAt_leaf_iff._proof_1_1": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.classAt_signs_eq_iff": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.classAt_signs_eq_iff._simp_1_2": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.depth": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.mix": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "declaration",
+      "axioms": []
+    },
+    "OrderedRemoval.SampledPath.mix.eq_1": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": []
+    },
+    "OrderedRemoval.SampledPath.mixFin": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.mixFin._proof_1": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.mixFin.congr_simp": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.mixFin.eq_1": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.mixFin_leaf": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.mixFin_node": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.mixFin_root": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.mix_div": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.mix_lt": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.mix_mod": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.node": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.sample": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.sample.congr_simp": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.sample.eq_1": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.sample_depth": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.sample_leaf_offset": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.sample_node": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.sample_node_lt": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.sample_nodes_eq": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.sample_parent": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.sample_parent._proof_1": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.sample_root_node": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.sample_root_offset": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SampledPath.sample_shared_leaf": {
+      "module": "OrderedRemoval.SampledPath",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Sampling.exists_agreement_of_changed_card_lt": {
+      "module": "OrderedRemoval.SamplingAvoidance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Sampling.exists_agreement_three_seed": {
+      "module": "OrderedRemoval.SamplingAvoidance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Sampling.exists_avoiding_of_card_mul_le": {
+      "module": "OrderedRemoval.SamplingAvoidance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Sampling.exists_avoiding_of_sum_card_lt": {
+      "module": "OrderedRemoval.SamplingAvoidance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Sampling.exists_avoiding_of_uniform_ratio_lt": {
+      "module": "OrderedRemoval.SamplingAvoidance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Sampling.exists_selection_avoiding": {
+      "module": "OrderedRemoval.SamplingAvoidance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Sampling.guard_frequency_le": {
+      "module": "OrderedRemoval.SamplingDistance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Sampling.hammingDistance_ge_of_guard_sampling": {
+      "module": "OrderedRemoval.SamplingDistance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Sampling.hammingDistance_ge_of_three_seed_guards": {
+      "module": "OrderedRemoval.SamplingDistance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.Sampling.sq_le_changed_card_of_forcing": {
+      "module": "OrderedRemoval.SamplingAvoidance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SequenceAssembly.HostBounds": {
+      "module": "OrderedRemoval.SequenceAssembly",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SequenceAssembly.copyDensity_le_of_integer_bound": {
+      "module": "OrderedRemoval.SequenceAssembly",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SequenceAssembly.counterexample_sequence_of_integer_bounds": {
+      "module": "OrderedRemoval.SequenceAssembly",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SequenceAssembly.counterexample_sequence_of_integer_bounds._proof_1_1": {
+      "module": "OrderedRemoval.SequenceAssembly",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SequenceAssembly.fixedDistance_ge_of_integer_bound": {
+      "module": "OrderedRemoval.SequenceAssembly",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SequenceAssembly.fixedMinEdits_ge_of_repairs": {
+      "module": "OrderedRemoval.SequenceAssembly",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.SequenceAssembly.fixedMinEdits_ge_of_repairs._proof_1_1": {
+      "module": "OrderedRemoval.SequenceAssembly",
       "kind": "theorem",
       "axioms": [
         "Quot.sound",
@@ -7935,6 +12162,15 @@
         "propext"
       ]
     },
+    "OrderedRemoval.TreeSampling.atLevel_eq_mixFin": {
+      "module": "OrderedRemoval.HostSamplingCompatibility",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "OrderedRemoval.TreeSampling.atLevel_leaf": {
       "module": "OrderedRemoval.ThreeSeedSampling",
       "kind": "theorem",
@@ -8254,6 +12490,421 @@
         "propext"
       ]
     },
+    "OrderedRemoval.anchor2": {
+      "module": "OrderedRemoval.Model",
+      "kind": "declaration",
+      "axioms": []
+    },
+    "OrderedRemoval.anchor2.eq_1": {
+      "module": "OrderedRemoval.DistanceMeaning",
+      "kind": "theorem",
+      "axioms": []
+    },
+    "OrderedRemoval.appendTwo": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "declaration",
+      "axioms": []
+    },
+    "OrderedRemoval.appendTwo.eq_1": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": []
+    },
+    "OrderedRemoval.appendTwoIncreasing": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.appendTwoIncreasing._proof_1": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.appendTwo_first": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.appendTwo_first._proof_1": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.appendTwo_initial": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.appendTwo_initial._proof_1": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.appendTwo_matches_fixedH": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.appendTwo_matches_fixedH._proof_1_3": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.appendTwo_matches_fixedH._proof_1_4": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.appendTwo_second": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.appendTwo_second._proof_1": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.concrete_host_bounds": {
+      "module": "OrderedRemoval.Main",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.copyCount": {
+      "module": "OrderedRemoval.Model",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.counterexample_sequence": {
+      "module": "OrderedRemoval.Main",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.exists_depth_decay_without_factor": {
+      "module": "OrderedRemoval.Asymptotics",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.exists_depth_polynomial_decay": {
+      "module": "OrderedRemoval.Asymptotics",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.exists_optimal_repair": {
+      "module": "OrderedRemoval.DistanceMeaning",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.exists_optimal_repair._proof_1_1": {
+      "module": "OrderedRemoval.DistanceMeaning",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.fixedDistance": {
+      "module": "OrderedRemoval.Model",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.fixedDistance_le_repair": {
+      "module": "OrderedRemoval.DistanceMeaning",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.fixedH": {
+      "module": "OrderedRemoval.Model",
+      "kind": "declaration",
+      "axioms": []
+    },
+    "OrderedRemoval.fixedH.eq_1": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": []
+    },
+    "OrderedRemoval.fixedH_eq_H4": {
+      "module": "OrderedRemoval.Model",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.fixedMinEdits": {
+      "module": "OrderedRemoval.Model",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.fixedMinEdits._proof_1": {
+      "module": "OrderedRemoval.Model",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.fixedMinEdits_le_repair": {
+      "module": "OrderedRemoval.DistanceMeaning",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.fixedMinEdits_le_square": {
+      "module": "OrderedRemoval.DistanceMeaning",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.hammingDistance": {
+      "module": "OrderedRemoval.Model",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.hammingDistance.eq_1": {
+      "module": "OrderedRemoval.SamplingDistance",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.hammingDistance_le_square": {
+      "module": "OrderedRemoval.DistanceMeaning",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.no_polynomial_removal_bound": {
+      "module": "OrderedRemoval.Main",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.no_polynomial_removal_bound_arbitrary_repairs": {
+      "module": "OrderedRemoval.Main",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.no_polynomial_removal_bound_of_sequence": {
+      "module": "OrderedRemoval.Consequence",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.no_polynomial_removal_bound_of_sequence._proof_1_1": {
+      "module": "OrderedRemoval.Consequence",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.no_polynomial_removal_bound_of_sequence._proof_1_2": {
+      "module": "OrderedRemoval.Consequence",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.not_HFree_of_anchor_body": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.not_HFree_of_anchor_body._simp_1_2": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.not_HFree_of_anchor_body._simp_1_3": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.orderedCopies": {
+      "module": "OrderedRemoval.Model",
+      "kind": "declaration",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.orderedCopies.eq_1": {
+      "module": "OrderedRemoval.CoarseCopyBound",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.strictMono_appendTwo": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.strictMono_appendTwo._proof_1_2": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.strictMono_appendTwo._proof_1_3": {
+      "module": "OrderedRemoval.BodyExtension",
+      "kind": "theorem",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.zero_HFree": {
+      "module": "OrderedRemoval.DistanceMeaning",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.zero_HFree._simp_1_2": {
+      "module": "OrderedRemoval.DistanceMeaning",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "OrderedRemoval.zero_HFree._simp_1_3": {
+      "module": "OrderedRemoval.DistanceMeaning",
+      "kind": "theorem",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "_private.OrderedRemoval.AnchorCertificate.0.OrderedRemoval.Concrete.IsAnchor.match_1.eq_1": {
       "module": "OrderedRemoval.AnchorCertificate",
       "kind": "theorem",
@@ -8428,6 +13079,102 @@
         "propext"
       ]
     },
+    "_private.OrderedRemoval.HostSampledPath.0.OrderedRemoval.HostSampledPath.horizontalKind.match_1.eq_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": []
+    },
+    "_private.OrderedRemoval.HostSampledPath.0.OrderedRemoval.HostSampledPath.horizontalKind.match_1.eq_2": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": []
+    },
+    "_private.OrderedRemoval.HostSampledPath.0.OrderedRemoval.HostSampledPath.horizontalKind.match_1.eq_3": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": []
+    },
+    "_private.OrderedRemoval.HostSampledPath.0.OrderedRemoval.HostSampledPath.horizontalKind.match_1.eq_4": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": []
+    },
+    "_private.OrderedRemoval.HostSampledPath.0.OrderedRemoval.HostSampledPath.horizontalKind.match_1.splitter": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "declaration",
+      "axioms": []
+    },
+    "_private.OrderedRemoval.HostSampledPath.0.OrderedRemoval.HostSampledPath.verticalKind.match_1.eq_1": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": []
+    },
+    "_private.OrderedRemoval.HostSampledPath.0.OrderedRemoval.HostSampledPath.verticalKind.match_1.eq_2": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "theorem",
+      "axioms": []
+    },
+    "_private.OrderedRemoval.HostSampledPath.0.OrderedRemoval.HostSampledPath.verticalKind.match_1.splitter": {
+      "module": "OrderedRemoval.HostSampledPath",
+      "kind": "declaration",
+      "axioms": []
+    },
+    "_private.OrderedRemoval.HostSampling.0.OrderedRemoval.Concrete.HostSampling.offset.match_1.eq_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "_private.OrderedRemoval.HostSampling.0.OrderedRemoval.Concrete.HostSampling.offset.match_1.eq_2": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "_private.OrderedRemoval.HostSampling.0.OrderedRemoval.Concrete.HostSampling.offset.match_1.eq_3": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "_private.OrderedRemoval.HostSampling.0.OrderedRemoval.Concrete.HostSampling.offset.match_1.splitter": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "_private.OrderedRemoval.HostSampling.0.OrderedRemoval.Concrete.HostSampling.sampleDepth.match_1.eq_1": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "_private.OrderedRemoval.HostSampling.0.OrderedRemoval.Concrete.HostSampling.sampleDepth.match_1.eq_2": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "_private.OrderedRemoval.HostSampling.0.OrderedRemoval.Concrete.HostSampling.sampleDepth.match_1.eq_3": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "_private.OrderedRemoval.HostSampling.0.OrderedRemoval.Concrete.HostSampling.sampleDepth.match_1.splitter": {
+      "module": "OrderedRemoval.HostSampling",
+      "kind": "declaration",
+      "axioms": [
+        "propext"
+      ]
+    },
     "_private.OrderedRemoval.IndexedHost.0.OrderedRemoval.Concrete.witnessCols": {
       "module": "OrderedRemoval.IndexedHost",
       "kind": "declaration",
@@ -8546,9 +13293,25 @@
     "OrderedRemoval.AnchorCertificate": "replaying OrderedRemoval.AnchorCertificate",
     "OrderedRemoval.AnchorClassification": "replaying OrderedRemoval.AnchorClassification",
     "OrderedRemoval.AnchorFrames": "replaying OrderedRemoval.AnchorFrames",
+    "OrderedRemoval.Asymptotics": "replaying OrderedRemoval.Asymptotics",
+    "OrderedRemoval.BodyExtension": "replaying OrderedRemoval.BodyExtension",
+    "OrderedRemoval.CoarseCopyBound": "replaying OrderedRemoval.CoarseCopyBound",
     "OrderedRemoval.ConcreteCopies": "replaying OrderedRemoval.ConcreteCopies",
     "OrderedRemoval.ConcreteHost": "replaying OrderedRemoval.ConcreteHost",
+    "OrderedRemoval.Consequence": "replaying OrderedRemoval.Consequence",
+    "OrderedRemoval.CountingInjection": "replaying OrderedRemoval.CountingInjection",
+    "OrderedRemoval.DistanceMeaning": "replaying OrderedRemoval.DistanceMeaning",
     "OrderedRemoval.ExtractAnchors": "replaying OrderedRemoval.ExtractAnchors",
+    "OrderedRemoval.GuardContainment": "replaying OrderedRemoval.GuardContainment",
+    "OrderedRemoval.GuardedFrame": "replaying OrderedRemoval.GuardedFrame",
+    "OrderedRemoval.GuardedPath": "replaying OrderedRemoval.GuardedPath",
+    "OrderedRemoval.HostAnchorFrames": "replaying OrderedRemoval.HostAnchorFrames",
+    "OrderedRemoval.HostRepairDistance": "replaying OrderedRemoval.HostRepairDistance",
+    "OrderedRemoval.HostRootLeaf": "replaying OrderedRemoval.HostRootLeaf",
+    "OrderedRemoval.HostSampledPath": "replaying OrderedRemoval.HostSampledPath",
+    "OrderedRemoval.HostSampledSelection": "replaying OrderedRemoval.HostSampledSelection",
+    "OrderedRemoval.HostSampling": "replaying OrderedRemoval.HostSampling",
+    "OrderedRemoval.HostSamplingCompatibility": "replaying OrderedRemoval.HostSamplingCompatibility",
     "OrderedRemoval.HostStructure": "replaying OrderedRemoval.HostStructure",
     "OrderedRemoval.HostTreeOrder": "replaying OrderedRemoval.HostTreeOrder",
     "OrderedRemoval.IndexedHost": "replaying OrderedRemoval.IndexedHost",
@@ -8556,10 +13319,20 @@
     "OrderedRemoval.LocalArithmetic": "replaying OrderedRemoval.LocalArithmetic",
     "OrderedRemoval.LocalizationArithmetic": "replaying OrderedRemoval.LocalizationArithmetic",
     "OrderedRemoval.LocalizationFrame": "replaying OrderedRemoval.LocalizationFrame",
+    "OrderedRemoval.Main": "replaying OrderedRemoval.Main",
+    "OrderedRemoval.Model": "replaying OrderedRemoval.Model",
     "OrderedRemoval.OrderedHost": "replaying OrderedRemoval.OrderedHost",
+    "OrderedRemoval.OrderedRepairDistance": "replaying OrderedRemoval.OrderedRepairDistance",
+    "OrderedRemoval.OrderedSampledSelection": "replaying OrderedRemoval.OrderedSampledSelection",
+    "OrderedRemoval.PathPropagation": "replaying OrderedRemoval.PathPropagation",
     "OrderedRemoval.Propagation": "replaying OrderedRemoval.Propagation",
     "OrderedRemoval.ProtectedSampling": "replaying OrderedRemoval.ProtectedSampling",
     "OrderedRemoval.RoleSupports": "replaying OrderedRemoval.RoleSupports",
+    "OrderedRemoval.SampledPath": "replaying OrderedRemoval.SampledPath",
+    "OrderedRemoval.SampledPathOrder": "replaying OrderedRemoval.SampledPathOrder",
+    "OrderedRemoval.SamplingAvoidance": "replaying OrderedRemoval.SamplingAvoidance",
+    "OrderedRemoval.SamplingDistance": "replaying OrderedRemoval.SamplingDistance",
+    "OrderedRemoval.SequenceAssembly": "replaying OrderedRemoval.SequenceAssembly",
     "OrderedRemoval.ThirdColumn": "replaying OrderedRemoval.ThirdColumn",
     "OrderedRemoval.ThreeSeedSampling": "replaying OrderedRemoval.ThreeSeedSampling",
     "OrderedRemoval.TreeComparisons": "replaying OrderedRemoval.TreeComparisons",
@@ -8571,9 +13344,25 @@
     "formal/OrderedRemoval/AnchorCertificate.lean": "bc38900a6bad2c3634fbe38b84906ef5bf07b76ac211548b5b89862d59dc80e6",
     "formal/OrderedRemoval/AnchorClassification.lean": "3e2591d9fdb5e413ab8a697a9e0228eeb5bf171e33c0254dbe2cfff983c5fdba",
     "formal/OrderedRemoval/AnchorFrames.lean": "57d93eeec8a2248cae602c1f9e1ad55f079816aace9e4a49037e0dec92731efa",
+    "formal/OrderedRemoval/Asymptotics.lean": "8b885c33754c9169d4f958c5514f0bfa67003110874db253937c511c8e4b84a9",
+    "formal/OrderedRemoval/BodyExtension.lean": "3be744564f075a04014f35c87e74dd52fd51663580d5f4d70d7030794277b501",
+    "formal/OrderedRemoval/CoarseCopyBound.lean": "dcf1560b906f819f11804fea10f1f79d1fb9b24bc631f3dfdb599b84ac98a2ee",
     "formal/OrderedRemoval/ConcreteCopies.lean": "5584929e0861f6286666ee920789bf42e29a245f0ec1affab7979eff924bc8ef",
     "formal/OrderedRemoval/ConcreteHost.lean": "0d001376656b7c9ce344a23b50a86694a026fe1571afceb1a6f92c88f25da5f0",
+    "formal/OrderedRemoval/Consequence.lean": "d2c36fc14b7cd3345722d5518880d613e84bccb2f47d28019e38b62ce8bd9838",
+    "formal/OrderedRemoval/CountingInjection.lean": "53fe3b5e74e87641507654304dbd07842a36f05da29e5653e080a3ee6b5dbb80",
+    "formal/OrderedRemoval/DistanceMeaning.lean": "64e5bc043b407d0b02e4e890f522d1d6608a1e98cc3491cf13b84c6bed740a1a",
     "formal/OrderedRemoval/ExtractAnchors.lean": "9fadf0e9ef486e126e186eb7acbc908ae91488904224e2c1fd99b861412bcf75",
+    "formal/OrderedRemoval/GuardContainment.lean": "22a491a11c0d2cab95a05bb2b0a44d402f68d11a8ff00c6887e9b1e831ed0c5c",
+    "formal/OrderedRemoval/GuardedFrame.lean": "075229a65be480c9b1d45c7acb8814f857d0aae7c92c3a189c82f816ceb0e5c9",
+    "formal/OrderedRemoval/GuardedPath.lean": "03a4661298e572c04bd0bd2c907bc975b6409003645f86674be8889b37e2fdbc",
+    "formal/OrderedRemoval/HostAnchorFrames.lean": "ffc83870869fd7b288295739a9c46e96c8c07be8a8eee1751674b2e083f1415c",
+    "formal/OrderedRemoval/HostRepairDistance.lean": "cffa33dc1faa82d2ff9da1ce3ae1fc63b4e0913e5454993c9460e8e45a512448",
+    "formal/OrderedRemoval/HostRootLeaf.lean": "a38ed4d72a3207512be92ef9d0b8ca28be6273648890b85fb9fe36f3862a1151",
+    "formal/OrderedRemoval/HostSampledPath.lean": "bc6cb744d1c986cbf0c928b6225ea516e187986daf52d7215e98f08989975e80",
+    "formal/OrderedRemoval/HostSampledSelection.lean": "314323592fb0572ce20bbb7c0f535778ecdd275e26da9319760ac453d63ffad7",
+    "formal/OrderedRemoval/HostSampling.lean": "eb1987ed23bf7f23271e00dee503a84f4bddb6492208b8bdbb257ee77df9decc",
+    "formal/OrderedRemoval/HostSamplingCompatibility.lean": "84d7837b256b6ca487a3fad7ca52b86d910e19a03968afb882b6ecd75bc3d89d",
     "formal/OrderedRemoval/HostStructure.lean": "c626130354bb889d719f0e84d7a42d0e61f92364324aa8f34d0da017c123cc9c",
     "formal/OrderedRemoval/HostTreeOrder.lean": "d6a0970eb8b6e851838d189e563dde49aa8062bbaf871e2161bfe12d9f0c6255",
     "formal/OrderedRemoval/IndexedHost.lean": "9171c4009956b29e8a134456f48ee752935eb661758b0ddbf06d94f54e8d5457",
@@ -8581,17 +13370,27 @@
     "formal/OrderedRemoval/LocalArithmetic.lean": "b9f55d52d32724f5f8380ccd422d0ffaf9fcf666db8a4b2543377db6c0a89b18",
     "formal/OrderedRemoval/LocalizationArithmetic.lean": "76fc67f64f5eb468346595c81fe8492f84717392b7b28f1397fa99e3b78e865b",
     "formal/OrderedRemoval/LocalizationFrame.lean": "f997fbf287137b2c40c3156c2b03439278ee629442dacadab6d5211a75ff3dfb",
+    "formal/OrderedRemoval/Main.lean": "6721fd9a1da6c2229705bf42ab5c279e033a88f6c1a9de8e46e5ef7943ac1f80",
+    "formal/OrderedRemoval/Model.lean": "1fa8211ce68801b690d85faefea98efb7eba3598ccf4d4e9f4ca7067df528644",
     "formal/OrderedRemoval/OrderedHost.lean": "49d5830d669ba1efa7aefab55b54187279c09afe40099795907d4d692b20f385",
+    "formal/OrderedRemoval/OrderedRepairDistance.lean": "a57c026e1a3e9c022db48a4fd82edeaa16e6c8eb714217134c8dff8e706fd1cc",
+    "formal/OrderedRemoval/OrderedSampledSelection.lean": "2d58417b6e612234d8c8c7518b28b8b65b334669b7191d35c14a5c5ca7d5b672",
+    "formal/OrderedRemoval/PathPropagation.lean": "a494c8d955c9530059c516e6a5dcafed3e092a61a08d03beaf5a8b90d0153061",
     "formal/OrderedRemoval/Propagation.lean": "d77f4202dcb78cfdd9f5219f281a59d1239ba93d9585b78f267486e707df0506",
     "formal/OrderedRemoval/ProtectedSampling.lean": "f605783e63155e48c8708a01d8d6371bf36e926c32f60ae4669ff9b0a1feafc0",
     "formal/OrderedRemoval/RoleSupports.lean": "539af46e47b3f79ada672bab16092cba712438539ff433a16c0a5baf0c0ca70e",
+    "formal/OrderedRemoval/SampledPath.lean": "c6af6cb74d6c2b7f616c51206a114898777e9100ce75a3d295c281435e78944f",
+    "formal/OrderedRemoval/SampledPathOrder.lean": "c8560c08717a8df889cc1732b343b1a5eb1f7fcca909f7df3091c6d528fa140b",
+    "formal/OrderedRemoval/SamplingAvoidance.lean": "c866cdc9fe99fd81203fd5e9075a135c9d2c693caad56e09741dfecb320c6753",
+    "formal/OrderedRemoval/SamplingDistance.lean": "c0d0614a763df328757dcf2e3d2c32cacd1c5fa06f3f848e4159a4b9c0b8c400",
+    "formal/OrderedRemoval/SequenceAssembly.lean": "6cc9ac077030b905464dd442cfdd75f7cea56c35c02a526d13af7ebd4ee69866",
     "formal/OrderedRemoval/ThirdColumn.lean": "e1844cb48e2943ab03636809b36a2ac4e8f0d5c93ed9439a05198f65f7c48258",
     "formal/OrderedRemoval/ThreeSeedSampling.lean": "71dee41bd1f5981d7abd5e27b56d1a96ce19e7a798e1e222c0efec04c9ae5498",
     "formal/OrderedRemoval/TreeComparisons.lean": "a402122506dbc0dd8e3ade3451682f30411d90dce9b92f79115a75afa77aa23a",
     "formal/OrderedRemoval/TreePositions.lean": "df83d4681e4a47281a960888d14551c0359964e51260c2897de3fd0daf406927",
     "formal/OrderedRemoval/ZeroLocalization.lean": "b317dd10d2347bdcdcb244f9c910d772326483da1351be9976079dd5c4afc5e7",
     "formal/OrderedRemoval/ZeroSetSize.lean": "bcbef9fc64b1c0a2d53b37cab712a4e7d7e2ea8e1fc43e391d7629d4f3263559",
-    "formal/OrderedRemoval.lean": "3bdd26acd9bdbf3ad059607ed158bc3c8965dcdf3269995dde01e33c214da49f",
+    "formal/OrderedRemoval.lean": "6da622e7096f6b90d037c71e86fb29fbda275f1250f9d91d53bac9614c7af06f",
     "formal/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
     "formal/lakefile.toml": "4fb7ab5a685ff624279b673cdb70f0fc27d4d2f285bc5e183e21e5f3390915b2",
     "formal/lake-manifest.json": "c1ae45156cf8ce00629518514bcbc658602841fdf7eb3fbf786e0ba3ab009b52"

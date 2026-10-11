@@ -1,20 +1,22 @@
 # Ordered binary matrix removal
 
-**Candidate research manuscript · October 10, 2026**
+**Candidate research manuscript · October 11, 2026**
 
 This repository proposes reducing the fixed obstruction to polynomial ordered
 induced removal from **66×66 to 4×4**, refining our earlier 15×15 and 5×5
 candidates. The complete **4×4 forbidden pattern** contains a **2×2 anchor
 component** plus two additional rows and columns. The manuscript contains
 the full written argument and exact finite checks. Independent mathematical
-review, end-to-end formalization, and a conclusive novelty assessment remain pending.
+review and a conclusive novelty assessment remain pending.
 
 A [separate-agent adversarial review](verification/reviews/four-separate-agent.md)
-found no material error in the written argument. Two additional exact checkers
-and a [partial Lean development](formal/README.md) are included. Lean now
-proves anchor classification, fixed-zero localization, and the dummy last
-row for every copy at every depth, plus the zero-set size bound `|T_h|≤2·2^h`. The full removal theorem remains unformalized; the result retains
-candidate status.
+found no material error in the written argument. Additional exact checkers
+and a [Lean development](formal/README.md) are included. Lean now proves the
+qualitative 4×4 removal theorem end to end: the concrete copy bound, arbitrary
+binary repair bound, and conclusion for every positive c,C. It uses the
+sufficient coarse count `N_H≤2mn⁶`; the sharper exact copy formula and canonical
+sampler bound remain outside the formal certificate. The result retains
+candidate status pending independent mathematical review.
 
 ![Forbidden pattern sizes decrease from OpenAI's 66×66 baseline to candidate patterns of 15×15, 5×5, and 4×4. The vertical axis is the pattern side length; stages show refinement order, not elapsed time. Independent mathematical review of the candidates remains pending.](assets/pattern-size-history.png)
 
@@ -23,7 +25,7 @@ candidate status.
 | [OpenAI baseline](BASELINE.md) | 66×66 | 64×64 | Released manuscript and Lean sources |
 | [First candidate](proofs/compressed-pattern.md) | 15×15 | 13×13 | Proof draft; independent review pending |
 | [Previous candidate](proofs/five-by-five.md) | 5×5 | 3×3 | Proof draft; independent review pending |
-| [Current candidate](proofs/four-by-four.md) | **4×4** | **2×2** | Proof draft; independent review pending |
+| [Current candidate](proofs/four-by-four.md) | **4×4** | **2×2** | Qualitative theorem checked in Lean; independent review pending |
 
 All four constructions use arbitrarily large host matrices. The anchor is
 part of the forbidden pattern. See [IMPROVEMENTS.md](IMPROVEMENTS.md) for
@@ -56,7 +58,8 @@ orders. Repairs allow arbitrary binary changes, including anchor cells.
 The pattern is fixed independently of h. The new proof permits additional
 anchor configurations and localizes every complete 4×4 copy to one of 2m
 specific zero cells. Finite tests support the argument; they do not prove
-its universal quantifiers.
+its universal quantifiers. The Lean certificate proves the qualitative
+conclusion using copy density at most `2(14h+2)⁻²2⁻ʰ`.
 
 ## Reproduce the checks
 
@@ -84,14 +87,14 @@ python3 verification/check_sources.py
 The 78-file source cache is ignored. Offline checks validate manifest metadata,
 not downloaded source bytes. The original source audit is preserved separately.
 The original upstream Lean formalization has not been rebuilt here.
-For the partial Lean development, install the pinned Lean 4.34.1 toolchain,
+For the Lean development, install the pinned Lean 4.34.1 toolchain,
 fetch the pinned Mathlib cache with `(cd formal && lake exe cache get)`,
 and run `python3 scripts/run_formal_checks.py`. This audits the project
 axiom dependencies and replays each local module in Lean's kernel.
-The concrete host, anchor classification, localization, last row, and zero-set
-size bound are checked. Copy counting, arbitrary-repair connections, and
-the full theorem remain open. See
-[formalization coverage](formal/README.md).
+The actual host, coarse copy bound, arbitrary-repair lower bound, and final
+every-c,C theorem are checked. Exact enumeration remains open. See
+[formalization coverage](formal/README.md) and the
+[final Lean theorem](formal/OrderedRemoval/Main.lean).
 
 Rebuild the PDF with `pdflatex` (TeX Live and the packages named in the build
 script): `python3 scripts/build_manuscript.py`. To regenerate the LaTeX source

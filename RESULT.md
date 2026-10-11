@@ -4,17 +4,20 @@
 refining the earlier **5×5** and **15×15 candidates** and the pinned primary
 manuscript's **66×66** pattern. A complete [proof draft](proofs/four-by-four.md)
 and [exact finite checks](verification/reference/four-report.json) are included.
-Independent mathematical review, end-to-end formal verification, and a conclusive
-novelty assessment remain pending.
+Independent mathematical review and a conclusive novelty assessment remain
+pending. The qualitative removal obstruction is now formalized in Lean.
 
 A [separate-agent audit](verification/reviews/four-separate-agent.md) found
 no material error, missing case, or incorrect count. Two additional exact
 checkers and the [Lean development](formal/README.md) provide further evidence.
 The actual host, its two orders, all-depth anchor classification, fixed-zero
 localization, dummy last row, and the zero-set size bound are now checked.
-Copy counting, arbitrary-repair connections, and the final theorem remain
-unformalized. No pattern-size
-or theorem-strength change is claimed at this assurance checkpoint.
+The new capstone also proves the coarse count `N_H≤2mn⁶`, the `m²` lower
+bound for every H4-free binary repair, and the failure of every polynomial
+removal bound. No host-existence, localization, sampling, or anchor-preservation
+hypothesis survives into the final theorem. This is verification progress;
+the pattern remains 4×4. The sharper exact enumeration and canonical sampler
+statement below remain outside the formal certificate.
 
 The explicit fixed forbidden pattern and its anchor component are
 

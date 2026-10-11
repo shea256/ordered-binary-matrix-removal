@@ -307,3 +307,73 @@ files and no generated-view discrepancy. `git diff --check` passed in both
 repositories. Compared with the merged audit, this adds 41 named theorems
 and 262 compiled declarations and removes none; these are verification
 counts, not claims of new mathematical results.
+
+## End-to-end qualitative removal theorem — 2026-10-11
+
+Started from merged localization PR #4, commit
+`6e7711ffdc51280ff8b9c882a77c3af2982ddaa2`, on new standalone branch
+`shea256/four-removal-theorem`. Upstream main remained
+`fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb`.
+
+Adapted selected upstream guarded-path/sampling, coordinate-deletion counting,
+normalization, and analytic modules with attribution. Added the concrete
+coarse-count bridge, attained-distance semantics, and both unconditional final
+capstones. The factor two in N_H≤2mn⁶ is retained through the c/2 decay step.
+A separate reviewer found and reported three intermediate index-65 leftovers
+in BodyExtension; they were corrected to 3 before successful compilation.
+This was a porting error, not an accepted invalid theorem.
+
+Commands used the pinned Lean 4.34.1 toolchain and Mathlib revision
+`d13f23b723b8a846827a245b89c10fc7d3f11612`:
+
+```sh
+python3 scripts/run_formal_checks.py
+python3 verification/check_sources.py
+python3 scripts/build_manuscript.py --regenerate-tex
+```
+
+Actual formal audit output:
+
+```text
+387 named Lean theorems; 1444 declarations audited; module kernel replay passed.
+The qualitative 4×4 removal theorem is formalized end to end. The sharper exact copy formula and canonical sampler bound are not formalized.
+```
+
+All 49 project modules were individually replayed into their imported Lean
+environments. All compiled project declarations use only `propext`, `Quot.sound`,
+and `Classical.choice`; no added axioms or admitted proofs were found. This is
+not fresh replay of all Mathlib. The build emitted one harmless deprecation
+warning for `if_false` in DistanceMeaning. The audit source receipt is
+`verification/reference/formal-audit.json`; the local complete output is
+`.context/removal-formal-checks.txt`. Named theorem totals include inherited
+arguments and do not measure new mathematical contributions.
+
+The source checker verified all 78 cached upstream file hashes. This did not
+rebuild the original full upstream Lean development. Pandoc 3.6.4 regenerated
+LaTeX; three pdfLaTeX passes completed with no reported warnings or overfull
+boxes, updating the source/PDF hash receipt.
+
+The separate agent's semantic review covers all 26 added modules and the
+actual-pattern, independent-order, unrestricted-repair, normalization, and
+final quantifier bridges. Its checker reconstructs all m³ selections through
+h=4 and confirms maximum guard frequencies 2,4,8,16, with the unprotected
+leaf-diagonal negative control at m². The original reviewed module snapshots
+match the completed sources. Its earlier default-suite attempt passed eight
+finite checks and then failed on the temporarily stale root-import hash; the
+final audit receipt replaces that stale metadata.
+
+The result remains candidate and independent peer review remains false. The
+qualitative formalized-result flag is now true. Exact enumeration, canonical
+sampler consequences, and novelty assessment remain outside this certificate.
+
+Final `python3 scripts/run_checks.py` completed successfully under Python 3.9.25:
+all nine exact checks matched their references (`compression`, `adversarial`,
+`refinement`, `four`, `four_repair`, `four_literal`, `four_reviewer`,
+`four_localization`, `four_removal`). Package validation passed 136 local links,
+source-bound formal metadata, paper artifact hashes, and candidate status. The
+complete local output is `.context/removal-package-checks.txt`.
+
+The mirrored open-math-problems track preserves its separate 3×3 limitation
+work. Its catalog and generated STATUS record the completed qualitative proof.
+Root validation passed: 34 tracks in 7 groups, 389 local links across 109
+Markdown files. `git diff --check` passed in both repositories.
