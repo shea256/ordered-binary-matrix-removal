@@ -2,7 +2,9 @@
 
 [PNG](pattern-size-history.png) and [SVG](pattern-size-history.svg) show
 selected constructions in decreasing order of pattern size. The logarithmic
-vertical axis counts specified binary entries: rows times columns.
+vertical axis counts specified binary entries: rows times columns. Standard
+base-10 ticks at 10, 100, 1,000 and 10,000 are equally spaced; exact counts
+remain labeled beside the plotted points.
 
 | Pattern | Entries | Source and role |
 | --- | ---: | --- |

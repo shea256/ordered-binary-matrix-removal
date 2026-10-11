@@ -30,12 +30,18 @@
     12
   ],
   "y_scale": "logarithmic",
+  "y_ticks": [
+    10,
+    100,
+    1000,
+    10000
+  ],
   "x_order": "selected constructions ordered by size, not publication date",
   "current_theorem_formalized": true,
   "matplotlib": "3.9.4",
   "artifacts": {
-    "scripts/build_figure.py": "1778c49775f1418880795a919da091de8045020760bf7534707169d047440779",
-    "assets/pattern-size-history.png": "8bc2829d026f9d11c78987a7d77ba956efbaf7b319b74c94cb9ed864f718259e",
-    "assets/pattern-size-history.svg": "8d4c2bebe630005cf552ff43015548b6fd93a475a153f2a9f69bbd928dfea851"
+    "scripts/build_figure.py": "040353b2e94397cd742e1568aab83656ecb5b113eea551b1cbba12b84d8e1e45",
+    "assets/pattern-size-history.png": "1e1d71e819d361fc15bf0f2441a68d04aa3db869e3f4e7d0f4644e4a44b22be1",
+    "assets/pattern-size-history.svg": "7794fe826f122f6e8a99d00b1004a587ee8bd7acb06fb03e1e3255d51e88efe1"
   }
 }

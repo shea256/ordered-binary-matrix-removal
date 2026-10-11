@@ -63,13 +63,14 @@ def main():
     ax.set_xlim(-0.18, 4.52)
     ax.set_yscale("log")
     ax.set_ylim(8, 10000)
-    ax.yaxis.set_major_locator(FixedLocator([12, 25, 100, 225, 1000, 4356]))
+    y_ticks = [10, 100, 1000, 10000]
+    ax.yaxis.set_major_locator(FixedLocator(y_ticks))
     ax.yaxis.set_major_formatter(FuncFormatter(lambda value, _: f"{value:,.0f}"))
     ax.yaxis.set_minor_locator(NullLocator())
     ax.set_xticks(range(len(shapes)), stages)
     ax.tick_params(axis="both", which="both", length=0, pad=10, labelcolor=MUTED)
     ax.tick_params(axis="x", labelsize=13)
-    ax.set_ylabel("Entries in the forbidden pattern · log scale", fontsize=14,
+    ax.set_ylabel("Entries in the forbidden pattern · log₁₀ scale", fontsize=14,
                   color=MUTED, labelpad=16)
     ax.grid(axis="y", color="#E1E4E1", linewidth=1.05)
     ax.set_axisbelow(True)
@@ -127,6 +128,7 @@ def main():
         "pattern_shapes": shapes,
         "entries": entries,
         "y_scale": "logarithmic",
+        "y_ticks": y_ticks,
         "x_order": "selected constructions ordered by size, not publication date",
         "current_theorem_formalized": status["new_result_formalized"],
         "matplotlib": matplotlib.__version__,
