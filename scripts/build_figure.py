@@ -4,7 +4,7 @@
 The horizontal axis is proportional UTC time; vertical counts use log10.
 Source records distinguish commit dates, release publication, and PR opening.
 """
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 import hashlib
 import json
 from pathlib import Path
@@ -19,7 +19,8 @@ from matplotlib.ticker import FixedLocator, FuncFormatter, NullLocator
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets"
 COLORS = {"openai-66": "#555555", "proveit-5": "#BE862D",
-          "erebos-4": "#8061AD", "project-3x4": "#129B78"}
+          "erebos-4": "#8061AD", "wang-4": "#956144",
+          "project-3x4": "#568878", "project-3x3": "#129B78"}
 EARLIER = "#2C7FCC"
 INK = "#171A1C"
 MUTED = "#646B70"
@@ -34,7 +35,7 @@ def main():
     records = json.loads((OUT / "pattern-size-events.json").read_text())
     events = records["events"]
     by_id = {event["id"]: event for event in events}
-    assert by_id["project-3x4"]["shape"] == [status["pattern_rows"], status["pattern_columns"]]
+    assert by_id["project-3x3"]["shape"] == [status["pattern_rows"], status["pattern_columns"]]
     assert by_id["erebos-4"]["shape"] == [status["baseline_pattern_rows"], status["baseline_pattern_columns"]]
     assert status["status"] == "candidate" and status["new_result_formalized"]
     times = [utc(e["timestamp"]) for e in events]
@@ -44,7 +45,7 @@ def main():
         event["entries"] = event["shape"][0] * event["shape"][1]
     milestones = [event for event in events if event["series"] == "milestone"]
     assert all(a["entries"] > b["entries"] for a,b in zip(milestones,milestones[1:]))
-    title = "Ordered binary matrix removal: 66×66 → 3×4"
+    title = "Ordered binary matrix removal: 66×66 → 3×3"
     y_ticks = [10, 100, 1000, 10000]
     plt.rcParams.update({
         "font.family": "DejaVu Sans", "font.size": 14,
@@ -61,15 +62,18 @@ def main():
         Line2D([0], [0], color=COLORS["openai-66"], lw=3, label="OpenAI"),
         Line2D([0], [0], color=COLORS["proveit-5"], lw=3, label="ProveIt"),
         Line2D([0], [0], color=COLORS["erebos-4"], lw=3, label="Erebos Labs"),
-        Line2D([0], [0], color=COLORS["project-3x4"], lw=3, label="This work: 3×4"),
+        Line2D([0], [0], color=COLORS["wang-4"], marker="o", markerfacecolor="white",
+               markeredgewidth=2, linestyle="none", label="Zinan Wang"),
+        Line2D([0], [0], color=COLORS["project-3x3"], lw=3, label="This work: 3×3"),
         Line2D([0], [0], color=EARLIER, marker="o", markerfacecolor="white",
                markeredgewidth=2, linestyle="none", label="Our earlier stages"),
-    ], loc="upper left", bbox_to_anchor=(0.055, 0.853), frameon=False,
-        ncol=5, fontsize=13, labelcolor=MUTED, handlelength=1.8, columnspacing=2)
+    ], loc="upper left", bbox_to_anchor=(0.055, 0.865), frameon=False,
+        ncol=3, fontsize=13, labelcolor=MUTED, handlelength=1.8, columnspacing=2)
 
-    ax.set_xlim(utc("2026-10-06T00:00:00Z"), utc("2026-10-12T18:00:00Z"))
+    last_time = utc(events[-1]["timestamp"])
+    ax.set_xlim(utc("2026-10-06T00:00:00Z"), last_time + timedelta(days=1.4))
     ax.set_yscale("log")
-    ax.set_ylim(8, 10000)
+    ax.set_ylim(6, 10000)
     ax.yaxis.set_major_locator(FixedLocator(y_ticks))
     ax.yaxis.set_major_formatter(FuncFormatter(lambda value, _: f"{value:,.0f}"))
     ax.yaxis.set_minor_locator(NullLocator())
@@ -90,11 +94,11 @@ def main():
         ax.plot([a["x"],b["x"]], [a["entries"],a["entries"]], color=COLORS[a["id"]], lw=3)
         ax.plot([b["x"],b["x"]], [a["entries"],b["entries"]], color=COLORS[b["id"]], lw=3)
     last = milestones[-1]
-    ax.plot([last["x"],mdates.date2num(utc("2026-10-12T12:00:00Z"))],
+    ax.plot([last["x"],mdates.date2num(last_time + timedelta(days=0.9))],
             [last["entries"],last["entries"]], color=COLORS[last["id"]], lw=3)
     for event in events:
-        stage = event["series"] == "project_stage"
-        color = EARLIER if stage else COLORS[event["id"]]
+        stage = event["series"] != "milestone"
+        color = EARLIER if event["series"] == "project_stage" else COLORS[event["id"]]
         ax.scatter(event["x"], event["entries"], s=110,
                    facecolor="white" if stage else color,
                    edgecolor=color if stage else "white", linewidth=2.5, zorder=5)
@@ -102,33 +106,35 @@ def main():
     # Labels use leaders where several October 10 stages fall close together.
     labels = {
         "openai-66": (12, 13, "66×66 · OpenAI\nOct 6 commit", 17),
-        "proveit-5": (-155, 34, "5×5 · ProveIt\nOct 7 commit", 16),
-        "erebos-4": (-106, 66, "4×4 · Erebos Labs\nOct 9 release", 16),
+        "proveit-5": (-140, 36, "5×5 · ProveIt\nOct 7 commit", 16),
+        "erebos-4": (-130, 66, "4×4 · Erebos Labs\nOct 9 release", 16),
         "project-15": (-53, 16, "Our 15×15\nOct 10 commit", 13),
-        "project-5": (-83, 40, "Our 5×5", 12),
-        "project-4": (8, 27, "Our 4×4", 12),
-        "project-3x4": (12, 14, "3×4 · This work\nOct 11 PR", 17),
+        "project-5": (-72, 28, "Our 5×5", 12),
+        "project-4": (12, 48, "Our 4×4", 12),
+        "wang-4": (-25, 113, "Wang · 4×4\nOct 11 commit", 13),
+        "project-3x4": (10, 70, "Our 3×4\nOct 11 PR", 13),
+        "project-3x3": (12, 15, "3×3 · This work\nOct 12 commit", 17),
     }
     for event in events:
         dx,dy,label,size = labels[event["id"]]
         color = EARLIER if event["series"] == "project_stage" else COLORS[event["id"]]
         ax.annotate(label, xy=(event["x"],event["entries"]), xytext=(dx,dy),
                     textcoords="offset points", fontsize=size, color=color, va="bottom",
-                    fontweight="bold" if event["id"] == "project-3x4" else "normal",
+                    fontweight="bold" if event["id"] == "project-3x3" else "normal",
                     arrowprops={"arrowstyle":"-", "color":color, "lw":0.8,
                                 "shrinkA":5,"shrinkB":7} if dy>25 else None)
-    ax.text(0.52, 0.86, "4×4 → 3×4", transform=ax.transAxes, fontsize=26,
-            fontweight="bold", color=COLORS["project-3x4"])
-    ax.text(0.52, 0.76, "16 → 12 entries · 25% fewer", transform=ax.transAxes,
+    ax.text(0.55, 0.86, "3×4 → 3×3", transform=ax.transAxes, fontsize=26,
+            fontweight="bold", color=COLORS["project-3x3"])
+    ax.text(0.55, 0.76, "12 → 9 entries · 25% fewer", transform=ax.transAxes,
             fontsize=18, color=INK)
-    ax.text(0.52, 0.63, "The 3×4 theorem is verified in Lean", transform=ax.transAxes,
+    ax.text(0.55, 0.65, "The 3×3 theorem is verified in Lean", transform=ax.transAxes,
             fontsize=14, color=MUTED)
 
     fig.text(0.06, 0.188,
              "Erebos Labs 4×4: GitHub v1.0.0 released October 9, 2026 at 12:40:51 UTC.",
              fontsize=13, color=COLORS["erebos-4"])
     fig.text(0.06, 0.149,
-             "Line: minimum entries among shown results. Hollow dots: our later intermediate constructions.",
+             "Line: minimum entries among shown results. Hollow dots: later constructions, including Wang’s 4×4.",
              fontsize=11.5, color=MUTED)
     fig.text(0.06, 0.113,
              "Commit dates are repository metadata. OpenAI’s manuscript is dated Sep 25; its plotted commit is Oct 6.",
@@ -144,7 +150,7 @@ def main():
                 metadata={"Software":"Matplotlib", "Title":title})
     fig.savefig(OUT / "pattern-size-history.svg", metadata={
         "Date":None, "Title":title,
-        "Description":"Proportional UTC timeline of selected GitHub records, with logarithmic pattern-entry counts. OpenAI 66×66: October 6 commit (manuscript dated September 25); ProveIt 5×5: October 7 commit; Erebos Labs 4×4: v1.0.0 release on October 9 at 12:40:51 UTC; this work 3×4: October 11 PR. Hollow points mark later project stages of 15×15, 5×5 and 4×4 on October 10. These are documented record dates, not asserted discovery or first-publication dates.",
+        "Description":"Proportional UTC timeline of selected GitHub records, with logarithmic pattern-entry counts. OpenAI 66×66: October 6 commit (paper dated September 25); ProveIt 5×5: October 7 commit; Erebos Labs 4×4: October 9 release; Wang 4×4: October 11 commit; this project 3×4: October 11 PR; this work 3×3: October 12 commit. Hollow points mark later constructions. These are record dates, not asserted discovery or first-publication dates.",
     })
     svg = OUT / "pattern-size-history.svg"
     svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines()) + "\n")

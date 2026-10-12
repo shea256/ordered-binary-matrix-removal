@@ -2,6 +2,39 @@
 
 ## October 12 — standalone release packaging
 
+The fresh standalone run of `python3 scripts/run_crown_formal_checks.py`
+completed successfully: Lean build, transitive axiom audit and all 92 local
+module kernel replays passed. Its generated receipt matches the archived
+crown-formal-audit.json exactly, including 573 named theorems, 2,163
+declarations and all 97 source hashes. Only the three standard axioms occur.
+The local transcript is `.context/crown-release-audit.log`.
+
+Release checks executed in this standalone checkout with Python 3.9.25,
+Lean 4.34.1, Pandoc 3.6.4, TeX Live 2021 and Matplotlib 3.9.4:
+
+```sh
+python3 scripts/run_checks.py
+python3 verification/check_crown_formal_model.py --output .context/crown-release-model.json
+python3 scripts/build_manuscript.py --regenerate-tex
+python3 scripts/build_figure.py
+python3 scripts/validate_repository.py
+git diff --check
+```
+
+All 18 exact-check suites matched their archived mathematical output.
+The optional reviewer SAT search was not rerun. Package integrity passed
+241 local links and all original H4, 3×4 and 3×3 audit source hashes.
+The fresh Lean/Python model report matches its archived reference exactly.
+The PDF built in three passes without warnings. Its first and final pages
+and the chart were visually inspected; SVG parsing and whitespace checks passed.
+Inline mathematical notation was typeset in the manuscript without changing
+the mathematical text in Sections 1–7 or the reviewed proof snapshot.
+
+The dated chart uses the result-bearing commit `edbc58b70c45d68085f0d3ece3506d09d94295bd`
+at `2026-10-12T13:58:01Z` for 3×3. This is a commit record, not a private
+discovery date. Wang's October 11 commit is also plotted for attribution.
+
+
 Copied the new Crown sources and source-bound evidence from the research
 track without changing the reviewed proof or any audited Lean source.
 Updated the manuscript and current metadata, archived the preceding 3×4
