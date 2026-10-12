@@ -45,30 +45,24 @@ def main():
         event["entries"] = event["shape"][0] * event["shape"][1]
     milestones = [event for event in events if event["series"] == "milestone"]
     assert all(a["entries"] > b["entries"] for a,b in zip(milestones,milestones[1:]))
-    title = "Ordered binary matrix removal: 66×66 → 3×3"
+    title = "Ordered binary matrix removal"
     y_ticks = [10, 100, 1000, 10000]
     plt.rcParams.update({
         "font.family": "DejaVu Sans", "font.size": 14,
         "axes.unicode_minus": False, "svg.fonttype": "path",
         "svg.hashsalt": "ordered-binary-matrix-removal-dated-history",
     })
-    fig = plt.figure(figsize=(18, 11), facecolor="white")
-    ax = fig.add_axes([0.095, 0.29, 0.86, 0.465])
-    fig.text(0.06, 0.943, title, fontsize=26, color=INK)
-    fig.text(0.06, 0.898,
-             "GitHub record dates · proportional time axis (UTC) · logarithmic entry counts",
-             fontsize=15, color=MUTED)
+    fig = plt.figure(figsize=(18, 9.6), facecolor="white")
+    ax = fig.add_axes([0.095, 0.235, 0.86, 0.58])
+    fig.text(0.06, 0.943, title, fontsize=28, color=INK)
+    fig.text(0.06, 0.893, "OpenAI Problem #190", fontsize=15, color=MUTED)
     fig.legend(handles=[
-        Line2D([0], [0], color=COLORS["openai-66"], lw=3, label="OpenAI"),
-        Line2D([0], [0], color=COLORS["proveit-5"], lw=3, label="ProveIt"),
-        Line2D([0], [0], color=COLORS["erebos-4"], lw=3, label="Erebos Labs"),
-        Line2D([0], [0], color=COLORS["wang-4"], marker="o", markerfacecolor="white",
-               markeredgewidth=2, linestyle="none", label="Zinan Wang"),
-        Line2D([0], [0], color=COLORS["project-3x3"], lw=3, label="This work: 3×3"),
-        Line2D([0], [0], color=EARLIER, marker="o", markerfacecolor="white",
-               markeredgewidth=2, linestyle="none", label="Our earlier stages"),
-    ], loc="upper left", bbox_to_anchor=(0.055, 0.865), frameon=False,
-        ncol=3, fontsize=13, labelcolor=MUTED, handlelength=1.8, columnspacing=2)
+        Line2D([0], [0], color=MUTED, lw=3, marker="o",
+               label="Smallest pattern shown"),
+        Line2D([0], [0], color=MUTED, marker="o", markerfacecolor="white",
+               markeredgewidth=2, linestyle="none", label="Other constructions"),
+    ], loc="upper right", bbox_to_anchor=(0.955, 0.916), frameon=False,
+        ncol=2, fontsize=13, labelcolor=MUTED, handlelength=1.8, columnspacing=2)
 
     last_time = utc(events[-1]["timestamp"])
     ax.set_xlim(utc("2026-10-06T00:00:00Z"), last_time + timedelta(days=1.4))
@@ -80,9 +74,9 @@ def main():
     ax.xaxis.set_major_locator(mdates.DayLocator(tz=timezone.utc))
     ax.xaxis.set_major_formatter(mdates.DateFormatter("Oct %d", tz=timezone.utc))
     ax.tick_params(axis="both", which="both", length=0, pad=11, labelcolor=MUTED)
-    ax.set_ylabel("Entries in the forbidden pattern · log₁₀ scale", fontsize=14,
+    ax.set_ylabel("Entries in forbidden pattern (log scale)", fontsize=14,
                   color=MUTED, labelpad=16)
-    ax.set_xlabel("GitHub record date · October 2026 · UTC", fontsize=12, color=MUTED, labelpad=13)
+    ax.set_xlabel("GitHub record date · October 2026 (UTC)", fontsize=12, color=MUTED, labelpad=13)
     ax.grid(axis="y", color="#E1E4E1", linewidth=1.05)
     ax.set_axisbelow(True)
     for side in ("top", "right"):
@@ -103,54 +97,44 @@ def main():
                    facecolor="white" if stage else color,
                    edgecolor=color if stage else "white", linewidth=2.5, zorder=5)
 
-    # Labels use leaders where several October 10 stages fall close together.
-    labels = {
-        "openai-66": (12, 13, "66×66 · OpenAI\nOct 6 commit", 17),
-        "proveit-5": (-140, 36, "5×5 · ProveIt\nOct 7 commit", 16),
-        "erebos-4": (-130, 66, "4×4 · Erebos Labs\nOct 9 release", 16),
-        "project-15": (-53, 16, "Our 15×15\nOct 10 commit", 13),
-        "project-5": (-72, 28, "Our 5×5", 12),
-        "project-4": (12, 48, "Our 4×4", 12),
-        "wang-4": (-25, 113, "Wang · 4×4\nOct 11 commit", 13),
-        "project-3x4": (10, 70, "Our 3×4\nOct 11 PR", 13),
-        "project-3x3": (12, 15, "3×3 · This work\nOct 12 commit", 17),
+    # Every point uses the same source-and-size label; the axes carry the dates
+    # and entry counts. Leaders separate the closely spaced later records.
+    offsets = {
+        "openai-66": (12, 14),
+        "proveit-5": (-135, 26),
+        "erebos-4": (-140, 44),
+        "project-15": (-55, 16),
+        "project-5": (-102, 26),
+        "project-4": (8, 66),
+        "wang-4": (-32, 100),
+        "project-3x4": (10, 62),
+        "project-3x3": (12, 15),
     }
+    point_labels = []
     for event in events:
-        dx,dy,label,size = labels[event["id"]]
+        dx,dy = offsets[event["id"]]
+        source = event["owner"]
+        rows,columns = event["shape"]
+        label = f"{source} · {rows}×{columns}"
+        point_labels.append(label)
         color = EARLIER if event["series"] == "project_stage" else COLORS[event["id"]]
         ax.annotate(label, xy=(event["x"],event["entries"]), xytext=(dx,dy),
-                    textcoords="offset points", fontsize=size, color=color, va="bottom",
-                    fontweight="bold" if event["id"] == "project-3x3" else "normal",
+                    textcoords="offset points", fontsize=14, color=color, va="bottom",
                     arrowprops={"arrowstyle":"-", "color":color, "lw":0.8,
                                 "shrinkA":5,"shrinkB":7} if dy>25 else None)
-    ax.text(0.55, 0.86, "3×4 → 3×3", transform=ax.transAxes, fontsize=26,
-            fontweight="bold", color=COLORS["project-3x3"])
-    ax.text(0.55, 0.76, "12 → 9 entries · 25% fewer", transform=ax.transAxes,
-            fontsize=18, color=INK)
-    ax.text(0.55, 0.65, "The 3×3 theorem is verified in Lean", transform=ax.transAxes,
-            fontsize=14, color=MUTED)
 
-    fig.text(0.06, 0.188,
-             "Erebos Labs 4×4: GitHub v1.0.0 released October 9, 2026 at 12:40:51 UTC.",
-             fontsize=13, color=COLORS["erebos-4"])
-    fig.text(0.06, 0.149,
-             "Line: minimum entries among shown results. Hollow dots: later constructions, including Wang’s 4×4.",
-             fontsize=11.5, color=MUTED)
-    fig.text(0.06, 0.113,
-             "Commit dates are repository metadata. OpenAI’s manuscript is dated Sep 25; its plotted commit is Oct 6.",
-             fontsize=11.5, color=MUTED)
-    fig.text(0.06, 0.077,
-             "Hosts can be arbitrarily large. Independent mathematical review pending; sources and timestamp types in assets/README.md.",
-             fontsize=11.5, color=MUTED)
-    fig.text(0.06, 0.041,
-             "github.com/shea256/ordered-binary-matrix-removal  ·  OpenAI Problem #190",
-             fontsize=11.5, color="#82898D")
+    fig.text(0.06, 0.092,
+             "Arbitrarily large hosts · 3×3 theorem verified in Lean · Independent mathematical review pending",
+             fontsize=12, color=MUTED)
+    fig.text(0.06, 0.046,
+             "github.com/shea256/ordered-binary-matrix-removal",
+             fontsize=12, color="#82898D")
     OUT.mkdir(exist_ok=True)
     fig.savefig(OUT / "pattern-size-history.png", dpi=150,
                 metadata={"Software":"Matplotlib", "Title":title})
     fig.savefig(OUT / "pattern-size-history.svg", metadata={
         "Date":None, "Title":title,
-        "Description":"Proportional UTC timeline of selected GitHub records, with logarithmic pattern-entry counts. OpenAI 66×66: October 6 commit (paper dated September 25); ProveIt 5×5: October 7 commit; Erebos Labs 4×4: October 9 release; Wang 4×4: October 11 commit; this project 3×4: October 11 PR; this work 3×3: October 12 commit. Hollow points mark later constructions. These are record dates, not asserted discovery or first-publication dates.",
+        "Description":"Proportional UTC timeline of selected GitHub records, with logarithmic pattern-entry counts. OpenAI 66×66: October 6 commit (paper dated September 25); ProveIt 5×5: October 7 commit; Erebos Labs 4×4: October 9 release; Zinan Wang 4×4: October 11 commit; Ryan Shea 3×4: October 11 PR; Ryan Shea 3×3: October 12 commit. Hollow points mark later constructions. These are record dates, not asserted discovery or first-publication dates.",
     })
     svg = OUT / "pattern-size-history.svg"
     svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines()) + "\n")
@@ -161,6 +145,7 @@ def main():
         "pattern_shapes":[e["shape"] for e in events],
         "entries":[e["entries"] for e in events],
         "timestamps":[e["timestamp"] for e in events],
+        "point_labels":point_labels,
         "y_scale":"logarithmic", "y_ticks":y_ticks,
         "x_scale":"linear UTC time", "x_order":"documented GitHub record timestamps",
         "current_theorem_formalized":status["new_result_formalized"],
