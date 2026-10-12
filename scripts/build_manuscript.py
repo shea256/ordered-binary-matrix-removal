@@ -61,6 +61,9 @@ if a.regenerate_tex:
 \DeclareUnicodeCharacter{230A}{\ensuremath{\lfloor}}
 \DeclareUnicodeCharacter{230B}{\ensuremath{\rfloor}}
 \DeclareUnicodeCharacter{2192}{\ensuremath{\to}}
+\DeclareUnicodeCharacter{21A6}{\ensuremath{\mapsto}}
+\DeclareUnicodeCharacter{2286}{\ensuremath{\subseteq}}
+\DeclareUnicodeCharacter{2229}{\ensuremath{\cap}}
 \DeclareUnicodeCharacter{2205}{\ensuremath{\emptyset}}
 \begin{document}
 '''
@@ -75,7 +78,7 @@ with tempfile.TemporaryDirectory() as td:
     warnings = [line for line in run.stdout.splitlines() if 'Warning' in line or 'Overfull' in line]
 version = subprocess.run(['pdflatex', '--version'], check=True, capture_output=True, text=True).stdout.splitlines()[0]
 receipt = {'engine': version, 'passes': 3, 'shell_escape': False, 'warnings': warnings, 'artifacts': {}}
-for name in ('manuscript.md', 'tex/manuscript.tex', 'manuscript.pdf', 'proofs/four-by-four.md', 'proofs/optimized-order.md', 'proofs/three-by-four.md'):
+for name in ('manuscript.md', 'tex/manuscript.tex', 'manuscript.pdf', 'proofs/four-by-four.md', 'proofs/optimized-order.md', 'proofs/three-by-four.md', 'proofs/three-by-three.md'):
     data = (ROOT / name).read_bytes()
     receipt['artifacts'][name] = {'sha256': hashlib.sha256(data).hexdigest(), 'bytes': len(data)}
 (ROOT / 'results/paper_build.json').write_text(json.dumps(receipt, indent=2) + '\n')

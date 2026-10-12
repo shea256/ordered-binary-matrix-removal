@@ -1,5 +1,5 @@
 {
-  "checked_date": "2026-10-11",
+  "checked_date": "2026-10-12",
   "timezone": "UTC",
   "scope": "Selected documented GitHub records, not discovery dates or an exhaustive priority history. Commit timestamps do not prove when code first became public. Release published_at and PR created_at identify the stated GitHub events.",
   "openai_date_note": "The OpenAI manuscript is dated September 25. The time-axis point uses its October 6 repository commit, so the plotted dates all refer to GitHub records.",
@@ -97,6 +97,21 @@
       "commit": "4c55827f48f9b416727157116dc88fe2d875028f"
     },
     {
+      "id": "wang-4",
+      "owner": "Zinan Wang",
+      "shape": [
+        4,
+        4
+      ],
+      "series": "external_stage",
+      "timestamp": "2026-10-11T13:18:15Z",
+      "timestamp_kind": "Git commit",
+      "timestamp_field": "commit.committer.date",
+      "source_url": "https://github.com/wzn1118/h4-ordered-matrix-removal/commit/8c503f7a7a0f42c53621dcd0bdaf753e2580aa3e",
+      "source_api": "https://api.github.com/repos/wzn1118/h4-ordered-matrix-removal/commits/8c503f7a7a0f42c53621dcd0bdaf753e2580aa3e",
+      "commit": "8c503f7a7a0f42c53621dcd0bdaf753e2580aa3e"
+    },
+    {
       "id": "project-3x4",
       "owner": "This project",
       "shape": [
@@ -110,6 +125,21 @@
       "source_url": "https://github.com/shea256/ordered-binary-matrix-removal/pull/6",
       "source_api": "https://api.github.com/repos/shea256/ordered-binary-matrix-removal/pulls/6",
       "commit": "fbc3e0010700821d20480d340afa61a05e6ef747"
+    },
+    {
+      "id": "project-3x3",
+      "owner": "This project",
+      "shape": [
+        3,
+        3
+      ],
+      "series": "milestone",
+      "timestamp": "2026-10-12T13:58:01Z",
+      "timestamp_kind": "Git commit",
+      "timestamp_field": "commit.committer.date",
+      "source_url": "https://github.com/shea256/ordered-binary-matrix-removal/commit/edbc58b70c45d68085f0d3ece3506d09d94295bd",
+      "source_api": "https://api.github.com/repos/shea256/ordered-binary-matrix-removal/commits/edbc58b70c45d68085f0d3ece3506d09d94295bd",
+      "commit": "edbc58b70c45d68085f0d3ece3506d09d94295bd"
     }
   ]
 }

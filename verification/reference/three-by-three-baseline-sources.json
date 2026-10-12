@@ -1,0 +1,42 @@
+{
+  "checked_utc": "2026-10-11T20:35:06.271601+00:00",
+  "openai_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "erebos_commit": "6d21ce36e83b71d8a44015016cf3ac77e44b55ff",
+  "proveit_path_commit": "bfbfe915186310fdf745a7a089e7dd88eeb773b1",
+  "wang_commit": "8c503f7a7a0f42c53621dcd0bdaf753e2580aa3e",
+  "wang_raw_base": "https://raw.githubusercontent.com/wzn1118/h4-ordered-matrix-removal/8c503f7a7a0f42c53621dcd0bdaf753e2580aa3e/",
+  "wang_downloaded_files": [
+    {
+      "path": "README.md",
+      "sha256": "6bd2b0c4d8f3e1ea6dcc2fa4d7450534c6e648780fa26e0c2ab7ba9618d098ab",
+      "bytes": 3205
+    },
+    {
+      "path": "paper/main.tex",
+      "sha256": "c3964d0d93f71c9a600df06bfd9e423aac1c1c67df83509256e33606084c0364",
+      "bytes": 23779
+    },
+    {
+      "path": "paper/formalization.tex",
+      "sha256": "e00044152ffa7bb6f79130309898c8fdd5aed10dbfb31c2e86195bbc6fb08852",
+      "bytes": 9571
+    },
+    {
+      "path": "formal_verification/H4Formal/GlobalTheorems.lean",
+      "sha256": "ed94b50980bf123a985189af657b549e0f1b754b852da111e6befe71996fe1df",
+      "bytes": 4884
+    },
+    {
+      "path": "formal_verification/H4Formal/RemovalStatement.lean",
+      "sha256": "ba76e53828dad8e39a34909eb89a89051fda3f2b42616f3622dfa6aec4523ec6",
+      "bytes": 2462
+    },
+    {
+      "path": "formal_verification/evidence/strict_build/strict_axiom_audit.json",
+      "sha256": "404d924234a502e975e05dcaa38d0398dedff852e0d8c141a810919fef25713e",
+      "bytes": 6293312
+    }
+  ],
+  "fresh_external_lean_builds": false,
+  "bounded_search_no_priority_certification": true
+}

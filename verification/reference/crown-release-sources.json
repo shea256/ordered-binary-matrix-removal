@@ -1,0 +1,47 @@
+{
+  "checked_utc": "2026-10-12T13:55:25.618469+00:00",
+  "records": [
+    {
+      "name": "openai",
+      "api": "https://api.github.com/repos/openai/math/commits/main",
+      "commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+      "commit_date": "2026-10-08T05:20:00Z",
+      "source_url": "https://github.com/openai/math/commit/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb"
+    },
+    {
+      "name": "erebos",
+      "api": "https://api.github.com/repos/erebos-labs/ordered-matrix-removal-4x4/commits/main",
+      "commit": "6d21ce36e83b71d8a44015016cf3ac77e44b55ff",
+      "commit_date": "2026-10-09T15:07:35Z",
+      "source_url": "https://github.com/erebos-labs/ordered-matrix-removal-4x4/commit/6d21ce36e83b71d8a44015016cf3ac77e44b55ff"
+    },
+    {
+      "name": "wang",
+      "api": "https://api.github.com/repos/wzn1118/h4-ordered-matrix-removal/commits/main",
+      "commit": "8c503f7a7a0f42c53621dcd0bdaf753e2580aa3e",
+      "commit_date": "2026-10-11T13:18:15Z",
+      "source_url": "https://github.com/wzn1118/h4-ordered-matrix-removal/commit/8c503f7a7a0f42c53621dcd0bdaf753e2580aa3e"
+    },
+    {
+      "name": "proveit_path",
+      "api": "https://api.github.com/repos/VladimirReshetnikov/ProveIt/commits?path=Combinatorics/OrderedMatrices/Research/ordered-matrix-removal&per_page=1",
+      "commit": "bfbfe915186310fdf745a7a089e7dd88eeb773b1",
+      "commit_date": "2026-10-07T21:24:26Z",
+      "source_url": "https://github.com/VladimirReshetnikov/ProveIt/commit/bfbfe915186310fdf745a7a089e7dd88eeb773b1"
+    }
+  ],
+  "openai_contents_sha256": "cc7c0b8a1cdedd845a777e77cf682657308503daf8346c1349e06e9259d063c2",
+  "openai_contents_problem_lines": [
+    "**188. The sharp terminal leave in random triangle removal.** Starting from the complete graph on <i>n</i> vertices, repeatedly delete a uniformly chosen remaining triangle. The terminal edge count is asymptotic to $`n^{3/2}/(2\\sqrt2)`$, with mean-square convergence after normalization by <i>n</i><sup>3/2</sup>. This proves the triangle case of the Joos\u2013K\u00fchn sharp-constant conjecture. ([Lean](lean/docs/188.md))",
+    "&emsp;[The sharp terminal leave in random triangle removal](preprints/The-Sharp-Terminal-Leave-in-Random-Triangle-Removal-September-25-2026/The-Sharp-Terminal-Leave-in-Random-Triangle-Removal-September-25-2026.pdf)",
+    "**190. Polynomial removal fails for ordered binary matrices.** Disproves polynomial ordered binary matrix removal with one fixed $`66\\times66`$ zero\u2013one pattern. Matrices can require many binary-entry changes to become pattern-free while their copy density is smaller than every proposed polynomial bound in that distance. Copies preserve row and column orders and match both zeros and ones. ([Lean](lean/docs/190.md))",
+    "&emsp;[Polynomial removal fails for ordered binary matrices](preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/paper.pdf)",
+    "We construct a fixed $`66\\times66`$ binary matrix for which ordered matrix removal has no polynomial bound. This disproves the polynomial ordered binary matrix-removal conjecture. Ordered copies preserve the separate row and column orders and match both zeros and ones; removal permits changing entries in either direction."
+  ],
+  "phrase_queries": [
+    "ordered binary matrix removal \"3x3\"",
+    "\"ordered matrix\" \"3\u00d73\" removal"
+  ],
+  "phrase_search_result": "No matching smaller primary result located in this bounded web search; not an exhaustive novelty or priority certificate.",
+  "fresh_external_lean_builds": false
+}

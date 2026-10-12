@@ -1,0 +1,642 @@
+{
+  "schema": 1,
+  "date_utc": "2026-10-11",
+  "scope": "Discovery only. Finite SAT/UNSAT screens are not universal proofs or independent impossibility certificates. The selected crown has a separate written proof and two census implementations.",
+  "encodings": 288,
+  "classification_counts": {
+    "nonanchor_copy": 264,
+    "forced_copy": 8,
+    "incompatible_role_order": 14,
+    "survives_single_mode_screen": 2
+  },
+  "single_mode_instances": 712,
+  "solver_outcomes": {
+    "unsat": 185,
+    "sat": 527
+  },
+  "single_mode_survivors": [
+    {
+      "pattern": "011101110",
+      "anchor_row": 0,
+      "anchor_column": 2
+    },
+    {
+      "pattern": "101110011",
+      "anchor_row": 2,
+      "anchor_column": 2
+    }
+  ],
+  "joint_runs": [
+    {
+      "encoding": {
+        "pattern": "011101110",
+        "anchor_row": 0,
+        "anchor_column": 2
+      },
+      "modes": [
+        [
+          "V",
+          1,
+          "+",
+          -1
+        ],
+        [
+          "V",
+          1,
+          "-",
+          -1
+        ],
+        [
+          "W",
+          1,
+          "+",
+          0
+        ],
+        [
+          "W",
+          1,
+          "+",
+          1
+        ],
+        [
+          "W",
+          1,
+          "-",
+          0
+        ],
+        [
+          "W",
+          1,
+          "-",
+          1
+        ],
+        [
+          "V",
+          2,
+          "+",
+          -1
+        ],
+        [
+          "V",
+          2,
+          "-",
+          -1
+        ],
+        [
+          "W",
+          2,
+          "+",
+          0
+        ],
+        [
+          "W",
+          2,
+          "+",
+          1
+        ],
+        [
+          "W",
+          2,
+          "-",
+          0
+        ],
+        [
+          "W",
+          2,
+          "-",
+          1
+        ]
+      ],
+      "depth": 3,
+      "variables": 1608,
+      "base_clauses": 18202,
+      "solver": "5.1.0",
+      "status": "sat",
+      "rounds": 13,
+      "seconds": 1.3448543220001739
+    },
+    {
+      "encoding": {
+        "pattern": "101110011",
+        "anchor_row": 2,
+        "anchor_column": 2
+      },
+      "modes": [
+        [
+          "V",
+          1,
+          "+",
+          -1
+        ],
+        [
+          "V",
+          1,
+          "-",
+          -1
+        ],
+        [
+          "W",
+          1,
+          "+",
+          0
+        ],
+        [
+          "W",
+          1,
+          "+",
+          1
+        ],
+        [
+          "W",
+          1,
+          "-",
+          0
+        ],
+        [
+          "W",
+          1,
+          "-",
+          1
+        ],
+        [
+          "V",
+          2,
+          "+",
+          -1
+        ],
+        [
+          "V",
+          2,
+          "-",
+          -1
+        ],
+        [
+          "W",
+          2,
+          "+",
+          0
+        ],
+        [
+          "W",
+          2,
+          "+",
+          1
+        ],
+        [
+          "W",
+          2,
+          "-",
+          0
+        ],
+        [
+          "W",
+          2,
+          "-",
+          1
+        ]
+      ],
+      "depth": 3,
+      "variables": 1608,
+      "base_clauses": 18412,
+      "solver": "5.1.0",
+      "status": "sat",
+      "rounds": 11,
+      "seconds": 1.1508417720006037
+    },
+    {
+      "encoding": {
+        "pattern": "011101110",
+        "anchor_row": 0,
+        "anchor_column": 2
+      },
+      "modes": [
+        [
+          "V",
+          1,
+          "+",
+          -1
+        ],
+        [
+          "V",
+          1,
+          "-",
+          -1
+        ],
+        [
+          "W",
+          1,
+          "+",
+          0
+        ],
+        [
+          "W",
+          1,
+          "+",
+          1
+        ],
+        [
+          "W",
+          1,
+          "-",
+          0
+        ],
+        [
+          "W",
+          1,
+          "-",
+          1
+        ],
+        [
+          "V",
+          2,
+          "+",
+          -1
+        ],
+        [
+          "V",
+          2,
+          "-",
+          -1
+        ],
+        [
+          "W",
+          2,
+          "+",
+          0
+        ],
+        [
+          "W",
+          2,
+          "+",
+          1
+        ],
+        [
+          "W",
+          2,
+          "-",
+          0
+        ],
+        [
+          "W",
+          2,
+          "-",
+          1
+        ],
+        [
+          "V",
+          3,
+          "+",
+          -1
+        ],
+        [
+          "V",
+          3,
+          "-",
+          -1
+        ],
+        [
+          "W",
+          3,
+          "+",
+          0
+        ],
+        [
+          "W",
+          3,
+          "+",
+          1
+        ],
+        [
+          "W",
+          3,
+          "-",
+          0
+        ],
+        [
+          "W",
+          3,
+          "-",
+          1
+        ]
+      ],
+      "depth": 4,
+      "variables": 4832,
+      "base_clauses": 104056,
+      "solver": "5.1.0",
+      "status": "sat",
+      "rounds": 25,
+      "seconds": 13.028513694998765
+    },
+    {
+      "encoding": {
+        "pattern": "101110011",
+        "anchor_row": 2,
+        "anchor_column": 2
+      },
+      "modes": [
+        [
+          "V",
+          1,
+          "+",
+          -1
+        ],
+        [
+          "V",
+          1,
+          "-",
+          -1
+        ],
+        [
+          "W",
+          1,
+          "+",
+          0
+        ],
+        [
+          "W",
+          1,
+          "+",
+          1
+        ],
+        [
+          "W",
+          1,
+          "-",
+          0
+        ],
+        [
+          "W",
+          1,
+          "-",
+          1
+        ],
+        [
+          "V",
+          2,
+          "+",
+          -1
+        ],
+        [
+          "V",
+          2,
+          "-",
+          -1
+        ],
+        [
+          "W",
+          2,
+          "+",
+          0
+        ],
+        [
+          "W",
+          2,
+          "+",
+          1
+        ],
+        [
+          "W",
+          2,
+          "-",
+          0
+        ],
+        [
+          "W",
+          2,
+          "-",
+          1
+        ],
+        [
+          "V",
+          3,
+          "+",
+          -1
+        ],
+        [
+          "V",
+          3,
+          "-",
+          -1
+        ],
+        [
+          "W",
+          3,
+          "+",
+          0
+        ],
+        [
+          "W",
+          3,
+          "+",
+          1
+        ],
+        [
+          "W",
+          3,
+          "-",
+          0
+        ],
+        [
+          "W",
+          3,
+          "-",
+          1
+        ]
+      ],
+      "depth": 4,
+      "variables": 4832,
+      "base_clauses": 104730,
+      "solver": "5.1.0",
+      "status": "sat",
+      "rounds": 21,
+      "seconds": 12.052184535001288
+    },
+    {
+      "encoding": {
+        "pattern": "011101110",
+        "anchor_row": 0,
+        "anchor_column": 2
+      },
+      "modes": [
+        [
+          "V",
+          1,
+          "+",
+          -1
+        ],
+        [
+          "V",
+          1,
+          "-",
+          -1
+        ],
+        [
+          "W",
+          1,
+          "+",
+          0
+        ],
+        [
+          "W",
+          1,
+          "+",
+          1
+        ],
+        [
+          "W",
+          1,
+          "-",
+          0
+        ],
+        [
+          "W",
+          1,
+          "-",
+          1
+        ],
+        [
+          "V",
+          2,
+          "+",
+          -1
+        ],
+        [
+          "V",
+          2,
+          "-",
+          -1
+        ],
+        [
+          "W",
+          2,
+          "+",
+          0
+        ],
+        [
+          "W",
+          2,
+          "+",
+          1
+        ],
+        [
+          "W",
+          2,
+          "-",
+          0
+        ],
+        [
+          "W",
+          2,
+          "-",
+          1
+        ]
+      ],
+      "depth": 2,
+      "variables": 648,
+      "base_clauses": 3922,
+      "solver": "5.1.0",
+      "full": true,
+      "scope": "Finite completion; not an all-depth theorem or a repair-distance certificate.",
+      "status": "sat",
+      "rounds": 11,
+      "seconds": 0.2755512049989193
+    },
+    {
+      "encoding": {
+        "pattern": "101110011",
+        "anchor_row": 2,
+        "anchor_column": 2
+      },
+      "modes": [
+        [
+          "V",
+          1,
+          "+",
+          -1
+        ],
+        [
+          "V",
+          1,
+          "-",
+          -1
+        ],
+        [
+          "W",
+          1,
+          "+",
+          0
+        ],
+        [
+          "W",
+          1,
+          "+",
+          1
+        ],
+        [
+          "W",
+          1,
+          "-",
+          0
+        ],
+        [
+          "W",
+          1,
+          "-",
+          1
+        ],
+        [
+          "V",
+          2,
+          "+",
+          -1
+        ],
+        [
+          "V",
+          2,
+          "-",
+          -1
+        ],
+        [
+          "W",
+          2,
+          "+",
+          0
+        ],
+        [
+          "W",
+          2,
+          "+",
+          1
+        ],
+        [
+          "W",
+          2,
+          "-",
+          0
+        ],
+        [
+          "W",
+          2,
+          "-",
+          1
+        ]
+      ],
+      "depth": 2,
+      "variables": 648,
+      "base_clauses": 3972,
+      "solver": "5.1.0",
+      "full": true,
+      "scope": "Finite completion; not an all-depth theorem or a repair-distance certificate.",
+      "status": "sat",
+      "rounds": 9,
+      "seconds": 0.2137783540001692
+    }
+  ],
+  "structured_templates": 216,
+  "structured_trunk_survivors": 30,
+  "selected_pattern": "011101110",
+  "selected_full_census_max_depth": 7,
+  "solver_package": "z3-solver==5.1.0.0",
+  "solver_reported_version": "5.1.0",
+  "python": "3.9.25"
+}

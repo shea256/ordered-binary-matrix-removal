@@ -1,0 +1,113 @@
+{
+  "pattern": [
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0
+    ]
+  ],
+  "scope": "Exact finite census. Written all-depth proof is separate; not checked in Lean.",
+  "records": [
+    {
+      "h": 1,
+      "m": 2,
+      "n": 20,
+      "copies": 112,
+      "quotient_copies": 5,
+      "families": {
+        "plus_parent_column": 64,
+        "leaf_column": 48
+      },
+      "noncanonical_copies": 0,
+      "seconds": 0.0003368939997017151
+    },
+    {
+      "h": 2,
+      "m": 4,
+      "n": 72,
+      "copies": 1792,
+      "quotient_copies": 10,
+      "families": {
+        "plus_parent_column": 1024,
+        "leaf_column": 768
+      },
+      "noncanonical_copies": 0,
+      "seconds": 0.0015781869988131803
+    },
+    {
+      "h": 3,
+      "m": 8,
+      "n": 208,
+      "copies": 28672,
+      "quotient_copies": 20,
+      "families": {
+        "plus_parent_column": 16384,
+        "leaf_column": 12288
+      },
+      "noncanonical_copies": 0,
+      "seconds": 0.007915837999462383
+    },
+    {
+      "h": 4,
+      "m": 16,
+      "n": 544,
+      "copies": 458752,
+      "quotient_copies": 40,
+      "families": {
+        "plus_parent_column": 262144,
+        "leaf_column": 196608
+      },
+      "noncanonical_copies": 0,
+      "seconds": 0.03995332100021187
+    },
+    {
+      "h": 5,
+      "m": 32,
+      "n": 1344,
+      "copies": 7340032,
+      "quotient_copies": 80,
+      "families": {
+        "plus_parent_column": 4194304,
+        "leaf_column": 3145728
+      },
+      "noncanonical_copies": 0,
+      "seconds": 0.24959913499878894
+    },
+    {
+      "h": 6,
+      "m": 64,
+      "n": 3200,
+      "copies": 117440512,
+      "quotient_copies": 160,
+      "families": {
+        "plus_parent_column": 67108864,
+        "leaf_column": 50331648
+      },
+      "noncanonical_copies": 0,
+      "seconds": 1.3666453799996816
+    },
+    {
+      "h": 7,
+      "m": 128,
+      "n": 7424,
+      "copies": 1879048192,
+      "quotient_copies": 320,
+      "families": {
+        "plus_parent_column": 1073741824,
+        "leaf_column": 805306368
+      },
+      "noncanonical_copies": 0,
+      "seconds": 9.567612077999001
+    }
+  ]
+}

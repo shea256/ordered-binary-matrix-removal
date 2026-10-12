@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "scope": "Finite same-agent Lean/Python semantic cross-check; the all-depth theorem is certified separately.",
+  "records": [
+    {
+      "h": 0,
+      "n": 2,
+      "entries_checked": 4,
+      "both_axis_orders_match": true,
+      "physically_enumerated_copies": 0
+    },
+    {
+      "h": 1,
+      "n": 32,
+      "entries_checked": 1024,
+      "both_axis_orders_match": true,
+      "physically_enumerated_copies": 448
+    },
+    {
+      "h": 2,
+      "n": 120,
+      "entries_checked": 14400,
+      "both_axis_orders_match": true,
+      "physically_enumerated_copies": 7168
+    },
+    {
+      "h": 3,
+      "n": 352,
+      "entries_checked": 123904,
+      "both_axis_orders_match": true
+    }
+  ],
+  "export_sha256": "bf94d7ea3c36a47c279b6acb308e1818e01baf88fda49c8888ee43e31e3055c8",
+  "sources": {
+    "verification/check_crown_formal_model.py": "12227fe646d566a562fc08fc6a1c78124e16c4598662f652454aee5af7b1c541",
+    "verification/export_crown_host.lean": "4de6a1895d814fd09b7e6e2284df980a17ac8887bb5c0bcd7e81fad83fcf7485",
+    "verification/check_three_by_three.py": "476adcd8a36f503661bab5b9a4952819f297a20452ce96a7e36158afff4aa08b",
+    "formal/OrderedRemoval/Crown/Host.lean": "d143b871ae999f1fefe185eb689032570ba61fd2455ffd7b86dba3b46b003700",
+    "formal/OrderedRemoval/Crown/OrderedHost.lean": "40ecafd37f1cb8862ac65e2003b5f08731332bd229794e42985434f6b059e4e7"
+  }
+}

@@ -1,5 +1,72 @@
 # Baseline audit — OPENAI-190
 
+## October 12 — release source refresh
+
+The [release source receipt](verification/reference/crown-release-sources.json)
+records fresh GitHub API checks: OpenAI, Erebos, ProveIt's relevant path and
+Wang remain at the pinned commits below. OpenAI CONTENTS still lists its
+66×66 paper and companion formalization. A bounded search for ordered
+matrix removal with 3x3 / 3×3 found no matching smaller primary source;
+this does not establish worldwide novelty or minimality. No external Lean
+builds were rerun for this release.
+
+## October 11 — 3×3 formalization checkpoint
+
+The new [Lean capstone](formal/OrderedRemoval/Crown/Complete.lean) proves
+the qualitative theorem for `011/101/110`, preserving arbitrary binary
+repairs and arbitrarily large hosts at the same arbitrarily small ε.
+Its padded host has n=(14h+2)m, distance at least m², and copy count
+at most 2mn⁴; the written n=(8h+2)m and exact 7m⁴ count remain outside
+this certificate. See [formal scope](formal/README.md). The versioned
+external-source comparison below is unchanged; formalization is not a
+new worldwide-priority search or a global minimality claim.
+
+## October 11, 20:30 UTC — 3×3 search and refreshed external sources
+
+The baseline for this attempt is our **3×4 theorem checked in Lean**,
+`1001/1010/0111`, with n=(14h+2)2^h, arbitrary-repair lower bound m²,
+copy bound 2mn⁵, arbitrarily small ε and arbitrarily large hosts at that
+same ε. Its audit remains scoped to 3×4. The new
+[3×3 written candidate](proofs/three-by-three.md) had not yet been formalized
+at that search checkpoint. The later certificate is described above.
+
+GitHub API checks still give OpenAI `fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb`,
+Erebos `6d21ce36e83b71d8a44015016cf3ac77e44b55ff`, and ProveIt's relevant
+path `bfbfe915186310fdf745a7a089e7dd88eeb773b1`. OpenAI's current CONTENTS
+and Lean scope page still identify one #190 manuscript and its 66×66
+formalized theorem. Their statements and companion-source distinctions
+remain as recorded below.
+
+The refreshed search additionally found [Zinan Wang's 4×4 manuscript](https://github.com/wzn1118/h4-ordered-matrix-removal/tree/8c503f7a7a0f42c53621dcd0bdaf753e2580aa3e),
+at commit `8c503f7a7a0f42c53621dcd0bdaf753e2580aa3e`, October 11, 13:18:15 UTC.
+Its [main source](https://github.com/wzn1118/h4-ordered-matrix-removal/blob/8c503f7a7a0f42c53621dcd0bdaf753e2580aa3e/paper/main.tex)
+states n=(14h+2)m, exact repair m², exact copies
+2m⁶+(m−2)m⁵/2=(5/2)m⁶−m⁵, and original-copy transversal m.
+The mode order puts all W− modes first, followed by V+,V−,W+0,W+1
+at each level. This differs from our W−,W+,V order but matches our
+earlier 4×4 count. Treat that formula as also present in this external
+source; older bounded-search novelty descriptions are superseded.
+
+We inspected its source, formal capstone and published audit data. Its
+Lean source states both exact count and unrestricted repair equality;
+we did **not** rerun its Lean build. A literal finite transcription
+reproduces counts 128, 9,216 and 622,592 at h=1,2,3; see the
+[checker](verification/check_wang_baseline.py) and
+[report](verification/reference/wang-baseline-report.json).
+This is not an independent all-depth proof or a priority determination.
+
+Additional phrase searches for ordered matrix removal with “3×3”, “3x3”
+and “crown” did not locate a matching smaller primary result. The search
+is bounded and is not a global novelty certificate.
+
+**New proof map:** suffix column anchors plus vertical-dummy ones and
+the existing nonuniform row supports → every crown has exactly one
+anchor on each axis → only a terminal minus mode can occur → exact
+count 7m⁴ on n=(8h+2)m. The five prescribed anchor incidences still
+extend every P body to the crown → the inherited arbitrary-repair
+argument gives m² edits → normalized density 7(8h+2)⁻⁶4⁻ʰ at
+ε_h=(8h+2)⁻². Uniform blowups preserve both bounds. The improvement
+is 9 specified entries instead of 12, with all original quantifiers.
 
 ## October 11 — chart timestamp audit
 

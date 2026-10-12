@@ -1,5 +1,5 @@
 {
-  "current_result_id": "asymmetric-three-by-four-2026-10-11",
+  "current_result_id": "crown-three-by-three-2026-10-12",
   "event_ids": [
     "openai-66",
     "proveit-5",
@@ -7,7 +7,9 @@
     "project-15",
     "project-5",
     "project-4",
-    "project-3x4"
+    "wang-4",
+    "project-3x4",
+    "project-3x3"
   ],
   "pattern_shapes": [
     [
@@ -35,8 +37,16 @@
       4
     ],
     [
+      4,
+      4
+    ],
+    [
       3,
       4
+    ],
+    [
+      3,
+      3
     ]
   ],
   "entries": [
@@ -46,7 +56,9 @@
     225,
     25,
     16,
-    12
+    16,
+    12,
+    9
   ],
   "timestamps": [
     "2026-10-06T21:58:50Z",
@@ -55,7 +67,9 @@
     "2026-10-10T06:37:28Z",
     "2026-10-10T15:10:23Z",
     "2026-10-10T18:48:25Z",
-    "2026-10-11T18:38:32Z"
+    "2026-10-11T13:18:15Z",
+    "2026-10-11T18:38:32Z",
+    "2026-10-12T13:58:01Z"
   ],
   "y_scale": "logarithmic",
   "y_ticks": [
@@ -69,9 +83,9 @@
   "current_theorem_formalized": true,
   "matplotlib": "3.9.4",
   "artifacts": {
-    "scripts/build_figure.py": "d46c4b814a07738a2d74785dc18752778bb88bb4da3e1afd00c0d4cca29cdd64",
-    "assets/pattern-size-events.json": "b7634cb13f17d50ef0cae9da983de62644cb4a5ffc36066a25d8fc529df904ab",
-    "assets/pattern-size-history.png": "77b69b1a772ce40f0784631f2bb1dd16244effe77e7217bade8f7cc4650ad066",
-    "assets/pattern-size-history.svg": "367411b0ef8ef26f11abf108be0c46de727c43dee042b094155370fdb6d203ed"
+    "scripts/build_figure.py": "567edd2aad686c8f62da17b355749458c3c1b7092f8cf796b8bd0b6142389869",
+    "assets/pattern-size-events.json": "69dcc16f8c2993f1138fdcde64c3f48cb1ff4c13eb33100a87897d48e551f327",
+    "assets/pattern-size-history.png": "ff8a271cbfc27053a4f5f6b53bf31b61a2a03e31fbd4c7984dddc0869e262247",
+    "assets/pattern-size-history.svg": "298e3e040c13792712c66fe4bf37fdb49b2c35226adaf614cf01b808665202a5"
   }
 }

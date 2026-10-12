@@ -1,5 +1,153 @@
 # Reproduction log
 
+## October 12 — standalone release packaging
+
+The fresh standalone run of `python3 scripts/run_crown_formal_checks.py`
+completed successfully: Lean build, transitive axiom audit and all 92 local
+module kernel replays passed. Its generated receipt matches the archived
+crown-formal-audit.json exactly, including 573 named theorems, 2,163
+declarations and all 97 source hashes. Only the three standard axioms occur.
+The local transcript is `.context/crown-release-audit.log`.
+
+Release checks executed in this standalone checkout with Python 3.9.25,
+Lean 4.34.1, Pandoc 3.6.4, TeX Live 2021 and Matplotlib 3.9.4:
+
+```sh
+python3 scripts/run_checks.py
+python3 verification/check_crown_formal_model.py --output .context/crown-release-model.json
+python3 scripts/build_manuscript.py --regenerate-tex
+python3 scripts/build_figure.py
+python3 scripts/validate_repository.py
+git diff --check
+```
+
+All 18 exact-check suites matched their archived mathematical output.
+The optional reviewer SAT search was not rerun. Package integrity passed
+241 local links and all original H4, 3×4 and 3×3 audit source hashes.
+The fresh Lean/Python model report matches its archived reference exactly.
+The PDF built in three passes without warnings. Its first and final pages
+and the chart were visually inspected; SVG parsing and whitespace checks passed.
+Inline mathematical notation was typeset in the manuscript without changing
+the mathematical text in Sections 1–7 or the reviewed proof snapshot.
+
+The dated chart uses the result-bearing commit `edbc58b70c45d68085f0d3ece3506d09d94295bd`
+at `2026-10-12T13:58:01Z` for 3×3. This is a commit record, not a private
+discovery date. Wang's October 11 commit is also plotted for attribution.
+
+
+Copied the new Crown sources and source-bound evidence from the research
+track without changing the reviewed proof or any audited Lean source.
+Updated the manuscript and current metadata, archived the preceding 3×4
+metadata, and extended package validation to preserve all three Lean audits.
+Default checks now include the two crown implementations, the separate
+reviewer's census (without its optional SAT run), and the Wang transcription.
+
+GitHub source refresh at 13:55 UTC confirmed the recorded OpenAI, Erebos,
+ProveIt-path and Wang commits. OpenAI's current CONTENTS still lists the
+66×66 manuscript and companion Lean result. The two bounded web queries
+located no matching smaller primary result; this is not a priority proof.
+See verification/reference/crown-release-sources.json. No external Lean
+build was rerun. The preserved October 11 receipts below record the
+original executed audit; release reproduction is recorded separately.
+The combined assurance file was refreshed after detecting that the separate
+reviewer had added its depth-3 SAT timeout note after the earlier checkpoint.
+Only that review-report hash had changed; the reviewed proof and all 97
+Lean audit source hashes still match their original receipts.
+
+The following commands reproduce the research checkpoint from this
+standalone repository; they were first executed in its research mirror.
+
+## October 11 — 3×3 Lean formalization and semantic model check
+
+Work stayed in `formal` on root branch
+`shea256/problem-190-improvements`. The ignored formal `.lake` symlink
+points to the existing standalone cache. No standalone tracked source,
+branch, external PR, or remote was changed. The user's separate written
+review arrived during this work; its report and exact reviewed proof
+snapshot were preserved.
+
+Toolchain: Lean 4.34.1, commit
+`5045d0056413266e57c625dcd7c365b10e377c52`, Linux x86_64; Python 3.9.25.
+Mathlib remains pinned to `d13f23b723b8a846827a245b89c10fc7d3f11612`.
+For this sandbox, prepend
+`/home/vercel-sandbox/open-math-problems/.context/lean-toolchain/lean-4.34.1-linux/bin`
+to PATH before the commands below.
+
+```sh
+(cd formal && lake build OrderedRemoval.Crown.Complete)
+python3 scripts/run_crown_formal_checks.py
+python3 verification/check_crown_formal_model.py --output verification/reference/crown-formal-model-report.json
+(cd formal && lake env lean ../verification/crown_statements.lean)
+```
+
+The complete theorem compiled. The axiom audit and kernel replay passed:
+573 named theorems and 2163 declarations across 92 modules,
+including 88 new named theorems and 257 declarations in the 19
+Crown modules. Counts include inherited infrastructure. The audit records every named theorem,
+all generated declarations, transitive axioms, module replay, and code hashes
+in [crown-formal-audit.json](verification/reference/crown-formal-audit.json).
+Its exact execution transcript is retained locally at
+`.context/three-lean/formal-audit.log` (relative to the workspace root).
+
+The semantic check executed the actual Lean host and raw-order definitions
+and compared them with the separately written Python model after doubling
+anchor blocks. Both axis orders and all **139,332 cells** matched at
+h=0,1,2,3 (n=2,32,120,352). Direct physical copy counts were 0,448,7,168
+at h=0,1,2. Those are finite checks of the padded model, not the exact
+7m⁴ claim for the smaller written host. See the
+[model report](verification/reference/crown-formal-model-report.json).
+
+The [printed capstone](verification/reference/crown-theorem-statements.txt)
+confirms the exact quantifier order, n⁶ normalization, unrestricted repair
+type, the three standard axioms, and literal rows `011/101/110`. The
+historical 3×4 receipt's 77 source hashes still match, and the legacy
+3×4 audit script selects its original 73 modules (excluding Crown).
+
+The Lean proof instead uses n=(14h+2)m, N_K≤2mn⁴, D_K≥m², and the inherited
+exponential-decay argument; blowups preserve ε and give arbitrarily large
+hosts. No universal exact count or exact repair equality was formalized.
+
+Compilation fixes were local proof/elaboration issues: explicit sum-order
+types, a missing import, finite-index normalization, and whitespace around
+Lean's overloaded order notation. No mathematical counterexample or change
+to the 3×3 statement was needed. The executable exporter required explicitly
+passing the two distinct order instances; the final comparison covers both.
+
+All 97 source hashes in the new formal receipt match the checked files.
+The unchanged finite discovery receipt and new model receipt also pass
+their hash checks. The combined current assurance state is recorded in
+[three-by-three-assurance.json](verification/reference/three-by-three-assurance.json).
+Final repository regeneration/validation passed for all 34 tracks and
+7 subject groups, and `git diff --check` passed. The legacy 3×4 audit
+script was scoped to its original 73 modules so adding Crown does not
+change that historical command's certificate coverage.
+
+## October 11 — fresh adversarial review of the 3×3 crown proof
+
+Environment: Python 3.9.25 on Linux x86_64 (Amazon Linux 2023). The
+reviewer checker needs only the standard library; its optional `--sat`
+section used `python-sat` (CaDiCaL 1.5.3 backend) installed with pip.
+Reviewed proof snapshot SHA-256
+`1a84af8a7fcc997036256160c1c2a8fc6f0d7fea4fafcf52b8f3ab6e19082f48`.
+
+```sh
+python3 verification/check_three_by_three_reviewer.py --max-depth 6 --physical-depth 3 --sat --output verification/reference/three-by-three-reviewer-report.json
+```
+
+Actual output (23 s wall): census h=1..6 gave copies 112; 1,792; 28,672;
+458,752; 7,340,032; 117,440,512, each equal to 7m⁴, with family split
+4m⁴/3m⁴ and zero noncanonical copies; physical counts at h≤3 agreed;
+crossing mode pairs 0, 0, 3, 6, 9, 12; frames 4hm. SAT: h=1 budgets
+0–3 UNSAT, budget 4 SAT (edits on four leaf-row/Y-column cells); h=2
+budget 15 UNSAT (12 rounds, 13 s), budget 16 SAT (eight leaf-row/Y-column
+edits and eight dummy-row/C⁻₁(0) edits). A depth-3 budget-63 run
+(n=208) reached 250 lazy-clause rounds without a verdict and was stopped by
+its 25-minute timeout; no depth-3 exact distance is recorded. Review text:
+[verification/reviews/three-by-three-adversarial.md](verification/reviews/three-by-three-adversarial.md).
+No files outside this track were changed except the catalog and the
+generated views.
+
+
 
 ## October 11 — date axis and Erebos release timestamp
 

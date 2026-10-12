@@ -1,0 +1,277 @@
+{
+  "status": "passed",
+  "pattern": [
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0
+    ]
+  ],
+  "records": [
+    {
+      "h": 1,
+      "n": 20,
+      "copies": 112,
+      "claimed": 112,
+      "families": {
+        "plus_parent_column": 64,
+        "leaf_column": 48
+      },
+      "noncanonical": 0,
+      "physical_copies": 112,
+      "crossing_mode_pairs": 0,
+      "frames": 8,
+      "seconds": 0.0
+    },
+    {
+      "h": 2,
+      "n": 72,
+      "copies": 1792,
+      "claimed": 1792,
+      "families": {
+        "plus_parent_column": 1024,
+        "leaf_column": 768
+      },
+      "noncanonical": 0,
+      "physical_copies": 1792,
+      "crossing_mode_pairs": 0,
+      "frames": 32,
+      "seconds": 0.0
+    },
+    {
+      "h": 3,
+      "n": 208,
+      "copies": 28672,
+      "claimed": 28672,
+      "families": {
+        "plus_parent_column": 16384,
+        "leaf_column": 12288
+      },
+      "noncanonical": 0,
+      "physical_copies": 28672,
+      "crossing_mode_pairs": 3,
+      "frames": 96,
+      "seconds": 0.9
+    },
+    {
+      "h": 4,
+      "n": 544,
+      "copies": 458752,
+      "claimed": 458752,
+      "families": {
+        "plus_parent_column": 262144,
+        "leaf_column": 196608
+      },
+      "noncanonical": 0,
+      "crossing_mode_pairs": 6,
+      "frames": 256,
+      "seconds": 0.1
+    },
+    {
+      "h": 5,
+      "n": 1344,
+      "copies": 7340032,
+      "claimed": 7340032,
+      "families": {
+        "plus_parent_column": 4194304,
+        "leaf_column": 3145728
+      },
+      "noncanonical": 0,
+      "crossing_mode_pairs": 9,
+      "frames": 640,
+      "seconds": 0.9
+    },
+    {
+      "h": 6,
+      "n": 3200,
+      "copies": 117440512,
+      "claimed": 117440512,
+      "families": {
+        "plus_parent_column": 67108864,
+        "leaf_column": 50331648
+      },
+      "noncanonical": 0,
+      "crossing_mode_pairs": 12,
+      "frames": 1536,
+      "seconds": 4.8
+    }
+  ],
+  "scope": "Fresh-reviewer rebuild from the written host specification; finite checks only, not a Lean certificate or human peer review.",
+  "exact_repair_distance": [
+    {
+      "h": 1,
+      "n": 20,
+      "budget": 0,
+      "rounds": 1,
+      "seconds": 0.0,
+      "result": "UNSAT",
+      "edits": null
+    },
+    {
+      "h": 1,
+      "n": 20,
+      "budget": 1,
+      "rounds": 1,
+      "seconds": 0.0,
+      "result": "UNSAT",
+      "edits": null
+    },
+    {
+      "h": 1,
+      "n": 20,
+      "budget": 2,
+      "rounds": 2,
+      "seconds": 0.0,
+      "result": "UNSAT",
+      "edits": null
+    },
+    {
+      "h": 1,
+      "n": 20,
+      "budget": 3,
+      "rounds": 2,
+      "seconds": 0.0,
+      "result": "UNSAT",
+      "edits": null
+    },
+    {
+      "h": 1,
+      "n": 20,
+      "budget": 4,
+      "rounds": 5,
+      "seconds": 0.0,
+      "result": "SAT",
+      "edits": [
+        [
+          "('R', 1, 'L', 0)",
+          "('Y', ('W', 1, '-', 0))",
+          "1"
+        ],
+        [
+          "('R', 1, 'L', 0)",
+          "('Y', ('W', 1, '-', 0))",
+          "1"
+        ],
+        [
+          "('R', 1, 'L', 1)",
+          "('Y', ('W', 1, '-', 1))",
+          "1"
+        ],
+        [
+          "('R', 1, 'L', 1)",
+          "('Y', ('W', 1, '-', 1))",
+          "1"
+        ]
+      ]
+    },
+    {
+      "h": 2,
+      "n": 72,
+      "budget": 15,
+      "rounds": 12,
+      "seconds": 13.0,
+      "result": "UNSAT",
+      "edits": null
+    },
+    {
+      "h": 2,
+      "n": 72,
+      "budget": 16,
+      "rounds": 12,
+      "seconds": 3.4,
+      "result": "SAT",
+      "edits": [
+        [
+          "('R', 2, 'L', 2)",
+          "('Y', ('W', 2, '-', 0))",
+          "1"
+        ],
+        [
+          "('R', 2, 'L', 2)",
+          "('Y', ('W', 2, '-', 0))",
+          "1"
+        ],
+        [
+          "('R', 2, 'L', 2)",
+          "('Y', ('W', 2, '-', 0))",
+          "1"
+        ],
+        [
+          "('R', 2, 'L', 2)",
+          "('Y', ('W', 2, '-', 0))",
+          "1"
+        ],
+        [
+          "('R', 2, 'L', 3)",
+          "('Y', ('W', 2, '-', 1))",
+          "1"
+        ],
+        [
+          "('R', 2, 'L', 3)",
+          "('Y', ('W', 2, '-', 1))",
+          "1"
+        ],
+        [
+          "('R', 2, 'L', 3)",
+          "('Y', ('W', 2, '-', 1))",
+          "1"
+        ],
+        [
+          "('R', 2, 'L', 3)",
+          "('Y', ('W', 2, '-', 1))",
+          "1"
+        ],
+        [
+          "('Rdummy',)",
+          "('C', 1, '-', 0)",
+          "1"
+        ],
+        [
+          "('Rdummy',)",
+          "('C', 1, '-', 0)",
+          "1"
+        ],
+        [
+          "('Rdummy',)",
+          "('C', 1, '-', 0)",
+          "1"
+        ],
+        [
+          "('Rdummy',)",
+          "('C', 1, '-', 0)",
+          "1"
+        ],
+        [
+          "('Rdummy',)",
+          "('C', 1, '-', 0)",
+          "1"
+        ],
+        [
+          "('Rdummy',)",
+          "('C', 1, '-', 0)",
+          "1"
+        ],
+        [
+          "('Rdummy',)",
+          "('C', 1, '-', 0)",
+          "1"
+        ],
+        [
+          "('Rdummy',)",
+          "('C', 1, '-', 0)",
+          "1"
+        ]
+      ]
+    }
+  ]
+}

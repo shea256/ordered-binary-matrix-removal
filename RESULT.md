@@ -1,77 +1,39 @@
-# Current result — candidate 3×4 removal obstruction
+# Current result — candidate 3×3 crown obstruction
 
-A new [written all-depth proof](proofs/three-by-four.md) gives the fixed
-rectangular pattern
+The fixed pattern `011/101/110` admits no polynomial ordered binary matrix
+removal bound. It has nine entries, compared with twelve in our previous
+3×4 result and sixteen in the located external 4×4 results.
 
-```text
-1 0 0 1
-1 0 1 0
-0 1 1 1
-```
+For every c,C,ε₀>0, some fixed 0<ε<ε₀ has the following property: for every
+N there are n≥max(1,N) and a binary n×n host requiring at least εn² edits
+in every crown-free repair and containing fewer than c ε^C n⁶ ordered copies.
+All nine labels and separate increasing axis maps are required; edits in
+both directions and anywhere in the host are allowed.
 
-For every h≥1, m=2^h, n=(14h+2)m, its explicit square binary host requires
-at least m² arbitrary binary edits to become pattern-free and has at most
-2mn⁵ ordered copies. Therefore its density is at most
-2(14h+2)⁻²2⁻ʰ, while its certified distance is (14h+2)⁻². The proof preserves
-failure of every polynomial removal bound, arbitrarily small ε, and
-arbitrarily large hosts via blowups.
+| Claim | Verification |
+| --- | --- |
+| Full qualitative theorem and quantifier order | Lean build, axiom audit and local-module kernel replay |
+| Written host n=(8h+2)m, exact count 7m⁴, repair at least m² | Written all-depth argument, finite checks, separate-agent written review |
+| Formal host n=(14h+2)m, copies at most 2mn⁴, repair at least m² | Lean; anchors have size 2m on each axis |
+| Actual formal host and axis definitions match intended padded model | Same-agent executed Lean/Python check through h=3 |
+| Human mathematical peer review, worldwide priority, minimality | Pending / not claimed |
 
-This is a **candidate pattern-size advance over the known 4×4 result**:
-one fewer row, 12 rather than 16 entries (25% fewer). It is rectangular,
-not a 3×3 result. No global minimality, exact repair equality, or exact
-all-depth count is claimed for the new host. The broader novelty search
-remains bounded; see [BASELINE.md](BASELINE.md).
+The paper and [formal scope](formal/README.md) explicitly distinguish these
+two host families. The exact 7m⁴ count and more economical host are not
+certified by Lean. No all-depth exact repair equality is claimed.
 
-Verification: two full weighted censuses agree at h=1..6, covering square
-hosts of order 32, 120, 352, 928, 2,304, and 5,504; physical h=1 and
-adversarial entry-rule variants were checked. A separately written agent
-checker agrees through h=4 and checks structural sublemmas through h=7.
-See the [exact report](verification/reference/three-by-four-report.json)
-and [review](verification/reviews/three-by-four.md).
-The main 3×4 theorem is **checked in Lean**, including arbitrarily small ε
-and arbitrarily large hosts at that same ε. The source-bound audit and
-separate-agent semantic review are linked in [formal/README.md](formal/README.md).
-The result has **not received independent mathematical peer review**.
-The older H4 formalization and its receipt remain separate.
+The audit checks 573 named theorems and 2,163 declarations over 92 modules;
+19 modules, 88 named theorems and 257 declarations belong to the new Crown
+development. The only allowed transitive axioms are `propext`, `Quot.sound`,
+and `Classical.choice`. Each project module was replayed into its imported
+environment; this is not a fresh replay of Mathlib.
 
-A complementary [limitation certificate](proofs/asymmetric-limitations.md)
-excludes 16,384 uniform templates at the inherited certified distance.
-The successful candidate uses nonuniform anchor entries outside that class.
-The user-authorized draft PR packages the proof and formal certificate.
-No social announcement or author contact has been performed.
+The [separate reviewer](verification/reviews/three-by-three-adversarial.md)
+found no gap in the original written proof and did not review the Lean port.
+The original proof and finite-discovery receipt remain unchanged snapshots;
+their older verification flags are superseded by the current metadata and
+[formal audit](verification/reference/crown-formal-audit.json).
 
-
-## Previous checkpoint record
-
-# Current result — candidate quantitative refinement
-
-The same H4 and its qualitative Lean obstruction were already released by
-Erebos on October 9, before our 4×4 PR. Those headline results are not a new
-advance here. The corrected comparison is in [BASELINE.md](BASELINE.md).
-
-The [new written proof](proofs/optimized-order.md) globally orders all minus
-horizontal modes first, then plus horizontal modes, then vertical modes.
-For every h≥1, m=2^h and n=(14h+2)m, it gives:
-
-- Exact copies N=(5/2)m⁶−m⁵, versus Erebos's (41m⁶−74m⁵)/4 for h≥2.
-- Exact minimum unrestricted binary repair cost m², adapting Erebos's known repair.
-- Limiting count and density ratio 10/41 at identical host size and exact distance:
-  asymptotically 75.6098% fewer copies. The finite reductions differ; h=1 is equal.
-- Minimum copy count within the class obtained by independently permuting intact
-  anchor-mode blocks on the two axes with entries, weights, group orders and
-  nonanchor orders fixed. No broader optimality is established.
-- The inherited failure of every polynomial removal bound, including arbitrarily
-  small ε and arbitrarily large hosts, with the same pattern and density exponent.
-
-The complete finite census reproduces the formula through h=4 and the explicit
-repair is H-free with m² edits at each checked depth. Separate physical h=1
-checks and a separately written reviewer implementation support the result.
-These are evidence for the written theorem, not a replacement for its proof.
-The new construction/count/exact equality are not yet checked in Lean; the
-existing Lean certificate applies to the previous host order and qualitative
-H4 theorem. Independent mathematical peer review remains pending.
-
-The result remains **candidate**. A bounded search found no earlier global-order
-count refinement in the inspected sources; this is not proof of novelty.
-No pattern-size reduction, new asymptotic exponent, global construction optimum,
-or improvement for arbitrary adaptive testers is claimed.
+Candidate classification is retained pending independent mathematical review.
+The baseline credits OpenAI, ProveIt, Erebos Labs and Zinan Wang; see
+[BASELINE.md](BASELINE.md). Older 3×4 and 4×4 results remain in `results/`.

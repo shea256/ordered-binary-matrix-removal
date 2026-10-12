@@ -1,7 +1,41 @@
 # Verification scope
 
+## Current 3×3 result
 
-The **current 3×4 main theorem is checked in Lean**, with arbitrarily small
+The full qualitative theorem is Lean verified, with unrestricted binary
+repairs and arbitrarily large hosts at the same arbitrarily small ε.
+The [formal audit](reference/crown-formal-audit.json) covers 92 local modules,
+573 named theorems and 2,163 declarations. Run
+`python3 scripts/run_crown_formal_checks.py` with the pinned toolchain.
+Lean uses size-2m anchors and a coarse count; the exact written 7m⁴ count
+on size-m anchors is outside that certificate. See [formal scope](../formal/README.md).
+
+`scripts/run_checks.py` runs the two seven-depth crown censuses, the separate
+reviewer's six-depth census and physical checks through h=3, guard/propagation
+checks, negative controls, the Wang transcription and historical suites.
+It compares deterministic mathematical output with the archived reports,
+excluding elapsed times. It does not rerun optional SAT searches or Lean.
+
+The [separate written-proof review](reviews/three-by-three-adversarial.md)
+found no gap; it did not review the new Lean port. Its archived optional
+SAT results establish exact repair equality only at h=1,2. Rerun with
+`python3 verification/check_three_by_three_reviewer.py --sat --output .context/crown-reviewer-sat.json`
+after installing `python-sat`; SAT is unnecessary for the universal theorem.
+The depth-3 SAT attempt timed out without a verdict and supplies no certificate.
+
+The [model check](check_crown_formal_model.py) executes Lean and compares
+actual entries and axis orders to a separate Python model through h=3.
+This and the [semantic note](reviews/three-by-three-formal-scope.md) are
+same-agent checks, not independent peer review.
+
+The original [proof snapshot](../proofs/three-by-three.md),
+[discovery receipt](reference/three-by-three-checks-receipt.json), remain immutable historical records. The
+[release assurance](reference/three-by-three-assurance.json) refreshes the
+reviewer-report hash after its timeout note was added; the reviewed proof
+and Lean sources are unchanged. `results/current.json` and the manuscript
+give the current scope.
+
+The **historical 3×4 main theorem is checked in Lean**, with arbitrarily small
 ε and arbitrarily large hosts for the same ε. Run
 `python3 scripts/run_rectangular_formal_checks.py` with the pinned toolchain.
 The [new audit](reference/rectangular-formal-audit.json) covers all
@@ -11,7 +45,7 @@ The [semantic review](reviews/three-by-four-formal.md) is separate AI review,
 not independent mathematical peer review. Exact all-depth enumeration,
 repair equality, and minimality are outside this certificate.
 
-## Current 3×4 candidate
+## Historical 3×4 candidate
 
 [check_three_by_four.py](check_three_by_four.py) independently constructs the
 host and performs a complete weighted census through h=6, physical h=1,

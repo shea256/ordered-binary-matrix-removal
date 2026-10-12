@@ -1,0 +1,25 @@
+OrderedRemoval.Crown.no_polynomial_removal_bound : ∀ (c C ε₀ : ℝ),
+  0 < c →
+    0 < C →
+      0 < ε₀ →
+        ∃ ε,
+          0 < ε ∧
+            ε < ε₀ ∧
+              ∀ (N : ℕ),
+                ∃ n,
+                  Max.max 1 N ≤ n ∧
+                    ∃ A,
+                      (∀ (B : OrderedRemoval.BinaryMatrix n),
+                          OrderedRemoval.Crown.HFree B → ε * ↑n ^ 2 ≤ ↑(OrderedRemoval.hammingDistance A B)) ∧
+                        ↑(OrderedRemoval.Crown.copyCount A) < c * ε.rpow C * ↑n ^ 6
+OrderedRemoval.Crown.concrete_host_bounds : ∀ (h : ℕ),
+  1 ≤ h →
+    (∀ (B : OrderedRemoval.BinaryMatrix (OrderedRemoval.Crown.OrderedHost.size h)),
+        OrderedRemoval.Crown.HFree B →
+          (2 ^ h) ^ 2 ≤ OrderedRemoval.hammingDistance (OrderedRemoval.Crown.concreteMatrix h) B) ∧
+      OrderedRemoval.Crown.copyCount (OrderedRemoval.Crown.concreteMatrix h) ≤
+        2 * 2 ^ h * OrderedRemoval.Crown.OrderedHost.size h ^ 4
+@OrderedRemoval.Crown.Copy.zero_localization : ∀ {h : ℕ} (E : OrderedRemoval.Crown.Copy h),
+  OrderedRemoval.Concrete.InZeroSet (E.rows 1) (E.cols 1)
+'OrderedRemoval.Crown.no_polynomial_removal_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+[[0, 1, 1], [1, 0, 1], [1, 1, 0]]

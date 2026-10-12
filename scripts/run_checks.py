@@ -19,6 +19,33 @@ for name in ("compression", "adversarial", "refinement", "four", "four_repair", 
     assert report == expected, name + " reference differs"
     receipt["checks"].append({"name": name, "reference_matches": True, "elapsed_seconds": round(time.monotonic()-start, 3)})
     print(name + ": exact checks and reference comparison passed", flush=True)
+def deterministic(value):
+    if isinstance(value, dict):
+        return {k: deterministic(v) for k, v in value.items() if k != 'seconds'}
+    if isinstance(value, list):
+        return [deterministic(v) for v in value]
+    return value
+
+for name, source in (
+    ('three-by-three-discovery', 'experiments/three_by_three_candidate.py'),
+    ('three-by-three', 'verification/check_three_by_three.py'),
+    ('three-by-three-reviewer', 'verification/check_three_by_three_reviewer.py'),
+    ('wang-baseline', 'verification/check_wang_baseline.py'),
+):
+    start = time.monotonic()
+    output = out / (name + '-report.json')
+    result = subprocess.run([sys.executable, str(ROOT/source), '--output', str(output)],
+                            check=True, capture_output=True, text=True)
+    report = json.loads(output.read_text())
+    expected = json.loads((ROOT/'verification/reference'/(name+'-report.json')).read_text())
+    if name == 'three-by-three-reviewer':
+        # Optional SAT repair searches are archived evidence, not part of this
+        # standard-library reproduction of the complete finite census.
+        expected.pop('exact_repair_distance', None)
+    assert deterministic(report) == deterministic(expected), name + ' reference differs'
+    receipt['checks'].append({'name': name, 'reference_matches': True,
+                             'elapsed_seconds': round(time.monotonic()-start, 3)})
+    print(name + ': exact checks and reference comparison passed', flush=True)
 subprocess.run([sys.executable, str(ROOT / "scripts" / "validate_repository.py")], check=True)
 (out / "checks-receipt.json").write_text(json.dumps(receipt, indent=2) + "\n")
 print("All checks passed. Finite checks are not a universal theorem or independent review.")

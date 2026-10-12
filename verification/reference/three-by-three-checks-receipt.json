@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "scope": "Source-bound finite exact checks and written candidate proof; not a Lean certificate or independent peer review.",
+  "new_lean_verified": false,
+  "separate_agent_review": false,
+  "independent_mathematical_review": false,
+  "python": "3.9.25",
+  "census_max_depth": 7,
+  "physical_check_depth": 1,
+  "repair_sampler_max_depth": 4,
+  "hashes": {
+    "proofs/three-by-three.md": "1a84af8a7fcc997036256160c1c2a8fc6f0d7fea4fafcf52b8f3ab6e19082f48",
+    "experiments/host.py": "c5323af5e36c1d52518fcbcd769895f22f9d25de6762ce2a4d6803c9a1b7610a",
+    "experiments/search_three_interior.py": "838c237f019e0d0e3261d717162d5c056daffd6fae72f6981d2b519bf85af725",
+    "experiments/search_three_joint.py": "a6fe57103733c311eecfebd17dff95d3cf296220ef89c995b2ddada3346b9981",
+    "experiments/three_by_three_candidate.py": "08d923af2a80c26561ca6b4b987dba0d47b574d126f41a58bcb302dfbaa31757",
+    "verification/check_three_by_three.py": "476adcd8a36f503661bab5b9a4952819f297a20452ce96a7e36158afff4aa08b",
+    "verification/check_wang_baseline.py": "d84c5b69b9e77a6c9badfaf155bf0ef7ee3395b051c178c967c2108c55568508",
+    "verification/reference/three-by-three-discovery-report.json": "5ed89ef71687c1c38900cd71c8ed3d3d0dbb7593989479fc746fa632188c54bf",
+    "verification/reference/three-by-three-report.json": "13b5db6213531209206404ed78f0ade13e6d985231cc9fde1fc4814b97370be2",
+    "verification/reference/three-by-three-interior-search.json": "d6479a152b91ce0abc0749a53ed4873f8cd88c35c3a6ae29d7a533b6f0d16b9d",
+    "verification/reference/three-by-three-joint-search.json": "220320a6615eb64c5b0912fa9cdff6f9b239a1022f6edf259ef3bd23759f1e0b",
+    "verification/reference/three-by-three-search-summary.json": "95641b8de0fe3af96358a21725fb7530f895aabe6c5cdad945c1419773e044f4",
+    "verification/reference/three-by-three-baseline-sources.json": "ad177d4a3c0ed072a5b46eda04666763af908b137f6fbe3a30210b3611d8b93d",
+    "verification/reference/wang-baseline-report.json": "bdc332faada97658d45b2ead0d28b95d54bbf62dda40a07a23b67bb63d2b76b7"
+  }
+}

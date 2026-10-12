@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "recorded_at_utc": "2026-10-12T13:57:42.410879+00:00",
+  "status": "candidate_result_with_qualitative_Lean_theorem",
+  "pattern": [
+    "011",
+    "101",
+    "110"
+  ],
+  "qualitative_theorem_lean_verified": true,
+  "arbitrary_binary_repairs": true,
+  "arbitrarily_small_epsilon": true,
+  "arbitrarily_large_hosts_at_same_epsilon": true,
+  "formal_host": {
+    "m": "2^h",
+    "n": "(14h+2)m",
+    "anchor_block_size": "2m on each axis",
+    "copy_count_upper_bound": "2 m n^4",
+    "arbitrary_repair_lower_bound": "m^2",
+    "density_normalization": "n^6"
+  },
+  "written_host_exact_count_lean_verified": false,
+  "written_host_exact_count": "7m^4 on n=(8h+2)m; written proof, finite checks, and separate-agent written review",
+  "separate_agent_written_review": true,
+  "separate_agent_formal_review": false,
+  "independent_human_mathematical_review": false,
+  "same_agent_formal_semantic_check": true,
+  "global_minimality_claimed": false,
+  "worldwide_priority_established": false,
+  "general_exact_repair_equality_claimed": false,
+  "standalone_release_updated": true,
+  "published_or_pushed": false,
+  "new_modules": 19,
+  "new_named_theorems": 88,
+  "new_declarations": 257,
+  "audited_modules": 92,
+  "audited_named_theorems": 573,
+  "audited_declarations": 2163,
+  "note": "Release packaging checkpoint. The original finite-check receipt and reviewed written proof remain unchanged. Refreshed the separate reviewer report hash after the reviewer recorded the depth-3 SAT timeout; the proof and Lean source hashes are unchanged. A bounded external source refresh is recorded separately in crown-release-sources.json.",
+  "hashes": {
+    "proofs/three-by-three.md": "1a84af8a7fcc997036256160c1c2a8fc6f0d7fea4fafcf52b8f3ab6e19082f48",
+    "verification/reference/three-by-three-checks-receipt.json": "0879315c25721e7d7e487d9320ed0c2d280e3cb5e12eb19d316cf871aec552b3",
+    "verification/reviews/three-by-three-adversarial.md": "67b82c1556db3ec7ad233efe80aa508e2d426ef4a3348a7a2fc40dd502e3d8bc",
+    "verification/check_three_by_three_reviewer.py": "892133964741af2b54a2a60de3aee9b4c1614196564e20c3b40ea1eda6e0cb1c",
+    "verification/reference/three-by-three-reviewer-report.json": "4ee44062e1ac87d385198bc3b37b093bfdccb80121dc843324f17aec78874dcc",
+    "verification/reference/crown-formal-audit.json": "77ace69b7bd0b8a1c38246cce59803b0249a4da2daa369f3108bc72d48bce896",
+    "verification/reference/crown-formal-model-report.json": "7c4ae35d3b31a22213c377e5a80de4ae13b04caef9ad3679ff5eda5114a476aa",
+    "verification/reviews/three-by-three-formal-scope.md": "2692c9fe38673f6ca9bd2e5be8265aca320a601492da355e8cf7b18565adb0da",
+    "verification/crown_statements.lean": "90d6fe2a9a3e5e40e6b609358c0ccd1e39c596a9621ed2921b613a21551d9ddd",
+    "verification/reference/crown-theorem-statements.txt": "6970a530e7df91054b04afccdbda403abb4fb4da3141c654451022cf0062ec1d"
+  },
+  "previous_checkpoint_sha256": "90f32e6c4c0ec8995e8c0919247b72c3399f5a67cf413b449800b90d770aa2c6"
+}

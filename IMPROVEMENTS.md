@@ -1,5 +1,18 @@
 # Improvement record
 
+## October 12 — 3×3 crown, with a Lean-checked qualitative theorem
+
+One fewer column reduces the preceding 3×4 result from twelve to nine
+entries. A suffix column anchor and vertical-dummy ones allow all-copy
+localization while retaining arbitrary-repair propagation. The written
+host has exact count 7m⁴; the Lean certificate uses doubled anchors and a
+sufficient coarse bound. See [the paper](manuscript.md) and
+[formal scope](formal/README.md). Independent mathematical review remains pending.
+
+The refreshed baseline also credits Zinan Wang's 4×4 manuscript, which
+contains the same exact count as our preceding quantitative refinement.
+The historical chronology below records development, not exclusive priority.
+
 ## October 11 — asymmetric 3×4 candidate
 
 The new [proof](proofs/three-by-four.md) reduces the known 4×4 pattern to
