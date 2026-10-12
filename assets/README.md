@@ -30,12 +30,12 @@ finding a GitHub record.
 | [OpenAI](https://github.com/openai/math/commit/adc7f1241b42e322a6451854ab7e4b4c146bf78a) | 66×66 | 4,356 | 2026-10-06T21:58:50Z | Git commit | Selected minimum |
 | [ProveIt](https://github.com/VladimirReshetnikov/ProveIt/commit/bfbfe915186310fdf745a7a089e7dd88eeb773b1) | 5×5 | 25 | 2026-10-07T21:24:26Z | Git commit | Selected minimum |
 | [Erebos Labs](https://github.com/erebos-labs/ordered-matrix-removal-4x4/releases/tag/v1.0.0) | 4×4 | 16 | 2026-10-09T12:40:51Z | GitHub release | Selected minimum |
-| [This project](https://github.com/shea256/ordered-binary-matrix-removal/commit/fa2aa33105d7d16ae782f4a0858a417e31de9f05) | 15×15 | 225 | 2026-10-10T06:37:28Z | Git commit | Later project stage |
-| [This project](https://github.com/shea256/ordered-binary-matrix-removal/commit/f16d432d9a918c694f0b404a12f744c0c8b0db03) | 5×5 | 25 | 2026-10-10T15:10:23Z | Git commit | Later project stage |
-| [This project](https://github.com/shea256/ordered-binary-matrix-removal/pull/1) | 4×4 | 16 | 2026-10-10T18:48:25Z | PR opened | Later project stage |
+| [Ryan Shea](https://github.com/shea256/ordered-binary-matrix-removal/commit/fa2aa33105d7d16ae782f4a0858a417e31de9f05) | 15×15 | 225 | 2026-10-10T06:37:28Z | Git commit | Later project stage |
+| [Ryan Shea](https://github.com/shea256/ordered-binary-matrix-removal/commit/f16d432d9a918c694f0b404a12f744c0c8b0db03) | 5×5 | 25 | 2026-10-10T15:10:23Z | Git commit | Later project stage |
+| [Ryan Shea](https://github.com/shea256/ordered-binary-matrix-removal/pull/1) | 4×4 | 16 | 2026-10-10T18:48:25Z | PR opened | Later project stage |
 | [Zinan Wang](https://github.com/wzn1118/h4-ordered-matrix-removal/commit/8c503f7a7a0f42c53621dcd0bdaf753e2580aa3e) | 4×4 | 16 | 2026-10-11T13:18:15Z | Git commit | Later external refinement |
-| [This project](https://github.com/shea256/ordered-binary-matrix-removal/pull/6) | 3×4 | 12 | 2026-10-11T18:38:32Z | PR opened | Selected minimum |
-| [This project](https://github.com/shea256/ordered-binary-matrix-removal/commit/edbc58b70c45d68085f0d3ece3506d09d94295bd) | 3×3 | 9 | 2026-10-12T13:58:01Z | Git commit | Selected minimum |
+| [Ryan Shea](https://github.com/shea256/ordered-binary-matrix-removal/pull/6) | 3×4 | 12 | 2026-10-11T18:38:32Z | PR opened | Selected minimum |
+| [Ryan Shea](https://github.com/shea256/ordered-binary-matrix-removal/commit/edbc58b70c45d68085f0d3ece3506d09d94295bd) | 3×3 | 9 | 2026-10-12T13:58:01Z | Git commit | Selected minimum |
 
 Erebos Labs' **v1.0.0 release was published October 9, 2026 at 12:40:51 UTC**.
 That is evidence of its public 4×4 result by that timestamp, regardless of

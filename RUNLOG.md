@@ -8,7 +8,14 @@ source legend, and long provenance footer. All point labels now use the
 same source-and-dimensions format and font size. A compact two-item legend
 explains the line and hollow markers; two footer lines retain the host,
 Lean/review status and repository link. Detailed dates and primary sources
-remain in assets/README.md and the unchanged event data.
+remain in assets/README.md and the source event data.
+
+The follow-up label edit names all five project results “Ryan Shea”, using
+the same source names in the event data, chart, SVG description and source
+table. Point positions and numerical values are unchanged. The 4×4 label
+was moved slightly to clear its neighbor’s leader line. The regenerated
+PNG was visually inspected; all 18 checks and package integrity passed
+again for this update.
 
 Regenerated PNG, SVG and the source-bound figure receipt with Matplotlib
 3.9.4. The new PNG was visually inspected; SVG parsing and direct comparison

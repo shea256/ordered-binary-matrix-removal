@@ -75,12 +75,12 @@
     "OpenAI \u00b7 66\u00d766",
     "ProveIt \u00b7 5\u00d75",
     "Erebos Labs \u00b7 4\u00d74",
-    "This work \u00b7 15\u00d715",
-    "This work \u00b7 5\u00d75",
-    "This work \u00b7 4\u00d74",
+    "Ryan Shea \u00b7 15\u00d715",
+    "Ryan Shea \u00b7 5\u00d75",
+    "Ryan Shea \u00b7 4\u00d74",
     "Zinan Wang \u00b7 4\u00d74",
-    "This work \u00b7 3\u00d74",
-    "This work \u00b7 3\u00d73"
+    "Ryan Shea \u00b7 3\u00d74",
+    "Ryan Shea \u00b7 3\u00d73"
   ],
   "y_scale": "logarithmic",
   "y_ticks": [
@@ -94,9 +94,9 @@
   "current_theorem_formalized": true,
   "matplotlib": "3.9.4",
   "artifacts": {
-    "scripts/build_figure.py": "4a1a2b3d758b12d45997b6733e0ce3ba2a7e66359c370def3fed0d955505afee",
-    "assets/pattern-size-events.json": "69dcc16f8c2993f1138fdcde64c3f48cb1ff4c13eb33100a87897d48e551f327",
-    "assets/pattern-size-history.png": "b5944f59c91b1230307a1b40549a6863817f9835a11905515e382abcf29e6c5c",
-    "assets/pattern-size-history.svg": "642bb010c78f7260e19468728cbb6a99a6bbbb9056e7a4c445c6fe58551cab08"
+    "scripts/build_figure.py": "72e38eb8e7a426ab8f510a32e4831ef19188869b76def2f1c670f4d8c9bded92",
+    "assets/pattern-size-events.json": "47264bd19d12890b04ea4d7b29f1607fdb3b004a56bd86e015feff8f1785ccbc",
+    "assets/pattern-size-history.png": "443decabd5a3a7f77e08ffd3159e4d41a354e4f44adc73c76ff3f47ab243d386",
+    "assets/pattern-size-history.svg": "469704f2ce703062998b3f0ce4844504f85fd5ecacee08d32e57ae2761d8f5e7"
   }
 }

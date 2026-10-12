@@ -105,7 +105,7 @@ def main():
         "erebos-4": (-140, 44),
         "project-15": (-55, 16),
         "project-5": (-102, 26),
-        "project-4": (8, 48),
+        "project-4": (8, 66),
         "wang-4": (-32, 100),
         "project-3x4": (10, 62),
         "project-3x3": (12, 15),
@@ -113,7 +113,7 @@ def main():
     point_labels = []
     for event in events:
         dx,dy = offsets[event["id"]]
-        source = "This work" if event["owner"] == "This project" else event["owner"]
+        source = event["owner"]
         rows,columns = event["shape"]
         label = f"{source} · {rows}×{columns}"
         point_labels.append(label)
@@ -134,7 +134,7 @@ def main():
                 metadata={"Software":"Matplotlib", "Title":title})
     fig.savefig(OUT / "pattern-size-history.svg", metadata={
         "Date":None, "Title":title,
-        "Description":"Proportional UTC timeline of selected GitHub records, with logarithmic pattern-entry counts. OpenAI 66×66: October 6 commit (paper dated September 25); ProveIt 5×5: October 7 commit; Erebos Labs 4×4: October 9 release; Wang 4×4: October 11 commit; this project 3×4: October 11 PR; this work 3×3: October 12 commit. Hollow points mark later constructions. These are record dates, not asserted discovery or first-publication dates.",
+        "Description":"Proportional UTC timeline of selected GitHub records, with logarithmic pattern-entry counts. OpenAI 66×66: October 6 commit (paper dated September 25); ProveIt 5×5: October 7 commit; Erebos Labs 4×4: October 9 release; Zinan Wang 4×4: October 11 commit; Ryan Shea 3×4: October 11 PR; Ryan Shea 3×3: October 12 commit. Hollow points mark later constructions. These are record dates, not asserted discovery or first-publication dates.",
     })
     svg = OUT / "pattern-size-history.svg"
     svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines()) + "\n")
