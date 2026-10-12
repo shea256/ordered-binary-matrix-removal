@@ -71,6 +71,17 @@
     "2026-10-11T18:38:32Z",
     "2026-10-12T13:58:01Z"
   ],
+  "point_labels": [
+    "OpenAI \u00b7 66\u00d766",
+    "ProveIt \u00b7 5\u00d75",
+    "Erebos Labs \u00b7 4\u00d74",
+    "This work \u00b7 15\u00d715",
+    "This work \u00b7 5\u00d75",
+    "This work \u00b7 4\u00d74",
+    "Zinan Wang \u00b7 4\u00d74",
+    "This work \u00b7 3\u00d74",
+    "This work \u00b7 3\u00d73"
+  ],
   "y_scale": "logarithmic",
   "y_ticks": [
     10,
@@ -83,9 +94,9 @@
   "current_theorem_formalized": true,
   "matplotlib": "3.9.4",
   "artifacts": {
-    "scripts/build_figure.py": "567edd2aad686c8f62da17b355749458c3c1b7092f8cf796b8bd0b6142389869",
+    "scripts/build_figure.py": "4a1a2b3d758b12d45997b6733e0ce3ba2a7e66359c370def3fed0d955505afee",
     "assets/pattern-size-events.json": "69dcc16f8c2993f1138fdcde64c3f48cb1ff4c13eb33100a87897d48e551f327",
-    "assets/pattern-size-history.png": "ff8a271cbfc27053a4f5f6b53bf31b61a2a03e31fbd4c7984dddc0869e262247",
-    "assets/pattern-size-history.svg": "298e3e040c13792712c66fe4bf37fdb49b2c35226adaf614cf01b808665202a5"
+    "assets/pattern-size-history.png": "b5944f59c91b1230307a1b40549a6863817f9835a11905515e382abcf29e6c5c",
+    "assets/pattern-size-history.svg": "642bb010c78f7260e19468728cbb6a99a6bbbb9056e7a4c445c6fe58551cab08"
   }
 }

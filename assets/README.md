@@ -10,6 +10,11 @@ Hollow markers show later constructions at their recorded dates: this
 project's intermediate stages and Wang's 4×4 quantitative refinement.
 This is a selected, sourced history rather than a complete priority ranking.
 
+Point labels consistently show source and pattern dimensions. The axes carry
+dates and entry counts; the image omits percentage callouts and per-point
+commit/release notes. Its footer retains the theorem's Lean status, review
+status and repository link. Detailed timestamps and provenance remain below.
+
 ## Timestamp sources
 
 These are **GitHub record timestamps**, not asserted discovery dates or a
@@ -47,8 +52,7 @@ Lean theorem. These source and verification differences are documented in
 contained the main theorem and its Lean certificate.
 
 The fixed-pattern dimensions are separate from host size: hosts can be
-arbitrarily large. The 25% reduction compares 12 with 9 specified entries.
-Independent mathematical review remains pending.
+arbitrarily large. Independent mathematical review remains pending.
 
 ## Regenerate
 

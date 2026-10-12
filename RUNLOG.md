@@ -1,5 +1,24 @@
 # Reproduction log
 
+## October 12 — simplify the dated chart
+
+After PR #10 merged, the requested visual cleanup removed the large 3×4 to
+3×3 and percentage callouts, per-point commit/release/date notes, duplicate
+source legend, and long provenance footer. All point labels now use the
+same source-and-dimensions format and font size. A compact two-item legend
+explains the line and hollow markers; two footer lines retain the host,
+Lean/review status and repository link. Detailed dates and primary sources
+remain in assets/README.md and the unchanged event data.
+
+Regenerated PNG, SVG and the source-bound figure receipt with Matplotlib
+3.9.4. The new PNG was visually inspected; SVG parsing and direct comparison
+with the merged figure receipt confirm identical data, timestamps and axis
+scales. Package integrity passed 241 local links and all artifact hashes.
+No mathematical source, theorem, manuscript or result metadata changed.
+
+`python3 scripts/run_checks.py` passed all 18 exact-check suites and package
+integrity; `git diff --check` passed. Lean was not rerun for this visual edit.
+
 ## October 12 — standalone release packaging
 
 The fresh standalone run of `python3 scripts/run_crown_formal_checks.py`
