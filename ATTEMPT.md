@@ -1,5 +1,45 @@
 # Executed attempts — OPENAI-190
 
+## October 12 — release of the executed 3×3 search
+
+The finite discovery screen covered 288 one-anchor encodings around the
+inherited 2×2 body: 264 nonanchor witnesses, 14 incompatible placements,
+eight further one-mode exclusions, and two survivors. The 712 one-mode
+SAT calls gave 527 SAT and 185 UNSAT, without unknown outcomes. Joint
+completions guided the suffix-column construction; the written all-depth
+argument and subsequent Lean theorem supply the universal conclusion.
+See the [search summary](verification/reference/three-by-three-search-summary.json).
+The other survivor is not ruled out in general, and these scoped searches
+do not prove global pattern minimality.
+
+## October 11 — 3×3 theorem formalization
+
+Implemented the all-copy crown argument in `OrderedRemoval.Crown` and
+connected it to the inherited repair sampler and asymptotics. The Lean
+capstone passed its build, axiom audit, and kernel replay with all
+quantifiers and arbitrary binary repairs.
+
+The selected route uses size-2m anchor blocks on both axes to preserve
+the existing two-subgroup sampler carrier. Both subgroups are twins;
+one selected anchor row and one selected anchor column suffice. This
+changes the host order to n=(14h+2)m, not the forbidden pattern. It avoids
+claiming formal verification of the written size-m-anchor family's exact
+7m⁴ count. A literal size-m carrier and exact enumeration remain possible
+quantitative extensions, not prerequisites to the qualitative theorem.
+
+Proof map: the new full-copy classification and inherited mode arithmetic
+localize the middle zero to at most 2m cells; encoding the four remaining
+indices gives N_K≤2mn⁴. The five-cell frame and protected-path frequency
+bound imply D_K≥m² for every binary repair. With ε=(14h+2)⁻², the normalized
+copy bound is 2ε2⁻ʰ. Exponential decay and uniform blowup establish the
+full quantifier order. See the [formal scope](formal/README.md),
+[audit](verification/reference/crown-formal-audit.json), and
+[executed-model check](verification/reference/crown-formal-model-report.json).
+
+The mathematical written proof is preserved at the exact snapshot audited
+by the separate reviewer. Its final verification paragraph describes the
+earlier discovery checkpoint; current status is in RESULT and formal/README.
+
 ## October 11 — asymmetric 3×4 search and candidate theorem
 
 Three attacks were executed:

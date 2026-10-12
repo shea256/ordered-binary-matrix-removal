@@ -1,3 +1,85 @@
+# Lean verification of the 3×3 theorem
+
+The current export is `OrderedRemoval.Crown.no_polynomial_removal_bound`
+in [Complete.lean](OrderedRemoval/Crown/Complete.lean), for the fixed pattern
+`011/101/110`. Copies use separately increasing row and column maps and
+match all nine binary entries. For every real c,C,ε₀>0, the theorem gives
+0<ε<ε₀ such that **for every host-size threshold N** there is an
+n≥max(1,N) square binary matrix A satisfying both:
+
+- Every crown-free binary matrix B differs from A on at least εn² cells.
+- A contains fewer than c ε^C n⁶ ordered crown copies.
+
+There is no unproved localization, host-existence, order, sampling, or
+anchor-preservation premise in that export. Edits in both directions and
+at every cell are allowed. A
+[separate-agent adversarial review](../verification/reviews/three-by-three-adversarial.md)
+found no gap in the written proof; it does not cover this Lean port and is
+not independent human mathematical peer review.
+
+## Exact scope of the formal construction
+
+The certificate uses a **padded variant** of the written host. For m=2^h,
+each anchor block on each axis has size 2m, represented as two consecutive
+twin subgroups of size m. Variables and dummies retain their written sizes.
+Thus n=(14h+2)m, rather than the written n=(8h+2)m. Prefix row anchors,
+suffix column anchors, the W−/W+/V mode order, and every entry rule are the
+same after identifying twins. The sampler uses one representative per
+subgroup, with a protected-cell probability bound 1/m².
+
+| Component | Formal conclusion |
+| --- | --- |
+| [Model](OrderedRemoval/Crown/Model.lean), [Host](OrderedRemoval/Crown/Host.lean), [OrderedHost](OrderedRemoval/Crown/OrderedHost.lean) | The literal crown, the padded host, and independent full-axis orders. |
+| [CopyStructure](OrderedRemoval/Crown/CopyStructure.lean), [NoAnchorColumns](OrderedRemoval/Crown/NoAnchorColumns.lean), [ZeroLocalization](OrderedRemoval/Crown/ZeroLocalization.lean) | Every copy has exactly one anchor on each axis; its middle zero is a leaf-to-own-minus-parent cell. |
+| [CoarseCopyBound](OrderedRemoval/Crown/CoarseCopyBound.lean) | The zero set has at most 2m cells, giving N_K≤2mn⁴. |
+| [GuardedFrame](OrderedRemoval/Crown/GuardedFrame.lean), [RepairDistance](OrderedRemoval/Crown/RepairDistance.lean) | A surviving five-cell frame completes P to the crown; every crown-free repair changes at least m² cells. |
+| [Main](OrderedRemoval/Crown/Main.lean), [Blowup](OrderedRemoval/Crown/Blowup.lean), [Complete](OrderedRemoval/Crown/Complete.lean) | Density ≤2(14h+2)⁻²2⁻ʰ, ε=(14h+2)⁻², exponential decay and fixed-ε blowups. |
+
+This proves the full qualitative theorem for the **same 3×3 pattern**.
+The written host's exact count 7m⁴, its more economical n=(8h+2)m,
+exact repair-distance equality, and global pattern minimality are outside
+this formal certificate. The earlier 3×4 audit is not relabeled or reused
+as a certificate for the new theorem.
+
+The written proof is retained at the exact SHA-256 snapshot named in the
+separate review. Its closing verification paragraph and the original
+finite-check receipt describe the discovery checkpoint before this
+formalization. This document and RESULT give the current certificate scope.
+
+## Reproduction and trust scope
+
+From this problem directory, using the pinned Lean 4.34.1 toolchain:
+
+```sh
+(cd formal && lake exe cache get)
+python3 scripts/run_crown_formal_checks.py
+python3 verification/check_crown_formal_model.py --output .context/crown-model-check.json
+```
+
+The [audit script](../scripts/run_crown_formal_checks.py) builds the complete
+theorem, examines the transitive axioms of every imported project declaration,
+and replays each project module into its imported Lean environment. Its
+allowed axioms are only `propext`, `Quot.sound`, and `Classical.choice`.
+It rejects additional axioms, admitted proofs, and native decision shortcuts.
+The [source-bound receipt](../verification/reference/crown-formal-audit.json)
+records the exact code hashes and executed checks. Mathlib is pinned to
+`d13f23b723b8a846827a245b89c10fc7d3f11612`; its entire kernel environment is
+not replayed from scratch by this script.
+
+The completed audit covered **573 named theorems and 2,163 declarations
+across 92 project modules**. The new Crown development comprises 19 modules,
+88 named theorems and 257 declarations; the remaining totals are inherited
+infrastructure, not new mathematical contributions.
+
+The [semantic checker](../verification/check_crown_formal_model.py) executes
+the actual Lean host and axis-order definitions, compares them with the
+separately written Python construction, and checks finite copy counts.
+See its [report](../verification/reference/crown-formal-model-report.json).
+These finite checks help detect a model mismatch; they are separate from
+the universal Lean proof and are not independent peer review.
+
+The following checkpoints are historical.
+
 # Lean verification of the 3×4 theorem
 
 **The main theorem is checked end to end**, including arbitrarily small ε

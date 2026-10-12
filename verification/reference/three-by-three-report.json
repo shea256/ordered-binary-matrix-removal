@@ -1,0 +1,166 @@
+{
+  "status": "passed",
+  "pattern": [
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0
+    ]
+  ],
+  "records": [
+    {
+      "h": 1,
+      "n": 20,
+      "copies": 112,
+      "noncanonical_copies": 0,
+      "unlocalized_copies": 0,
+      "leaf_column": 48,
+      "plus_parent_column": 64
+    },
+    {
+      "h": 2,
+      "n": 72,
+      "copies": 1792,
+      "noncanonical_copies": 0,
+      "unlocalized_copies": 0,
+      "leaf_column": 768,
+      "plus_parent_column": 1024
+    },
+    {
+      "h": 3,
+      "n": 208,
+      "copies": 28672,
+      "noncanonical_copies": 0,
+      "unlocalized_copies": 0,
+      "leaf_column": 12288,
+      "plus_parent_column": 16384
+    },
+    {
+      "h": 4,
+      "n": 544,
+      "copies": 458752,
+      "noncanonical_copies": 0,
+      "unlocalized_copies": 0,
+      "leaf_column": 196608,
+      "plus_parent_column": 262144
+    },
+    {
+      "h": 5,
+      "n": 1344,
+      "copies": 7340032,
+      "noncanonical_copies": 0,
+      "unlocalized_copies": 0,
+      "leaf_column": 3145728,
+      "plus_parent_column": 4194304
+    },
+    {
+      "h": 6,
+      "n": 3200,
+      "copies": 117440512,
+      "noncanonical_copies": 0,
+      "unlocalized_copies": 0,
+      "leaf_column": 50331648,
+      "plus_parent_column": 67108864
+    },
+    {
+      "h": 7,
+      "n": 7424,
+      "copies": 1879048192,
+      "noncanonical_copies": 0,
+      "unlocalized_copies": 0,
+      "leaf_column": 805306368,
+      "plus_parent_column": 1073741824
+    }
+  ],
+  "physical_depth_one": {
+    "h": 1,
+    "n": 20,
+    "copies": 112,
+    "noncanonical_copies": 0,
+    "unlocalized_copies": 0,
+    "leaf_column": 48,
+    "plus_parent_column": 64
+  },
+  "repair_sampler": [
+    {
+      "h": 1,
+      "seeds": 8,
+      "frames": 32,
+      "maximum_guard_frequency": 2,
+      "bound": 2,
+      "distinct_guard_cells": 136
+    },
+    {
+      "h": 2,
+      "seeds": 64,
+      "frames": 512,
+      "maximum_guard_frequency": 4,
+      "bound": 4,
+      "distinct_guard_cells": 1024
+    },
+    {
+      "h": 3,
+      "seeds": 512,
+      "frames": 6144,
+      "maximum_guard_frequency": 8,
+      "bound": 8,
+      "distinct_guard_cells": 6016
+    },
+    {
+      "h": 4,
+      "seeds": 4096,
+      "frames": 65536,
+      "maximum_guard_frequency": 16,
+      "bound": 16,
+      "distinct_guard_cells": 31744
+    }
+  ],
+  "boolean_propagation": [
+    [
+      1,
+      0,
+      1,
+      0
+    ]
+  ],
+  "negative_controls": {
+    "vertical_dummy": {
+      "h": 3,
+      "n": 208,
+      "copies": 815104,
+      "noncanonical_copies": 786432,
+      "unlocalized_copies": 786432,
+      "leaf_column": 12288,
+      "plus_parent_column": 16384
+    },
+    "horizontal_dummy": {
+      "h": 3,
+      "n": 208,
+      "copies": 770048,
+      "noncanonical_copies": 741376,
+      "unlocalized_copies": 675840,
+      "leaf_column": 12288,
+      "plus_parent_column": 16384
+    },
+    "odd_child": {
+      "h": 3,
+      "n": 208,
+      "copies": 110592,
+      "noncanonical_copies": 81920,
+      "unlocalized_copies": 81920,
+      "leaf_column": 12288,
+      "plus_parent_column": 16384
+    }
+  },
+  "scope": "Separate same-agent implementation; finite checks do not prove universal claims or replace Lean/peer review."
+}

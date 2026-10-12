@@ -1,408 +1,422 @@
-# A 3×4 ordered binary removal obstruction
+# A 3×3 ordered binary matrix removal obstruction
 
-October 11, 2026. **Candidate result with a written all-depth proof.**
-The exact finite checks use two implementations. A separate agent reviewed
-the argument; this is not independent mathematical peer review. This new
-host and main theorem are now checked in Lean, including the full quantifiers.
-See the source-bound audit and verification scope in Section 8.
+Ryan Shea, with Codex assistance. October 12, 2026.
 
-The tree, threshold entries, mode roles, and arbitrary-repair sampler are
-inherited from OpenAI's September 25 manuscript. Erebos previously proved
-the 4×4 obstruction and exact repair equality. Our construction changes the
-anchor encoding, retaining the globally ordered modes from the preceding
-[4×4 quantitative refinement](proofs/optimized-order.md). The new ingredient is
-one anchor row with nonuniform extra ones, described explicitly below.
+**Candidate result with a Lean-checked qualitative theorem.** The forbidden
+pattern has nine entries, down from twelve in our previous 3×4 construction.
+We retain arbitrary binary repairs, arbitrarily small distance parameters,
+and arbitrarily large hosts at the same chosen parameter. Independent
+mathematical peer review is pending; no global minimality or worldwide
+priority is claimed.
 
-## Statement
+The written construction below has n=(8h+2)m and exactly 7m⁴ copies. A separate
+AI reviewer found no gap in this argument. The Lean proof establishes the same
+qualitative theorem using doubled anchor blocks, n=(14h+2)m, and the sufficient
+bound 2mn⁴. It does not certify the written exact count or smaller host size.
+Section 8 specifies the formal statement and evidence.
 
-The fixed rectangular pattern is
+The signed tree, threshold entries, mode roles and protected-path argument
+build on OpenAI's #190 manuscript and formalization. The row supports adapt
+our [3×4 construction](proofs/three-by-four.md); the new changes are one
+anchor on each axis, suffix column anchors and vertical-dummy ones.
+Erebos Labs' earlier 4×4 theorem, ProveIt's 5×5 work and Zinan Wang's 4×4
+quantitative result are credited in [BASELINE.md](BASELINE.md) and
+[ATTRIBUTION.md](ATTRIBUTION.md). In particular, Wang's manuscript also gives
+the exact count of our preceding 4×4 refinement, with a different mode order.
+
+## 1. Statement and quantitative implication
+
+Let
 
 \[
- H=\begin{pmatrix}1&0&0&1\\1&0&1&0\\0&1&1&1\end{pmatrix},
- \qquad P=\begin{pmatrix}1&0\\1&1\end{pmatrix}.
+ K=J_3-I_3=\begin{pmatrix}0&1&1\\1&0&1\\1&1&0\end{pmatrix}.
 \]
 
-For every integer h≥1, set m=2^h, d=14h+2, n=dm. The square binary host
-A_h below satisfies
+For every integer h≥1, put m=2^h, d=8h+2 and n=dm. The square binary
+host A_h defined below satisfies
 
 \[
- \operatorname{dist}_H(A_h)\ge d^{-2},\qquad
- N_H(A_h)\le 2mn^5,\qquad
- \frac{N_H(A_h)}{n^7}\le 2d^{-2}2^{-h}.
+ D_K(A_h)\ge m^2,\qquad N_K(A_h)=7m^4,
+ \qquad \frac{N_K(A_h)}{n^6}=7d^{-6}4^{-h}.
 \]
 
-Copies use three increasing distinct rows and four increasing distinct
-columns and match all twelve entries. Distance allows arbitrary binary
-changes in either direction anywhere in the host, normalized by n².
-No equality for repair distance or exact all-depth copy count is claimed.
+D_K minimizes **all binary edits in both directions, at arbitrary cells**.
+Copies preserve independent increasing row and column orders and match all
+nine entries. No exact minimum repair distance is claimed.
 
-Consequently, for all c,C>0 and every ε₀>0, there exists 0<ε<ε₀ such that
-hosts of arbitrarily large order are ε-far from H-freeness and have fewer
-than c ε^C n^7 copies. In particular H admits no polynomial removal bound.
-This reduces the pattern from the known 4×4 to 3×4 (16 to 12 entries);
-it does not establish a 3×3 obstruction or minimality.
+Consequently, for every c,C,ε₀>0 there exists a fixed 0<ε<ε₀ such that,
+for every N, some n≥max(1,N) and binary n×n host require at least εn²
+edits to become K-free and have fewer than c ε^C n⁶ copies. This is a
+3×3 pattern, with 9 rather than the preceding 3×4 pattern's 12 entries.
 
-## 1. The host, including every binary entry
+Bitwise complementation gives the same statement for the **3×3 identity
+matrix**: every K-copy in A corresponds to an I₃-copy in 1−A, and
+B↦1−B preserves edit distance and exchanges the two freeness conditions.
 
-Use a complete binary tree of height h, with nodes p=0,…,2^i−1 at depth i.
-For i<h put row blocks R_i^−(p),R_i^+(p) and column blocks
-C_i^−(p),C_i^+(p), each of size m/2^i. At depth h identify the two signs:
-R_h^−(p)=R_h^+(p)=L_R(p) and C_h^−(p)=C_h^+(p)=L_C(p), each of size one.
-Add dummy blocks R_*,C_* of size m. A class omits the node index and
-denotes the union over its level; a parity subscript restricts node parity.
+## 2. Complete host specification
 
-Rows follow recursive order: minus block, left subtree, right subtree,
-plus block. Columns follow plus block, left subtree, right subtree, minus
-block. A leaf block occurs once. Dummy rows are last, dummy columns first
-among nonanchors. Positions within a block are twins.
+At each depth 0≤i<h and node p∈{0,…,2^i−1}, create blocks R_i^−(p),
+R_i^+(p), C_i^−(p), C_i^+(p), each of size m/2^i. At depth h, identify
+both signs with leaf blocks L_R(p), L_C(p), of size one. Create dummy
+blocks R_*, C_* of size m.
 
-Every nonanchor entry meeting a dummy is one. All variable entries are
-zero except the following threshold entries:
+The recursive row order is minus block, left subtree, right subtree, plus
+block. The column order is plus block, left subtree, right subtree, minus
+block. Dummy rows follow all variable rows; dummy columns precede all
+variable columns. Every nonanchor entry incident to a dummy is one.
+All variable entries are zero except these threshold entries:
 
-| Row / column | Value | Range |
+| Row / column | Entry | Range |
 | --- | --- | --- |
 | R_i^+(p), C_i^+(q) | 1[p≤q] | 0≤i≤h |
 | R_i^−(p), C_i^−(q) | 1[p<q] | 0≤i<h |
 | R_i^+(p), C_{i−1}^+(q) | 1[⌊p/2⌋≤q] | 1≤i≤h |
 | R_i^−(p), C_{i−1}^−(q) | 1[⌊p/2⌋<q] | 1≤i≤h |
 
-The last two rules both apply to a leaf row, with different column signs.
-There is no conflicting minus diagonal rule at leaves.
+At i=h the first rule means the leaf-to-leaf matrix, and both parent
+rules apply to the shared leaf row. Write π(p)=⌊p/2⌋. A class is the
+union over all nodes at a fixed signed depth; a parity subscript restricts
+the node parity.
 
-There are six modes at each i=1,…,h, with these disjoint roles:
+There are six modes at each i=1,…,h:
 
 | Mode | Row role 1 | Row role 2 | Column role 1 | Column role 2 |
 | --- | --- | --- | --- | --- |
 | V_i^+ | R_i^+ | R_{i−1}^+ | C_* | C_{i−1}^+ |
 | V_i^− | R_{i−1}^− | R_i^− | C_* | C_{i−1}^− |
-| W_{i,d}^+ | R_{i,d}^+ | R_* | C_{i−1}^+ | C_{i,d}^+ |
-| W_{i,d}^− | R_{i,d}^− | R_* | C_{i,d}^− | C_{i−1}^− |
+| W_{i,e}^+ | R_{i,e}^+ | R_* | C_{i−1}^+ | C_{i,e}^+ |
+| W_{i,e}^− | R_{i,e}^− | R_* | C_{i,e}^− | C_{i−1}^− |
 
-For each mode t add **one row anchor block X_t of size 2m** and **two
-column anchor blocks Y_{t,0},Y_{t,1}, each of size m**. Put anchors before
-all nonanchors. On both axes order modes as
+Add one row block X_t and one column block Y_t of size m per mode t.
+All X blocks precede all nonanchor rows. All Y blocks follow all
+nonanchor columns. The mode order on each axis is W^− in increasing
+(i,e), then W^+ in increasing (i,e), then V_1^+,V_1^−,…,V_h^+,V_h^−.
+
+Set A(X_s,Y_t)=1[s=t]. On nonanchor rows, the one-set of Y_t is exactly
 
 \[
- (W^-_{1,0},W^-_{1,1},\ldots,W^-_{h,0},W^-_{h,1}),\quad
- (W^+_{1,0},W^+_{1,1},\ldots,W^+_{h,0},W^+_{h,1}),\quad
- (V^+_1,V^-_1,\ldots,V^+_h,V^-_h).
+ U_t=(\text{row role 1 of }t)\ \cup\
+ \begin{cases}R_* & t\text{ vertical},\\\varnothing&t\text{ horizontal}.\end{cases}
 \]
 
-Within each column mode, group 0 precedes group 1. Anchor row X_t is one
-on Y_{t,0}, zero on every other anchor column. A nonanchor row in row
-role j∈{1,2} of t has signature e_j against (Y_{t,0},Y_{t,1}); a row
-in neither role has signature 00.
+The one-set T_t of X_t on nonanchor columns is:
 
-It remains to specify each anchor row on nonanchor columns. Write D=C_*.
-Its one-set T_t is exactly:
-
-| Anchor row mode | T_t |
+| t | T_t |
 | --- | --- |
 | V_i^σ | C_{i−1}^σ |
-| W_{i,d}^+ | D ∪ C_{i,d}^+ |
-| W_{i,1}^− | D ∪ C_{i−1}^− |
-| W_{i,0}^−, i<h | D ∪ C_{i−1}^− ∪ C_{i,1}^− |
-| W_{h,0}^− | D ∪ C_{h−1}^− |
+| W_{i,e}^+ | C_* ∪ C_{i,e}^+ |
+| W_{i,1}^− | C_* ∪ C_{i−1}^− |
+| W_{i,0}^−, i<h | C_* ∪ C_{i−1}^− ∪ C_{i,1}^− |
+| W_{h,0}^− | C_* ∪ C_{h−1}^− |
 
-In particular the odd-child addition is **absent at the common leaves**.
-All unspecified entries are zero. The added dummy and odd-child ones
-are outside the designated column roles. On those roles each X_t still
-has signature (0,1), as required by H's last two columns. Together with
-the prescribed row signatures, every ordered designated P extends to H.
+All unspecified entries are zero. In particular, the odd-child addition
+is absent at the shared leaves. Each axis has 6hm anchor positions and
+(2h+2)m nonanchor positions, so n=(8h+2)m.
 
-Each axis has 12hm anchor positions and (2h+2)m nonanchor positions.
-Thus the host is square with n=(14h+2)m.
+On the two column roles X_t has signature 01; on the two row roles Y_t
+has signature 10. The added dummy one for vertical Y_t is outside both
+row roles. Thus every ordered role body P=((1,0),(1,1)) extends to K
+using X_t as the first row and Y_t as the last column.
 
-## 2. Elementary support and order facts
+## 3. Elementary order and support facts
 
-At a fixed signed level, blocks occur in increasing node order. For a
-fixed nonanchor row, entries along a column class are nondecreasing;
-for a fixed nonanchor column, entries along a row class are nonincreasing.
-Thus same-class rows or columns have nested neighborhoods.
-
-Nonanchor rows and columns contain no unordered 3×3 crown J₃−I₃.
-Here is the inherited argument. Same-class columns cannot occur in a crown.
-A nondummy nonleaf row is supported on its own and preceding signed column
-classes. A leaf row is supported on L_C,C_{h−1}^+,C_{h−1}^−. Hence three
-distinct classes with pairwise common nondummy neighbors must be those
-three terminal classes. On fixed columns from those classes, leaf traces
-are nested as the leaf node increases, and nonleaf rows have zero on L_C.
-They cannot provide both required incomparable traces with a one on L_C.
-
-The one-set of any anchor column on nonanchor rows is a whole class or
-a parity half-class. Any two such sets are disjoint or nested. No mode
-order assumption is needed for this laminarity statement.
-
-We repeatedly use the recursive-order comparisons, with π(p)=⌊p/2⌋:
+Blocks in a fixed class occur in increasing node order. A fixed nonanchor
+row is nondecreasing along a column class; a fixed nonanchor column is
+nonincreasing along a row class. These follow from the four thresholds.
+For the comparisons used below, the recursive order gives
 
 \[
 \begin{aligned}
- C_{i-1}^+(b)<C_i^\sigma(q)&\iff b\le\pi(q),&
- C_i^\sigma(q)<C_{i-1}^+(b)&\iff\pi(q)<b,\\
- C_i^\sigma(q)<C_{i-1}^-(b)&\iff\pi(q)\le b,&
+ C_{i-1}^+(a)<C_i^\sigma(q)&\iff a\le\pi(q),\\
+ C_i^\sigma(q)<C_{i-1}^-(b)&\iff\pi(q)\le b,\\
  C_{i-1}^-(b)<C_i^\sigma(q)&\iff b<\pi(q),\\
- C_j^+(a)<C_j^-(b)&\iff a\le b,&
- C_j^-(a)<C_j^+(b)&\iff a<b,\\
- R_i^+(p)<R_{i-1}^+(a)&\iff\pi(p)\le a,&
+ C_j^+(a)<C_j^-(b)&\iff a\le b,\\
+ R_i^+(p)<R_{i-1}^+(a)&\iff\pi(p)\le a,\\
  R_{i-1}^-(a)<R_i^-(p)&\iff a\le\pi(p).
 \end{aligned}
 \]
 
-The two same-level cross-sign comparisons require j<h; at depth h the
-signs are identified. Child signs in the parent/child comparisons may be
-the common leaf sign. Reversing a strict block comparison
-gives its complementary strict inequality. These facts follow directly
-from the consecutive left-to-right subtree intervals.
+Child signs can be the common leaf sign; the same-level cross-sign
+comparison has j<h. Reverse comparisons have the complementary inequalities.
 
-## 3. Exactly one anchor row and one or two anchor columns
+**Nonanchor crown exclusion.** A dummy cannot occur in a crown, since
+each crown row and column contains a zero. Two crown columns cannot be
+in one variable class, because their one-sets would be nested. The classes
+on which a nondummy row can be one are its own and preceding signed
+classes, or, for a leaf row, L_C,C_{h−1}^+,C_{h−1}^−. Three distinct
+column classes with a common nondummy neighbor for each pair must
+therefore be this last triple: elsewhere the class-incidence graph is
+two paths. The two crown rows incident to the leaf column must both be
+leaves. Their nonanchor neighborhoods are nested as the leaf index
+increases, contradicting the crown's incomparable row traces. This
+excludes every row/column permutation of the crown in the nonanchor body.
 
-Consider a copy on rows r₁<r₂<r₃ and columns c₁<c₂<c₃<c₄. Let a,b count
-the selected anchors on each axis. Anchors are prefixes. H has three
-distinct rows and four distinct columns, so no twin block can be reused.
-
-**No anchor rows (a=0).** If b=0, columns 1,3,4 form a crown, impossible.
-If b=1 or 2, column 1 places rows 1 and 2 in one class, but their traces
-on nonanchor columns 3,4 are 01 and 10. If b≥3, anchor columns 1 and 3
-have traces 110 and 011, contradicting laminarity.
-
-**At least two anchor rows with b>0.** Column 1 is one on the first two
-anchor rows. It can only meet one mode's row block, so those rows would
-be twins, impossible. Hence a≥2 requires b=0.
-
-For the next cases let A<B be the modes of the first two anchor rows.
-Their supports must have a common c₁ and exclusive columns c₃∈T_B∖T_A,
-c₄∈T_A∖T_B. If c₁ is variable, c₄ cannot be dummy since c₁<c₄.
-Inspection of the explicit support table leaves precisely
+**Crossing anchor supports.** Suppose modes A<B have ordered variable
+columns u<v<w with
 
 \[
- A=W^-_{i,0},\quad i<h,\qquad
- B=W^-_{i+1,d}\ \text{or}\ V^-_{i+1}.
+ u\in T_B\setminus T_A,\quad v\in T_A\setminus T_B,
+ \quad w\in T_A\cap T_B.
 \]
 
-Indeed the only other crossing pair with variable intersection is
-W_{i,d}^+,V_{i+1}^+, whose first-only part is dummy. Same-level minus
-supports are nested, disjoint-level supports have no variable intersection,
-and vertical supports are single distinct classes. For the displayed pairs,
-c₁ is in odd C_i^−, c₄ in C_{i−1}^−, and c₃ in even C_i^−, or possibly
-odd C_{i+1}^− when B=W^-_{i+1,0} with i+1<h.
+Then A=W_{i,0}^− for i<h, and B is W_{i+1,e}^− or V_{i+1}^−.
+Moreover v∈C_{i−1}^−, w∈C_{i,1}^−, and u is in C_{i,0}^− or,
+when B=W_{i+1,0}^− and i+1<h, in C_{i+1,1}^−.
 
-**Two anchor rows (a=2,b=0).** Column c₁ is variable since its bottom
-entry is zero. In the displayed pair classification, a nondummy row
-cannot be one on both C_{i−1}^− and C_{i+1}^−. Therefore c₃ is in even
-C_i^− and r₃ must be in R_i^−. Its entire nonanchor one-support lies in
-D∪C_{i−1}^−∪C_i^−, covered by T_A∪T_B. This contradicts c₂'s trace 001.
+Here is an exhaustive justification from the support table. At one minus
+level the supports are nested. Distinct minus levels have a variable
+intersection only at successive levels with the earlier mode's odd-child
+addition. A minus mode can cross a later vertical support only when that
+support is its full child class. Plus horizontal supports at distinct
+levels have no variable intersection; at one level they are disjoint
+apart from C_*. A plus horizontal support and a later vertical support
+can cross only in the former's parity class, leaving C_* as the first
+support's exclusive part. It cannot be v, since u<v and C_* is first.
+Vertical supports are distinct full classes. Plus and minus variable
+supports do not intersect: the minus odd-child addition never reaches
+the shared leaf class. These exhaust the mode types and their order.
 
-**Three anchor rows (a=3,b=0).** If c₁ is variable, the same pair
-classification applies. No anchor row is one both on c₄∈C_{i−1}^− and
-c₃ in even C_i^− or odd C_{i+1}^−: the sole support spanning the adjacent
-minus classes adds only odd children. If c₁ is dummy, its trace 110
-forces the first two modes to be W and the last to be V. The V support
-is one full class K, so c₂,c₃,c₄ all lie in K. A W support restricted
-to K is empty, all of K, or one parity half. The exclusive c₃,c₄ force
-opposite halves, whose union covers K; there is no c₂ with trace 001.
+## 4. Every copy has exactly one anchor on each axis
 
-It follows that a=1. If b=4, c₁ and c₄ must both be the sole group-0
-anchor class on which r₁ is one; these are twins, impossible. If b=3,
-column c₃ places r₂,r₃ in one row class, whereas the nonanchor c₄ has
-trace 01 on them, contradicting nonincreasing same-class row entries.
+Write a copy on r₁<r₂<r₃ and c₁<c₂<c₃. Let a,b count its anchor
+rows and columns. Rows and columns of K are pairwise distinct, so no
+twin block can be used twice. Row anchors form a prefix of the copy;
+column anchors form a suffix.
 
-**No anchor columns (a=1,b=0).** Column c₁ is not dummy, since its bottom
-entry is zero; c₃ is not dummy either, since c₁<c₂<c₃. Both lower rows
-are nondummy and lie in different classes, since their column traces
-include both 10 and 01. Their common one at c₃ forces adjacent signed
-row classes, possibly including the terminal leaf class.
+**a=0.** If b=0, use nonanchor crown exclusion. Otherwise c₃=Y_t.
+Its ones on r₁,r₂ put them in the same variable class: neither can
+be the last nonanchor row type, the dummy. If b=1 or 2, c₁ is
+nonanchor, and its trace 01 on r₁<r₂ contradicts nonincreasing
+entries within their row class. If b=3, c₁ and c₂ have opposite
+traces 01 and 10 on those two rows. On one variable class a U support
+is empty, full, or one parity half. Thus these two supports must be
+the two opposite parity halves, both belonging to horizontal modes.
+They are disjoint even on the dummy, contradicting their two ones on r₃.
 
-For a V mode, a W^+ mode, or an unextended W^− mode, c₁,c₄ lie in one
-column class. Their order contradicts r₂·c₁=1,r₂·c₄=0. The sole remaining
-mode is W^-_{i,0}, i<h. Put P₀=C_{i−1}^− and Q₀=odd C_i^−; c₁,c₄ must
-lie in different classes.
+**a≥1, b≥2.** Row r₁ is an X block and is one on both c₂,c₃.
+It is one on only one Y block, so these columns would be twins.
 
-If c₁∈P₀ and c₄∈Q₀, the lower row classes are either
-(R_{i−1}^−,R_i^−), forcing their common c₃ into P₀ where its top entry
-is one, or (R_i^−,R_{i+1}^−). In the latter case, write c₁=P₀(b),
-c₄=Q₀(q), r₂=R_i^−(p). Column order gives b<π(q), while r₂·c₁=1 gives
-π(p)<b. Hence p<q, contradicting r₂·c₄=0.
+**a≥2, b=1.** Column c₃ is one on both r₁,r₂. Its unique matching
+X block makes these rows twins.
 
-If c₁∈Q₀ and c₄∈P₀, the lower row classes are either
-(R_i^−,R_{i−1}^−), again forcing c₃ into P₀, or
-(R_{i+1}^−,R_i^−). In the latter case let r₂ have node p and r₃ node z.
-Since c₂ has top zero and bottom one, it must be an even C_i^− column
-with node u: dummy and P₀ are in the top support. Row order gives
-π(p)<z; the bottom entry gives z<u. Thus r₂·c₂=1, contradicting its
-required zero. If i+1=h, the same minus incidences and row-order comparison
-hold with the common leaf class. This finishes the b=0 exclusion.
+**a≥2, b=0.** Put (u,v,w)=(c₁,c₂,c₃). The common w and the middle
+v cannot be dummy because earlier columns exist. If u were dummy,
+the earlier anchor would be vertical and the later one horizontal,
+contrary to the global mode order. Thus all three columns are variable,
+and the first two supports give the crossing configuration of Section 3.
+If a=2, r₃ is
+nondummy (it is zero on w). It must be one on u,v. When u is at level
+i+1, the two levels i+1 and i−1 are too far apart for one nonanchor
+row support. When u is in even C_i^−, r₃ must be in R_i^−. Since
+u<w within that class, its one on u forces a one on w, a contradiction.
+If a=3, no anchor support contains both C_{i−1}^− and C_{i+1}^−.
+The only anchor support spanning C_{i−1}^− and C_i^− adds odd
+children, not the required even u. This is also impossible.
 
-We have proved (a,b)∈{(1,1),(1,2)}.
+We are left with a=1 and b≤1. Suppose b=0. Now c₂,c₃ lie in T_t
+for r₁=X_t. They are variable, since a smaller c₁ exists. If they
+belong to the same class, the trace 10 of r₃ on c₂<c₃ is impossible.
+The only remaining support is T_{W_{i,0}^-}, i<h, and their classes
+are C_{i−1}^−,C_i^− in some order. The common positive column c₁
+of r₂,r₃ is not dummy, since this T_t contains C_*. Both lower rows
+are nondummy. Inspection of their own/parent supports puts the class
+of c₁ in {C_{i−1}^−,C_i^−}: a row incident to the former has depth
+i−1 or i, and a row incident to the latter has depth i or i+1;
+intersections have no third class, including when i+1=h. If c₁ has
+c₂'s class, row r₂ has forbidden trace 10 on c₁<c₂. If it has
+c₃'s class, row r₃ has that trace on c₁<c₃. Therefore b=1.
 
-## 4. Every copy uses its own terminal minus parent
+## 5. Localization and exact enumeration
 
-Let t be r₁'s mode. Column c₁ is Y_{t,0}, so r₂ belongs to row role 1
-of t. The remaining conditions include
+We now have r₁=X_t and c₃=Y_t, with the same mode because their
+corner entry is one. Row r₂ is variable, lies in row role 1 of t,
+and satisfies
 
 \[
- c_3<c_4,\quad A(r_2,c_3)=1,\quad A(r_2,c_4)=0,
- \quad c_3\notin T_t,\quad c_4\in T_t.
+ c_1\notin T_t,\quad c_2\in T_t,\quad
+ A(r_2,c_1)=1,\quad A(r_2,c_2)=0.
 \]
 
-Both c₃,c₄ are nonanchors. Column c₄ is not dummy, since c₃<c₄.
+The later row r₃ is one on both nonanchor columns and zero on Y_t.
 
-**Vertical t.** For V_i^+, r₂ is R_i^+(p) and c₄=C_{i−1}^+(q) with
-π(p)>q. A nondummy c₃ outside T_t with a one on r₂ would be in C_i^+
-(or, at a leaf, C_{h−1}^−). Its order before c₄ contradicts the threshold
-inequalities. Explicitly a C_i^+ node u requires p≤u and π(u)<q;
-a terminal minus-parent node u requires π(p)<u<q. For V_i^−, r₂ is
-R_{i−1}^−(p) and c₄=C_{i−1}^−(q) with p≥q. A nondummy c₃ outside T_t
-could only be C_{i−2}^−(u) when i≥2, requiring π(p)<u<π(q), also impossible.
-At i=1 that preceding class is absent.
-Thus c₃ must be dummy.
+**t=V_i^+.** Here r₂=R_i^+(p), c₂=C_{i−1}^+(q), and π(p)>q.
+Since r₃ is zero on Y_t, it is neither dummy nor in R_i^+.
+Its one on c₂ forces r₃=R_{i−1}^+(a). Row order gives π(p)≤a,
+while that one gives a≤q, a contradiction.
 
-When b=1, the nonanchor c₂<c₃ rules that out. When b=2, a later
-nondummy r₃ with a one on c₄ is impossible by the same threshold and
-row-order inequalities: in the plus case its row class is R_{i−1}^+
-or R_i^+, and in the minus case R_{i−1}^− or R_i^−. Hence r₃ is dummy.
-Its one at anchor c₂ would require a W group-1 column. Every W anchor
-precedes the V column c₁, contradicting c₁<c₂.
+**t=V_i^−.** Now r₂=R_{i−1}^−(p), c₂=C_{i−1}^−(q), p≥q.
+The zero on Y_t excludes the dummy and R_{i−1}^−, so r₃ must
+be R_i^−(a), allowing a leaf. Row order and its one on c₂ give
+p≤π(a)<q, a contradiction. These two exclusions use the new dummy
+ones on vertical Y blocks.
 
-**Positive horizontal t=W_{i,d}^+.** Column c₄ is in C_{i,d}^+, as is
-the class of r₂. Write their nodes p,q. The zero requires p>q. A c₃
-in the same child class is excluded by monotonicity and c₃<c₄. A plus
-parent c₃=C_{i−1}^+(u) requires π(p)≤u≤π(q). Equal floors would make
-p,q unequal siblings, contradicting their common parity d. At the
-terminal level a minus-parent c₃ instead requires π(p)<u<π(q), impossible.
-The dummy is in T_t and cannot be c₃. No copy occurs in this mode.
+**t=W_{i,e}^+.** The row r₂ and column c₂ are in the same plus
+child class and parity; their nodes p,q satisfy p>q. A positive c₁
+outside T_t cannot be dummy. If c₁ is in the child class, monotonicity
+contradicts c₁<c₂. If it is a plus parent with node u, positivity and
+order give π(p)≤u≤π(q), impossible for p>q of equal parity. At the
+leaf level a minus parent is additionally possible, but then
+π(p)<u<π(q), also impossible.
 
-**Negative horizontal t=W_{i,d}^−.** The row r₂ is R_{i,d}^−(p), or
-L_R(p) if i=h. If c₄ is an added odd child, then i<h,d=0. Its node q
-satisfies p≥q. Column c₃ outside T_t with a one on r₂ can only be an
-own-level node u>p; c₃<c₄ would give u<q, impossible.
+**t=W_{i,e}^−.** Write r₂=R_i^−(p), or L_R(p) when i=h.
+If c₂ is an added odd child, then i<h, e=0, and its node q satisfies
+p≥q. The only positive c₁ outside T_t is an own-level node u>p;
+its order before c₂ gives u<q, impossible. Thus c₂=C_{i−1}^−(b)
+and π(p)≥b.
 
-Thus c₄=C_{i−1}^−(b), with π(p)≥b. For i<h, a c₃ outside T_t with a
-one on r₂ must be C_i^−(q), where q>p and π(q)≤b. These inequalities
-force π(q)=b=π(p), p even and q=p+1 odd. The row role then has d=0,
-but this odd c₃ was added to T_t, a contradiction. This is the precise
-use of the new odd-child ones.
+For i<h, a positive c₁ outside T_t must be C_i^−(q), with q>p.
+Its position before c₂ gives π(q)≤b. Thus π(q)=b=π(p), p is even,
+and q=p+1 is odd. But this odd child belongs to T_t, a contradiction.
+This is the precise use of the nonterminal odd-child addition.
 
-Therefore i=h. Here c₃ can only be a leaf column q with p≤q, or a
-plus-parent column C_{h−1}^+(a) with π(p)≤a. In the first case its order
-before c₄ gives π(q)≤b; in the second it gives a≤b. Together with
-π(p)≥b, both cases imply b=π(p).
-
-Every copy consequently sends its fixed zero H(2,4) to
+Consequently i=h. Column c₁ is either a leaf q≥p or a plus-parent
+C_{h−1}^+(u) with π(p)≤u. Its order before c₂ gives π(q)≤b in
+the first case and u≤b in the second. Combining with π(p)≥b forces
 
 \[
- T_h=\{(L_R(p),c):c\in C_{h-1}^-(\lfloor p/2\rfloor)\}.
+ b=\pi(p),\qquad
+ c_1\in\{L_C(q):p\le q,\ \pi(q)=\pi(p)\}
+          \ \cup\ C_{h-1}^+(\pi(p)).
 \]
 
-There are exactly 2m cells in T_h, because each terminal parent block
-has two positions. Fixing this cell leaves at most n⁵ choices for the
-other two rows and three columns. Thus N_H(A_h)≤2mn⁵.
+Finally r₃ must be dummy. A variable row one on C_{h−1}^−(π(p))
+is either a leaf v or R_{h−1}^−(a). A later leaf has v>p and
+cannot satisfy π(v)<π(p). A later parent-minus row has a>π(p)
+and cannot satisfy a<π(p). No other variable row can be one there.
 
-## 5. Arbitrary repairs still cost at least m²
+We have classified every copy: for a leaf p, it uses X_{W_{h,p mod 2}^-},
+L_R(p), R_*; C_{h−1}^−(π(p)); the matching Y block; and either
+a leaf q≥p in that parent's two-leaf interval or C_{h−1}^+(π(p))
+as its first column. Conversely these choices have the required order
+and all nine entries, directly by the host rules.
+
+Three anchor/dummy choices contribute m³, and the minus-parent column
+contributes 2. The first column has 2 plus-parent choices and 2 leaf
+choices for even p, or 2 plus-parent choices and 1 leaf choice for odd p.
+There are m/2 leaves of each parity, so
+
+\[
+ N_K=\frac m2\cdot2m^3(4+3)=7m^4.
+\]
+
+The two families contribute 4m⁴ and 3m⁴ respectively. In particular
+every copy's middle zero lies in the 2m-cell leaf-to-own-minus-parent set.
+
+## 6. Lower bound against arbitrary repairs
 
 Let a binary B differ from A_h on M<m² cells. Sample a uniform leaf z
-and its ancestor at each level. Independently choose one uniform position
-from each signed row and column block on this path, identifying the two
-sign selections at the leaf. Choose independent uniform representatives
-of each anchor block and each dummy block.
+and its ancestor path. Independently choose a uniform representative
+from each signed row and column block on the path, identifying the two
+sign choices at the shared leaf on each axis. Choose independent uniform
+representatives from every anchor and dummy block.
 
-A variable or dummy position has marginal probability 1/m. A column
-anchor position has probability 1/m, and a row anchor position 1/(2m).
-Selections with an anchor or dummy endpoint are independent across axes;
-root selections are also independent. Therefore any protected cell
-(anchor endpoint, dummy endpoint, or root-to-root) is selected with
-probability at most 1/m². The union bound supplies a selection with no
-edited protected cell. This probability assertion is not made for
-arbitrary variable-variable cells or for shared leaf diagonals.
+Every variable or dummy position has marginal probability 1/m, and each
+anchor position has probability 1/m. A cell with an anchor or dummy
+endpoint has selection probability 1/m², since that representative is
+independent of the other axis. The same holds for either root-to-root
+cell. Protect all such selected cells. The union bound gives a selection
+with no edited protected cell. We make no such probability assertion for
+general variable-variable cells or the shared leaf diagonal.
 
-Suppose B is H-free. The unchanged designated anchors extend every
-ordered P body on the selected role representatives to H. Therefore
-all those bodies must avoid P. The root-plus diagonal is one and the
-root-minus diagonal zero. If the selected parent diagonals have these
-values, the vertical bodies are
+If B is K-free, every selected ordered role body must avoid P, by the
+unchanged five anchor incidences completing it to K. The root-plus
+diagonal is one and root-minus diagonal zero. Assuming these values at
+a parent, the two vertical bodies are
 
 \[
  \begin{pmatrix}1&b_+\\1&1\end{pmatrix},\qquad
  \begin{pmatrix}1&0\\1&b_-\end{pmatrix}.
 \]
 
-Their P-freeness forces b_+=1,b_−=0. The horizontal modes matching the
-child parity next have bodies
+P-freeness forces b_+=1,b_−=0. The horizontal bodies of the selected
+child parity are then
 
 \[
  \begin{pmatrix}1&c_+\\1&1\end{pmatrix},\qquad
  \begin{pmatrix}c_-&0\\1&1\end{pmatrix},
 \]
 
-forcing child diagonal values c_+=1,c_−=0. The recursive axis orders
-put all these role bodies in increasing order. Induction reaches the
-common leaf diagonal, which cannot simultaneously be one and zero.
-Thus B is not H-free. All M edits were arbitrary, including anchor edits
-and both directions of binary change. This proves the m² lower bound.
+forcing c_+=1,c_−=0. All four bodies are ordered by the recursive
+tree order and have their dummy entries protected. Induction reaches
+the common leaf diagonal, a contradiction. Therefore D_K(A_h)≥m².
+Edits to anchors, dummies and either binary label were never restricted.
 
-## 6. Quantifiers and comparison
+## 7. Final quantifiers and blowups
 
-With ε_h=(14h+2)^−2, the density-to-power ratio is at most
+Set ε_h=(8h+2)⁻². For every fixed C>0,
 
 \[
- \frac{N_H(A_h)}{n_h^7\epsilon_h^C}
- \le 2(14h+2)^{2C-2}2^{-h}\longrightarrow0.
+ \frac{N_K(A_h)}{n_h^6\epsilon_h^C}
+ =7(8h+2)^{2C-6}4^{-h}\longrightarrow0.
 \]
 
-Given c,C,ε₀>0, choose h with ε_h<ε₀ and this ratio<c. Replace every
-physical row and column by q identical consecutive twins, for any positive
-integer q. The same
-sampler gives repair lower bound q²m². Since H has distinct rows and
-columns, a copy cannot reuse a projected row or column, so its count
-scales exactly by q⁷. Both normalized bounds are unchanged. Choosing q
-arbitrarily large gives the required host sizes, including a prescribed
-threshold depending on ε_h.
+Given c,C,ε₀>0, choose h with ε_h<ε₀ and this ratio<c. Replace each
+physical row and column by q consecutive identical twins. The pattern's
+distinct rows and columns prevent a copy from reusing a projected row
+or column, so its count multiplies exactly by q⁶. The repair sampler
+works with blocks q times larger: protected-cell probabilities are
+(qm)⁻², and the lower bound is q²m². Both normalized bounds are unchanged.
+Arbitrarily large q yields every prescribed lower threshold on host size
+at the **same** ε_h.
 
-The improvement is rectangular pattern size: 3×4 rather than the known
-4×4. Copy densities have different normalizations n⁷ and n⁸, so the
-raw count is not a multiplicative improvement to the old fixed-H bound.
-The earlier 4×4 exact-distance and optimized-count results remain separate.
-Neither the exact repair equality nor its existing Lean certificate has
-been transferred to this host.
+## 8. Verification and formal theorem
 
-## 7. Reproduction and verification scope
+The [original proof snapshot](proofs/three-by-three.md) is retained byte for
+byte at the SHA-256 recorded in the
+[separate-agent adversarial review](verification/reviews/three-by-three-adversarial.md).
+Sections 1–7 above reproduce its mathematical argument. The review found no
+gap and suggested two clarifications: the class-incidence paths meet at the
+leaf class, and the middle column in the W cases cannot be the dummy column
+because its middle-row entry is zero. These observations are already implied
+by the definitions. Separate-agent review is not human mathematical peer review.
 
-`experiments/asymmetric_candidate.py` enumerates all ordered quotient
-copies with exact twin multiplicities through h=6.
-`verification/check_three_by_four.py` separately constructs the host and
-uses weighted subsequence dynamic programming. It checks the same depths,
-a fully expanded h=1 matrix, designated anchor signatures, and adverse
-variants omitting each of the two anchor-row changes. The latter variants
-have nonlocalized copies. See the archived exact report and separate
-agent review. These finite computations support this written argument;
-they do not supply its universal quantifiers or independent peer review.
+The [discovery census](experiments/three_by_three_candidate.py) and
+[literal checker](verification/check_three_by_three.py) agree through h=7,
+including hosts of order 7,424. The latter checks expanded h=1, three-seed
+repair guards through h=4, all Boolean propagation states, and negative
+controls omitting each essential added support. The
+[reviewer's independent implementation](verification/check_three_by_three_reviewer.py)
+rebuilds the host from the prose, with complete weighted censuses through h=6
+and physical censuses through h=3. Its optional SAT check establishes exact
+repair distances only at h=1 and h=2. Finite checks do not prove the universal
+statement or exact repair equality at all depths.
 
+The principal Lean export is
+`OrderedRemoval.Crown.no_polynomial_removal_bound` in
+[Complete.lean](formal/OrderedRemoval/Crown/Complete.lean). It proves the
+qualitative theorem of Section 1 with the same literal 3×3 crown and n⁶
+normalization: every c,C,ε₀>0 admits a fixed 0<ε<ε₀ such that every host-size
+threshold N admits an n≥max(1,N) and a square binary host with at least εn²
+edits required in every crown-free binary repair and fewer than c ε^C n⁶
+ordered copies. There are no host-existence, localization, sampling or
+anchor-preservation hypotheses.
 
-## 8. Lean formalization
+For this certificate each anchor block on each axis is doubled to size 2m,
+represented by two consecutive identical subgroups of size m. All body and
+dummy blocks, entry rules and relative block orders are retained. The formal
+host has n=(14h+2)m. Localization bounds the number of eligible middle-zero
+cells by 2m; encoding the other four indices gives at most 2mn⁴ copies.
+The protected sampler still gives a repair lower bound m². Consequently
+ε=(14h+2)⁻² and the density is at most 2ε2⁻ʰ. Exponential decay and uniform
+blowups prove the full quantifier order. This certifies the qualitative
+3×3 result, not the exact 7m⁴ count on the more economical written host.
 
-The main theorem is checked in Lean 4.34.1 with the pinned Mathlib dependency.
+The [source-bound audit](verification/reference/crown-formal-audit.json)
+built and checked 92 local modules, 573 named theorems and 2,163 declarations,
+including inherited infrastructure. The Crown development adds 19 modules,
+88 named theorems and 257 declarations. Only `propext`, `Quot.sound`, and
+`Classical.choice` occur as transitive axioms. Each local module was replayed
+into its imported Lean environment; the audit does not freshly replay all
+Mathlib or use a different proof assistant. Lean is pinned to 4.34.1 and
+Mathlib to `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 
-`no_polynomial_removal_bound` in the `OrderedRemoval.Rectangular`
-namespace states the full quantifier order: for every c,C,ε₀>0, choose a fixed 0<ε<ε₀; for every host
-threshold N, there is an n≥max(1,N) square binary matrix with at least εn²
-edits in every H-free repair and fewer than c ε^C n⁷ copies.
+The [executed-model check](verification/reference/crown-formal-model-report.json)
+compares the actual Lean host and axis orders with a separate Python model
+through h=3, covering 139,332 entries, and physical copy counts through h=2.
+The [formal semantic note](verification/reviews/three-by-three-formal-scope.md)
+is a same-agent second pass. The separate adversarial reviewer covered the
+written proof, not this Lean port. Exact repair equality, global minimality,
+and worldwide priority remain outside the certificate.
 
-The proof constructs the literal host and both orders, excludes every
-unwanted anchor configuration, localizes the fixed zero, counts copies,
-and proves the arbitrary-repair bound before normalizing. The uniform-blowup
-lemmas preserve the normalized bounds. They prove the sufficient q⁷ copy
-upper bound; the exact blowup-count equality in Section 6 is not needed
-by the formal capstone. No exact all-depth enumeration or repair equality
-is asserted for this host.
-
-The formal sampler is an alternative to Section 5's independent sampler:
-it retains the inherited three seeds and selects representatives from both
-m-sized row subgroups of each 2m anchor block. Copy completion uses the
-second representative. Its anchor-row marginal is 1/m, and every protected
-cell still has probability at most 1/m². This distinction changes no bound.
-
-The [audit](verification/reference/rectangular-formal-audit.json) binds all
-project source files. It checks transitive axiom dependencies and replays
-each project module into its imported Lean environment. This does not
-freshly replay all Mathlib or constitute independent mathematical peer review.
-Only `propext`, `Quot.sound`, and `Classical.choice` occur as axioms.
-The separate-agent semantic review is archived alongside the finite checks.
+See [formal/README.md](formal/README.md) and [RUNLOG.md](RUNLOG.md) for
+reproducible commands, historical checkpoints and verification boundaries.

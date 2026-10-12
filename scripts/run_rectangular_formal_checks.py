@@ -24,7 +24,10 @@ def main():
     version = run("lake", "env", "lean", "--version").strip()
     assert "version 4.34.1," in version, version
     run("lake", "build", "OrderedRemoval", "OrderedRemoval.Rectangular.Complete")
-    files = sorted((FORMAL / "OrderedRemoval").rglob("*.lean"))
+    # This historical audit imports the H4 and 3×4 roots. New Crown sources
+    # have their own entry point and receipt in run_crown_formal_checks.py.
+    files = [p for p in sorted((FORMAL / "OrderedRemoval").rglob("*.lean"))
+             if "Crown" not in p.relative_to(FORMAL / "OrderedRemoval").parts]
     source_names = {}
     for path in files:
         source = path.read_text()

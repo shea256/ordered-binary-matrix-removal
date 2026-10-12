@@ -1,0 +1,47 @@
+{
+  "source_commit": "8c503f7a7a0f42c53621dcd0bdaf753e2580aa3e",
+  "records": [
+    {
+      "depth": 1,
+      "order": "wang_source_order",
+      "expanded": false,
+      "repaired": false,
+      "n": 32,
+      "copies": 128,
+      "anchor_column_counts": {
+        "2": 128
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 2,
+      "order": "wang_source_order",
+      "expanded": false,
+      "repaired": false,
+      "n": 120,
+      "copies": 9216,
+      "anchor_column_counts": {
+        "1": 1024,
+        "2": 8192
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    },
+    {
+      "depth": 3,
+      "order": "wang_source_order",
+      "expanded": false,
+      "repaired": false,
+      "n": 352,
+      "copies": 622592,
+      "anchor_column_counts": {
+        "1": 98304,
+        "2": 524288
+      },
+      "copies_outside_zero_set": 0,
+      "edits": 0
+    }
+  ],
+  "scope": "Literal finite transcription of Wang manuscript mode order; no fresh Lean build or all-depth independent audit."
+}

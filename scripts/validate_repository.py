@@ -8,18 +8,74 @@ for name in ('README.md','BASELINE.md','ATTEMPT.md','RESULT.md','RUNLOG.md','HAN
 current = json.loads((ROOT / 'results/current.json').read_text())
 assert current['status'] == 'candidate' and current['independent_review'] is False
 assert current['new_result_formalized'] is True
-assert (current['pattern_rows'],current['pattern_columns']) == (3,4)
-assert current['normalization_exponent'] == 7
-assert current['formalization']['applies_to_current_host'] is True
-report34=json.loads((ROOT/current['verification_report']).read_text())
-assert report34['pattern'] == current['pattern']
+assert (current['pattern_rows'],current['pattern_columns']) == (3,3)
+assert current['pattern'] == [[0,1,1],[1,0,1],[1,1,0]]
+assert current['normalization_exponent'] == 6
+assert current['host_coefficient'] == 8
+crown = current['formalization']
+assert crown['applies_to_current_pattern'] is True
+assert crown['applies_to_current_host'] is False
+assert crown['formal_host']['n'] == '(14h+2)m'
+assert crown['formal_host']['anchor_block_size'] == '2m on each axis'
+assert crown['formal_host']['copy_count_upper_bound'] == '2 m n^4'
+assert current['exact_copy_count'] == '7*m^4'
+assert current['exact_repair_equality_claimed'] is False
+report33 = json.loads((ROOT/current['verification_report']).read_text())
+assert report33['pattern'] == current['pattern']
+assert [x['copies'] for x in report33['records']] == [7*2**(4*h) for h in range(1,8)]
+assert all(x['noncanonical_copies'] == x['unlocalized_copies'] == 0
+           for x in report33['records'])
+review33 = json.loads((ROOT/current['reviewer_verification_report']).read_text())
+assert [x['copies'] for x in review33['records']] == [x['copies'] for x in report33['records'][:6]]
+assert all(x['physical_copies'] == x['copies'] for x in review33['records'][:3])
+assert (ROOT/current['separate_agent_review']['report']).is_file()
+crown_audit = json.loads((ROOT/crown['audit']).read_text())
+assert crown['status'] == crown_audit['status'] == 'crown_removal_theorem_formalized'
+assert crown_audit['pattern'] == ['011','101','110']
+assert crown_audit['written_host']['exact_count_formalized'] is False
+assert crown_audit['end_to_end_removal_theorem_formalized'] is True
+assert crown['final_removal_theorem_formalized'] is True
+for flag in ('arbitrarily_small_epsilon_formalized',
+             'arbitrarily_large_hosts_at_fixed_epsilon_formalized',
+             'coarse_copy_count_formalized','arbitrary_repair_bound_formalized',
+             'zero_cell_localization_formalized'):
+    assert crown[flag] is True and crown_audit[flag] is True, flag
+for flag in ('exact_copy_count_formalized', 'exact_repair_equality_formalized'):
+    assert crown[flag] is False and crown_audit[flag] is False, flag
+assert crown['named_theorems'] == crown_audit['theorem_count'] == len(crown_audit['axioms']) == 573
+assert crown['checked_declarations'] == crown_audit['declaration_count'] == len(crown_audit['all_declarations']) == 2163
+crown_modules = {'.'.join(p.relative_to(ROOT/'formal').with_suffix('').parts)
+                 for p in (ROOT/'formal/OrderedRemoval').rglob('*.lean')}
+assert set(crown_audit['kernel_replay']) == crown_modules
+assert crown['modules_replayed'] == len(crown_modules) == 92
+assert crown_audit['capstone'] == crown['capstone']
+assert crown['capstone'] in crown_audit['axioms']
+assert all(set(info['axioms']) <= {'propext','Quot.sound','Classical.choice'}
+           for info in crown_audit['all_declarations'].values())
+for name, expected in crown_audit['sources'].items():
+    assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest() == expected, name
+assert (ROOT/crown['semantic_review']).is_file()
+# Preserve source binding for the original finite, review and formal checkpoints.
+for checkpoint in ('three-by-three-checks-receipt', 'three-by-three-assurance', 'crown-formal-model-report'):
+    data = json.loads((ROOT/'verification/reference'/f'{checkpoint}.json').read_text())
+    hashes = data.get('hashes', data.get('sources', {}))
+    assert hashes, checkpoint
+    for name, expected in hashes.items():
+        assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest() == expected, (checkpoint, name)
+# The rectangular theorem remains a separately scoped historical certificate.
+previous = json.loads((ROOT/current['previous_result']).read_text())
+assert (previous['pattern_rows'], previous['pattern_columns']) == (3,4)
+assert previous['normalization_exponent'] == 7
+assert previous['formalization']['applies_to_current_host'] is True
+report34=json.loads((ROOT/previous['verification_report']).read_text())
+assert report34['pattern'] == previous['pattern']
 assert [x['copies'] for x in report34['results']] == [1632,101888,4743168,197525504,7757365248,293769052160]
 assert all(x['bad_localization_copies']==0 for x in report34['results'])
-review34=json.loads((ROOT/current['reviewer_verification_report']).read_text())
+review34=json.loads((ROOT/previous['reviewer_verification_report']).read_text())
 assert [x['copies'] for x in review34['census']] == [x['copies'] for x in report34['results'][:4]]
-assert (ROOT/current['separate_agent_review']['report']).is_file()
+assert (ROOT/previous['separate_agent_review']['report']).is_file()
 # The rectangular certificate has its own scope and immutable source binding.
-rect=current['formalization']
+rect=previous['formalization']
 rect_audit=json.loads((ROOT/rect['audit']).read_text())
 assert rect['status']==rect_audit['status']=='rectangular_removal_theorem_formalized'
 assert rect_audit['pattern']==['1001','1010','0111']
@@ -35,7 +91,8 @@ assert rect['exact_repair_equality_formalized'] is False
 assert rect['named_theorems']==rect_audit['theorem_count']==len(rect_audit['axioms'])
 assert rect['checked_declarations']==rect_audit['declaration_count']==len(rect_audit['all_declarations'])
 rect_modules={'.'.join(p.relative_to(ROOT/'formal').with_suffix('').parts)
-              for p in (ROOT/'formal/OrderedRemoval').rglob('*.lean')}
+              for p in (ROOT/'formal/OrderedRemoval').rglob('*.lean')
+              if 'Crown' not in p.parts}
 assert set(rect_audit['kernel_replay'])==rect_modules
 assert rect['modules_replayed']==len(rect_modules)
 assert 'OrderedRemoval.Rectangular.no_polynomial_removal_bound' in rect_audit['axioms']
@@ -99,7 +156,9 @@ for name, expected in audit['sources'].items():
     assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected, name
 proof = (ROOT / current['proof_file']).read_text()
 manuscript = (ROOT / 'manuscript.md').read_text()
-assert manuscript[manuscript.index('## Statement'):] == proof[proof.index('## Statement'):].replace('../verification/', 'verification/').replace('../BASELINE.md', 'BASELINE.md')
+body = proof[proof.index('## 1. Statement'):proof.index('## 8. Verification scope')]
+body = body.replace('../verification/', 'verification/').replace('../BASELINE.md', 'BASELINE.md')
+assert manuscript[manuscript.index('## 1. Statement'):manuscript.index('## 8. Verification and formal theorem')] == body
 receipt = json.loads((ROOT / 'results/paper_build.json').read_text())
 for name, expected in receipt['artifacts'].items():
     data = (ROOT / name).read_bytes()

@@ -1,5 +1,46 @@
 # Attribution and scope
 
+## October 11 — 3×3 qualitative Lean theorem
+
+The [new certificate](formal/README.md) proves the full theorem for the
+3×3 crown using doubled anchor blocks and the coarse bound 2mn⁴. The
+new anchor classification, suffix column order, five-cell completion, and
+all-copy localization are connected to the inherited OpenAI tree,
+three-seed sampling, propagation, counting injection, and asymptotic
+arguments. Several arithmetic lemmas are reused directly from our 3×4
+formalization. Module and theorem totals include inherited infrastructure
+and should not be described as new mathematical contributions.
+
+The [separate-agent review](verification/reviews/three-by-three-adversarial.md)
+covers the original written proof snapshot. It did not examine this Lean
+port. The written exact 7m⁴ formula and the smaller host's quantitative
+parameters remain outside the formal certificate. Human peer review,
+worldwide priority, and minimality are not established by the checks.
+
+## October 11 — 3×3 crown candidate and further baseline correction
+
+The [3×3 proof draft](proofs/three-by-three.md) uses OpenAI's signed tree,
+role table, threshold body and arbitrary-repair propagation. It adapts
+the nonuniform row supports developed for the preceding 3×4 construction.
+The new encoding puts a single column anchor after the nonanchors and
+adds dummy-row ones in vertical anchor columns. Its all-copy classification
+and exact 7m⁴ count are written candidate claims, supported by two
+same-agent implementations. That discovery checkpoint preceded the later
+separate review and qualitative Lean certificate above. Independent
+mathematical peer review remains pending.
+
+The refreshed search found [Zinan Wang's 4×4 manuscript](https://github.com/wzn1118/h4-ordered-matrix-removal/tree/8c503f7a7a0f42c53621dcd0bdaf753e2580aa3e).
+It states the same (5/2)m⁶−m⁵ count as our earlier 4×4 refinement, with
+its own mode order and formal exact-count/repair claims. We found it
+during this 3×3 attempt, not before our earlier discoveries. Its source
+and finite census were checked; its Lean build was not rerun. Previous
+bounded-search descriptions must not imply that matching count occurs
+only in our work. See [BASELINE.md](BASELINE.md) for versions and scope.
+
+This release packages the 3×3 result in a user-authorized PR. No
+social announcement or author contact has been performed. Older checkpoint
+statements below are historical.
+
 ## New asymmetric 3×4 candidate — October 11
 
 The [new proof](proofs/three-by-four.md) inherits OpenAI's binary tree,

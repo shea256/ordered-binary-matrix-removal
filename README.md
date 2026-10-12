@@ -1,80 +1,94 @@
 # Ordered binary matrix removal
 
-**Candidate 3×4 obstruction · Main theorem checked in Lean · October 11, 2026**
+**Candidate 3×3 obstruction · Main theorem checked in Lean · October 12, 2026**
 
-![Ordered matrix-removal results on a proportional UTC date axis and logarithmic entry-count axis. OpenAI's October 6 commit is followed by ProveIt's October 7 commit, Erebos Labs' October 9 release, and our October 11 3×4 PR. Hollow markers show our later intermediate constructions.](assets/pattern-size-history.png)
+![Dated progress in ordered binary matrix removal, from OpenAI’s 66×66 pattern through ProveIt’s 5×5, Erebos Labs’ 4×4 and this project’s 3×4 to 3×3. Time is proportional in UTC and pattern entries use a logarithmic axis.](assets/pattern-size-history.png)
 
-The x-axis uses dated **GitHub records**, with proportional time spacing.
-Erebos Labs' 4×4 [v1.0.0 release](https://github.com/erebos-labs/ordered-matrix-removal-4x4/releases/tag/v1.0.0)
-was published **October 9, 2026 at 12:40:51 UTC**. The line tracks the smallest
-entry count among the displayed results; hollow markers show our later
-intermediate stages. OpenAI's paper is dated September 25; the chart uses
-its October 6 repository commit. See [timestamp sources and scope](assets/README.md)
-and [baseline attribution](BASELINE.md).
-
-We give a construction with a Lean-checked main theorem for the fixed ordered binary pattern
+We give a construction for the fixed ordered binary pattern
 
 ```text
-1 0 0 1
-1 0 1 0
-0 1 1 1
+0 1 1
+1 0 1
+1 1 0
 ```
 
-This reduces the forbidden pattern from the known **4×4 to 3×4**: twelve
-entries instead of sixteen. For every h≥1, m=2^h and n=(14h+2)m, the square
-binary host requires at least m² arbitrary binary edits to become H-free
-and has at most 2mn⁵ copies. Its density is at most 2(14h+2)⁻²2⁻ʰ.
-The written proof retains failure of every polynomial removal bound,
-arbitrarily small distance parameters, and arbitrarily large hosts.
+The **3×3 pattern has nine entries**, down from twelve in our previous 3×4
+construction and sixteen in the earlier external 4×4 results. Arbitrarily
+large matrices can contain extremely few copies of this pattern while still
+requiring many edits to eliminate it: **no polynomial removal bound holds**.
+Copies preserve separate row and column orders and match both zeros and ones.
+Repairs may change any entry in either direction.
 
 Read the [paper](manuscript.pdf), [Markdown manuscript](manuscript.md), and
-[proof](proofs/three-by-four.md). Exact checks agree through six depths and
-a [separate AI reviewer](verification/reviews/three-by-four.md) found no
-remaining proof gap after a boundary qualification was corrected.
+[Lean theorem](formal/OrderedRemoval/Crown/Complete.lean).
+For every c,C,ε₀>0, the theorem gives a fixed 0<ε<ε₀ such that, for every
+size threshold N, some square host of order n≥max(1,N) requires at least
+εn² edits to become pattern-free and has fewer than c ε^C n⁶ copies.
 
-**The main theorem for the new 3×4 pattern is checked in Lean.** It includes
-arbitrarily small distance parameters and arbitrarily large hosts at the same
-chosen parameter. See the [formal proof](formal/README.md),
-[source-bound audit](verification/reference/rectangular-formal-audit.json), and
-[semantic review](verification/reviews/three-by-four-formal.md).
-The proof and certificate were merged in [PR #6](https://github.com/shea256/ordered-binary-matrix-removal/pull/6).
-Independent mathematical peer review and a broader novelty assessment remain
-pending. This is a rectangular result, not 3×3 or a minimality theorem.
-Neither exact repair equality nor an exact all-depth count is claimed.
+## What is verified
+
+**The full qualitative theorem for the 3×3 pattern is checked in Lean.**
+The source-bound audit covers 92 project modules, 573 named theorems and
+2,163 declarations, including inherited infrastructure. A separate AI reviewer
+found no gap in the written proof. Independent mathematical peer review remains
+pending; we make no global minimality or first-ever claim.
+
+The written and formal proofs use two versions of the host, with m=2^h:
+
+| Version | Anchor size per mode and axis | Host order n | Copies | Repair lower bound |
+| --- | --- | --- | --- | --- |
+| Written proof and separate-agent review | m | (8h+2)m | exactly 7m⁴ | m² |
+| Lean certificate | 2m | (14h+2)m | at most 2mn⁴ | m² |
+
+Both establish the same no-polynomial-bound theorem. **The exact 7m⁴ count
+and the smaller host's quantitative parameters are outside the Lean certificate.**
+See [formal scope](formal/README.md), the
+[audit](verification/reference/crown-formal-audit.json),
+[separate written-proof review](verification/reviews/three-by-three-adversarial.md),
+and [model alignment check](verification/reviews/three-by-three-formal-scope.md).
+The [original proof snapshot](proofs/three-by-three.md) is preserved unchanged
+for its review hashes; the manuscript gives the current verification status.
 
 ## Baseline and attribution
 
-Erebos published the same earlier 4×4 obstruction and its qualitative Lean
-proof before our 4×4 PR. That priority correction remains in
-[BASELINE.md](BASELINE.md) and [ATTRIBUTION.md](ATTRIBUTION.md). The tree,
-threshold entries, protected sampling and propagation originate in OpenAI's
-construction. The new ingredients are the asymmetric anchor encoding,
-nonuniform extra ones and its full-copy localization argument.
+The tree, threshold entries, protected sampling and propagation originate in
+OpenAI's 66×66 construction and formalization. ProveIt supplied earlier 5×5
+work; Erebos Labs published a 4×4 theorem and Lean proof before our 4×4 PR.
+Zinan Wang's 4×4 manuscript also gives the exact copy count found in our
+earlier quantitative refinement, with a different mode order.
 
-The [optimized H4 order](proofs/optimized-order.md) is retained as a separate
-quantitative refinement, with limiting copy ratio 10/41 to Erebos at identical
-n and exact repair cost. Its metadata is in
-[previous-optimized-four.json](results/previous-optimized-four.json).
-The retained [4×4 Lean certificate](formal/README.md) concerns the previous
-within-depth host and does not certify this 3×4 construction.
+Our 3×3 construction uses one anchor on each axis, suffix column anchors,
+vertical-dummy ones, and a new all-copy classification. See
+[BASELINE.md](BASELINE.md) and [ATTRIBUTION.md](ATTRIBUTION.md) for pinned
+sources, verification stages and the bounded novelty search. The preceding
+[3×4 certificate](results/previous-three-by-four.json) and
+[4×4 refinement](proofs/optimized-order.md) remain available.
+
+The chart uses dated **GitHub records**, with proportional UTC spacing.
+Erebos Labs' [v1.0.0 release](https://github.com/erebos-labs/ordered-matrix-removal-4x4/releases/tag/v1.0.0)
+was published October 9, 2026 at 12:40:51 UTC. The line follows the smallest
+entry count among the selected records, not a complete priority history.
+See [timestamp sources and scope](assets/README.md).
 
 ## Reproduce
 
 ```sh
 python3 scripts/run_checks.py
 # With the pinned Lean/Lake toolchain installed:
-python3 scripts/run_rectangular_formal_checks.py
+python3 scripts/run_crown_formal_checks.py
+python3 verification/check_crown_formal_model.py --output .context/crown-model-check.json
 ```
 
-The checks use Python 3.9+ and the standard library. They include complete
-weighted censuses through h=6, expanded physical h=1, a separately written
-reviewer checker, and adverse variants omitting the essential extra entries.
-Finite checks support the written proof; they do not prove its universal
-quantifiers. See [verification scope](verification/README.md),
-[RESULT.md](RESULT.md), [RUNLOG.md](RUNLOG.md), and [HANDOFF.md](HANDOFF.md).
+The default exact checks use Python 3.9+ and the standard library. They include
+two seven-depth censuses, a separately written reviewer checker, repair guards,
+Boolean propagation, and adverse variants. Optional SAT discovery and repair
+searches are documented separately. Finite checks support the proof; the Lean
+certificate establishes the universal theorem. See
+[verification scope](verification/README.md), [RESULT.md](RESULT.md),
+[RUNLOG.md](RUNLOG.md), and [HANDOFF.md](HANDOFF.md).
 
 Build the paper with `python3 scripts/build_manuscript.py`; add
 `--regenerate-tex` with Pandoc 3.6.4 installed to regenerate LaTeX first.
-The historical [improvement record](IMPROVEMENTS.md) records development,
-not priority. Prepared by Ryan Shea with Codex assistance. Licensed under
+The [improvement record](IMPROVEMENTS.md) records development, not priority.
+Prepared by Ryan Shea with Codex assistance. Licensed under
 [Apache 2.0](LICENSE); see [NOTICE](NOTICE).

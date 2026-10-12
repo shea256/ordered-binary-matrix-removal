@@ -10,3 +10,7 @@ See ATTRIBUTION.md for inherited methods and proposed changes.
 The October 11 quantitative refinement credits Erebos's earlier H4 results
 and adapts its terminal-anchor repair argument, with the earlier ProveIt
 manuscript also credited. See BASELINE.md and ATTRIBUTION.md for pinned sources.
+
+The 3×3 release also credits Zinan Wang's manuscript for the matching exact
+copy count in the earlier H4 refinement, using a different mode order.
+Its Lean sources were inspected, not copied or freshly rebuilt here.
