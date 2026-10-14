@@ -89,6 +89,17 @@ certificate establishes the universal theorem. See
 
 Build the paper with `python3 scripts/build_manuscript.py`; add
 `--regenerate-tex` with Pandoc 3.6.4 installed to regenerate LaTeX first.
+The [Markdown manuscript](manuscript.md) is the mathematical source;
+the [template](tex/template.tex) and [preamble](tex/preamble.tex) control the
+title, abstract, typography, and pagination. The pdfLaTeX build requires
+the packages listed in the preamble, including `microtype`, `parskip`,
+`needspace`, `xurl`, and `bookmark`. After editing the Markdown or template,
+regenerate LaTeX; `python3 scripts/build_manuscript.py --check-tex` checks
+that the generated source is current. PDF links open repository files online.
+The [bibliography](references.bib) supplies the manuscript's `[@key]` citations.
+Pandoc's built-in citeproc generates linked numeric citations and references
+using [the citation style](tex/references.csl); unresolved citations fail the
+build. Regenerate LaTeX after changing either bibliography file as well.
 The [improvement record](IMPROVEMENTS.md) records development, not priority.
 Prepared by Ryan Shea with Codex assistance. Licensed under
 [Apache 2.0](LICENSE); see [NOTICE](NOTICE).

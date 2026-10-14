@@ -1,5 +1,106 @@
 # Reproduction log
 
+## October 14 — manuscript citations and bibliography
+
+Added a short background section, numbered in-text citations, a seven-entry
+bibliography, and an explicit link to OpenAI's companion Lean formalization.
+The references cover Alon–Fischer–Newman (2007), Alon–Ben-Eliezer–Fischer
+(2017), Alon–Ben-Eliezer (2020), OpenAI, ProveIt, Erebos Labs, and Zinan Wang.
+The background distinguishes polynomial original-copy hitting bounds from
+arbitrary binary repair bounds. The existing check still requires Sections
+1–7 to match the reviewed proof after removing inline math delimiters; no
+proof text, formal source, result classification, or verification scope changed.
+
+Bibliographic metadata and attribution were checked against the authors'
+manuscripts, the SIAM author-hosted version of record, Springer's article
+record, IEEE's Crossref metadata, and the pinned repository manuscripts.
+Repository citations use the versions already recorded in BASELINE.md:
+OpenAI `fd4aeeb2ee4f`, ProveIt `bfbfe9151863`, Erebos `6d21ce36e83b`, and
+Wang `8c503f7a7a0f`. ProveIt and Erebos are credited by project/repository;
+their title pages do not name an individual author. OpenAI's current CONTENTS
+at `1581d4cbdd69` still lists the 66×66 result; its paper title source matches
+the pinned snapshot. The Erebos and Wang repository heads still match the
+cited commits. These checks supply citation provenance, not a new novelty
+claim or independent proof review.
+
+`references.bib` holds the metadata and `tex/references.csl` controls the
+numeric style. Pandoc 3.6.4's built-in citeproc resolves the citations, so
+regeneration needs no additional bibliography executable or network access.
+Both files are included in `results/paper_build.json`. Missing citation keys
+now fail rendering through `--fail-if-warnings`; an isolated temporary copy
+with an intentionally missing citation confirmed this behavior.
+
+Commands, with Pandoc 3.6.4 on PATH:
+
+```sh
+python3 scripts/build_manuscript.py --regenerate-tex
+python3 scripts/build_manuscript.py --check-tex
+python3 scripts/run_checks.py
+python3 scripts/validate_repository.py
+pdfinfo -dests manuscript.pdf
+pdfinfo -url manuscript.pdf
+git diff --check
+```
+
+The PDF has eight pages and compiles without warnings. All seven citation
+keys resolve to PDF destinations, all eight numbered sections remain
+bookmarked, and every external link annotation uses an absolute HTTPS URL.
+The first and bibliography pages were rendered and visually inspected;
+text bounding boxes on every page fit within the margins. All 18 exact-check
+suites matched their references, and package integrity passed. The parent
+research repository validator also passed (34 tracks, 543 local links).
+Lean was not rerun for these citation and presentation changes.
+
+## October 14 — manuscript typography and layout
+
+Compared the current PDF with the Fourier paper at
+`0e61af6ce0ef712494c93c902baefa314ef7e23c` and the matroid paper at
+`8cd1395994596d89ad20c2af8b69dab8e3402ee1`. This is a presentation update:
+the reviewed proof, formal sources, current result metadata, finite checks,
+and source-bound mathematical evidence are unchanged.
+
+The PDF now has a centered title, separate author/date, a Codex-assistance
+footnote, an abstract, numbered section headings, section bookmarks, and
+consistent paragraph and table spacing. The attribution paragraph is retained
+verbatim under a closing Attribution heading. The original October 12 paper
+date is retained. Inline math delimiters improve the variables, inequalities,
+scripts, and mode notation; the existing validator still checks exact equality
+of Sections 1–7 with the reviewed text after stripping those delimiters.
+
+The builder translates Unicode only inside mathematical nodes, preserves
+literal set braces, and groups superscripts/subscripts correctly. It converts
+relative repository links to GitHub URLs for standalone PDF reading. The
+template and preamble are tracked separately, and their hashes and the builder
+hash are included in the build receipt. The read-only `--check-tex` command
+compares a fresh Markdown conversion with the checked-in LaTeX.
+
+Environment: Python 3.9.25, Pandoc 3.6.4, pdfTeX 1.40.22 / TeX Live 2021.
+Installed the TeX Live `microtype`, `parskip`, `needspace`, and `xurl`
+packages. The initial build exposed missing default EC fonts when `fontenc`
+loaded before Latin Modern; loading Latin Modern first resolved it without
+adding a different font family.
+
+Commands, with Pandoc 3.6.4 on PATH:
+
+```sh
+python3 scripts/build_manuscript.py --regenerate-tex
+python3 scripts/build_manuscript.py --check-tex
+python3 scripts/run_checks.py
+python3 scripts/validate_repository.py
+pdfinfo -url manuscript.pdf
+git diff --check
+```
+
+The seven-page PDF compiled in three passes, with shell escape disabled and
+no warnings or overfull boxes. Explicit Unicode glyph mapping fixes control
+characters in extracted mathematical text. All 18 exact-check suites matched their archived
+outputs. The generated LaTeX matches the Markdown and template; package
+integrity and source-bound mathematical artifacts passed. PDF pages were
+rendered for visual inspection of equations, tables, headings, and pagination.
+All text bounding boxes fit within the page margins; all eight numbered section
+destinations and 18 absolute repository link annotations are present. Lean was
+not rerun for this formatting update.
+
 ## October 12 — simplify the dated chart
 
 After PR #10 merged, the requested visual cleanup removed the large 3×4 to

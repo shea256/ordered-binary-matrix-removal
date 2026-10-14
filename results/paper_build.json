@@ -5,16 +5,36 @@
   "warnings": [],
   "artifacts": {
     "manuscript.md": {
-      "sha256": "225c4d76bba26377a8f116da2c152913d3a9cdedbaf8baaa117fff4c61c568e7",
-      "bytes": 20920
+      "sha256": "386cdd759d97d8a04580ea020921ca1077f78873d866855914712a14fa4817dc",
+      "bytes": 23344
+    },
+    "references.bib": {
+      "sha256": "167a28c19a8a9eeebee7ac2a249d8c227e34a23ecf04419ab93b60546ad352ef",
+      "bytes": 2721
+    },
+    "tex/references.csl": {
+      "sha256": "0512577e0895d9c0092480dce9006d25f3bce3ba3e1710c3223723bad47305c6",
+      "bytes": 2267
     },
     "tex/manuscript.tex": {
-      "sha256": "9543ba552d36a35b5c4e5394f52bacc4d8ba958e5afc49966c85a3e9ba9c8fee",
-      "bytes": 25733
+      "sha256": "b1e387b2bec253f559128627722ddb606a0da7142ac5b647ec3ec649627d77fa",
+      "bytes": 30120
+    },
+    "tex/preamble.tex": {
+      "sha256": "0dbd3500495e79e7270196ae550bf9ed83c6d0595000a1d68f876e043207559d",
+      "bytes": 4399
+    },
+    "tex/template.tex": {
+      "sha256": "3cb8bbd18efda2ea4cb99004ac9cc74d48c5418251fa9bc0b2f3daa74323e3d2",
+      "bytes": 405
+    },
+    "scripts/build_manuscript.py": {
+      "sha256": "75111aa98109905bbe9fc8d7fed08db1d0899a75d7c40fe17d67b6c7c1b5521a",
+      "bytes": 8619
     },
     "manuscript.pdf": {
-      "sha256": "8ca53cc440734dec8244c24c5f08bc8f858ba7a299cf3c7edd958ac161874fc7",
-      "bytes": 199983
+      "sha256": "862d55d22153b0f4e6e2b35ddd0098d5419613fc730b6be35de10c469f66f288",
+      "bytes": 396048
     },
     "proofs/four-by-four.md": {
       "sha256": "b020e55857438738da94a79bc9420c7a131ad4fdd08b322f80595d3bdfa76fe3",

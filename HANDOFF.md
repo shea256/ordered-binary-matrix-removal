@@ -1,5 +1,16 @@
 # Handoff — 3×3 theorem checked in Lean
 
+The October 14 manuscript formatting update adds a title/abstract layout,
+consistent mathematical typography, table spacing, bookmarks, and online PDF
+links. It also adds a cited background section and seven numbered references
+covering the foundational literature and prior repository constructions.
+The reviewed mathematical argument and all verification scopes remain
+unchanged. Edit `manuscript.md` for text, `references.bib` for bibliographic
+metadata, and `tex/preamble.tex` for typography;
+regenerate with `python3 scripts/build_manuscript.py --regenerate-tex` and
+check synchronization with `--check-tex`. See [RUNLOG.md](RUNLOG.md) for the
+executed checks.
+
 The release package contains the current manuscript, exact checks, separate
 written-proof review, all Crown Lean sources, source-bound audit and updated
 dated chart. The user authorized a PR; no merge or social announcement is
