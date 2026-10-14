@@ -1,6 +1,6 @@
 # A \(3×3\) Ordered Binary Matrix Removal Obstruction
 
-Ryan Shea, with Codex assistance. October 12, 2026.
+Ryan Shea. October 12, 2026.
 
 **Candidate result with a Lean-checked qualitative theorem.** The forbidden
 pattern has nine entries, down from twelve in our previous \(3×4\) construction.
@@ -433,6 +433,10 @@ and worldwide priority remain outside the certificate.
 
 See [formal/README.md](formal/README.md) and [RUNLOG.md](RUNLOG.md) for
 reproducible commands, historical checkpoints and verification boundaries.
+
+## Acknowledgments
+
+Developed with Codex assistance.
 
 ## Attribution
 

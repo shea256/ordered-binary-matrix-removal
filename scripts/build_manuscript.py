@@ -91,7 +91,7 @@ def transform(node):
 def render_tex():
     source = (ROOT / "manuscript.md").read_text()
     front = source.split("\n\n", 2)
-    credit = re.fullmatch(r"(.+), with Codex assistance\. (.+)\.", front[1])
+    credit = re.fullmatch(r"(.+)\. (.+)\.", front[1])
     if credit is None:
         raise ValueError("Expected the manuscript author and date line")
     result = subprocess.run(

@@ -5,8 +5,8 @@
   "warnings": [],
   "artifacts": {
     "manuscript.md": {
-      "sha256": "386cdd759d97d8a04580ea020921ca1077f78873d866855914712a14fa4817dc",
-      "bytes": 23344
+      "sha256": "34b9cdcf7581cda4925982aa33c5b40bfc51efe4f52d2aa58e13b3e34c005bde",
+      "bytes": 23375
     },
     "references.bib": {
       "sha256": "167a28c19a8a9eeebee7ac2a249d8c227e34a23ecf04419ab93b60546ad352ef",
@@ -17,24 +17,24 @@
       "bytes": 2267
     },
     "tex/manuscript.tex": {
-      "sha256": "b1e387b2bec253f559128627722ddb606a0da7142ac5b647ec3ec649627d77fa",
-      "bytes": 30120
+      "sha256": "d53d87a02afc4d0eec92f67a768ebae20a20cee616538f065a644ccfb0cc7420",
+      "bytes": 30212
     },
     "tex/preamble.tex": {
       "sha256": "0dbd3500495e79e7270196ae550bf9ed83c6d0595000a1d68f876e043207559d",
       "bytes": 4399
     },
     "tex/template.tex": {
-      "sha256": "3cb8bbd18efda2ea4cb99004ac9cc74d48c5418251fa9bc0b2f3daa74323e3d2",
-      "bytes": 405
+      "sha256": "33d2b46f0fc3453883aef01047bdadac7c81e1e2f5be1ee6b23438693a9204c2",
+      "bytes": 364
     },
     "scripts/build_manuscript.py": {
-      "sha256": "75111aa98109905bbe9fc8d7fed08db1d0899a75d7c40fe17d67b6c7c1b5521a",
-      "bytes": 8619
+      "sha256": "a963e31a85a27cc7f4937c7bad20a76e58c8079eccc8bd5695c20fe347b36028",
+      "bytes": 8596
     },
     "manuscript.pdf": {
-      "sha256": "862d55d22153b0f4e6e2b35ddd0098d5419613fc730b6be35de10c469f66f288",
-      "bytes": 396048
+      "sha256": "b6f31896445a5ac14d9f6df4d30a238ce584d28e77b567861d800b7ecb2a18de",
+      "bytes": 369110
     },
     "proofs/four-by-four.md": {
       "sha256": "b020e55857438738da94a79bc9420c7a131ad4fdd08b322f80595d3bdfa76fe3",
