@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="en-US">
+  <info>
+    <title>Ordered binary matrix removal — numeric references</title>
+    <id>https://github.com/shea256/ordered-binary-matrix-removal/tex/references.csl</id>
+    <updated>2026-10-14T00:00:00+00:00</updated>
+  </info>
+  <macro name="authors">
+    <names variable="author">
+      <name initialize-with=". " and="text" delimiter=", "/>
+    </names>
+  </macro>
+  <macro name="publication">
+    <choose>
+      <if type="article-journal">
+        <group delimiter=", ">
+          <group delimiter=" ">
+            <text variable="container-title" font-style="italic"/>
+            <group>
+              <text variable="volume"/>
+              <text variable="issue" prefix="(" suffix=")"/>
+            </group>
+          </group>
+          <text variable="page"/>
+          <date variable="issued"><date-part name="year"/></date>
+        </group>
+      </if>
+      <else-if type="paper-conference">
+        <group delimiter=", ">
+          <text variable="container-title" font-style="italic"/>
+          <text variable="page" prefix="pp. "/>
+          <text variable="publisher"/>
+          <date variable="issued"><date-part name="year"/></date>
+        </group>
+      </else-if>
+      <else>
+        <date variable="issued"><date-part name="year"/></date>
+      </else>
+    </choose>
+  </macro>
+  <citation>
+    <layout prefix="[" suffix="]" delimiter="; ">
+      <group delimiter=", ">
+        <text variable="citation-number"/>
+        <group delimiter=" ">
+          <label variable="locator" form="short"/>
+          <text variable="locator"/>
+        </group>
+      </group>
+    </layout>
+  </citation>
+  <bibliography entry-spacing="1" second-field-align="flush">
+    <layout>
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <group delimiter=". " suffix=".">
+        <text macro="authors"/>
+        <text variable="title"/>
+        <text macro="publication"/>
+        <text variable="note"/>
+      </group>
+      <group prefix=" " delimiter=". ">
+        <text variable="DOI" prefix="https://doi.org/"/>
+        <text variable="URL"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
