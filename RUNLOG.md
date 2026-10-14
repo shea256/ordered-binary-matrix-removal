@@ -1,5 +1,21 @@
 # Reproduction log
 
+## October 14 — move the Codex credit to acknowledgments
+
+Removed the author footnote so the title page reads Ryan Shea without a star.
+The Markdown byline and its parser now contain only the author and date;
+the existing Codex-assistance credit appears once under Acknowledgments near
+the end of the paper. Regenerated the LaTeX, PDF, and source-hash receipt.
+
+The eight-page PDF builds without warnings. Text extraction confirms the
+unmarked author name on page 1 and the single credit on page 7; both pages
+were visually inspected, and all page text fits within the margins.
+`--check-tex` confirms source synchronization. The reviewed proof text,
+formal sources, result metadata, and verification evidence are unchanged.
+All 18 suites in `python3 scripts/run_checks.py` passed, together with
+package integrity, parent-repository validation, and `git diff --check`.
+Lean was not rerun for this presentation change.
+
 ## October 14 — manuscript citations and bibliography
 
 Added a short background section, numbered in-text citations, a seven-entry

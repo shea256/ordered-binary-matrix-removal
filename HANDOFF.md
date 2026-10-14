@@ -4,6 +4,7 @@ The October 14 manuscript formatting update adds a title/abstract layout,
 consistent mathematical typography, table spacing, bookmarks, and online PDF
 links. It also adds a cited background section and seven numbered references
 covering the foundational literature and prior repository constructions.
+The author line reads Ryan Shea; the Codex credit appears in Acknowledgments.
 The reviewed mathematical argument and all verification scopes remain
 unchanged. Edit `manuscript.md` for text, `references.bib` for bibliographic
 metadata, and `tex/preamble.tex` for typography;
